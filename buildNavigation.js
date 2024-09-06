@@ -67,15 +67,14 @@ try {
 
     if(siteMetadata.subPages) {
         topNavMarkdown += `subPages\n`;
+        let sideNavMarkdown = ``;
+        let depth = 1;
+    
+        sideNavMarkdown += buildSideNavRecursively(siteMetadata.subPages, depth);
+        topNavMarkdown +=  sideNavMarkdown;
     }
-    fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.md'), topNavMarkdown);
 
-    const sideNav = siteMetadata.subPages;
-    console.dir(sideNav)
-    let sideNavMarkdown = ``;
-    let depth = 0;
-    sideNavMarkdown += buildSideNavRecursively(sideNav, depth);
-    fs.writeFileSync(path.resolve(__dirname + '/build/sideNav.md'), sideNavMarkdown);
+    fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.md'), topNavMarkdown);
 } catch (err) {
     console.error(err);
 }
@@ -83,13 +82,13 @@ try {
 // need to check paths to
 function buildSideNavRecursively(sideNav, depth) {
     let sideNavMarkdown = '';
+    console.log(sideNav)
 
     for (var k in sideNav) {
+        sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path})\n`;
+
         if (sideNav[k].pages) {
             sideNavMarkdown += buildSideNavRecursively(sideNav[k].pages, depth+1);
-        } else {
-            //sideNavMarkdown += `<li> <a href="${sideNav[k].path}"> ${sideNav[k].title} </a> </li>`;
-            sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path})\n`;
         } 
     }
     return sideNavMarkdown;
@@ -98,7 +97,7 @@ function buildSideNavRecursively(sideNav, depth) {
 function insertSpace(indentLevel) {
     let spaces = ``;
     for(var i=0; i<indentLevel; i++){
-        spaces += `  `
+        spaces += `    `
     }
     return spaces;
 }
