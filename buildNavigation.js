@@ -3,27 +3,74 @@ const path = require('path');
 const fs = require('node:fs');
 
 try {
-    const topNav = nav.gatsbyConfig.siteMetadata;
-    const pathPrefix = nav.gatsbyConfig.pathPrefix;
-    console.log(nav.gatsbyConfig)
-    console.log('pathPrefix',pathPrefix)
-    let topNavMarkdown = ``;
-
-    // TODO: prob need url fixer from gatsby theme
-    if (topNav?.home) {
-        
-        //topNavMarkdown += `<li> <a href="${topNav.home.path}"> ${topNav.home.title} </a> </li>\n`;
-        topNavMarkdown += `- [${topNav.home.title}](${topNav.home.path})\n`;
+    if(!nav) {
+        throw new TypeError("Unable to get nav");
     }
 
-    topNav.pages?.forEach((navItem) => {
-        //topNavMarkdown += `<li> <a href="${navItem.path}"> ${navItem.title} </a> </li>\n`;
-        topNavMarkdown += `- [${navItem.title}](${navItem.path})\n`;
+    if(!nav.gatsbyConfig) {
+        throw new TypeError("Gatsby config not defined");
+    }
+
+    if(!nav.gatsbyConfig.pathPrefix) {
+        throw new TypeError("pathPrefix not found");
+    } 
+
+    console.log(nav.gatsbyConfig);
+    const pathPrefix = nav.gatsbyConfig.pathPrefix;
+    let siteMetadata = nav.gatsbyConfig.siteMetadata ? nav.gatsbyConfig.siteMetadata : {};
+
+
+    let topNavMarkdown = ``;
+    // TODO: prob need url fixer from gatsby theme
+    // home link defines the first link defaults to Products
+    // can be hidden
+    // siteMetadata.versions
+    // siteMetadata.home
+
+    topNavMarkdown += `pathPrefix\n`;
+    topNavMarkdown += `    - ${pathPrefix}\n`;
+
+    if (siteMetadata.home) {
+        topNavMarkdown += 'home\n';
+        topNavMarkdown += `    - [${topNav.home.title}](${topNav.home.path})\n`;
+
+        if(siteMetadata.home.hidden) {
+            topNavMarkdown += `    - hidden\n`;
+        }
+    }
+
+    if (siteMetadata.versions) {
+        topNavMarkdown += 'versions\n';
+
+        siteMetadata.versions.forEach((versionItem) => {
+            let isSelectedText = versionItem.selected ? `selected` : '';
+            let versionPathText = versionItem.path ? versionItem.path : '/';
+            topNavMarkdown += `    - [${versionItem.title}](${versionPathText}) ${isSelectedText}\n`;
+        });
+    }
+
+    if(siteMetadata.pages) {
+        topNavMarkdown += `pages\n`;
+    }
+
+    siteMetadata.pages?.forEach((navItem) => {
+        //let pathText = navItem.path ? navItem.path : '';
+        if(navItem.path) {
+            topNavMarkdown += `    - [${navItem.title}](${navItem.path})\n`;
+        } else {
+            topNavMarkdown += `    - ${navItem.title}\n`;
+            navItem.menu.forEach((menuItem) =>{
+                topNavMarkdown += `        - [${menuItem.title}](${menuItem.path})\n`;
+            });
+        }
     });
 
-    fs.writeFileSync(path.resolve(__dirname + '/build/topNav.md'), topNavMarkdown);
+    if(siteMetadata.subPages) {
+        topNavMarkdown += `subPages\n`;
+    }
+    fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.md'), topNavMarkdown);
 
-    const sideNav = nav.gatsbyConfig.siteMetadata.subPages;
+    const sideNav = siteMetadata.subPages;
     console.dir(sideNav)
     let sideNavMarkdown = ``;
     let depth = 0;
