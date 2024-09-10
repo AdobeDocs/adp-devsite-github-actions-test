@@ -88,7 +88,7 @@ jobs:
       - name: Build navigation file
         uses: borales/actions-yarn@v3
         with:
-          cmd: run buildNavigation
+          cmd: buildNavigation
 
   build-dev:
     defaults:
