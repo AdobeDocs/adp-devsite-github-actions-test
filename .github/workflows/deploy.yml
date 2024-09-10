@@ -80,15 +80,15 @@ jobs:
   pre-build-dev:
     needs: [set-state]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     if: needs.set-state.outputs.deploy_dev == 'true'
     steps:
-      - name: check dev azure connection string
-        if: env.AIO_AZURE_DEV_CONNECTION_STRING == null
-        run: |
-          echo "::error::Please set the Azure Blob Storage connection string as AIO_AZURE_DEV_CONNECTION_STRING in Github Secrets"
-          exit 1
-        env:
-          AIO_AZURE_DEV_CONNECTION_STRING: ${{ secrets.AIO_AZURE_DEV_CONNECTION_STRING }}
+      - name: Build navigation file
+        uses: borales/actions-yarn@v3
+        with:
+          cmd: run buildNavigation
 
   build-dev:
     defaults:
