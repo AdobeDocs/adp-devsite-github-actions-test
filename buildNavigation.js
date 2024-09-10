@@ -40,7 +40,7 @@ try {
     }
 
     if (siteMetadata.versions) {
-        topNavMarkdown += 'versions\n';
+        topNavMarkdown += '\nversions\n';
 
         siteMetadata.versions.forEach((versionItem) => {
             let isSelectedText = versionItem.selected ? `selected` : '';
@@ -50,7 +50,7 @@ try {
     }
 
     if(siteMetadata.pages) {
-        topNavMarkdown += `pages\n`;
+        topNavMarkdown += `\npages\n`;
     }
 
     siteMetadata.pages?.forEach((navItem) => {
@@ -66,7 +66,7 @@ try {
     });
 
     if(siteMetadata.subPages) {
-        topNavMarkdown += `subPages\n`;
+        topNavMarkdown += `\nsubPages\n`;
         let sideNavMarkdown = ``;
         let depth = 1;
     

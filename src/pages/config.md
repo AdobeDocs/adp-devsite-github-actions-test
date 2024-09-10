@@ -1,8 +1,10 @@
 pathPrefix
     - /github-actions-test/
+
 versions
     - [v2.0](/) selected
     - [v1.4](https://github.com/AdobeDocs/dev-site) 
+
 pages
     - [Cat Analytics](/)
     - [Guides](/guides/)
@@ -10,6 +12,7 @@ pages
         - [Cat Reference v2.0](/api/index.md)
         - [Cat Reference v1.4](/api/1.4.md)
     - [Support](/support/)
+
 subPages
     - [Get Started](/guides/)
         - [Dummy an OAuth Client](/guides/dummy_oauth_client/)
