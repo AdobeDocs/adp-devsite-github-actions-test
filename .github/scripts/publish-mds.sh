@@ -16,4 +16,4 @@ publish()
     curl -XPOST -vi "${url}"
 }
 
-find "${root}" -type f -name "*.md" -exec echo "{}" \; | while read i; do publish $i; done
+find "${root}" -type f -name "*.**" -exec echo "{}" \; | while read i; do publish $i; done
