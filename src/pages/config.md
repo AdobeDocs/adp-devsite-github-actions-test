@@ -1,4 +1,5 @@
-<ADPConfig slots="text" />
+<Hero />
+
 pathPrefix
     - /github-actions-test/
 
