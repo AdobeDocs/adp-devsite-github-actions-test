@@ -1,4 +1,4 @@
-<ADPConfig slots="list">
+<ADPConfig slots="list" />
 
 pathPrefix
     - /github-actions-test/
@@ -27,5 +27,3 @@ subPages:
         - [How to contribute](/support/contribute/) 
     - [Community](/support/community/) header
         - [Information](/support/community/) 
-
-</ADPConfig>
