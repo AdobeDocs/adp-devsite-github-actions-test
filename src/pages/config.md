@@ -1,7 +1,7 @@
-<ADPConfig />
+<ADPConfig >
 
 pathPrefix
-    - /github-actions-test/wat:
+    - /github-actions-test/wat
 
 versions:
     - [v2.0](/) selected
@@ -27,3 +27,5 @@ subPages:
         - [How to contribute](/support/contribute/) 
     - [Community](/support/community/) header
         - [Information](/support/community/) 
+
+</ADPConfig>
