@@ -17,4 +17,4 @@ publish()
 }
 
 # TODO: may want to only certain types of files up 
-find "${root}" -type f -name "*.**" -exec echo "{}" \; | while read i; do publish $i; done
+find "${root}" -type f -name "*.md" -exec echo "{}" \; | while read i; do publish $i; done

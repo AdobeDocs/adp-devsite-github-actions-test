@@ -21,7 +21,7 @@ try {
     let siteMetadata = nav.gatsbyConfig.siteMetadata ? nav.gatsbyConfig.siteMetadata : {};
 
 
-    let topNavMarkdown = ``;
+    let topNavMarkdown = `<ADPConfig />\n`;
     // TODO: prob need url fixer from gatsby theme
     // home link defines the first link defaults to Products
     // can be hidden
@@ -75,7 +75,6 @@ try {
         topNavMarkdown +=  sideNavMarkdown;
     }
 
-    fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.json'), JSON.stringify(nav));
     fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.md'), topNavMarkdown);
 } catch (err) {
     console.error(err);
