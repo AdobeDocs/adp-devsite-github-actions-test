@@ -1,7 +1,8 @@
 var nav = require('./build/gatsbyConfig.js');
 const path = require('path');
 const fs = require('node:fs');
-
+// regex to find sections:
+// subPages:((\s* .*)*)
 try {
     if(!nav) {
         throw new TypeError("Unable to get nav");
@@ -28,10 +29,10 @@ try {
     // siteMetadata.home
 
     topNavMarkdown += `pathPrefix\n`;
-    topNavMarkdown += `    - ${pathPrefix}\n`;
+    topNavMarkdown += `    - ${pathPrefix}:\n`;
 
     if (siteMetadata.home) {
-        topNavMarkdown += 'home\n';
+        topNavMarkdown += '\nhome:\n';
         topNavMarkdown += `    - [${topNav.home.title}](${topNav.home.path})\n`;
 
         if(siteMetadata.home.hidden) {
@@ -40,7 +41,7 @@ try {
     }
 
     if (siteMetadata.versions) {
-        topNavMarkdown += '\nversions\n';
+        topNavMarkdown += '\nversions:\n';
 
         siteMetadata.versions.forEach((versionItem) => {
             let isSelectedText = versionItem.selected ? `selected` : '';
@@ -50,7 +51,7 @@ try {
     }
 
     if(siteMetadata.pages) {
-        topNavMarkdown += `\npages\n`;
+        topNavMarkdown += `\npages:\n`;
     }
 
     siteMetadata.pages?.forEach((navItem) => {
@@ -66,7 +67,7 @@ try {
     });
 
     if(siteMetadata.subPages) {
-        topNavMarkdown += `\nsubPages\n`;
+        topNavMarkdown += `\nsubPages:\n`;
         let sideNavMarkdown = ``;
         let depth = 1;
     
@@ -74,6 +75,7 @@ try {
         topNavMarkdown +=  sideNavMarkdown;
     }
 
+    fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.json'), JSON.stringify(nav));
     fs.writeFileSync(path.resolve(__dirname + '/src/pages/config.md'), topNavMarkdown);
 } catch (err) {
     console.error(err);
@@ -85,7 +87,8 @@ function buildSideNavRecursively(sideNav, depth) {
     console.log(sideNav)
 
     for (var k in sideNav) {
-        sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path})\n`;
+        let header = sideNav[k].header ? 'header' : ''; 
+        sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path}) ${header}\n`;
 
         if (sideNav[k].pages) {
             sideNavMarkdown += buildSideNavRecursively(sideNav[k].pages, depth+1);
