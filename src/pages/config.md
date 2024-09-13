@@ -1,5 +1,4 @@
-<ADPConfig slots="list" />
-
+<ADPConfig />
 pathPrefix
     - /github-actions-test/
 
