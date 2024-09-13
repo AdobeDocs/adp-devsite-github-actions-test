@@ -1,5 +1,3 @@
-<Hero />
-
 pathPrefix
     - /github-actions-test/
 
