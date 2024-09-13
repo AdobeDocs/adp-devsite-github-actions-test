@@ -28,11 +28,11 @@ try {
     // siteMetadata.versions
     // siteMetadata.home
 
-    topNavMarkdown += `pathPrefix:\n`;
+    topNavMarkdown += `- pathPrefix:\n`;
     topNavMarkdown += `    - ${pathPrefix}:\n`;
 
     if (siteMetadata.home) {
-        topNavMarkdown += '\nhome:\n';
+        topNavMarkdown += '\n- home:\n';
         topNavMarkdown += `    - [${topNav.home.title}](${topNav.home.path})\n`;
 
         if(siteMetadata.home.hidden) {
@@ -41,7 +41,7 @@ try {
     }
 
     if (siteMetadata.versions) {
-        topNavMarkdown += '\nversions:\n';
+        topNavMarkdown += '\n- versions:\n';
 
         siteMetadata.versions.forEach((versionItem) => {
             let isSelectedText = versionItem.selected ? `selected` : '';
@@ -51,7 +51,7 @@ try {
     }
 
     if(siteMetadata.pages) {
-        topNavMarkdown += `\npages:\n`;
+        topNavMarkdown += `\n- pages:\n`;
     }
 
     siteMetadata.pages?.forEach((navItem) => {
@@ -67,7 +67,7 @@ try {
     });
 
     if(siteMetadata.subPages) {
-        topNavMarkdown += `\nsubPages:\n`;
+        topNavMarkdown += `\n- subPages:\n`;
         let sideNavMarkdown = ``;
         let depth = 1;
     
