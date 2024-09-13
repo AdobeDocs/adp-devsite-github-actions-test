@@ -21,14 +21,14 @@ try {
     let siteMetadata = nav.gatsbyConfig.siteMetadata ? nav.gatsbyConfig.siteMetadata : {};
 
 
-    let topNavMarkdown = `<ADPConfig />\n`;
+    let topNavMarkdown = ``;
     // TODO: prob need url fixer from gatsby theme
     // home link defines the first link defaults to Products
     // can be hidden
     // siteMetadata.versions
     // siteMetadata.home
 
-    topNavMarkdown += `pathPrefix\n`;
+    topNavMarkdown += `pathPrefix:\n`;
     topNavMarkdown += `    - ${pathPrefix}:\n`;
 
     if (siteMetadata.home) {

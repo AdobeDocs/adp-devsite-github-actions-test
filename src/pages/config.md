@@ -1,4 +1,4 @@
-pathPrefix
+pathPrefix:
     - /github-actions-test/
 
 versions:
