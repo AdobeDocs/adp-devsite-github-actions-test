@@ -1,7 +1,7 @@
 <ADPConfig />
 
 pathPrefix
-    - /github-actions-test/:
+    - /github-actions-test/wat:
 
 versions:
     - [v2.0](/) selected
