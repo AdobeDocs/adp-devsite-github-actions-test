@@ -16,4 +16,5 @@ publish()
     curl -XPOST -vi "${url}"
 }
 
+# TODO: may want to only certain types of files up 
 find "${root}" -type f -name "*.**" -exec echo "{}" \; | while read i; do publish $i; done
