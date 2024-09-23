@@ -5,7 +5,7 @@ contributors:
   - https://github.com/icaraps 
 ---
 
-<Hero slots="heading, text"/>
+<HeroDocumentation slots="heading, text"/>
 
 # Cat Analytics API
 
