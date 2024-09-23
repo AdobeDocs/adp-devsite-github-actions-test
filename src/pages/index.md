@@ -13,11 +13,6 @@ Cat Product API offers limitless ways to integrate your most important customer 
 
 <Resources slots="heading, links"/>
 
-#### Resources
-
-* [Quickstart Guide](https://developer.adobe.com)
-* [Cat Analytics Github Repo](https://github.com/AdobeDocs/dev-site)
-
 ## Overview
 
 This documentation provides instructions for Catt Analytics 2.0 APIs. For working with Cat Analytics APIs, see [Cat Analytics API Documentation](https://github.com/AdobeDocs/dev-site).
@@ -28,7 +23,7 @@ You can also create reports to explore, get insights, or answer important questi
 
 ## Discover
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
+<Discover width="100%" slots="heading, link, text"/>
 
 ### Get Started
 
