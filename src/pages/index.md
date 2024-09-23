@@ -21,13 +21,6 @@ You can also create reports to explore, get insights, or answer important questi
 
 ## Discover
 
-<Discover width="100%" slots="heading, link, text"/>
-
-### Get Started
-
-[Quickstart Guide](guides/)
-
-Get started with the Cat Analytics APIs.
 
 <DiscoverBlock slots="heading, link, text"/>
 
