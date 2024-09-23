@@ -11,8 +11,6 @@ contributors:
 
 Cat Product API offers limitless ways to integrate your most important customer data into key business processes. Cat Product API offer limitless ways.
 
-<Resources slots="heading, links"/>
-
 ## Overview
 
 This documentation provides instructions for Catt Analytics 2.0 APIs. For working with Cat Analytics APIs, see [Cat Analytics API Documentation](https://github.com/AdobeDocs/dev-site).
