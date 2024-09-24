@@ -19,43 +19,6 @@ The Cat Analytics APIs are a collection of APIs that power Cat Analytics product
 The APIs allow for the creation of data rich user interfaces that you can use to manipulate and integrate data.
 You can also create reports to explore, get insights, or answer important questions about your data.
 
-## Discover
-
-
-<Discover slots="heading, link, text"/>
-
-### Guides
-
-[Calculated Metrics API](guides/dummy_metrics_api/)
-
-Returns information on the user's company that is necessary for making other Cat Analytics API calls.
-
-<Discover slots="link, text"/>
-
-[Segments API](guides/dummy_oauth_client/)
-
-Provides configuration guidance and best practices for the /segments endpoint.
-
-<Discover slots="link, text"/>
-
-[Reporting Guide API](guides/dummy_using_postman/)
-
-Provides configuration guidance and best practices for the /reports endpoint.
-
-<Discover slots="link, text"/>
-
-[Migrating from 1.4 to 2.0](guides/migrating/)
-
-For help migrating from the 1.4 versions of the Analytics API to the newer and more capable /reports API.
-
-<Discover width="100%" slots="heading, link, text"/>
-
-### API References
-
-[Try the API](api/)
-
-Try the Analytics API with Swagger UI. Explore, make calls, with full endpoint descriptions.
-
 ## Contributing
 
 We encourage you to participate in our open documentation initiative, if you have suggestions, corrections, additions
