@@ -22,7 +22,7 @@ You can also create reports to explore, get insights, or answer important questi
 ## Discover
 
 
-<DiscoverBlock slots="heading, link, text"/>
+<Discover slots="heading, link, text"/>
 
 ### Guides
 
@@ -30,25 +30,25 @@ You can also create reports to explore, get insights, or answer important questi
 
 Returns information on the user's company that is necessary for making other Cat Analytics API calls.
 
-<DiscoverBlock slots="link, text"/>
+<Discover slots="link, text"/>
 
 [Segments API](guides/dummy_oauth_client/)
 
 Provides configuration guidance and best practices for the /segments endpoint.
 
-<DiscoverBlock slots="link, text"/>
+<Discover slots="link, text"/>
 
 [Reporting Guide API](guides/dummy_using_postman/)
 
 Provides configuration guidance and best practices for the /reports endpoint.
 
-<DiscoverBlock slots="link, text"/>
+<Discover slots="link, text"/>
 
 [Migrating from 1.4 to 2.0](guides/migrating/)
 
 For help migrating from the 1.4 versions of the Analytics API to the newer and more capable /reports API.
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
+<Discover width="100%" slots="heading, link, text"/>
 
 ### API References
 
