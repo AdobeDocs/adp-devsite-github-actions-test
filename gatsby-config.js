@@ -50,6 +50,10 @@ module.exports = {
       {
         title: 'Support',
         path: '/support/'
+      },
+      {
+        title: 'RedoclyAPIBlock Test',
+        path: '/redocly-api-block-test/'
       }
     ],
     subPages: [
