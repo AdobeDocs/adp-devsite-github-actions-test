@@ -10,6 +10,7 @@
         - [Cat Reference v2.0](/api/index.md)
         - [Cat Reference v1.4](/api/1.4.md)
     - [Support](/support/)
+    - [Test](/test/)
 - subPages:
     - [Get Started](/guides/) 
         - [Dummy an OAuth Client](/guides/dummy_oauth_client/) 
@@ -22,3 +23,7 @@
         - [How to contribute](/support/contribute/) 
     - [Community](/support/community/) header
         - [Information](/support/community/) 
+    - [Test](/test/)
+        - [Layout None](/test/layout-none/) 
+        - [RedoclyAPIBlock](/test/redocly-api-block/) 
+    

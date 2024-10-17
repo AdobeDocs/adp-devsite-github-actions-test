@@ -50,6 +50,10 @@ module.exports = {
       {
         title: 'Support',
         path: '/support/'
+      },
+      {
+        title: 'Test',
+        path: '/test/'
       }
     ],
     subPages: [
@@ -104,7 +108,21 @@ module.exports = {
             path: '/support/community/'
           }
         ]
-      }
+      },
+      {
+        title: 'Test',
+        path: '/test/',
+        pages: [
+          {
+            title: 'Layout None',
+            path: '/test/layout-none/'
+          },
+          {
+            title: 'RedoclyAPIBlock',
+            path: '/test/redocly-api-block/'
+          }
+        ]
+      },
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]
