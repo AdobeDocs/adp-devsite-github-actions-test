@@ -114,8 +114,8 @@ module.exports = {
         path: '/test/',
         pages: [
           {
-            title: 'Layout None',
-            path: '/test/layout-none/'
+            title: 'InlineAlert',
+            path: '/test/inline-alert/'
           },
           {
             title: 'RedoclyAPIBlock',

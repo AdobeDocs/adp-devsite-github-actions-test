@@ -24,6 +24,6 @@
     - [Community](/support/community/) header
         - [Information](/support/community/) 
     - [Test](/test/)
-        - [Layout None](/test/layout-none/) 
+        - [InlineAlert](/test/inline-alert/) 
         - [RedoclyAPIBlock](/test/redocly-api-block/) 
     
