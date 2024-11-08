@@ -1,8 +1,10 @@
 - pathPrefix:
     - /github-actions-test/
+
 - versions:
     - [v2.0](/) selected
     - [v1.4](https://github.com/AdobeDocs/dev-site) 
+
 - pages:
     - [Cat Analytics](/)
     - [Guides](/guides/)
@@ -11,6 +13,7 @@
         - [Cat Reference v1.4](/api/1.4.md)
     - [Support](/support/)
     - [Test](/test/)
+
 - subPages:
     - [Get Started](/guides/) 
         - [Dummy an OAuth Client](/guides/dummy_oauth_client/) 
@@ -23,7 +26,7 @@
         - [How to contribute](/support/contribute/) 
     - [Community](/support/community/) header
         - [Information](/support/community/) 
-    - [Test](/test/)
+    - [Test](/test/) 
+        - [CodeBlock](/test/code-block/) 
         - [InlineAlert](/test/inline-alert/) 
         - [RedoclyAPIBlock](/test/redocly-api-block/) 
-    

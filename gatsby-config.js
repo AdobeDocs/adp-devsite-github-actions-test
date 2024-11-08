@@ -114,6 +114,10 @@ module.exports = {
         path: '/test/',
         pages: [
           {
+            title: 'CodeBlock',
+            path: '/test/code-block/'
+          },
+          {
             title: 'InlineAlert',
             path: '/test/inline-alert/'
           },
