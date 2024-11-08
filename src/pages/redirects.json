@@ -1,0 +1,24 @@
+{
+  "total": 4,
+  "offset": 0,
+  "limit": 4,
+  "data": [
+    {
+      "Source": "/sidekick-extension",
+      "Destination": "https://chrome.google.com/webstore/detail/helix-sidekick-beta/ccfggkjabjahcjoljmgmklhpaccedipo"
+    },
+    {
+      "Source": "/github-bot",
+      "Destination": "https://github.com/apps/helix-bot"
+    },
+    {
+      "Source": "/install-github-bot",
+      "Destination": "https://github.com/apps/helix-bot/installations/new"
+    },
+    {
+      "Source": "/tutorial",
+      "Destination": "/developer/tutorial"
+    }
+  ],
+  ":type": "sheet"
+}
