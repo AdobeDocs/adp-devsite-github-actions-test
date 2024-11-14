@@ -29,4 +29,6 @@
     - [Test](/test/) 
         - [CodeBlock](/test/code-block/) 
         - [InlineAlert](/test/inline-alert/) 
+        - [ListBlock](/test/list-block/) 
         - [RedoclyAPIBlock](/test/redocly-api-block/) 
+        - [TabsBlock](/test/tabs-block/) 
