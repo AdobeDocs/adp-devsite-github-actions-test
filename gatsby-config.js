@@ -122,6 +122,10 @@ module.exports = {
             path: '/test/inline-alert/'
           },
           {
+            title: 'ListBlock',
+            path: '/test/list-block/'
+          },
+          {
             title: 'RedoclyAPIBlock',
             path: '/test/redocly-api-block/'
           },
