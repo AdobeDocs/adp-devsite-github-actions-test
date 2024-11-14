@@ -124,6 +124,10 @@ module.exports = {
           {
             title: 'RedoclyAPIBlock',
             path: '/test/redocly-api-block/'
+          },
+          {
+            title: 'TabsBlock',
+            path: '/test/tabs-block/'
           }
         ]
       },
