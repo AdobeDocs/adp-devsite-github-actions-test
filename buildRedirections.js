@@ -30,8 +30,6 @@ try {
         "total" : data.length,
         "data" : data,
         ":type": "sheet"
-
-
     };
 
     let redirectionsFilePath = path.resolve(__dirname + '/src/pages/redirects.json');
