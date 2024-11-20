@@ -28,6 +28,8 @@ try {
     let redirectionsData = 
     {
         "total" : data.length,
+        "offset": 0,
+        "limit": data.length,
         "data" : data,
         ":type": "sheet"
     };
