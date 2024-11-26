@@ -3,7 +3,7 @@ layout: none
 ---
 
 <RedoclyAPIBlock 
-    src="/adp-devsite-github-actions-test/openapi.yaml" 
+    src="/github-actions-test/openapi.yaml" 
     width="600px" 
     typography="fontFamily: `serif`, fontSize: '16px'"  
     codeBlock="tokens: { punctuation: { color: 'red ' }}"
