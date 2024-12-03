@@ -1,14 +1,4 @@
-
-`inline`
-
-```
-https://ims-na1.adobelogin.com/ims/authorize
-&response_type=code
-```
-
-```json
-{"error_code":"429050","message":"Too many requests"}
-```
+// copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#code-block
 
 <CodeBlock slots="heading, code" repeat="2" languages="JSON, JSON" />
 

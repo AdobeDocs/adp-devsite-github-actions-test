@@ -2,15 +2,9 @@
 title: createCustomerV2 mutation
 ---
 
-## Example usage
-
 <TabsBlock orientation="horizontal" slots="heading, content" repeat="2" theme="light"/>
 
-### Create a customer
-
-The following call creates a new customer.
-
-**Request:**
+### Request
 
 ```graphql
 mutation {
@@ -33,7 +27,7 @@ mutation {
 }
 ```
 
-**Response:**
+### Response
 
 ```json
 {

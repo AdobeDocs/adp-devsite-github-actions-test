@@ -2,9 +2,13 @@
 layout: none
 ---
 
-<InlineAlert slots="text"/>
+// copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#simple-inlinealert
 
-Adobe I/O Runtime requires a license. Please contact your Adobe sales representative for more details.
+<InlineAlert slots="text" />
+
+This is the text that displays within the default alert variant — info.
+
+// copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#richer-inlinealert
 
 <InlineAlert variant="help" slots="header, text1, text2, text3, text4" />
 
