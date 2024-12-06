@@ -7,8 +7,8 @@ layout: none
     width="600px" 
     typography="fontFamily: `serif`, fontSize: '16px'"  
     codeBlock="tokens: { punctuation: { color: 'red ' }}"
-    disableSidebar
-    disableSearch
+    disableSidebar={false}
+    disableSearch={true}
     hideTryItPanel
     scrollYOffset={64}
     sortOperationsAlphabetically
