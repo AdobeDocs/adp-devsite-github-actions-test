@@ -1,7 +1,13 @@
-// copied from https://github.com/AdobeDocs/adobe-io-events/blob/main/src/pages/guides/sdk/sdk_signature_verification.md?plain=1#L43
+// copied + modified from https://github.com/AdobeDocs/adobe-io-events/blob/main/src/pages/guides/sdk/sdk_signature_verification.md?plain=1#L43
 // page https://developer.adobe.com/events/docs/guides/sdk/sdk_signature_verification/
 
-| Param | Type | Description |
-| ----- | ---- | ----------- |
-| event | <code>object</code> | JSON payload delivered to the registered webhook URL |
-| recipientClientId | <code>string</code> | Target recipient client id retrieved from the Adobe I/O Console integration |
+#### SignatureOptions : `object`
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| digiSignature1 | string | Value of digital signature retrieved from the x-adobe-digital-signature1 header |
+| digiSignature2 | string | Value of digital signature retrieved from the x-adobe-digital-signature2 header |
+| publicKeyPath1 | string | Relative path of ioevents public key retrieved from the x-adobe-public-key1-path header |
+| publicKeyPath2 | string | Relative path of ioevents public key retrieved from the x-adobe-public-key2-path header |
