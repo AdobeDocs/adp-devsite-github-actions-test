@@ -28,6 +28,8 @@
         - [Information](/support/community/) 
     - [Test](/test/) 
         - [CodeBlock](/test/code-block/) 
+        - [Code in List](/test/code-in-list/) 
+        - [Code in Table](/test/code-in-table/) 
         - [InlineAlert](/test/inline-alert/) 
         - [ListBlock](/test/list-block/) 
         - [RedoclyAPIBlock](/test/redocly-api-block/) 

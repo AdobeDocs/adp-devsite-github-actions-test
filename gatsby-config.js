@@ -118,6 +118,14 @@ module.exports = {
             path: '/test/code-block/'
           },
           {
+            title: 'Code in List',
+            path: '/test/code-in-list/'
+          },
+          {
+            title: 'Code in Table',
+            path: '/test/code-in-table/'
+          },
+          {
             title: 'InlineAlert',
             path: '/test/inline-alert/'
           },
