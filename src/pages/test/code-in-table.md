@@ -7,7 +7,7 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| [digiSignature1] | <code>string</code> | Value of digital signature retrieved from the x-adobe-digital-signature1 header |
-| [digiSignature2] | <code>string</code> | Value of digital signature retrieved from the x-adobe-digital-signature2 header |
-| [publicKeyPath1] | <code>string</code> | Relative path of ioevents public key retrieved from the x-adobe-public-key1-path header |
-| [publicKeyPath2] | <code>string</code> | Relative path of ioevents public key retrieved from the x-adobe-public-key2-path header |
+| [digiSignature1] | `string` | Value of digital signature retrieved from the x-adobe-digital-signature1 header |
+| [digiSignature2] | `string` | Value of digital signature retrieved from the x-adobe-digital-signature2 header |
+| [publicKeyPath1] | `string` | Relative path of ioevents public key retrieved from the x-adobe-public-key1-path header |
+| [publicKeyPath2] | `string` | Relative path of ioevents public key retrieved from the x-adobe-public-key2-path header |
