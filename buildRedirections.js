@@ -23,7 +23,7 @@ try {
                 mdFilePath = mdFilePath.replace('.md', '/');
                 data.push({
                     "Source" : mdFilePath,
-                    "Destinatination" : mdFilePath.replace(/\/$/, "")
+                    "Destination" : mdFilePath.replace(/\/$/, "")
                 });
             }
         }
