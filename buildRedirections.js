@@ -11,17 +11,21 @@ try {
     let results = globSync(__dirname + '/src/pages/**/*.md');
     let data = [];
 
+    // Fixes paths that end in a trailing slash that shouldn't
     results.forEach((mdFilePath) => {
+        let originalFilePath = mdFilePath;
         mdFilePath = mdFilePath.replace(__dirname + '/src/pages', pathPrefix);
         mdFilePath = path.resolve(mdFilePath);
 
-        // skip any index.md as they don't need redirect
+        // skip any index.md or config.md as they don't need redirect
         if(!mdFilePath.includes('index.md')) {
-            mdFilePath = mdFilePath.replace('.md', '/');
-            data.push({
-                "Source" : mdFilePath,
-                "Destinatination" : mdFilePath.replace(/\/$/, "")
-            });
+            if(!mdFilePath.includes('config.md')) {
+                mdFilePath = mdFilePath.replace('.md', '/');
+                data.push({
+                    "Source" : mdFilePath,
+                    "Destinatination" : mdFilePath.replace(/\/$/, "")
+                });
+            }
         }
     });
 
