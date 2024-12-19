@@ -114,6 +114,10 @@ module.exports = {
         path: '/test/',
         pages: [
           {
+            title: 'Code',
+            path: '/test/code/'
+          },
+          {
             title: 'CodeBlock',
             path: '/test/code-block/'
           },
