@@ -27,6 +27,7 @@
     - [Community](/support/community/) header
         - [Information](/support/community/) 
     - [Test](/test/) 
+        - [Code](/test/code/) 
         - [CodeBlock](/test/code-block/) 
         - [Code in List](/test/code-in-list/) 
         - [Code in Table](/test/code-in-table/) 
