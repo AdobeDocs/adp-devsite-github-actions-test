@@ -1,6 +1,6 @@
 // copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#listblock
 
-<ListBlock slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="checkmark" variant="fullWidth" />
+<List slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="checkmark" variant="fullWidth" />
 
 500 free Document Transactions per month
 
