@@ -1,23 +1,6 @@
-// copied from https://github.com/AdobeDocs/express-add-ons-docs/blob/main/src/pages/guides/tutorials/grids-addon.md?plain=1#L146-L237
+// copied from https://github.com/AdobeDocs/express-add-ons-docs/blob/main/src/pages/guides/tutorials/grids-addon.md?plain=1#L163
 // page https://developer.adobe.com/express/add-ons/docs/guides/tutorials/grids-addon/
 
-```json
-{
-    // ...
-    "entryPoints": [
-        {
-            "type": "panel",
-            "id": "panel1",
-            "main": "index.html",
-            "documentSandbox": "code.js" // 👈 here
-        }
-    ]
-}
-```
-
-If you're wondering about `documentSandbox/shapeUtils.js`, it is an auxiliary file containing private code consumed by `code.js` that doesn't need to be exposed to the iframe in this specific project. The code of the blank template is as follows.
-
-<!-- Code below -->
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
