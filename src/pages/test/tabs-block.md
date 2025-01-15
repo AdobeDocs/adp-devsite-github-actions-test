@@ -46,3 +46,34 @@ mutation {
   }
 }
 ```
+
+
+<Tab orientation="vertical" slots="heading, image, content" repeat="3"  theme="dark" className='bgBlue ' />
+
+## Tab 1
+
+![Code for initializing SDK](../images/adobe-express.svg)
+
+content tab 1
+
+## Tab 2
+
+![Code to invoke full editor](../images/adobe-express.svg)
+
+content tab 2
+
+## Tab 3
+
+![Code to invoke quick actions](../images/adobe-express.svg)
+
+content tab 3
+
+<Tab slots="heading, content" repeat="2"  theme="dark" className='bgBlue ' />
+
+## Tab 1
+
+content tab 1
+
+## Tab 2
+
+content tab 1
