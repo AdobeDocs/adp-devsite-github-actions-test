@@ -122,6 +122,10 @@ module.exports = {
             path: '/test/code-block/'
           },
           {
+            title: 'CodeBlock with Picklist',
+            path: '/test/code-block-with-picklist/'
+          },
+          {
             title: 'Code in List',
             path: '/test/code-in-list/'
           },
