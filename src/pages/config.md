@@ -30,6 +30,7 @@
         - [Code](/test/code/) 
         - [CodeBlock](/test/code-block/) 
         - [CodeBlock with Picklist](/test/code-block-with-picklist/) 
+        - [CodeBlock without Picklist](/test/code-block-without-picklist/) 
         - [Code in List](/test/code-in-list/) 
         - [Code in Table](/test/code-in-table/) 
         - [InlineAlert](/test/inline-alert/) 

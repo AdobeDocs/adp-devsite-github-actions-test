@@ -1,7 +1,4 @@
-// copied from https://github.com/AdobeDocs/express-add-ons-docs/blob/main/src/pages/guides/tutorials/grids-addon.md?plain=1#L163
-// page https://developer.adobe.com/express/add-ons/docs/guides/tutorials/grids-addon/
-
-<CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, code.js, shapeUtils.js, extra.js"/>
+<CodeBlock slots="heading, code" repeat="5"/>
 
 #### iframe
 

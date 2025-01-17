@@ -126,6 +126,10 @@ module.exports = {
             path: '/test/code-block-with-picklist/'
           },
           {
+            title: 'CodeBlock without Picklist',
+            path: '/test/code-block-without-picklist/'
+          },
+          {
             title: 'Code in List',
             path: '/test/code-in-list/'
           },
