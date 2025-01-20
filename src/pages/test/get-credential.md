@@ -2,29 +2,29 @@ test credential
 
 <GetCredential className="getCredentialContainer" templateId={template_id} productName={product_name} >
 
-<GetCredential.SignIn title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." buttonText="Sign in to create credentials" />
+<GetCredentialSignIn title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." buttonText="Sign in to create credentials" />
 
-<GetCredential.Form title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." className="formClass">
+<GetCredentialForm title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." className="formClass">
 
-<GetCredential.Form.CredentialName label="Credential name" description="Credential name must be unique and between 6 and 45 characters long and must not contain any special characters. A project will be automatically created with the same name in Adobe Developer Console." range="45" />
+<GetCredentialFormCredentialName label="Credential name" description="Credential name must be unique and between 6 and 45 characters long and must not contain any special characters. A project will be automatically created with the same name in Adobe Developer Console." range="45" />
 
-<GetCredential.Form.AllowedOrigins label="Allowed domains (up to 5)" contextHelp={true} contextHelpHeading="What are allowed domains" placeholder="Example: www.domain-1.com, www.domain-2.com, *.my-domain.com, localhost:5000" contextHelpText="To prevent a third party from using your client ID on their own website, the use of your client ID is restricted to a list of domains that you specifically authorize." contextHelpLink="https://www.adobe.com/" contextHelpLabelForLink="Learn more in our documentation" description="Use wildcards to enter multiple subdomains (*.my-domain.com) or commas to separate multiple domains (www.domain-1.com, www.domain-2.com). During local development, you can include ports greater than 1023 with localhost (e.g. localhost:3000). Standard ports (80, 443) will be used for non-localhost domains." />
+<GetCredentialFormAllowedOrigins label="Allowed domains (up to 5)" contextHelp={true} contextHelpHeading="What are allowed domains" placeholder="Example: www.domain-1.com, www.domain-2.com, *.my-domain.com, localhost:5000" contextHelpText="To prevent a third party from using your client ID on their own website, the use of your client ID is restricted to a list of domains that you specifically authorize." contextHelpLink="https://www.adobe.com/" contextHelpLabelForLink="Learn more in our documentation" description="Use wildcards to enter multiple subdomains (*.my-domain.com) or commas to separate multiple domains (www.domain-1.com, www.domain-2.com). During local development, you can include ports greater than 1023 with localhost (e.g. localhost:3000). Standard ports (80, 443) will be used for non-localhost domains." />
 
-<GetCredential.Form.Products label="Included products and services">
+<GetCredentialFormProducts label="Included products and services">
 
-<GetCredential.Form.Product label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialFormProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
 
-</GetCredential.Form.Products>
+</GetCredentialFormProducts>
 
-<GetCredential.Form.Downloads label="Download a personalized code sample" contextHelp={true} contextHelpHeading="Select Language">
+<GetCredentialFormDownloads label="Download a personalized code sample" contextHelp={true} contextHelpHeading="Select Language">
 
-<GetCredential.Form.Download title="JavaScript" href={data?.allFile?.edges[0]?.node?.publicURL} />
+<GetCredentialFormDownload title="JavaScript" href={data?.allFile?.edges[0]?.node?.publicURL} />
 
-</GetCredential.Form.Downloads>
+</GetCredentialFormDownloads>
 
-<GetCredential.Form.AdobeDeveloperConsole label='By checking this box, you agree to' linkText="Adobe Developer Terms of Use" href="https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Adobe-Developer-Additional-Terms_en-US_20230822.pdf" />
+<GetCredentialFormAdobeDeveloperConsole label='By checking this box, you agree to' linkText="Adobe Developer Terms of Use" href="https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Adobe-Developer-Additional-Terms_en-US_20230822.pdf" />
 
-<GetCredential.Form.Side>
+<GetCredentialFormSide>
 
 ### API key credential
 
@@ -36,15 +36,15 @@ Submitting this form creates an API Key credential. The API key credential ident
 
 [Adobe Express Embed SDK documentation](https://developer.adobe.com/express/embed-sdk/docs/guides/)
 
-</GetCredential.Form.Side>
+</GetCredentialFormSide>
 
-</GetCredential.Form>
+</GetCredentialForm>
 
-<GetCredential.UnknownError />
+<GetCredentialUnknownError />
 
-<GetCredential.Card title="Your credential is ready to use" paragraph="Check the downloads section of your browser for the ZIP file, or find it where you save downloads on your machine." nextStepsLabel="Next steps" nextStepsHref={targetURL} devConsoleDirection="/console" developerConsoleManage="Manage on Developer console" className="card_developer_console">
+<GetCredentialCard title="Your credential is ready to use" paragraph="Check the downloads section of your browser for the ZIP file, or find it where you save downloads on your machine." nextStepsLabel="Next steps" nextStepsHref={targetURL} devConsoleDirection="/console" developerConsoleManage="Manage on Developer console" className="card_developer_console">
 
-<GetCredential.Card.Side>
+<GetCredentialCardSide>
 
 ### API key credential
 
@@ -56,84 +56,84 @@ An API Key credential was created. The API key credential identifies your applic
 
 [Adobe Express Embed SDK documentation](https://developer.adobe.com/express/embed-sdk/docs/guides/)
 
-</GetCredential.Card.Side>
+</GetCredentialCardSide>
 
-<GetCredential.Card.Products label="Included products and services">
+<GetCredentialCardProducts label="Included products and services">
 
-<GetCredential.Card.Product label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialCardProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
 
-</GetCredential.Card.Products>
+</GetCredentialCardProducts>
 
-<GetCredential.Card.DevConsoleLink heading="Developer Console Project" />
+<GetCredentialCardDevConsoleLink heading="Developer Console Project" />
 
-<GetCredential.Card.CredentialDetails heading="Credential details">
+<GetCredentialCardCredentialDetails heading="Credential details">
 
-<GetCredential.Card.CredentialDetails.APIKey heading="API Key" />
+<GetCredentialCardCredentialDetails.APIKey heading="API Key" />
 
-<GetCredential.Card.CredentialDetails.AllowedOrigins heading="Allowed domains" />
+<GetCredentialCardCredentialDetailsAllowedOrigins heading="Allowed domains" />
 
-<GetCredential.Card.CredentialDetails.OrganizationName heading="Organization" />
+<GetCredentialCardCredentialDetailsOrganizationName heading="Organization" />
 
-<GetCredential.Card.CredentialDetails.ImsOrgID heading="IMS Organization ID" />
+<GetCredentialCardCredentialDetailsImsOrgID heading="IMS Organization ID" />
 
-</GetCredential.Card.CredentialDetails>
+</GetCredentialCardCredentialDetails>
 
-</GetCredential.Card>
+</GetCredentialCard>
 
-<GetCredential.Return title="Previously created projects" paragraph="Select a project and access your existing credentials for Adobe Express Embed SDK." nextStepsLabel="Next steps" nextStepsHref={targetURL} className="card_developer_console">
+<GetCredentialReturn title="Previously created projects" paragraph="Select a project and access your existing credentials for Adobe Express Embed SDK." nextStepsLabel="Next steps" nextStepsHref={targetURL} className="card_developer_console">
 
-<GetCredential.Return.Side>
+<GetCredentialReturnSide>
 
-<GetCredential.Return.Side.Custom>
+<GetCredentialReturnSideCustom>
 
 ### Welcome back
 
 View your existing Adobe Express Embed SDK credentials and generate new ones. Quickly access your API keys to keep your projects running efficiently.
 
-</GetCredential.Return.Side.Custom>
+</GetCredentialReturnSideCustom>
 
-<GetCredential.Return.Side.NewCredential heading="Need another credential?" buttonLabel="Create new credential" />
+<GetCredentialReturnSideNewCredential heading="Need another credential?" buttonLabel="Create new credential" />
 
-</GetCredential.Return.Side>
+</GetCredentialReturnSide>
 
-<GetCredential.Return.CredentialDetails heading="Credential details">
+<GetCredentialReturnCredentialDetails heading="Credential details">
 
-<GetCredential.Return.CredentialDetails.APIKey heading="API Key" />
+<GetCredentialReturnCredentialDetailsAPIKey heading="API Key" />
 
-<GetCredential.Return.CredentialDetails.AllowedOrigins heading="Allowed domains" />
+<GetCredentialReturnCredentialDetailsAllowedOrigins heading="Allowed domains" />
 
-<GetCredential.Return.CredentialDetails.OrganizationName heading="Organization" />
+<GetCredentialReturnCredentialDetailsOrganizationName heading="Organization" />
 
-<GetCredential.Return.CredentialDetails.ImsOrgID heading="IMS Organization ID" />
+<GetCredentialReturnCredentialDetailsImsOrgID heading="IMS Organization ID" />
 
-</GetCredential.Return.CredentialDetails>
+</GetCredentialReturnCredentialDetails>
 
-<GetCredential.Return.ProjectsDropdown label="Projects" subHeading="Only your projects that contain credentials are shown" />
+<GetCredentialReturnProjectsDropdown label="Projects" subHeading="Only your projects that contain credentials are shown" />
 
-<GetCredential.Return.ManageDeveloperConsole label="Manage all your projects and credentials on Adobe Developer Console" direction='/console/projects' />
+<GetCredentialReturnManageDeveloperConsole label="Manage all your projects and credentials on Adobe Developer Console" direction='/console/projects' />
 
-<GetCredential.Return.DevConsoleLink heading="Developer Console Project" />
+<GetCredentialReturnDevConsoleLink heading="Developer Console Project" />
 
-<GetCredential.Return.Products label="Included products and services">
+<GetCredentialReturnProducts label="Included products and services">
 
-<GetCredential.Return.Product label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialReturnProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
 
-</GetCredential.Return.Products>
+</GetCredentialReturnProducts>
 
-</GetCredential.Return>
+</GetCredentialReturn>
 
-<GetCredential.RequestAccess title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application.">
+<GetCredentialRequestAccess title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application.">
 
-<GetCredential.RequestAccess.RestrictedAccess title="Restricted Access" buttonLabel="Request access" >
+<GetCredentialRequestAccessRestrictedAccess title="Restricted Access" buttonLabel="Request access" >
 
-<GetCredential.RequestAccess.RestrictedAccess.Products label="Included products and services">
+<GetCredentialRequestAccessRestrictedAccessProducts label="Included products and services">
 
-<GetCredential.RequestAccess.RestrictedAccess.Products.Product label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialRequestAccessRestrictedAccessProductsProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
 
-</GetCredential.RequestAccess.RestrictedAccess.Products>
+</GetCredentialRequestAccessRestrictedAccessProducts>
 
-</GetCredential.RequestAccess.RestrictedAccess>
+</GetCredentialRequestAccessRestrictedAccess>
 
-</GetCredential.RequestAccess>
+</GetCredentialRequestAccess>
 
 </GetCredential>
