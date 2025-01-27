@@ -7,6 +7,7 @@
 
 - pages:
     - [Cat Analytics](../developer-console/)
+    - [Testing Console](../developer-console/)
     - [Guides](/guides/)
     - API Reference
         - [Cat Reference v2.0](/api/index.md)
