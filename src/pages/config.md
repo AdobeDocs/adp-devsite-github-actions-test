@@ -6,13 +6,13 @@
     - [v1.4](https://github.com/AdobeDocs/dev-site) 
 
 - pages:
-    - [Cat Analytics](../developer-console/)
+    - [Cat Analytics](/)
     - [Guides](/guides/)
     - API Reference
         - [Cat Reference v2.0](/api/index.md)
         - [Cat Reference v1.4](/api/1.4.md)
     - [Support](/support/)
-    - [Test](../developer-console/)
+    - [Test](/test/)
 
 - subPages:
     - [Get Started](/guides/) 
