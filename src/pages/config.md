@@ -6,7 +6,7 @@
     - [v1.4](https://github.com/AdobeDocs/dev-site) 
 
 - pages:
-    - [Cat Analytics](https://developer-stage.adobe.com/developer-console/)
+    - [Cat Analytics](../developer-console/)
     - [Guides](/guides/)
     - API Reference
         - [Cat Reference v2.0](/api/index.md)
