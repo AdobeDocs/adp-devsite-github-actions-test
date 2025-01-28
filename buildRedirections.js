@@ -12,8 +12,7 @@ try {
     let data = [];
 
     // Fixes paths that end in a trailing slash that shouldn't
-    results.forEach((mdFilePath) => {
-        let originalFilePath = mdFilePath;
+    results.forEach(mdFilePath => {
         mdFilePath = mdFilePath.replace(__dirname + '/src/pages', pathPrefix);
         mdFilePath = path.resolve(mdFilePath);
 
