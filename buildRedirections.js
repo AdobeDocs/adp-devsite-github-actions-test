@@ -3,19 +3,24 @@ const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
 
+function getMdFilePaths(pattern) {
+    let results = globSync(__dirname + '/src/pages' + pattern);
+    return results.map(mdFilePath => {
+        mdFilePath = mdFilePath.replace(__dirname + '/src/pages', pathPrefix);
+        mdFilePath = path.resolve(mdFilePath);
+        return mdFilePath;
+    });
+}
+
 try {
     if(!pathPrefix) {
         throw new TypeError("pathPrefix not found");
     } 
 
-    let results = globSync(__dirname + '/src/pages/**/*.md');
     let data = [];
 
     // Fixes paths that end in a trailing slash that shouldn't
-    results.forEach(mdFilePath => {
-        mdFilePath = mdFilePath.replace(__dirname + '/src/pages', pathPrefix);
-        mdFilePath = path.resolve(mdFilePath);
-
+    getMdFilePaths('/**/*.md').forEach(mdFilePath => {
         // skip any index.md or config.md as they don't need redirect
         if(!mdFilePath.includes('index.md')) {
             if(!mdFilePath.includes('config.md')) {
