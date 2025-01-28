@@ -19,7 +19,7 @@ try {
 
     let data = [];
 
-    // Fixes paths that end in a trailing slash that shouldn't
+    // Fixes paths that end in a trailing slash but shouldn't
     getMdFilePaths('/**/*.md').forEach(mdFilePath => {
         // skip any index.md or config.md as they don't need redirect
         if(!mdFilePath.includes('index.md')) {
@@ -31,6 +31,15 @@ try {
                 });
             }
         }
+    });
+
+    // Fixes paths that don't end in a trailing slash but should
+    getMdFilePaths('/**/index.md').forEach(mdFilePath => {
+        mdFilePath = mdFilePath.replace('/index.md', '');
+        data.push({
+            "Source" : mdFilePath,
+            "Destination" : mdFilePath + '/'
+        });
     });
 
     let redirectionsData = 
