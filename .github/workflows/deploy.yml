@@ -19,6 +19,10 @@ on:
         description: "Build redirections file (yes|no)"
         required: true
         default: "no"
+      wip:
+        description: "Test WIP (yes|no)"
+        required: true
+        default: "no"
 
 jobs:
   set-state:
@@ -31,6 +35,7 @@ jobs:
       clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
       build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
       build_redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
+      wip: ${{ contains(github.event.inputs.wip, 'yes') }}
 
     steps:
       - name: Checkout
@@ -58,6 +63,7 @@ jobs:
       - run: echo "Clean cache - ${{ needs.set-state.outputs.clean_cache }}"
       - run: echo "Build navigation - ${{ needs.set-state.outputs.build_navigation }}"
       - run: echo "Build redirections - ${{ needs.set-state.outputs.build_redirections }}"
+      - run: echo "Test WIP - ${{ needs.set-state.outputs.wip }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
@@ -112,11 +118,16 @@ jobs:
           cmd: buildRedirections
 
       - name: Publish on stage
-        if: needs.set-state.outputs.deploy_stage == 'true'
+        if: needs.set-state.outputs.deploy_stage == 'true' && needs.set-state.outputs.wip == 'false'
         run: |
             bash .github/scripts/publish-mds-stage.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
 
       - name: Publish on prod
-        if: needs.set-state.outputs.deploy_prod == 'true'
+        if: needs.set-state.outputs.deploy_prod == 'true' && needs.set-state.outputs.wip == 'false'
         run: |
             bash .github/scripts/publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
+
+      - name: Test WIP
+        if: needs.set-state.outputs.wip == 'true'
+        run: |
+            bash .github/scripts/wip.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
