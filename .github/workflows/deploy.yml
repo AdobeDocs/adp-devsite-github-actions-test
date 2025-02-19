@@ -26,6 +26,12 @@ jobs:
     outputs:
       path_prefix: ${{ steps.get_path_prefix.outputs.path_prefix }}
       branch_short_ref: ${{ steps.get_branch.outputs.branch }}
+      deploy_stage: ${{ contains(github.event.inputs.env, 'stage') }}
+      deploy_prod: ${{ contains(github.event.inputs.env, 'prod') }}
+      clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
+      build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
+      build-redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -47,6 +53,11 @@ jobs:
     needs: [set-state]
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Deploy to stage - ${{ needs.set-state.outputs.deploy_stage }}"
+      - run: echo "Deploy to prod - ${{ needs.set-state.outputs.deploy_prod }}"
+      - run: echo "Clean cache - ${{ needs.set-state.outputs.clean_cache }}"
+      - run: echo "Build navigation - ${{ needs.set-state.outputs.build_navigation }}"
+      - run: echo "Build redirections - ${{ needs.set-state.outputs.build-redirections }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
