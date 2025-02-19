@@ -1,7 +1,16 @@
 ---
 name: Deployment
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Deploy to (stage|prod|stage prod)"
+        required: true
+        default: "stage"
+      clean:
+        description: "Clean cache (yes|no)"
+        required: true
+        default: "no"
 
 jobs:
   set-state:
