@@ -12,11 +12,11 @@ on:
         required: true
         default: "no"
       build-navigation:
-        description: "Build navigation (yes|no)"
+        description: "Build navigation file (yes|no)"
         required: true
         default: "no"
       build-redirections:
-        description: "Build redirections (yes|no)"
+        description: "Build redirections file (yes|no)"
         required: true
         default: "no"
 
@@ -30,7 +30,7 @@ jobs:
       deploy_prod: ${{ contains(github.event.inputs.env, 'prod') }}
       clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
       build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
-      build-redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
+      build_redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
 
     steps:
       - name: Checkout
@@ -57,12 +57,11 @@ jobs:
       - run: echo "Deploy to prod - ${{ needs.set-state.outputs.deploy_prod }}"
       - run: echo "Clean cache - ${{ needs.set-state.outputs.clean_cache }}"
       - run: echo "Build navigation - ${{ needs.set-state.outputs.build_navigation }}"
-      - run: echo "Build redirections - ${{ needs.set-state.outputs.build-redirections }}"
+      - run: echo "Build redirections - ${{ needs.set-state.outputs.build_redirections }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
       - run: echo "Path prefix - ${{ needs.set-state.outputs.path_prefix }}"
-
 
   build:
     defaults:
@@ -94,11 +93,30 @@ jobs:
         with:
           cmd: install
 
+      - name: Clean cache
+        if: needs.set-state.outputs.clean_cache == 'true'
+        uses: borales/actions-yarn@v3
+        with:
+          cmd: clean
+
       - name: Build navigation file
+        if: needs.set-state.outputs.build_navigation == 'true'
         uses: borales/actions-yarn@v3
         with:
           cmd: buildNavigation
 
-      - name: Publish markdown files in ./src/pages
+      - name: Build redirections file
+        if: needs.set-state.outputs.build_redirections == 'true'
+        uses: borales/actions-yarn@v3
+        with:
+          cmd: buildRedirections
+
+      - name: Publish on stage
+        if: needs.set-state.outputs.deploy_stage == 'true'
+        run: |
+            bash .github/scripts/publish-mds-stage.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
+
+      - name: Publish on prod
+        if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
             bash .github/scripts/publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
