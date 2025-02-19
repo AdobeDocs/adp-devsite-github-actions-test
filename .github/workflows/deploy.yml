@@ -11,6 +11,14 @@ on:
         description: "Clean cache (yes|no)"
         required: true
         default: "no"
+      build-navigation:
+        description: "Build navigation (yes|no)"
+        required: true
+        default: "no"
+      build-redirections:
+        description: "Build redirections (yes|no)"
+        required: true
+        default: "no"
 
 jobs:
   set-state:
