@@ -4,8 +4,8 @@
 # cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
 # ./temp-publish-mds.sh
 
-root="../../src/pages"
-path_prefix="/github-actions-test/"
+root=$1
+path_prefix=$2
 env="prod"
 clean_cache=true
 
@@ -36,16 +36,15 @@ publish_md()
     url="${home}${path_prefix}${filename#$root/}"
 
     if [ "$clean_cache" == true ]; then
-        echo ""
-        echo "TODO - clean cache"
+        print_heading "TODO - clean cache"
     fi
 
     if [ "$env" == prod ]; then
         print_heading "curl -XPOST -vi \"${url}\""
-        curl -XPOST -vi "${url}"
+        # curl -XPOST -vi "${url}"
     else
         print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
-        curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
+        # curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
 }
 
