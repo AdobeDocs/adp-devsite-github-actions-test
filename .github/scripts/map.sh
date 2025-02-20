@@ -10,7 +10,7 @@ env="stage"
 
 if [ "$env" = prod ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
-elif [ "$env" = stage ]; then
+else
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
 fi
 
