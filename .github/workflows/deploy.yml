@@ -22,7 +22,7 @@ on:
       wip:
         description: "Test WIP (yes|no)"
         required: true
-        default: "no"
+        default: "yes"
 
 jobs:
   set-state:
@@ -134,4 +134,4 @@ jobs:
       - name: Test WIP
         if: needs.set-state.outputs.wip == 'true'
         run: |
-            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"

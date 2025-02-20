@@ -6,6 +6,9 @@
 
 root=$1
 path_prefix=$2
+deploy_stage=$3
+deploy_prod=$4
+
 env="prod"
 clean_cache=true
 
