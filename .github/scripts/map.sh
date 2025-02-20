@@ -15,18 +15,17 @@ else
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
 fi
 
-if [ "$cleanCache" == true ]; then
-    echo "do cleanCache"
-else
-    echo "don't cleanCache"
-fi
-
 publish()
 {
     filename=$1
     url="${home}${path_prefix}${filename#$root/}"
 
     echo ""
+
+    if [ "$cleanCache" == true ]; then
+        echo "do cleanCache"
+    fi
+
     echo "url: ${url}"
     # curl -XPOST -vi "${url}"
 }
