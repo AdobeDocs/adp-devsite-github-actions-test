@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# to run locally:
+# cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
+# ./map.sh
+
 home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
-root=$1
-path_prefix=$2
+root="../../src/pages"
+path_prefix="/github-actions-test/"
 
 publish()
 {
