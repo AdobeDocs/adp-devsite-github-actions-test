@@ -14,9 +14,6 @@ elif [ "$env" = stage ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
 fi
 
-echo "env: ${env}"
-echo "home: ${home}"
-
 publish()
 {
     filename=$1
