@@ -18,21 +18,23 @@ fi
 publish_md()
 {
     filename=$1
-    echo "$filename"
     url="${home}${path_prefix}${filename#$root/}"
 
-    echo ""
     if [ "$clean_cache" == true ]; then
+        echo ""
         echo "TODO - clean cache"
     fi
 
-    echo ""
     if [ "$env" == prod ]; then
+        echo ""
         echo "TODO - publish on prod"
     else
+        echo ""
         echo "TODO - publish on stage"
     fi
 }
 
 # TODO: may want to only certain types of files up 
 find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
+
+#sample file name ../../src/pages/redirects.json
