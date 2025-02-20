@@ -7,13 +7,25 @@
 root="../../src/pages"
 path_prefix="/github-actions-test/"
 env="stage"
-clean_cache=false
+clean_cache=true
 
 if [ "$env" == prod ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
 else
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
 fi
+
+print_heading() 
+{
+    heading=$1
+
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo "$heading"
+    echo ""
+}
 
 publish_md()
 {
@@ -29,12 +41,7 @@ publish_md()
         echo ""
         echo "TODO - publish on prod"
     else
-        echo ""
-        echo ""
-        echo "--------------------------------------------------------------------------------"
-        echo ""
-        echo "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
-        echo ""
+        print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
         curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
 }
