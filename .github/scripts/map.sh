@@ -7,11 +7,18 @@
 root="../../src/pages"
 path_prefix="/github-actions-test/"
 env="stage"
+cleanCache=false
 
-if [ "$env" = prod ]; then
+if [ "$env" == prod ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
 else
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
+fi
+
+if [ "$cleanCache" == true ]; then
+    echo "do cleanCache"
+else
+    echo "don't cleanCache"
 fi
 
 publish()
