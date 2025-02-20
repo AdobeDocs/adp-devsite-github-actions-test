@@ -31,6 +31,7 @@ publish_md()
     else
         echo ""
         echo "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
+        curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
 }
 
