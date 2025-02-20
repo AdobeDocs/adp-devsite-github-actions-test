@@ -7,12 +7,12 @@ path_prefix=$2
 publish()
 {
     filename=$1
-    to_remove="$root/"
-    relative_filename=${filename/#$to_remove}
+    relative_filename=${filename/#$root/} 
     url="${home}${path_prefix}${relative_filename}"
 
     echo ""
-    echo "curl -XPOST -vi ${url}"
+    echo "filename: ${filename}"
+    echo "relative_filename: ${relative_filename}"
     # curl -XPOST -vi "${url}"
 }
 
