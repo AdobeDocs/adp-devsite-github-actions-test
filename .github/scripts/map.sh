@@ -7,7 +7,7 @@ path_prefix=$2
 publish()
 {
     filename=$1
-    url="${home}${path_prefix}${filename/#$root/}"
+    url="${home}${path_prefix}${filename#$root/}"
 
     echo ""
     echo "url: ${url}"
