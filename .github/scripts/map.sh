@@ -4,15 +4,14 @@
 # cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
 # ./map.sh
 
-home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
 root="../../src/pages"
 path_prefix="/github-actions-test/"
 env="stage"
 
 if [ "$env" = prod ]; then
-  home="my prod home"
-else
-  home="my stage home"
+    home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
+elif [ "$env" = stage ]; then
+    home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
 fi
 
 echo "env: ${env}"
