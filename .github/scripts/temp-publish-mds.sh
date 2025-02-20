@@ -11,8 +11,11 @@ clean_cache=true
 
 if [ "$env" == prod ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
-else
+elif [ "$env" == stage ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
+else
+    # fail 
+    exit 1
 fi
 
 print_heading() 
