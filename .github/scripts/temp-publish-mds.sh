@@ -6,7 +6,7 @@
 
 root="../../src/pages"
 path_prefix="/github-actions-test/"
-env="stage"
+env="prod"
 clean_cache=true
 
 if [ "$env" == prod ]; then
@@ -38,8 +38,8 @@ publish_md()
     fi
 
     if [ "$env" == prod ]; then
-        echo ""
-        echo "TODO - publish on prod"
+        print_heading "curl -XPOST -vi \"${url}\""
+        curl -XPOST -vi "${url}"
     else
         print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
         curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
