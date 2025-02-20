@@ -7,12 +7,10 @@ path_prefix=$2
 publish()
 {
     filename=$1
-    relative_filename=${filename/#$root/} 
-    url="${home}${path_prefix}${relative_filename}"
+    url="${home}${path_prefix}${filename/#$root/}"
 
     echo ""
-    echo "filename: ${filename}"
-    echo "relative_filename: ${relative_filename}"
+    echo "url: ${url}"
     # curl -XPOST -vi "${url}"
 }
 
