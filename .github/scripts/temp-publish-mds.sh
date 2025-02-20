@@ -30,7 +30,11 @@ publish_md()
         echo "TODO - publish on prod"
     else
         echo ""
+        echo ""
+        echo "--------------------------------------------------------------------------------"
+        echo ""
         echo "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
+        echo ""
         curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
 }
