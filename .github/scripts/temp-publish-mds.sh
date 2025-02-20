@@ -9,6 +9,11 @@ path_prefix=$2
 deploy_stage=$3
 deploy_prod=$4
 
+if !["$deploy_stage"] && !["$deploy_prod"]; then
+    exit 1;
+fi
+
+
 env="prod"
 clean_cache=true
 
