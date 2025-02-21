@@ -6,8 +6,9 @@
 
 root=$1
 path_prefix=$2
-deploy_stage=$3
-deploy_prod=$4
+clean_cache=$3
+deploy_stage=$4
+deploy_prod=$5
 
 # root="../../src/pages"
 # path_prefix="/github-actions-test/"
@@ -28,7 +29,6 @@ if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
 fi
 
 env="prod"
-clean_cache=true
 
 if [ "$env" == prod ]; then
     home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
