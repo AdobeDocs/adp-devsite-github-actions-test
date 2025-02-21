@@ -14,6 +14,18 @@ fail() {
   exit 1
 }
 
+echo_heading() 
+{
+    heading=$1
+
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo "$heading"
+    echo ""
+}
+
 process() 
 {
     filename=$1
@@ -23,9 +35,13 @@ process()
 
     case "$action" in
         "cache")
-            echo "TODO - cache ${url}" ;;
+            echo "TODO - cache ${url}" 
+            echo "2a" 
+            ;;
         "publish")
-            echo "TODO - publish ${url}" ;;
+            echo "TODO - publish ${url}" 
+            echo "2b"
+            ;;
         *)
             fail "Unknown action" ;;
     esac
