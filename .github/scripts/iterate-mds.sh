@@ -14,7 +14,7 @@ fail() {
   exit 1
 }
 
-run() 
+process() 
 {
     filename=$1
     echo "${filename}"
@@ -24,15 +24,5 @@ action=$1
 env=$2
 root="../../src/pages"
 
-if ! [ "$action" == "cache" ] && ! [ "$action" == "publish" ]
-then
-    fail Invalid action
-fi
-
-if ! [ "$env" == "stage" ] && ! [ "$env" == "prod" ]
-then
-    fail Invalid env
-fi
-
 # TODO: may want to only process certain types of files
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do run $i; done
+find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
