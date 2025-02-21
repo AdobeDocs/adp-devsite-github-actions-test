@@ -25,7 +25,7 @@ fail() {
 }
 
 if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
-    fail "no environment specified"
+    fail "Missing env"
 fi
 
 env="prod"
