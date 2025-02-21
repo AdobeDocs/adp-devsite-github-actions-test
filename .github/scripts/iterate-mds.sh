@@ -36,9 +36,10 @@ env=$2
 
 home="https://admin.hlx.page"
 org="adobedocs"
-branch="main"
-path_prefix="/github-actions-test/"
+# branch="main"
+# path_prefix="/github-actions-test/"
 root="../../src/pages"
+#root="./src/pages"
 
 case "$action" in
     cache | preview)
@@ -63,5 +64,9 @@ esac
 # TODO: may want to only process certain types of files
 # find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
 
-test_url="../../src/pages/redirects.json"
-process "${test_url}"
+# test_url="../../src/pages/redirects.json"
+# process "${test_url}"
+
+echo "path_prefix: ${path_prefix}"
+echo "branch: ${branch}"
+

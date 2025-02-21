@@ -113,19 +113,19 @@ jobs:
       - name: Clean cache on stage
         if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_stage == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh cache stage
+            bash .github/scripts/iterate-mds.sh cache stage "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.branch_short_ref }}"
 
       - name: Clean cache on prod
         if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_prod == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh cache prod
+            bash .github/scripts/iterate-mds.sh cache prod "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.branch_short_ref }}"
 
       - name: Preview on stage
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh preview stage
+            bash .github/scripts/iterate-mds.sh preview stage "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.branch_short_ref }}"
 
       - name: Preview on prod
         if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh preview prod
+            bash .github/scripts/iterate-mds.sh preview prod "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.branch_short_ref }}"
