@@ -7,4 +7,4 @@ print() {
     echo "${filename}"
 }
 
-sh .github/scripts/find-files.sh print
+sh .github/scripts/find-files.sh "${print}"
