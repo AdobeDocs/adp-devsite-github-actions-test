@@ -19,10 +19,6 @@ on:
         description: "Build redirections file (yes|no)"
         required: true
         default: "no"
-      wip:
-        description: "Test WIP (yes|no)"
-        required: true
-        default: "yes"
 
 jobs:
   set-state:
@@ -35,7 +31,6 @@ jobs:
       clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
       build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
       build_redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
-      wip: ${{ contains(github.event.inputs.wip, 'yes') }}
 
     steps:
       - name: Checkout
@@ -64,7 +59,6 @@ jobs:
       - run: echo "Clean cache - ${{ needs.set-state.outputs.clean_cache }}"
       - run: echo "Build navigation file - ${{ needs.set-state.outputs.build_navigation }}"
       - run: echo "Build redirections file - ${{ needs.set-state.outputs.build_redirections }}"
-      - run: echo "Test WIP - ${{ needs.set-state.outputs.wip }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
