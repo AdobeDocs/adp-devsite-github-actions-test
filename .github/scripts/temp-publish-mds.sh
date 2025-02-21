@@ -4,15 +4,15 @@
 # cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
 # ./temp-publish-mds.sh
 
-# root=$1
-# path_prefix=$2
-# deploy_stage=$3
-# deploy_prod=$4
+root=$1
+path_prefix=$2
+deploy_stage=$3
+deploy_prod=$4
 
-root="../../src/pages"
-path_prefix="/github-actions-test/"
-deploy_stage=false
-deploy_prod=false
+# root="../../src/pages"
+# path_prefix="/github-actions-test/"
+# deploy_stage=false
+# deploy_prod=false
 
 error() {
   echo "$@" 1>&2
