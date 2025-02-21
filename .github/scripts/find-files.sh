@@ -1,3 +1,4 @@
+root="./src/pages"
 func=$1
 
 # TODO: may want to only find certain types of files
