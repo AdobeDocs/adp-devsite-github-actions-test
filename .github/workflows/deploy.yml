@@ -120,12 +120,12 @@ jobs:
         run: |
             bash .github/scripts/iterate-mds.sh cache prod
 
-      - name: Publish on stage
+      - name: Preview on stage
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: |
             bash .github/scripts/iterate-mds.sh preview stage
 
-      - name: Publish on prod
+      - name: Preview on prod
         if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
             bash .github/scripts/iterate-mds.sh preview prod
