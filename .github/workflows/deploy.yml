@@ -134,4 +134,4 @@ jobs:
       - name: Test WIP
         if: needs.set-state.outputs.wip == 'true'
         run: |
-            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
+            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
