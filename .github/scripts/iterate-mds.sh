@@ -14,18 +14,6 @@ fail() {
   exit 1
 }
 
-echo_heading() 
-{
-    heading=$1
-
-    echo ""
-    echo ""
-    echo "--------------------------------------------------------------------------------"
-    echo ""
-    echo "$heading"
-    echo ""
-}
-
 process() 
 {
     filename=$1
@@ -33,7 +21,14 @@ process()
     path="${path_prefix}${filename#$root/}"
     url="${home}/${action}/${org}/${site}/${branch}${path}"
 
-    echo "${url}"
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo "curl -XPOST -vi ${args} \"${url}\""
+    echo ""
+
+    curl -XPOST -vi ${args} "${url}"
 }
 
 action=$1
