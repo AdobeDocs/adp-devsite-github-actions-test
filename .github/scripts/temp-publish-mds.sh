@@ -28,17 +28,6 @@ if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
     fail "Missing env"
 fi
 
-env="prod"
-
-if [ "$env" == prod ]; then
-    home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
-elif [ "$env" == stage ]; then
-    home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
-else
-    # fail 
-    exit 1
-fi
-
 print_heading() 
 {
     heading=$1
