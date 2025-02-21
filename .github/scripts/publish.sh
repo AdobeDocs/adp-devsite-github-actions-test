@@ -2,4 +2,4 @@
 
 env=$1
 
-sh ./clean-cache.sh
+sh .github/scripts/clean-cache.sh
