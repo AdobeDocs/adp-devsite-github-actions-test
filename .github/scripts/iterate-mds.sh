@@ -17,12 +17,19 @@ fail() {
 process() 
 {
     filename=$1
-    echo "${filename}"
+    # echo "${filename}"
 }
 
 action=$1
 env=$2
 root="../../src/pages"
+
+case "$action" in
+    "cache")
+        echo "TODO - cache" ;;
+    "publish")
+        echo "TODO - publish" ;;
+esac
 
 # TODO: may want to only process certain types of files
 find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
