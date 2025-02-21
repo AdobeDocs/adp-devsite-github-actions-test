@@ -4,12 +4,18 @@
 # cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
 # ./temp-publish-mds.sh
 
-root=$1
-path_prefix=$2
-deploy_stage=$3
-deploy_prod=$4
+# root=$1
+# path_prefix=$2
+# deploy_stage=$3
+# deploy_prod=$4
 
-if ["$deploy_stage" == false] && ["$deploy_prod" == false]; then
+root="../../src/pages"
+path_prefix="/github-actions-test/"
+deploy_stage=false
+deploy_prod=false
+
+if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
+    echo "exiting"
     exit 1;
 fi
 
@@ -57,6 +63,6 @@ publish_md()
 }
 
 # TODO: may want to only certain types of files up 
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
+# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
 
 #sample file name ../../src/pages/redirects.json
