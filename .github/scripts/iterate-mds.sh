@@ -18,11 +18,14 @@ process()
 {
     filename=$1
 
+    path="${path_prefix}${filename#$root/}"
+    url="https://admin.hlx.page/preview/${org}/${site}/${branch}${path}"
+
     case "$action" in
         "cache")
-            echo "TODO - cache ${filename}" ;;
+            echo "TODO - cache ${url}" ;;
         "publish")
-            echo "TODO - publish ${filename}" ;;
+            echo "TODO - publish ${url}" ;;
         *)
             fail "Unknown action" ;;
     esac
@@ -31,9 +34,10 @@ process()
 action=$1
 env=$2
 
-root="../../src/pages"
-path_prefix="/github-actions-test/"
+org="adobedocs"
 branch="main"
+path_prefix="/github-actions-test/"
+root="../../src/pages"
 
 case "$env" in
     "stage")
