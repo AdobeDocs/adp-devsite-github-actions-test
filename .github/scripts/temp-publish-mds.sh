@@ -70,6 +70,6 @@ publish_md()
 }
 
 # TODO: may want to only certain types of files up 
-# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
+find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
 
 #sample file name ../../src/pages/redirects.json
