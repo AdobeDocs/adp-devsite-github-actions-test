@@ -4,17 +4,16 @@
 # cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
 # ./temp-publish-mds.sh
 
-# root=$1
-# path_prefix=$2
-# clean_cache=$3
-# deploy_stage=$4
-# deploy_prod=$5
+root="./src/pages"
+path_prefix=$1
+clean_cache=$2
+env=$3
 
-root="../../src/pages"
-path_prefix="/github-actions-test/"
-clean_cache=true
-deploy_stage=true
-deploy_prod=false
+# root="../../src/pages"
+# path_prefix="/github-actions-test/"
+# clean_cache=true
+# deploy_stage=true
+# deploy_prod=false
 
 error() {
   echo "$@" 1>&2
