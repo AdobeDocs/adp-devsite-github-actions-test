@@ -14,11 +14,18 @@ path_prefix="/github-actions-test/"
 deploy_stage=false
 deploy_prod=false
 
-if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
-    echo "exiting"
-    exit 1;
-fi
+error() {
+  echo "$@" 1>&2
+}
 
+fail() {
+  error "$@"
+  exit 1
+}
+
+if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
+    fail "no environment specified"
+fi
 
 env="prod"
 clean_cache=true
