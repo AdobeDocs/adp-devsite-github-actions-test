@@ -56,7 +56,7 @@ publish_md()
 }
 
 if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
-    fail Missing env"
+    fail Missing env
 fi
 
 # TODO: may want to only certain types of files up 
