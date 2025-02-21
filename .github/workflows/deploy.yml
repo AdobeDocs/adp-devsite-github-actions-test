@@ -36,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get pathPrefix
+      - name: Get path prefix
         uses: actions/github-script@v6
         id: get_path_prefix
         with:
