@@ -40,18 +40,23 @@ print_heading()
 publish_md()
 {
     filename=$1
-    url="${home}${path_prefix}${filename#$root/}"
 
     if [ "$clean_cache" == true ]; then
         print_heading "TODO - clean cache"
     fi
 
-    if [ "$env" == prod ]; then
-        print_heading "curl -XPOST -vi \"${url}\""
-        curl -XPOST -vi "${url}"
-    else
+    if [ "$deploy_stage" == true ]; then
+        home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
+        url="${home}${path_prefix}${filename#$root/}"
         print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
         curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
+    fi
+
+    if [ "$deploy_prod" == true ]; then
+        home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
+        url="${home}${path_prefix}${filename#$root/}"
+        print_heading "curl -XPOST -vi \"${url}\""
+        curl -XPOST -vi "${url}"
     fi
 }
 
