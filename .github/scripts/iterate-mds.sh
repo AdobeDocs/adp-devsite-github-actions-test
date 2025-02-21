@@ -22,7 +22,10 @@ process()
 
 action=$1
 env=$2
+
 root="../../src/pages"
+path_prefix="/github-actions-test/"
+branch="main"
 
 case "$env" in
     "stage")
