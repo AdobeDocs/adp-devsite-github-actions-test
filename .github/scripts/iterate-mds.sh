@@ -17,7 +17,15 @@ fail() {
 process() 
 {
     filename=$1
-    # echo "${filename}"
+
+    case "$action" in
+        "cache")
+            echo "TODO - cache ${filename}" ;;
+        "publish")
+            echo "TODO - publish ${filename}" ;;
+        *)
+            fail "Unknown action" ;;
+    esac
 }
 
 action=$1
