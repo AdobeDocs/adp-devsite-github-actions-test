@@ -103,12 +103,6 @@ jobs:
         with:
           cmd: install
 
-      - name: Clean cache
-        if: needs.set-state.outputs.clean_cache == 'true'
-        uses: borales/actions-yarn@v3
-        with:
-          cmd: clean
-
       - name: Build navigation file
         if: needs.set-state.outputs.build_navigation == 'true'
         uses: borales/actions-yarn@v3
@@ -121,17 +115,7 @@ jobs:
         with:
           cmd: buildRedirections
 
-      - name: Publish on stage
-        if: needs.set-state.outputs.deploy_stage == 'true' && needs.set-state.outputs.wip != 'true'
-        run: |
-            bash .github/scripts/publish-mds-stage.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
-
-      - name: Publish on prod
-        if: needs.set-state.outputs.deploy_prod == 'true' && needs.set-state.outputs.wip != 'true'
-        run: |
-            bash .github/scripts/publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
-
-      - name: Test WIP
+      - name: Publish
         if: needs.set-state.outputs.wip == 'true'
         run: |
             bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
