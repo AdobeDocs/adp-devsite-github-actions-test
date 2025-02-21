@@ -41,13 +41,14 @@ publish_md()
 {
     filename=$1
 
-    if [ "$clean_cache" == true ]; then
-        print_heading "TODO - clean cache"
-    fi
-
     if [ "$deploy_stage" == true ]; then
         home="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main"
         url="${home}${path_prefix}${filename#$root/}"
+
+        if [ "$clean_cache" == true ]; then
+            print_heading "TODO - clean cache"
+        fi
+
         print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
         curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
@@ -55,6 +56,11 @@ publish_md()
     if [ "$deploy_prod" == true ]; then
         home="https://admin.hlx.page/preview/adobedocs/adp-devsite/main"
         url="${home}${path_prefix}${filename#$root/}"
+
+        if [ "$clean_cache" == true ]; then
+            print_heading "TODO - clean cache"
+        fi
+
         print_heading "curl -XPOST -vi \"${url}\""
         curl -XPOST -vi "${url}"
     fi
