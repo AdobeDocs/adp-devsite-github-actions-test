@@ -116,7 +116,22 @@ jobs:
         with:
           cmd: buildRedirections
 
-      - name: Publish
-        if: needs.set-state.outputs.wip == 'true'
+      - name: Clean cache on stage
+        if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_stage == 'true'
+        run: |
+            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
+
+      - name: Clean cache on prod
+        if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_prod == 'true'
+        run: |
+            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
+
+      - name: Publish on stage
+        if: needs.set-state.outputs.deploy_stage == 'true'
+        run: |
+            bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
+
+      - name: Publish on prod
+        if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
             bash .github/scripts/temp-publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}" "${{ needs.set-state.outputs.clean_cache == 'true' }}" "${{ needs.set-state.outputs.deploy_stage == 'true' }}" "${{ needs.set-state.outputs.deploy_prod == 'true' }}"
