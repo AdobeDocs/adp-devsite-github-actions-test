@@ -13,7 +13,7 @@
 root="../../src/pages"
 path_prefix="/github-actions-test/"
 clean_cache=false
-deploy_stage=false
+deploy_stage=true
 deploy_prod=false
 
 error() {
