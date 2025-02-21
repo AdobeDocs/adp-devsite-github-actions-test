@@ -19,7 +19,7 @@ process()
     filename=$1
 
     path="${path_prefix}${filename#$root/}"
-    url="https://admin.hlx.page/preview/${org}/${site}/${branch}${path}"
+    url="${home}/preview/${org}/${site}/${branch}${path}"
 
     case "$action" in
         "cache")
@@ -34,6 +34,7 @@ process()
 action=$1
 env=$2
 
+home="https://admin.hlx.page"
 org="adobedocs"
 branch="main"
 path_prefix="/github-actions-test/"
