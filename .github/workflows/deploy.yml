@@ -113,19 +113,19 @@ jobs:
       - name: Clean cache on stage
         if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_stage == 'true'
         run: |
-            bash .github/scripts/clean-cache.sh "stage"
+            bash .github/scripts/iterate-mds.sh cache stage
 
       - name: Clean cache on prod
         if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_prod == 'true'
         run: |
-            bash .github/scripts/clean-cache.sh "prod"
+            bash .github/scripts/iterate-mds.sh cache prod
 
       - name: Publish on stage
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: |
-            bash .github/scripts/publish.sh "stage"
+            bash .github/scripts/iterate-mds.sh publish stage
 
       - name: Publish on prod
         if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
-            bash .github/scripts/publish.sh "prod"
+            bash .github/scripts/iterate-mds.sh publish prod
