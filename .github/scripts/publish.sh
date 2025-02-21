@@ -2,4 +2,9 @@
 
 env=$1
 
-sh .github/scripts/clean-cache.sh
+print() {
+    filename = $1
+    echo "${filename}"
+}
+
+sh .github/scripts/find-files.sh print
