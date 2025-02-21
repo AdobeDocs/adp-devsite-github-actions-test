@@ -47,10 +47,10 @@ publish_md()
 
     if [ "$env" == prod ]; then
         print_heading "curl -XPOST -vi \"${url}\""
-        # curl -XPOST -vi "${url}"
+        curl -XPOST -vi "${url}"
     else
         print_heading "curl -XPOST -vi --header \"x-content-source-authorization: stage\" \"$url\""
-        # curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
+        curl -XPOST -vi --header "x-content-source-authorization: stage" "${url}"
     fi
 }
 
@@ -59,6 +59,5 @@ if [ "$deploy_stage" == false ] && [ "$deploy_prod" == false ]; then
 fi
 
 # TODO: may want to only certain types of files up 
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
-
-#sample file name ../../src/pages/redirects.json
+# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do publish_md $i; done
+publish_md ../../src/pages/redirects.json
