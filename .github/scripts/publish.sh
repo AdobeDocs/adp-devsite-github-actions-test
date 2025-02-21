@@ -2,4 +2,4 @@
 
 env=$1
 
-echo "TODO - publish on ${env}"
+sh ./clean-cache.sh
