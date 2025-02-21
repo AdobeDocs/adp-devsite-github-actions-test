@@ -38,8 +38,8 @@ process()
             echo "TODO - cache ${url}" 
             echo "2a" 
             ;;
-        "publish")
-            echo "TODO - publish ${url}" 
+        "preview")
+            echo "TODO - preview ${url}" 
             echo "2b"
             ;;
         *)
@@ -66,4 +66,6 @@ case "$env" in
 esac
 
 # TODO: may want to only process certain types of files
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+
+test_url="https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/main/github-actions-test/redirects.json"

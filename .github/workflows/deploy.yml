@@ -123,9 +123,9 @@ jobs:
       - name: Publish on stage
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh publish stage
+            bash .github/scripts/iterate-mds.sh preview stage
 
       - name: Publish on prod
         if: needs.set-state.outputs.deploy_prod == 'true'
         run: |
-            bash .github/scripts/iterate-mds.sh publish prod
+            bash .github/scripts/iterate-mds.sh preview prod
