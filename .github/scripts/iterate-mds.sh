@@ -24,11 +24,13 @@ action=$1
 env=$2
 root="../../src/pages"
 
-case "$action" in
-    "cache")
-        echo "TODO - cache" ;;
-    "publish")
-        echo "TODO - publish" ;;
+case "$env" in
+    "stage")
+        site="adp-devsite-stage" ;;
+    "prod")
+        site="adp-devsite" ;;
+    *)
+        fail "Unknown env" ;;
 esac
 
 # TODO: may want to only process certain types of files
