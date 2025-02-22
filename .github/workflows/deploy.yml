@@ -1,7 +1,20 @@
 ---
 name: Deployment
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      clean:
+        description: "Clean cache (yes|no)"
+        required: true
+        default: "no"
+      build-navigation:
+        description: "Build navigation file (yes|no)"
+        required: true
+        default: "no"
+      build-redirections:
+        description: "Build redirections file (yes|no)"
+        required: true
+        default: "no"
 
 jobs:
   set-state:
@@ -9,11 +22,15 @@ jobs:
     outputs:
       path_prefix: ${{ steps.get_path_prefix.outputs.path_prefix }}
       branch_short_ref: ${{ steps.get_branch.outputs.branch }}
+      clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
+      build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
+      build_redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get pathPrefix
+      - name: Get path prefix
         uses: actions/github-script@v6
         id: get_path_prefix
         with:
@@ -21,6 +38,7 @@ jobs:
             const script = require('./.github/scripts/get-path-prefix.js');
             script({ core });
           result-encoding: string
+
       - name: Get branch name
         shell: bash
         run: echo "branch=${GITHUB_REF#refs/heads/}" >> "$GITHUB_OUTPUT"
@@ -30,11 +48,13 @@ jobs:
     needs: [set-state]
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Clean cache - ${{ needs.set-state.outputs.clean_cache }}"
+      - run: echo "Build navigation file - ${{ needs.set-state.outputs.build_navigation }}"
+      - run: echo "Build redirections file - ${{ needs.set-state.outputs.build_redirections }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
       - run: echo "Path prefix - ${{ needs.set-state.outputs.path_prefix }}"
-
 
   build:
     defaults:
@@ -43,23 +63,33 @@ jobs:
     needs: [set-state]
     runs-on: ubuntu-latest
     steps:
+      - name: Validate branch
+        if: needs.set-state.outputs.branch_short_ref != 'stage' && needs.set-state.outputs.branch_short_ref != 'main'
+        run: |
+            echo "Invalid branch. Please use 'stage' to preview or 'main' to publish."
+            exit 1
+
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node v16 for Yarn v3
+        if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: "16.15.0" # Current LTS version
 
       - name: Enable Corepack for Yarn v3
+        if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
         run: corepack enable
 
       - name: Install Yarn v3
+        if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
         uses: borales/actions-yarn@v3
         with:
           cmd: set version stable
 
       - name: Install Dependencies
+        if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
         uses: borales/actions-yarn@v3
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
@@ -67,10 +97,28 @@ jobs:
           cmd: install
 
       - name: Build navigation file
+        if: needs.set-state.outputs.build_navigation == 'true'
         uses: borales/actions-yarn@v3
         with:
           cmd: buildNavigation
 
-      - name: Publish markdown files in ./src/pages
+      - name: Build redirections file
+        if: needs.set-state.outputs.build_redirections == 'true'
+        uses: borales/actions-yarn@v3
+        with:
+          cmd: buildRedirections
+
+      - name: Clean cache
+        if: needs.set-state.outputs.clean_cache == 'true'
         run: |
-            bash .github/scripts/publish-mds.sh "./src/pages" "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/process-mds.sh cache ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+
+      - name: Preview
+        if: needs.set-state.outputs.branch_short_ref == 'stage'
+        run: |
+            bash .github/scripts/process-mds.sh preview ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+
+      - name: Publish
+        if: needs.set-state.outputs.branch_short_ref == 'main'
+        run: |
+            bash .github/scripts/process-mds.sh live ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
