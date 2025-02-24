@@ -1,19 +1,17 @@
-// This script retrieves the pathPrefix from the gatsby-config.js file.
-// It serves as an example for how to set up external javascript functions
-// outside workflow .yml files when they get too big or complex to keep them inline.
+// to run locally: 
+// cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
+// node get-path-prefix-2
 
-// Documentation for the actions/github-script:
-// https://github.com/actions/github-script#run-a-separate-file
+async function sdf() {
+    console.log('~~ hello 2');
+    const url = "https://raw.githubusercontent.com/aemsites/devsite-runtime-connector/refs/heads/main/src/devsite-paths.json";
 
-module.exports = async ({ core }) => {
-    const fs = await require('fs');    
-    if (!fs.existsSync('../../src/pages/config.md')) {
-        core.setFailed(
-            `config.md file is missing.
-      
-            To fix this, add a config.md file under src/pages.
-            `
-          );
-    }
+    const obj = await (await fetch(url)).json();
+    console.log('~~ obj', obj);
 };
+
+sdf();
+
+
   
+
