@@ -20,7 +20,7 @@ const test = async () => {
 
     const startIndex = line.indexOf('/');
     const endIndex = line.lastIndexOf('/');
-    const pathPrefix = line.substring(startIndex, endIndex + 1); 
+    const pathPrefix = line.substring(startIndex, endIndex); 
     console.log(`pathPrefix from config: "${pathPrefix}"`);
 
     // TODO - pass repo as an arg to this script. 
@@ -28,11 +28,22 @@ const test = async () => {
     // 
     const owner = "AdobeDocs";
     const repo = "adp-devsite-github-actions-test";
-    // TODO - get root from devsite paths, but adjust it so that 
-    // use these 3 as a key to the pathPrefix from devsite paths, and then make sure pathPrefix is the same.
 
     const devsitePaths = await (await fetch(url)).json();
+    const entry = devsitePaths.find(entry => entry.repo === repo && entry.owner === owner);
+
+    const pathPrefixFromDevsitePaths = entry.pathPrefix;
+
+    // const request = new Request(url);
+
+    // const response = await fetch(request);
+    // const devsitePaths = await response.json();
+
     
+    
+
+    console.log('~~ devsitePaths', entry, pathPrefixFromDevsitePaths);
+
 };
 
 test();
