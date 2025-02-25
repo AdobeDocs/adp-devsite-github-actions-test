@@ -9,19 +9,17 @@ const test = async () => {
     const { pathPrefix } = await require('../../gatsby-config.js');
     console.log('~~ pathPrefix', pathPrefix);
 
-    const configFile = await require('fs');    
-    if (!configFile.existsSync('../../src/pages/config.md')) {
+    const configPath = '../../src/pages/config.md';
+
+    const fs = await require('fs');    
+    if (!fs.existsSync(configPath)) {
         console.log('file doesnt exist');
-    } else {
-        console.log('file exists')
     }
 
+    let configContent = fs.readFileSync(configPath).toString()
+    console.log(configContent);
+    
     const devsitePaths = await (await fetch(url)).json();
-
-
-    // console.log('~~ obj', obj);
-
-
 };
 
 test();
