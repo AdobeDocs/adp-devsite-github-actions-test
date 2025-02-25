@@ -3,11 +3,10 @@
 // node get-path-prefix-2
 
 const test = async () => {
-    console.log('~~ hello 2');
     const url = "https://raw.githubusercontent.com/aemsites/devsite-runtime-connector/refs/heads/main/src/devsite-paths.json";
 
     const { pathPrefix } = await require('../../gatsby-config.js');
-    console.log('~~ pathPrefix', pathPrefix);
+    console.log('~~ pathPrefix from gatsby: ', pathPrefix);
 
     const configPath = '../../src/pages/config.md';
 
@@ -16,8 +15,13 @@ const test = async () => {
         console.log('file doesnt exist');
     }
 
-    let configContent = fs.readFileSync(configPath).toString()
-    console.log(configContent);
+    let configContent = fs.readFileSync(configPath).toString();
+    const lines = configContent.split('\n');
+    const keyIndex = lines.findIndex(line => line.includes("pathPrefix:"));
+    const pathPrefixFromConfig = lines.slice(keyIndex + 1).find(line => line.trimStart().startsWith("-"));
+    console.log(`keyIndex "${pathPrefixFromConfig}"`);
+
+
     
     const devsitePaths = await (await fetch(url)).json();
 };
