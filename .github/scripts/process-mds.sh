@@ -30,7 +30,10 @@ process()
     echo "${cmd}"
     echo ""
 
-    eval "${cmd2}"
+    myvar=$(eval "${cmd2}")
+
+    echo "--------------------------------------------------------------------------------"
+    echo ${myvar}
 }
 
 case "$operation" in
