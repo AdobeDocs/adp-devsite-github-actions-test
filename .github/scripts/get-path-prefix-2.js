@@ -23,11 +23,8 @@ const test = async () => {
 
     const startIndex = line.indexOf('/');
     const endIndex = line.lastIndexOf('/');
-    console.log('startIndex', startIndex);
-    console.log('endIndex', endIndex);
-    
-
-    // console.log(`keyIndex "${pathPrefixFromConfig}"`);
+    const pathPrefixFromConfig = line.substring(startIndex, endIndex + 1); 
+    console.log(`pathPrefix from config: "${pathPrefixFromConfig}"`);
 
 
     
