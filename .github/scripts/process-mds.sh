@@ -3,7 +3,8 @@
 operation=$1
 branch=$2
 path_prefix=$3
-root="./src/pages"
+root="../../src/pages"
+# root="./src/pages"
 
 error() {
   echo "$@" 1>&2
@@ -17,9 +18,10 @@ fail() {
 process() 
 {
     filename=$1
-    path="${path_prefix:1}${filename#$root/}"
+    path="${path_prefix:1}/${filename#$root/}"
     url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
     cmd="curl -X${http_method} -vi ${args} \"${url}\""
+    cmd2="${cmd} | grep \"HTTP/2\""
 
     echo ""
     echo ""
@@ -28,7 +30,7 @@ process()
     echo "${cmd}"
     echo ""
 
-    eval "${cmd}"
+    eval "${cmd2}"
 }
 
 case "$operation" in
@@ -55,4 +57,5 @@ else
 fi
 
 # TODO: may want to only process certain types of files
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+process "../../src/pages/redirects.json"
