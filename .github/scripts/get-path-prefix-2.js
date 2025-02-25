@@ -18,8 +18,16 @@ const test = async () => {
     let configContent = fs.readFileSync(configPath).toString();
     const lines = configContent.split('\n');
     const keyIndex = lines.findIndex(line => line.includes("pathPrefix:"));
-    const pathPrefixFromConfig = lines.slice(keyIndex + 1).find(line => line.trimStart().startsWith("-"));
-    console.log(`keyIndex "${pathPrefixFromConfig}"`);
+    const line = lines.slice(keyIndex + 1).find(line => line.trimStart().startsWith("-"));
+    
+
+    const startIndex = line.indexOf('/');
+    const endIndex = line.lastIndexOf('/');
+    console.log('startIndex', startIndex);
+    console.log('endIndex', endIndex);
+    
+
+    // console.log(`keyIndex "${pathPrefixFromConfig}"`);
 
 
     
