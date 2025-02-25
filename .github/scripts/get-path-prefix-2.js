@@ -5,9 +5,6 @@
 const test = async () => {
     const url = "https://raw.githubusercontent.com/aemsites/devsite-runtime-connector/refs/heads/main/src/devsite-paths.json";
 
-    const { pathPrefix } = await require('../../gatsby-config.js');
-    console.log('~~ pathPrefix from gatsby: ', pathPrefix);
-
     const configPath = '../../src/pages/config.md';
 
     const fs = await require('fs');    
@@ -23,12 +20,19 @@ const test = async () => {
 
     const startIndex = line.indexOf('/');
     const endIndex = line.lastIndexOf('/');
-    const pathPrefixFromConfig = line.substring(startIndex, endIndex + 1); 
-    console.log(`pathPrefix from config: "${pathPrefixFromConfig}"`);
+    const pathPrefix = line.substring(startIndex, endIndex + 1); 
+    console.log(`pathPrefix from config: "${pathPrefix}"`);
 
+    // TODO - pass repo as an arg to this script. 
+    // e.g. https://github.com/AdobeDocs/adp-devsite-github-actions-test/actions/runs/13468667666/job/37639187537
+    // 
+    const owner = "AdobeDocs";
+    const repo = "adp-devsite-github-actions-test";
+    // TODO - get root from devsite paths, but adjust it so that 
+    // use these 3 as a key to the pathPrefix from devsite paths, and then make sure pathPrefix is the same.
 
-    
     const devsitePaths = await (await fetch(url)).json();
+    
 };
 
 test();
