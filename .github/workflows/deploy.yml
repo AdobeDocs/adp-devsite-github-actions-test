@@ -114,9 +114,9 @@ jobs:
             bash .github/scripts/process-mds.sh cache stage "/github-actions-test"
 
       - name: Preview
-        if: needs.set-state.outputs.branch_short_ref == 'stage'
+        # if: needs.set-state.outputs.branch_short_ref == 'stage'
         run: |
-            bash .github/scripts/process-mds.sh preview ${{ needs.set-state.outputs.branch_short_ref }} "/github-actions-test"
+            bash .github/scripts/process-mds.sh preview stage "/github-actions-test"
 
       - name: Publish
         if: needs.set-state.outputs.branch_short_ref == 'main'
