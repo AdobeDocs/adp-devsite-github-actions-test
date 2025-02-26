@@ -1,12 +1,5 @@
 #!/bin/bash
 
-operation=$1
-branch=$2
-path_prefix=$3
-root="../../src/pages"
-# root="./src/pages"
-errors=""
-
 error() {
   echo "$@" 1>&2
 }
@@ -16,24 +9,14 @@ fail() {
   exit 1
 }
 
-process() 
-{
-    filename=$1
-    path="${path_prefix:1}/${filename#$root/}"
-    url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
-    cmd="curl -X${http_method} -vi ${args} \"${url}\""
+operation=$1
+branch=$2
+path_prefix=$3
+delimiter_count=80
+root="../../src/pages" 
+# root="./src/pages"
 
-    echo ""
-    echo ""
-    echo "--------------------------------------------------------------------------------"
-    echo ""
-    # echo "${cmd}"
-    echo ""
-
-    error=$(eval "${cmd} | grep -e \"x-error:\"")
-    return error
-}
-
+# validate operation
 case "$operation" in
     cache | preview | live)
         http_method="POST" ;;
@@ -41,6 +24,7 @@ case "$operation" in
         fail "Unknown operation" ;;
 esac
 
+# validate branch
 case "$branch" in
     stage)
         site="adp-devsite-stage" ;;
@@ -50,6 +34,7 @@ case "$branch" in
         fail "Unknown branch" ;;
 esac
 
+# conditional args
 if [ "$branch" == "stage" ] && [ "$operation" == "preview" ]
 then
     args="--header \"x-content-source-authorization: stage\""
@@ -57,30 +42,50 @@ else
     args=""
 fi
 
+# process mds in root
 # TODO: may want to only process certain types of files
 find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | 
-    while read i; 
+    while read filename; 
     do 
-        error=$(process $i)
-        errors="${errors}\n${i}"
+        path="${path_prefix:1}/${filename#$root/}"
+        url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
+        cmd="curl -X${http_method} -vi ${args} \"${url}\""
+
+        echo ""
+        echo ""
+        echo "--------------------------------------------------------------------------------"
+        echo ""
+        echo "${cmd}"
+        echo ""
+
+        # run command and filter error string
+        error=$(eval "${cmd} | grep -e \"x-error:\"")
+
+        # append to errors
+        if [ "$error" != "" ]
+        then
+            errors="${errors}\n${cmd}\n${error}\n"
+        fi 
+        
+        # write errors to stderr so it can be accessed outside this subshell later
         echo $errors > 2
     done
-# process "../../src/pages/redirectds.json"
 
 echo ""
 echo ""
 echo "================================================================================"
 echo ""
 
-# if [ "${errors}" == "" ]
-# then
-#     echo "Success!"
-# else 
-#     echo "Errors:"
-# fi
+# read errors from stderr
 read -r errors < 2
-echo -e "${errors}"
-echo ""
 
-printf 'A%.0s' {1..10}
+# print summary
+if [ "${errors}" == "" ]
+then
+    echo "Success!"
+else 
+    echo "Errors:"
+    echo -e "${errors}"
+fi
+
 echo ""
