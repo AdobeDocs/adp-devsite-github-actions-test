@@ -21,7 +21,6 @@ process()
     path="${path_prefix:1}/${filename#$root/}"
     url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
     cmd="curl -X${http_method} -vi ${args} \"${url}\""
-    cmd2="${cmd} | grep \"x-error:\""
 
     echo ""
     echo ""
@@ -30,7 +29,7 @@ process()
     echo "${cmd}"
     echo ""
 
-    myvar=$(eval "${cmd2}")
+    myvar=$(eval "${cmd} | grep \"x-error:\"")
 
     echo ""
     echo ""
