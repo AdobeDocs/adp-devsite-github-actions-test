@@ -29,8 +29,8 @@ process()
     echo "${cmd}"
     echo ""
 
-    myvar=$(eval "${cmd} | grep -e \"x-error:\" -e \"x-error-code:\"")
-    results="${myvar}\nhello"
+    result=$(eval "${cmd} | grep -e \"x-error:\" -e \"x-error-code:\"")
+    results="Failures: \n\n${cmd}\n${result}"
 
     echo ""
     echo ""
