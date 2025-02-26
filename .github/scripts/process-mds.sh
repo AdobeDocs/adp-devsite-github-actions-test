@@ -35,21 +35,6 @@ process()
     then
         errors="\n${cmd}\n${error}"
     fi
-
-    echo ""
-    echo ""
-    echo "================================================================================"
-    echo ""
-
-    if [ "$errors" == "" ]
-    then
-        echo "Success!"
-    else 
-        echo "Errors:"
-    fi
-
-    echo -e "${errors}"
-    echo ""
 }
 
 case "$operation" in
@@ -76,5 +61,20 @@ else
 fi
 
 # TODO: may want to only process certain types of files
-# find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
-process "../../src/pages/redirectds.json"
+find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+# process "../../src/pages/redirectds.json"
+
+echo ""
+echo ""
+echo "================================================================================"
+echo ""
+
+if [ "$errors" == "" ]
+then
+    echo "Success!"
+else 
+    echo "Errors:"
+fi
+
+echo -e "${errors}"
+echo ""
