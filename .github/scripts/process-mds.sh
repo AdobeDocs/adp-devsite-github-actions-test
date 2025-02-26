@@ -24,7 +24,7 @@ case "$operation" in
         fail "Unknown operation" ;;
 esac
 
-# validate branch
+# conditional site
 case "$branch" in
     stage)
         site="adp-devsite-stage" ;;
