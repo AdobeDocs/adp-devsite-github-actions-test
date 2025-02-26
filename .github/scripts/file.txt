@@ -1,0 +1,76 @@
+* Host admin.hlx.page:443 was resolved.
+* IPv6: (none)
+* IPv4: 151.101.45.91
+*   Trying 151.101.45.91:443...
+* Connected to admin.hlx.page (151.101.45.91) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+*  CAfile: /etc/ssl/cert.pem
+*  CApath: none
+* (304) (IN), TLS handshake, Server hello (2):
+* (304) (IN), TLS handshake, Unknown (8):
+* (304) (IN), TLS handshake, Certificate (11):
+* (304) (IN), TLS handshake, CERT verify (15):
+* (304) (IN), TLS handshake, Finished (20):
+* (304) (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=hlx.page
+*  start date: Feb 24 11:03:54 2025 GMT
+*  expire date: May 25 11:03:53 2025 GMT
+*  subjectAltName: host "admin.hlx.page" matched cert's "*.hlx.page"
+*  issuer: C=US; O=Let's Encrypt; CN=R11
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://admin.hlx.page/preview/adobedocs/adp-devsite-stage/stage/github-actions-test/redirectsw.json
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: admin.hlx.page]
+* [HTTP/2] [1] [:path: /preview/adobedocs/adp-devsite-stage/stage/github-actions-test/redirectsw.json]
+* [HTTP/2] [1] [user-agent: curl/8.6.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [x-content-source-authorization: stage]
+> POST /preview/adobedocs/adp-devsite-stage/stage/github-actions-test/redirectsw.json HTTP/2
+> Host: admin.hlx.page
+> User-Agent: curl/8.6.0
+> Accept: */*
+> x-content-source-authorization: stage
+> 
+< HTTP/2 404 
+HTTP/2 404 
+< content-type: text/plain; charset=utf-8
+content-type: text/plain; charset=utf-8
+< cache-control: no-store, private, must-revalidate
+cache-control: no-store, private, must-revalidate
+< x-error-code: AEM_BACKEND_NOT_FOUND
+x-error-code: AEM_BACKEND_NOT_FOUND
+< x-invocation-id: 96f925bd-b94f-4a8c-b65b-d27de1e599d4
+x-invocation-id: 96f925bd-b94f-4a8c-b65b-d27de1e599d4
+< x-error: [admin] File not found: /github-actions-test/redirectsw.json
+x-error: [admin] File not found: /github-actions-test/redirectsw.json
+< accept-ranges: bytes
+accept-ranges: bytes
+< date: Wed, 26 Feb 2025 00:55:49 GMT
+date: Wed, 26 Feb 2025 00:55:49 GMT
+< via: 1.1 varnish
+via: 1.1 varnish
+< x-served-by: cache-nyc-kteb1890036-NYC
+x-served-by: cache-nyc-kteb1890036-NYC
+< x-cache: MISS
+x-cache: MISS
+< x-cache-hits: 0
+x-cache-hits: 0
+< x-timer: S1740531349.109650,VS0,VE847
+x-timer: S1740531349.109650,VS0,VE847
+< strict-transport-security: max-age=31557600
+strict-transport-security: max-age=31557600
+< x-ratelimit-limit: 10
+x-ratelimit-limit: 10
+< x-ratelimit-rate: 0.100
+x-ratelimit-rate: 0.100
+< content-length: 0
+content-length: 0
+
+< 
+* Connection #0 to host admin.hlx.page left intact

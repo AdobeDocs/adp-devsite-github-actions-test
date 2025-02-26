@@ -29,13 +29,13 @@ process()
     echo "${cmd}"
     echo ""
 
-    myvar=$(eval "${cmd} | grep \"x-error:\"")
+    myvar=$(eval "${cmd} | grep -e \"x-error:\" -e \"x-error-code:\"")
 
     echo ""
     echo ""
     echo "================================================================================"
     echo ""
-    echo ${myvar}
+    echo "${myvar}"
     echo ""
 }
 
