@@ -42,50 +42,55 @@ else
     args=""
 fi
 
+process() 
+{
+    filename=$1
+    path="${path_prefix:1}/${filename#$root/}"
+    url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
+    cmd="curl -X${http_method} -vi ${args} \"${url}\""
+
+    echo ""
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo "${cmd}"
+    echo ""
+
+    # run command and filter error string
+    error=$(eval "${cmd} | grep -e \"x-error:\"")
+
+    # append to errors
+    if [ "$error" != "" ]
+    then
+        errors="${errors}\n${cmd}\n${error}\n"
+    fi 
+    
+    # write errors to stderr so it can be accessed outside this subshell later
+    echo $errors > 2
+}
+
+summarize() {
+    echo ""
+    echo ""
+    echo "================================================================================"
+    echo ""
+
+    # read errors from stderr
+    read -r errors < 2
+
+    if [ "${errors}" == "" ]
+    then
+        echo "Success!"
+    else 
+        echo "Errors:"
+        echo -e "${errors}"
+    fi
+
+    echo ""
+}
+
 # process mds in root
 # TODO: may want to only process certain types of files
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | 
-    while read filename; 
-    do 
-        path="${path_prefix:1}/${filename#$root/}"
-        url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
-        cmd="curl -X${http_method} -vi ${args} \"${url}\""
+find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
 
-        echo ""
-        echo ""
-        echo "--------------------------------------------------------------------------------"
-        echo ""
-        echo "${cmd}"
-        echo ""
-
-        # run command and filter error string
-        error=$(eval "${cmd} | grep -e \"x-error:\"")
-
-        # append to errors
-        if [ "$error" != "" ]
-        then
-            errors="${errors}\n${cmd}\n${error}\n"
-        fi 
-        
-        # write errors to stderr so it can be accessed outside this subshell later
-        echo $errors > 2
-    done
-
-echo ""
-echo ""
-echo "================================================================================"
-echo ""
-
-# read errors from stderr
-read -r errors < 2
-
-# print summary
-if [ "${errors}" == "" ]
-then
-    echo "Success!"
-else 
-    echo "Errors:"
-    echo -e "${errors}"
-fi
-
-echo ""
+summarize
