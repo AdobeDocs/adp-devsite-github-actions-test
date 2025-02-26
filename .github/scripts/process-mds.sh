@@ -29,14 +29,26 @@ process()
     echo "${cmd}"
     echo ""
 
-    result=$(eval "${cmd} | grep -e \"x-error:\" -e \"x-error-code:\"")
-    results="Failures: \n\n${cmd}\n${result}"
+    error=$(eval "${cmd} | grep -e \"x-error:\"")
+
+    if [ "$error" != "" ]
+    then
+        errors="\n${cmd}\n${error}"
+    fi
 
     echo ""
     echo ""
     echo "================================================================================"
     echo ""
-    echo -e "${results}"
+
+    if [ "$errors" == "" ]
+    then
+        echo "Success"
+    else 
+        echo "Errors:"
+    fi
+
+    echo -e "${errors}"
     echo ""
 }
 
@@ -65,4 +77,4 @@ fi
 
 # TODO: may want to only process certain types of files
 # find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
-process "../../src/pages/redirectsw.json"
+process "../../src/pages/redirectse.json"
