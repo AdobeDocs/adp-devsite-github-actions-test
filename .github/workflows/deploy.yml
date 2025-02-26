@@ -30,14 +30,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get path prefix
-        uses: actions/github-script@v6
-        id: get_path_prefix
-        with:
-          script: |
-            const script = require('./.github/scripts/get-path-prefix-2.js');
-            script({ core });
-          result-encoding: string
+      # - name: Get path prefix
+      #   uses: actions/github-script@v6
+      #   id: get_path_prefix
+      #   with:
+      #     script: |
+      #       const script = require('./.github/scripts/get-path-prefix-2.js');
+      #       script({ core });
+      #     result-encoding: string
 
       - name: Get branch name
         shell: bash
@@ -54,7 +54,7 @@ jobs:
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
       - run: echo "Repository name - ${{ github.event.repository.name }}"
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
-      - run: echo "Path prefix - ${{ needs.set-state.outputs.path_prefix }}"
+      # - run: echo "Path prefix - ${{ needs.set-state.outputs.path_prefix }}"
 
   build:
     defaults:
@@ -63,11 +63,11 @@ jobs:
     needs: [set-state]
     runs-on: ubuntu-latest
     steps:
-      - name: Validate branch
-        if: needs.set-state.outputs.branch_short_ref != 'stage' && needs.set-state.outputs.branch_short_ref != 'main'
-        run: |
-            echo "Invalid branch. Please use 'stage' to preview or 'main' to publish."
-            exit 1
+      # - name: Validate branch
+      #   if: needs.set-state.outputs.branch_short_ref != 'stage' && needs.set-state.outputs.branch_short_ref != 'main'
+      #   run: |
+      #       echo "Invalid branch. Please use 'stage' to preview or 'main' to publish."
+      #       exit 1
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -111,12 +111,12 @@ jobs:
       - name: Clean cache
         if: needs.set-state.outputs.clean_cache == 'true'
         run: |
-            bash .github/scripts/process-mds.sh cache ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/process-mds.sh cache stage "/github-actions-test"
 
       - name: Preview
         if: needs.set-state.outputs.branch_short_ref == 'stage'
         run: |
-            bash .github/scripts/process-mds.sh preview ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/process-mds.sh preview ${{ needs.set-state.outputs.branch_short_ref }} "/github-actions-test"
 
       - name: Publish
         if: needs.set-state.outputs.branch_short_ref == 'main'
