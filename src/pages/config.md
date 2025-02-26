@@ -1,5 +1,5 @@
 - pathPrefix:
-    - /github-actions-test/
+    - /github-actions-testDIFF/
 
 - versions:
     - [v2.0](/) selected
