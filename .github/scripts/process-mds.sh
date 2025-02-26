@@ -43,7 +43,7 @@ process()
 
     if [ "$errors" == "" ]
     then
-        echo "Success"
+        echo "Success!"
     else 
         echo "Errors:"
     fi
@@ -77,4 +77,4 @@ fi
 
 # TODO: may want to only process certain types of files
 # find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
-process "../../src/pages/redirectse.json"
+process "../../src/pages/redirectds.json"
