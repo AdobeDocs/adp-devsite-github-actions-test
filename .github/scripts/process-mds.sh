@@ -13,8 +13,8 @@ operation=$1
 branch=$2
 path_prefix=$3
 delimiter_count=80
-root="../../src/pages" 
-# root="./src/pages"
+# root="../../src/pages" 
+root="./src/pages"
 
 # validate operation
 case "$operation" in
