@@ -30,12 +30,13 @@ process()
     echo ""
 
     myvar=$(eval "${cmd} | grep -e \"x-error:\" -e \"x-error-code:\"")
+    results="${myvar}\nhello"
 
     echo ""
     echo ""
     echo "================================================================================"
     echo ""
-    echo "${myvar}"
+    echo -e "${results}"
     echo ""
 }
 
