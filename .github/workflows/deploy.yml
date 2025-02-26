@@ -36,7 +36,7 @@ jobs:
         with:
           script: |
             const script = require('./.github/scripts/get-path-prefix.js');
-            script({ core, repo: ${{ github.event.repository.name }}, owner: ${{ github.event.repository.owner.login }} });
+            script({ core });
           result-encoding: string
 
       - name: Get branch name
