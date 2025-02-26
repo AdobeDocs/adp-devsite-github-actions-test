@@ -81,3 +81,6 @@ echo ""
 read -r errors < 2
 echo -e "${errors}"
 echo ""
+
+printf 'A%.0s' {1..10}
+echo ""
