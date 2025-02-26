@@ -33,7 +33,22 @@ const test = async ({owner, repo}) => {
   const fromDevsitePaths = await getFromDevsitePaths({owner, repo});
   console.log('fromDevsitePaths: ', fromDevsitePaths);
 
-  // TODO
+  if(!fromConfig) {
+    console.log('add to config');
+    return;
+  }
+
+  if(!fromDevsitePaths) {
+    console.log('add to devsite-paths');
+    return;
+  }
+
+  if(fromConfig !== fromDevsitePaths) {
+    console.log('should match');
+    return;
+  }
+
+  return fromConfig;
 };
 
 test({owner: "AdobeDocs", repo: "adp-devsite-github-actions-test"});
