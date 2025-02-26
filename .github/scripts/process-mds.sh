@@ -5,6 +5,7 @@ branch=$2
 path_prefix=$3
 root="../../src/pages"
 # root="./src/pages"
+errors=""
 
 error() {
   echo "$@" 1>&2
@@ -26,15 +27,11 @@ process()
     echo ""
     echo "--------------------------------------------------------------------------------"
     echo ""
-    echo "${cmd}"
+    # echo "${cmd}"
     echo ""
 
     error=$(eval "${cmd} | grep -e \"x-error:\"")
-
-    if [ "$error" != "" ]
-    then
-        errors="\n${cmd}\n${error}"
-    fi
+    return error
 }
 
 case "$operation" in
@@ -61,15 +58,23 @@ else
 fi
 
 # TODO: may want to only process certain types of files
-find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
+find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | 
+    while read i; 
+    do 
+        error=$(process $i)
+        echo "UAAEAEAEA ${error}"
+    done
 # process "../../src/pages/redirectds.json"
+
+echo "????????????????????????????????????????????????????????????????????????????????"
+echo -e "${errors}"
 
 echo ""
 echo ""
 echo "================================================================================"
 echo ""
 
-if [ "$errors" == "" ]
+if [ "${errors}" == "" ]
 then
     echo "Success!"
 else 
