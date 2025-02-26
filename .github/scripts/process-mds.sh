@@ -21,7 +21,7 @@ process()
     path="${path_prefix:1}/${filename#$root/}"
     url="https://admin.hlx.page/${operation}/adobedocs/${site}/${branch}/${path}"
     cmd="curl -X${http_method} -vi ${args} \"${url}\""
-    cmd2="${cmd} | grep \"HTTP/2\""
+    cmd2="${cmd} | grep \"x-error:\""
 
     echo ""
     echo ""
@@ -32,8 +32,12 @@ process()
 
     myvar=$(eval "${cmd2}")
 
-    echo "--------------------------------------------------------------------------------"
+    echo ""
+    echo ""
+    echo "================================================================================"
+    echo ""
     echo ${myvar}
+    echo ""
 }
 
 case "$operation" in
@@ -61,4 +65,4 @@ fi
 
 # TODO: may want to only process certain types of files
 # find "${root}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
-process "../../src/pages/redirects.json"
+process "../../src/pages/redirectsw.json"
