@@ -1,49 +1,42 @@
-// This script retrieves the pathPrefix from the gatsby-config.js file.
-// It serves as an example for how to set up external javascript functions
-// outside workflow .yml files when they get too big or complex to keep them inline.
+// to run locally: 
+// cd /Users/melissag/Projects/adp-devsite-github-actions-test/.github/scripts
+// node get-path-prefix-2
 
-// Documentation for the actions/github-script:
-// https://github.com/actions/github-script#run-a-separate-file
+const test = async () => {
+  const url = "https://raw.githubusercontent.com/aemsites/devsite-runtime-connector/refs/heads/main/src/devsite-paths.json";
+  const root='../../src/pages';
+  const configPath = `${root}/config.md`;
+  // // TODO - pass repo as an arg to this script. 
+  // // e.g. https://github.com/AdobeDocs/adp-devsite-github-actions-test/actions/runs/13468667666/job/37639187537
+  const owner = "AdobeDocs";
+  const repo = "adp-devsite-github-actions-test";
 
-module.exports = async ({ core }) => {
-  const { pathPrefix } = await require('../../gatsby-config.js');
-
-  if (!pathPrefix) {
-    core.setFailed(
-      `The pathPrefix in the site's gatsby-config.js file is missing.
-
-      To fix this, open your gatsby-config.js file, and add it to the config object:
-
-      module.exports = {
-        pathPrefix: "/commerce/frontend-core/",
-        ...
-      }`
-    );
-  } else if (pathPrefix === '/') {
-    core.setFailed(
-      `The pathPrefix in the site's gatsby-config.js file is set to "/". This is not allowed.
-
-      To fix this, change the pathPrefix to include a name that starts and ends with "/":
-
-      pathPrefix: "/commerce/frontend - core/"
-
-      This name identifies the site within the developer.adobe.com domain:
-      https://developer.adobe.com/document-services/<PATH_TO_FILES>.
-      `
-    );
-  } else {
-    if (!pathPrefix.startsWith('/') || !pathPrefix.endsWith('/')) {
-      core.setFailed(
-        `The pathPrefix in the site's gatsby-config.js file does not start or end with "/".
-
-        To fix this, change the pathPrefix to include a name that starts and ends with "/".
-        For example: "/document-services/" or "/commerce/cloud-tools/".
-
-        This is required by convention because of the way we construct site URLs.
-        For example: https://developer.adobe.com + /document-services/ + path/to/files/.
-        `
-      );
-    }
+  // fail if config.md is missing
+  const fs = await require('fs');    
+  if (!fs.existsSync(configPath)) {
+      console.log('file doesnt exist');
+      return;
   }
-  core.setOutput('path_prefix', pathPrefix);
+
+  // get pathPrefix from config
+  let configContent = fs.readFileSync(configPath).toString();
+  const lines = configContent.split('\n');
+  const keyIndex = lines.findIndex(line => line.includes("pathPrefix:"));
+  const line = lines.slice(keyIndex + 1).find(line => line.trimStart().startsWith("-"));
+  const startIndex = line.indexOf('/');
+  const endIndex = line.lastIndexOf('/');
+  const pathPrefixFromConfig = line.substring(startIndex, endIndex); 
+  console.log(`pathPrefixFromConfig: "${pathPrefixFromConfig}"`);
+
+  // get pathPrefix from devsite-paths
+  const devsitePaths = await (await fetch(url)).json();
+  const entry = devsitePaths.find(entry => entry.repo === repo && entry.owner === owner);
+  const pathPrefixFromDevsitePaths = entry.pathPrefix;
+  console.log(`pathPrefixFromDevsitePaths: "${pathPrefixFromDevsitePaths}"`);
 };
+
+test();
+
+
+
+
