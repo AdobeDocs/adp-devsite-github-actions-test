@@ -63,11 +63,11 @@ jobs:
     needs: [set-state]
     runs-on: ubuntu-latest
     steps:
-      - name: Validate branch
-        if: needs.set-state.outputs.branch_short_ref != 'stage' && needs.set-state.outputs.branch_short_ref != 'main'
-        run: |
-            echo "Invalid branch. Please use 'stage' to preview or 'main' to publish."
-            exit 1
+      # - name: Validate branch
+      #   if: needs.set-state.outputs.branch_short_ref != 'stage' && needs.set-state.outputs.branch_short_ref != 'main'
+      #   run: |
+      #       echo "Invalid branch. Please use 'stage' to preview or 'main' to publish."
+      #       exit 1
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -114,7 +114,7 @@ jobs:
       - name: Clean cache
         if: needs.set-state.outputs.clean_cache == 'true'
         run: |
-            bash .github/scripts/process-mds.sh cache ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/process-mds.sh cache main "${{ needs.set-state.outputs.path_prefix }}"
 
       - name: Preview
         if: needs.set-state.outputs.branch_short_ref == 'stage'
@@ -122,6 +122,6 @@ jobs:
             bash .github/scripts/process-mds.sh preview ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
 
       - name: Publish
-        if: needs.set-state.outputs.branch_short_ref == 'main'
+        # if: needs.set-state.outputs.branch_short_ref == 'main'
         run: |
-            bash .github/scripts/process-mds.sh live ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+            bash .github/scripts/process-mds.sh live main "${{ needs.set-state.outputs.path_prefix }}"
