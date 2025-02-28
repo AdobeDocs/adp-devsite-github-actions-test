@@ -93,7 +93,6 @@ summarize() {
 
 # process mds in root
 # TODO: may want to only process certain types of files
-# find "${ROOT}" -type f \( -name "*.md" -o -name "*.json" \) -exec echo "{}" \; | while read i; do process $i; done
-process "./src/pages/index.md"
+["./src/pages/index.md", "./src/pages/config.md"] | while read i; do process $i; done
 
 summarize
