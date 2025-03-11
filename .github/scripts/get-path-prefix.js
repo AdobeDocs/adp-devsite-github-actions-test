@@ -107,7 +107,10 @@ module.exports = async ({ core, isStage, isProd }) => {
 
     // must convert values to boolean from string
     if(isProd.toLowerCase() === 'true') {
+      console.log(`poppedPathPrefix: ${poppedPathPrefix}`);
       const prodEntries = await (await fetch(`${DEVSITE_PROD_HOST}${DEVSITE_PATHNAME}`)).json();
+      console.log(`prodEntries`);
+      console.log(prodEntries)
       const prodEntry = prodEntries?.data?.find(entry => entry.pathPrefix === poppedPathPrefix);
 
       if(!prodEntry) {
