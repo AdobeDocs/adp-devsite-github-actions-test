@@ -4,21 +4,29 @@ on:
   workflow_dispatch:
     inputs:
       env:
-        description: "Deploy to (stage|prod|stage prod)"
+        description: "Select environment to deploy to"
+        type: choice
         required: true
         default: "stage"
+        options:
+          - stage
+          - prod
+          - stage & prod
       clean:
-        description: "Clean cache (yes|no)"
+        description: "Clean cache?"
+        type: boolean
         required: true
         default: "no"
       build-navigation:
-        description: "Build navigation file (yes|no)"
+        description: "Build navigation file?"
+        type: boolean
         required: true
-        default: "no"
+        default: "false"
       build-redirections:
-        description: "Build redirections file (yes|no)"
+        description: "Build redirections file?"
+        type: boolean
         required: true
-        default: "no"
+        default: "false"
 
 jobs:
   set-state:
@@ -26,23 +34,23 @@ jobs:
     outputs:
       path_prefix: ${{ steps.get_path_prefix.outputs.path_prefix }}
       branch_short_ref: ${{ steps.get_branch.outputs.branch }}
-      deploy_stage: ${{ contains(github.event.inputs.env, 'stage') }}
-      deploy_prod: ${{ contains(github.event.inputs.env, 'prod') }}
-      clean_cache: ${{ contains(github.event.inputs.clean, 'yes') }}
-      build_navigation: ${{ contains(github.event.inputs.build-navigation, 'yes') }}
-      build_redirections: ${{ contains(github.event.inputs.build-redirections, 'yes') }}
+      deploy_stage: ${{ contains(inputs.env, 'stage') }}
+      deploy_prod: ${{ contains(inputs.env, 'prod') }}
+      clean_cache: ${{ inputs.clean }}
+      build_navigation: ${{ inputs.build-navigation }}
+      build_redirections: ${{ inputs.build-redirections }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Get path prefix
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         id: get_path_prefix
         with:
           script: |
             const script = require('./.github/scripts/get-path-prefix.js');
-            script({ core, owner: "${{ github.event.repository.owner.login }}", repo: "${{ github.event.repository.name }}" });
+            script({ core, isStage:"${{ contains(inputs.env, 'stage') }}", isProd:"${{ contains(inputs.env, 'prod') }}" });
           result-encoding: string
 
       - name: Get branch name
@@ -72,21 +80,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node v16 for Yarn v3
+      - name: Setup Node v18 for Yarn v3
         if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.15.0" # Current LTS version
+          node-version: "18"
 
       - name: Enable Corepack for Yarn v3
         if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
         run: corepack enable
 
-      - name: Install Yarn v3
+      - name: Install Yarn v4
         if: needs.set-state.outputs.build_navigation == 'true' || needs.set-state.outputs.build_redirections == 'true'
-        uses: borales/actions-yarn@v3
+        uses: borales/actions-yarn@v4
         with:
           cmd: set version stable
 
@@ -109,13 +117,6 @@ jobs:
         uses: borales/actions-yarn@v3
         with:
           cmd: buildRedirections
-
-      - name: Validate path prefix
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const script = require('.github/scripts/validate-path-prefix.js');
-            script({ core, pathPrefixFromDevsitePaths: "${{ needs.set-state.outputs.path_prefix }}" });
 
       - name: Clean cache on stage
         if: needs.set-state.outputs.clean_cache == 'true' && needs.set-state.outputs.deploy_stage == 'true'
