@@ -7,7 +7,7 @@ contributors:
 
 <HeroSimple slots="heading, text"/>
 
-# Prod deploy from here
+# main branch
 
 Cat Product API offers limitless ways to integrate your most important customer data into key business processes. Cat Product API offer limitless ways.
 
