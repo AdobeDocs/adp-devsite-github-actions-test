@@ -135,5 +135,6 @@ jobs:
 
       - name: Publish
         if: needs.set-state.outputs.deploy_prod == 'true'
-        run: |
+        run: |            
+            bash .github/scripts/process-mds.sh preview prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
             bash .github/scripts/process-mds.sh live prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
