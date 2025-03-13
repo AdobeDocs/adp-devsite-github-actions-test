@@ -128,12 +128,12 @@ jobs:
         run: |
             bash .github/scripts/process-mds.sh cache prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
 
-      - name: Preview
+      - name: Deploy to stage
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: |
             bash .github/scripts/process-mds.sh preview stage ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
 
-      - name: Publish
+      - name: Deploy to prod
         if: needs.set-state.outputs.deploy_prod == 'true'
         run: |            
             bash .github/scripts/process-mds.sh preview prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
