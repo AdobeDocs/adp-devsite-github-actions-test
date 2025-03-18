@@ -1,4 +1,4 @@
-test credential
+<!-- test credential
 
 <GetCredential className="getCredentialContainer" templateId={template_id} productName={product_name} >
 
@@ -136,4 +136,4 @@ View your existing Adobe Express Embed SDK credentials and generate new ones. Qu
 
 </GetCredentialRequestAccess>
 
-</GetCredential>
+</GetCredential> -->
