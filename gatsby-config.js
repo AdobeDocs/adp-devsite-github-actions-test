@@ -43,7 +43,7 @@ module.exports = {
           {
             title: 'Cat Reference v1.4',
             description: 'Cat API Spec',
-            path: '/api/1.4.md'
+            path: '/api/1-4.md'
           }
         ]
       },
