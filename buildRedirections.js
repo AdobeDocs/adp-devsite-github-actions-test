@@ -18,19 +18,19 @@ try {
         // Fixes paths that don't end in a trailing slash but should.
         // index.md is a directory-level URL that needs a trailing slash
         if(mdFilePath.includes('index.md')) {
-            mdFilePath = mdFilePath.replace('/index.md', '');
+            const source = mdFilePath.replace('/index.md', '');
             data.push({
-                "Source" : mdFilePath,
-                "Destination" : mdFilePath + '/'
+                "Source" : source,
+                "Destination" : source + '/'
             });
         }
         // Fixes paths that end in a trailing slash but shouldn't.
         // skip any index.md or config.md as they don't need redirect
         else if(!mdFilePath.includes('config.md')) {
-            mdFilePath = mdFilePath.replace('.md', '/');
+            const source = mdFilePath.replace('.md', '/');
             data.push({
-                "Source" : mdFilePath,
-                "Destination" : mdFilePath.replace(/\/$/, "")
+                "Source" : source,
+                "Destination" : source.replace(/\/$/, "")
             });
         }
     });
