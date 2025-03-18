@@ -3,7 +3,7 @@
 
 - versions:
     - [v2.0](/) selected
-    - [v1.4](https://github.com/AdobeDocs/dev-site)
+    - [v1.4](https://github.com/AdobeDocs/dev-site) 
 
 - pages:
     - [Cat Analytics](/)
@@ -15,25 +15,25 @@
     - [Test](/test/)
 
 - subPages:
-    - [Get Started](/guides/)
-        - [Dummy an OAuth Client](/guides/dummy_oauth_client/)
-        - [Dummy OAuth using POSTMAN](/guides/dummy_using_postman/)
-    - [Cat Metrics API](/guides/dummy_metrics_api/)
-    - [Migrating](/guides/migrating/)
+    - [Get Started](/guides/) 
+        - [Dummy an OAuth Client](/guides/dummy_oauth_client/) 
+        - [Dummy OAuth using POSTMAN](/guides/dummy_using_postman/) 
+    - [Cat Metrics API](/guides/dummy_metrics_api/) 
+    - [Migrating](/guides/migrating/) 
     - [Overview](/support/) header
-        - [Help](/support/)
-        - [FAQ](/support/FAQ/)
-        - [How to contribute](/support/contribute/)
+        - [Help](/support/) 
+        - [FAQ](/support/FAQ/) 
+        - [How to contribute](/support/contribute/) 
     - [Community](/support/community/) header
-        - [Information](/support/community/)
-    - [Test](/test/)
-        - [Code](/test/code/)
-        - [CodeBlock](/test/code-block/)
-        - [CodeBlock with Picklist](/test/code-block-with-picklist/)
-        - [CodeBlock without Picklist](/test/code-block-without-picklist/)
-        - [Code in List](/test/code-in-list/)
-        - [Code in Table](/test/code-in-table/)
-        - [InlineAlert](/test/inline-alert/)
-        - [ListBlock](/test/list-block/)
-        - [RedoclyAPIBlock](/test/redocly-api-block/)
-        - [TabsBlock](/test/tabs-block/)
+        - [Information](/support/community/) 
+    - [Test](/test/) 
+        - [Code](/test/code/) 
+        - [CodeBlock](/test/code-block/) 
+        - [CodeBlock with Picklist](/test/code-block-with-picklist/) 
+        - [CodeBlock without Picklist](/test/code-block-without-picklist/) 
+        - [Code in List](/test/code-in-list/) 
+        - [Code in Table](/test/code-in-table/) 
+        - [InlineAlert](/test/inline-alert/) 
+        - [ListBlock](/test/list-block/) 
+        - [RedoclyAPIBlock](/test/redocly-api-block/) 
+        - [TabsBlock](/test/tabs-block/) 
