@@ -23,6 +23,10 @@ try {
                 "Source" : source,
                 "Destination" : source + '/'
             });
+            data.push({
+                "Source" : source + '/index',
+                "Destination" : source + '/'
+            });
         }
         // Fixes paths that end in a trailing slash but shouldn't.
         // skip any index.md or config.md as they don't need redirect
