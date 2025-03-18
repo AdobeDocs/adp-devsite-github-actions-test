@@ -13,14 +13,15 @@ curl -i -X POST 'https://graffias.adobe.io/graffias/graphql'
     -d @introspection.json --compressed
 ```
 
-// copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1#L584-L586 
+// copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1#L584-L586
 // page https://developer.adobe.com/app-builder/docs/getting_started/first_app/#common-issues
 
-1. Validation error. If you see the following error, it is because you did not pass in an authorization header to an action expecting one. 
+1. Validation error. If you see the following error, it is because you did not pass in an authorization header to an action expecting one.
 
     ```bash
     {"error": "cannot validate token, reason: missing authorization header"}
     ```
+
 // copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1#L400-402
 // page https://developer.adobe.com/app-builder/docs/getting_started/first_app/#6developing-the-application
 
