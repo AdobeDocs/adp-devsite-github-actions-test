@@ -10,7 +10,7 @@
     - [Guides](/guides/)
     - API Reference
         - [Cat Reference v2.0](/api/index.md)
-        - [Cat Reference v1.4](/api/1.4.md)
+        - [Cat Reference v1.4](/api/1-4.md)
     - [Support](/support/)
     - [Test](/test/)
 
