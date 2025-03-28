@@ -63,9 +63,7 @@ function getFileMap(files) {
 
 function renameFiles(map) {
     map.forEach((to, from) => {
-        fs.rename(from, to, function(err) {
-            if(err) throw err;
-        });
+        fs.renameSync(from, to);
     });
 }
 
@@ -94,17 +92,11 @@ function getLinkMap(fileMap, file) {
 }
 
 function renameLinksInFile(linkMap, file) {
-    fs.readFile(file, 'utf8', function (err, data) {
-        if(err) throw err;
-
-        linkMap.forEach((to, from) => {
-            data = data.replaceAll(new RegExp(`(\\[[^\\[]*]\\()(${from})([^)]*\\))`, "g"), `$1${to}$3`);
-        });
-    
-        fs.writeFile(file, data, 'utf8', function (err) {
-            if(err) throw err;
-        });
+    let data = fs.readFileSync(file, 'utf8');
+    linkMap.forEach((to, from) => {
+        data = data.replaceAll(new RegExp(`(\\[[^\\[]*]\\()(${from})([^)]*\\))`, "g"), `$1${to}$3`);
     });
+    fs.writeFileSync(file, data, 'utf-8');
 }
 
 try {
