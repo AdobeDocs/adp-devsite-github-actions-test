@@ -95,6 +95,7 @@ function renameLinksInMarkdownFile(fileMap, file) {
 }
 
 function renameLinksInRedirectsFile(fileMap) {
+    console.log('~ Hello')
 }
 
 function appendRedirects(fileMap) {
@@ -111,16 +112,18 @@ function appendRedirects(fileMap) {
     writeRedirectionsFile(data);
 }
 
+console.log();
 try {
     const files = getMarkdownFiles();
     const fileMap = getFileMap(files);
     files.forEach(file => {
-        renameLinksInMarkdownFile(fileMap, file);
+        // renameLinksInMarkdownFile(fileMap, file);
     });
     renameLinksInRedirectsFile(fileMap);
-    appendRedirects(fileMap);
-    renameFiles(fileMap);
+    // appendRedirects(fileMap);
+    // renameFiles(fileMap);
 
 } catch (err) {
     console.error(err);
 }
+console.log();
