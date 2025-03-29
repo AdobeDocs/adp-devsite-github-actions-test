@@ -70,6 +70,7 @@ try {
 
 
 module.exports = {
+    getRedirectionsFilePath,
     readRedirectionsFile,
     writeRedirectionsFile
 };
