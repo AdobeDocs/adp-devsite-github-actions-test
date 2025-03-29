@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
-const { readRedirectionsFile, writeRedirectionsFile } = require('./buildRedirections.js');
+const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./buildRedirections.js');
+const matchAll = require('string.prototype.matchall')
 
 function getMarkdownFiles() {
     return globSync(__dirname + '/src/pages/**/*.md')
@@ -95,7 +96,18 @@ function renameLinksInMarkdownFile(fileMap, file) {
 }
 
 function renameLinksInRedirectsFile(fileMap) {
-    console.log('~ Hello')
+    const file = getRedirectionsFilePath();
+    // let data = fs.readFileSync(file, 'utf8');
+
+    const data = `one [first](one.md) [second](two.md) two three [third and last](3.md)`;
+    const from = "one.md";
+    const re = new RegExp(`(\\[[^\\[]*]\\()(${from})([^)]*\\))`, "g");
+    const matches = matchAll(data, re);
+    [...matches].forEach(m => {
+        console.log(m[0], ':', m[1], '!', m[2], '!', m[3]);
+    })
+
+    // fs.writeFileSync(file, data, 'utf-8');
 }
 
 function appendRedirects(fileMap) {
