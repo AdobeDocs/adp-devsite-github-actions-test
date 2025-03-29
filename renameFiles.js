@@ -67,6 +67,25 @@ function renameFiles(map) {
     });
 }
 
+function getLinkMap(fileMap, file) {
+    const linkMap = new Map();    
+    fileMap.forEach((toFile, fromFile) => {
+        const fromUrl = toRelativeUrl(fromFile, file);
+        const toUrl = toRelativeUrl(toFile, file);
+        linkMap.set(fromUrl, toUrl);
+    });
+    return linkMap;
+}
+
+function renameLinksInMarkdownFile(fileMap, file) {
+    let data = fs.readFileSync(file, 'utf8');
+    const linkMap = getLinkMap(fileMap, file);
+    linkMap.forEach((to, from) => {
+        data = data.replaceAll(new RegExp(`(\\[[^\\[]*]\\()(${from})([^)]*\\))`, "g"), `$1${to}$3`);
+    });
+    fs.writeFileSync(file, data, 'utf-8');
+}
+
 function appendRedirects(fileMap) {
     const newData = [];
     fileMap.forEach((toFile, fromFile) => {
@@ -81,35 +100,17 @@ function appendRedirects(fileMap) {
     writeRedirectionsFile(data);
 }
 
-function getLinkMap(fileMap, file) {
-    const linkMap = new Map();    
-    fileMap.forEach((toFile, fromFile) => {
-        const fromUrl = toRelativeUrl(fromFile, file);
-        const toUrl = toRelativeUrl(toFile, file);
-        linkMap.set(fromUrl, toUrl);
-    });
-    return linkMap;
-}
-
-function renameLinksInFile(linkMap, file) {
-    let data = fs.readFileSync(file, 'utf8');
-    linkMap.forEach((to, from) => {
-        data = data.replaceAll(new RegExp(`(\\[[^\\[]*]\\()(${from})([^)]*\\))`, "g"), `$1${to}$3`);
-    });
-    fs.writeFileSync(file, data, 'utf-8');
-}
-
 try {
     const files = getMarkdownFiles();
     const fileMap = getFileMap(files);
-    renameFiles(fileMap);
-    appendRedirects(fileMap);
     
-    files.forEach(fileBeforeRename => {
-        const file = fileMap.get(fileBeforeRename) ?? fileBeforeRename;
-        const linkMap = getLinkMap(fileMap, file);
-        renameLinksInFile(linkMap, file);
+    files.forEach(file => {
+        renameLinksInMarkdownFile(fileMap, file);
     });
+
+    appendRedirects(fileMap);
+
+    renameFiles(fileMap);
 
 } catch (err) {
     console.error(err);
