@@ -3,11 +3,7 @@ const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
 const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./scriptUtils.js');
-
-function getMarkdownFiles() {
-    return globSync(__dirname + '/src/pages/**/*.md')
-        .map(f => path.resolve(f));
-}
+const { getMarkdownFiles, toUrl, toRelativeUrl } = require('./normalizeLinks.js');
 
 function toKebabCase(str) {
     return str && str
@@ -19,25 +15,6 @@ function toKebabCase(str) {
 function toEdsCase(str) {
     const isValid = Boolean((/^([a-z0-9-]*)$/.test(str)));
     return isValid ? str : toKebabCase(str);
-}
-
-function toUrl(file, renameBaseWithoutExt) {
-    const base = path.basename(file);
-    const ext = path.extname(file);
-    const end = file.length - base.length;
-    const baseWithoutExt = base.substring(0, base.length - ext.length);
-    const newBaseWithoutExt = renameBaseWithoutExt(baseWithoutExt);
-    return `${file.substring(0, end)}${newBaseWithoutExt}`
-}
-
-function toRelativeFile(file, fromFile) {
-    const fromDir = path.dirname(fromFile);
-    return path.relative(fromDir, file);
-}
-
-function toRelativeUrl(file, fromFile) {
-    const relativeFile = toRelativeFile(file, fromFile);
-    return toUrl(relativeFile, f => f);
 }
 
 function renameFile(file, renameBaseWithoutExt) {
