@@ -68,9 +68,8 @@ function getLinkMap(fileMap, file) {
     return linkMap;
 }
 
-function replaceLinksInFile({ fileMap, file, getFindPattern, getReplacePattern }) {
+function replaceLinksInFile({ file, linkMap, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
-    const linkMap = getLinkMap(fileMap, file);
     linkMap.forEach((to, from) => {
         const find = getFindPattern(from);
         const replace = getReplacePattern(to);
@@ -81,17 +80,18 @@ function replaceLinksInFile({ fileMap, file, getFindPattern, getReplacePattern }
 
 function renameLinksInMarkdownFile(fileMap, file) {
     replaceLinksInFile({ 
-        fileMap, 
         file, 
+        linkMap: getLinkMap(fileMap, file),
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
         getReplacePattern: (to) => `$1${to}$3$4`,
     });
 }
 
 function renameLinksInRedirectsFile(fileMap) {
+    const file = getRedirectionsFilePath();
     replaceLinksInFile({
-        fileMap, 
-        file: getRedirectionsFilePath(),
+        file,
+        linkMap: getLinkMap(fileMap, file),
         getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
     });
