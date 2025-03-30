@@ -28,6 +28,48 @@ function toRelativeUrl(file, fromFile) {
     return toUrl(relativeFile, f => f);
 }
 
+function normalizeLink(link, ) {
+    // e.g. with.dot - can't assume this is the file extension
+    // need to compare with the actual equivalent file
+    // easy enough to remove '/' prefix, './' prefix, 
+    // and replacing '/index' with '/' (but this must be done after the file extension is removed)
+    // TODO - test with 'index.notanextension'
+
+    // - remove file extension
+    // - remove index filename
+    // - remove '/' prefix
+    // - remove './' prefix
+}
+
+function normalizeLinksInFile({ file, find, replace}) {
+    let data = fs.readFileSync(file, 'utf8');
+    const links = []; // TODO - extract links using find regex
+    links.forEach(link => {
+        const normalizedLink = normalizeLink(link);
+        data = data.replaceAll(new RegExp(find, "gm"), replace);
+    })
+    fs.writeFileSync(file, data, 'utf-8');
+}
+
+function normalizeLinksInMarkdownFile() {
+    normalizeLinksInFile()
+}
+
+function normalizeLinksInRedirectsFile() {
+    normalizeLinksInFile();
+}
+
+try {
+    const files = getMarkdownFiles();
+    files.forEach(file => {
+        normalizeLinksInMarkdownFile(files, file);
+    });
+    normalizeLinksInRedirectsFile(files, file);
+
+} catch (err) {
+    console.error(err);
+}
+
 module.exports = {
     getMarkdownFiles,
     toUrl,
