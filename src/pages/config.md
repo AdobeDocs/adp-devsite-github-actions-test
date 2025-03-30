@@ -7,10 +7,10 @@
 
 - pages:
     - [Cat Analytics](/)
-    - [Sentence cse](/SentenceCase)
-    - [Guides](/Guides/)
+    - [Sentence cse](SentenceCase)
+    - [Guides](Guides/)
 
 - subPages:
-    - [Get Started](/Guides/) 
-        - [Lower](/Guides/lower) 
-        - [With dot](/Guides/with.dot) 
+    - [Get Started](Guides/) 
+        - [Lower](Guides/lower) 
+        - [With dot](Guides/with.dot) 
