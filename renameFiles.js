@@ -31,10 +31,6 @@ function toRenamedFile(file, renameBaseWithoutExt) {
     return `${url}${ext}`
 }
 
-function toRenamedEdsFile(file) {
-    return toRenamedFile(file, toKebabCase);
-}
-
 function toRelativeFile(file, fromFile) {
     const fromDir = path.dirname(fromFile);
     return path.relative(fromDir, file);
@@ -48,7 +44,7 @@ function toRelativeUrl(file, fromFile) {
 function getFileMap(files) {
     const map = new Map();
     files.forEach(from => { 
-        const to = toRenamedEdsFile(from);
+        const to = toRenamedFile(from, toKebabCase)
         if(to !== from) {
             map.set(from, to) 
         }
