@@ -77,12 +77,24 @@ function getLinkMap(fileMap, file) {
     return linkMap;
 }
 
-function renameLinksInMarkdownFile(linkMap, file) {
+function renameLinksInFile({ fileMap, file, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
+    const linkMap = getLinkMap(fileMap, file);
     linkMap.forEach((to, from) => {
-        data = data.replaceAll(new RegExp(`(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`, "gm"), `$1${to}$3$4`);
+        const find = getFindPattern(from);
+        const replace = getReplacePattern(to);
+        data = data.replaceAll(new RegExp(find, "gm"), replace);
     });
     fs.writeFileSync(file, data, 'utf-8');
+}
+
+function renameLinksInMarkdownFile(fileMap, file) {
+    renameLinksInFile({ 
+        fileMap, 
+        file, 
+        getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
+        getReplacePattern: (to) => `$1${to}$3$4`,
+    });
 }
 
 function appendRedirects(fileMap) {
@@ -101,12 +113,9 @@ function appendRedirects(fileMap) {
 try {
     const files = getMarkdownFiles();
     const fileMap = getFileMap(files);
-    
     files.forEach(file => {
-        const linkMap = getLinkMap(fileMap, file);
-        renameLinksInMarkdownFile(linkMap, file);
+        renameLinksInMarkdownFile(fileMap, file);
     });
-
     appendRedirects(fileMap);
     renameFiles(fileMap);
 
