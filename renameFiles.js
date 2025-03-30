@@ -35,11 +35,6 @@ function toRenamedEdsFile(file) {
     return toRenamedFile(file, toKebabCase);
 }
 
-function toDevSiteUrl(file) {
-    const relativeFile = path.relative(__dirname + '/src/pages', file);
-    return `${pathPrefix}${relativeFile}`;
-}
-
 function toRelativeFile(file, fromFile) {
     const fromDir = path.dirname(fromFile);
     return path.relative(fromDir, file);
@@ -107,11 +102,13 @@ function renameLinksInRedirectsFile(fileMap) {
 }
 
 function appendRedirects(fileMap) {
+    const file = getRedirectionsFilePath();
+    const linkMap = getLinkMap(fileMap, file);
     const newData = [];
-    fileMap.forEach((toFile, fromFile) => {
+    linkMap.forEach((to, from) => {
         newData.push({
-            Source: toDevSiteUrl(fromFile), 
-            Destination: toDevSiteUrl(toFile)
+            Source:  `${pathPrefix}${from}`, 
+            Destination: `${pathPrefix}${to}`,
         })
     });
     const currData = readRedirectionsFile();
