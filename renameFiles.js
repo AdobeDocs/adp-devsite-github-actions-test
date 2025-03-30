@@ -16,7 +16,7 @@ function toKebabCase(str) {
         .join('-');
 }
 
-function toRenamedUrl(file, renameBaseWithoutExt) {
+function toUrl(file, renameBaseWithoutExt) {
     const base = path.basename(file);
     const ext = path.extname(file);
     const end = file.length - base.length;
@@ -25,8 +25,8 @@ function toRenamedUrl(file, renameBaseWithoutExt) {
     return `${file.substring(0, end)}${newBaseWithoutExt}`
 }
 
-function toRenamedFile(file, renameBaseWithoutExt) {
-    const url = toRenamedUrl(file, renameBaseWithoutExt);
+function renameFile(file, renameBaseWithoutExt) {
+    const url = toUrl(file, renameBaseWithoutExt);
     const ext = path.extname(file);
     return `${url}${ext}`
 }
@@ -38,13 +38,13 @@ function toRelativeFile(file, fromFile) {
 
 function toRelativeUrl(file, fromFile) {
     const relativeFile = toRelativeFile(file, fromFile);
-    return toRenamedUrl(relativeFile, f => f);
+    return toUrl(relativeFile, f => f);
 }
 
 function getFileMap(files) {
     const map = new Map();
     files.forEach(from => { 
-        const to = toRenamedFile(from, toKebabCase)
+        const to = renameFile(from, toKebabCase)
         if(to !== from) {
             map.set(from, to) 
         }
