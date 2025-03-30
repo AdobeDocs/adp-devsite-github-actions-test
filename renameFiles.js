@@ -67,20 +67,6 @@ function renameFiles(map) {
     });
 }
 
-function appendRedirects(fileMap) {
-    const newData = [];
-    fileMap.forEach((toFile, fromFile) => {
-        newData.push({
-            Source: toDevSiteUrl(fromFile), 
-            Destination: toDevSiteUrl(toFile)
-        })
-    });
-
-    const currData = readRedirectionsFile();
-    const data = [...currData, ...newData];
-    writeRedirectionsFile(data);
-}
-
 function getLinkMap(fileMap, file) {
     const linkMap = new Map();    
     fileMap.forEach((toFile, fromFile) => {
@@ -99,17 +85,30 @@ function renameLinksInMarkdownFile(linkMap, file) {
     fs.writeFileSync(file, data, 'utf-8');
 }
 
+function appendRedirects(fileMap) {
+    const newData = [];
+    fileMap.forEach((toFile, fromFile) => {
+        newData.push({
+            Source: toDevSiteUrl(fromFile), 
+            Destination: toDevSiteUrl(toFile)
+        })
+    });
+    const currData = readRedirectionsFile();
+    const data = [...currData, ...newData];
+    writeRedirectionsFile(data);
+}
+
 try {
     const files = getMarkdownFiles();
     const fileMap = getFileMap(files);
-    renameFiles(fileMap);
-    appendRedirects(fileMap);
     
-    files.forEach(fileBeforeRename => {
-        const file = fileMap.get(fileBeforeRename) ?? fileBeforeRename;
+    files.forEach(file => {
         const linkMap = getLinkMap(fileMap, file);
         renameLinksInMarkdownFile(linkMap, file);
     });
+
+    appendRedirects(fileMap);
+    renameFiles(fileMap);
 
 } catch (err) {
     console.error(err);
