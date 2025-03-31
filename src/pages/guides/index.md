@@ -14,11 +14,13 @@
 
 <!-- non-normalized links -->
 [with.dot](with.dot.md)
+[with.dot](with.dot.md.NotAnExtension)
 [with.dot](with.dot.md#JumpLink)
 [with.dot](/with.dot.md)
 [with.dot](/with.dot.md#JumpLink)
 
 [with.dot](/with.dot)
+[with.dot](/with.dot.NotAnExtension)
 [with.dot](/with.dot#JumpLink)
 [with.dot](./with.dot)
 [with.dot](./with.dot#JumpLink)
@@ -31,7 +33,9 @@
 [SentenceCase](../SentenceCase.md)
 [SentenceCase](../SentenceCase.md#JumpLink)
 
+[index](index.NotAnExtension)
 [index](index.md)
+[index](index.md.NotAnExtension)
 [index](/index)
 [index](/index.md)
 [index](./index)

@@ -33,7 +33,6 @@ function normalizeLink(link, ) {
     // need to compare with the actual equivalent file
     // easy enough to remove '/' prefix, './' prefix, 
     // and replacing '/index' with '/' (but this must be done after the file extension is removed)
-    // TODO - test with 'index.notanextension'
 
     // - remove file extension
     // - remove index filename
