@@ -43,20 +43,21 @@ function normalizeLink(link, ) {
 
 function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
     let data = fs.readFileSync(file, 'utf8');
-    console.log(data);
+    // console.log(data);
     const links = []; // TODO - extract links using find regex
 
-    const from = "one.md";
-    const re = new RegExp(`(\\[[^]]*]\\()([^)]*)(\\))`, "gm");
+    // (\[[^]]*]\()([^)]*)(\))
+
+    const re = new RegExp('(\\[[^\\]]*])', "gm");
     const matches = matchAll(data, re);
-    console.log([...matches]);
-    
-
-
-    links.forEach(link => {
-        const normalizedLink = normalizeLink(link);
-        data = data.replaceAll(new RegExp(find, "gm"), replace);
+    [...matches].forEach(m => {
+        console.log(`${m[0]} ! ${m[1]}`);
     })
+    
+    // links.forEach(link => {
+    //     const normalizedLink = normalizeLink(link);
+    //     data = data.replaceAll(new RegExp(find, "gm"), replace);
+    // })
     // fs.writeFileSync(file, data, 'utf-8');
 }
 
