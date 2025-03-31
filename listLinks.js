@@ -10,4 +10,22 @@ function getMarkdownFiles() {
         .map(f => path.resolve(__dirname + '/src/pages', f));
 }
 
-console.log('~~ list links');
+function listLinksInMarkdownFile(file) {
+    let data = fs.readFileSync(file, 'utf8');
+    
+    const filePattern = '[^)#]*';
+    const matches = matchAll(data, new RegExp(`(\\[[^\\]]*]\\()(${filePattern})(#[^\\()]*)?(\\))`, "gm"));
+    [...matches].forEach(m => {
+        console.log({file, link: m[0], index: m.index});
+    })
+}
+
+try {
+    const files = getMarkdownFiles();
+    files.forEach(file => {
+        listLinksInMarkdownFile(file);
+    });
+
+} catch (err) {
+    console.error(err);
+}
