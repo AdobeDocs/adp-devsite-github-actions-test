@@ -49,28 +49,26 @@ function normalizeLink(link, ) {
 }
 
 function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
-    console.log('~~ filePattern: ', filePattern);
-
     let data = fs.readFileSync(file, 'utf8');
-
-    const findFile = getFindPattern(filePattern);
-    const matches = matchAll(data, new RegExp(findFile, "gm"));
-    const links = new Set([...matches].map(m => m[2]));
-    console.log([...matches]);
-
-    const linkMap = new Map();
-    links.forEach(link => {
-        // TODO
-        linkMap.set(link,'Chewie');
+    
+    const matches = matchAll(data, new RegExp(`(")(Source|Destination)(")`, "gm"));
+    [...matches].forEach(m => {
+        console.log(m[0]);
     })
 
-    linkMap.forEach((to, from) => {
-        const findFrom = getFindPattern(from);
-        const replaceTo = getReplacePattern(to);
-        data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
-    });
+    // const linkMap = new Map();
+    // links.forEach(link => {
+    //     // TODO
+    //     linkMap.set(link,'Chewie');
+    // })
 
-    fs.writeFileSync(file, data, 'utf-8');
+    // linkMap.forEach((to, from) => {
+    //     const findFrom = getFindPattern(from);
+    //     const replaceTo = getReplacePattern(to);
+    //     data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
+    // });
+
+    // fs.writeFileSync(file, data, 'utf-8');
 }
 
 function normalizeLinksInMarkdownFile(files, file) {
