@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
 const { getRedirectionsFilePath } = require('./buildRedirections.js');
+const matchAll = require('string.prototype.matchall');
 
 function getMarkdownFiles() {
     return globSync(__dirname + '/src/pages/**/*.md')
@@ -42,15 +43,25 @@ function normalizeLink(link, ) {
 
 function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
     let data = fs.readFileSync(file, 'utf8');
+    console.log(data);
     const links = []; // TODO - extract links using find regex
+
+    const from = "one.md";
+    const re = new RegExp(`(\\[[^]]*]\\()([^)]*)(\\))`, "gm");
+    const matches = matchAll(data, re);
+    console.log([...matches]);
+    
+
+
     links.forEach(link => {
         const normalizedLink = normalizeLink(link);
         data = data.replaceAll(new RegExp(find, "gm"), replace);
     })
-    fs.writeFileSync(file, data, 'utf-8');
+    // fs.writeFileSync(file, data, 'utf-8');
 }
 
 function normalizeLinksInMarkdownFile(files, file) {
+    console.log(file);
     normalizeLinksInFile({
         file,
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
@@ -70,11 +81,11 @@ function normalizeLinksInRedirectsFile(files) {
 try {
     const files = getMarkdownFiles();
     files.forEach(file => {
-        if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/guides/index.md') {
+        if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/Guides/index.md') {
             normalizeLinksInMarkdownFile(files, file);
         }
     });
-    normalizeLinksInRedirectsFile(files);
+    // normalizeLinksInRedirectsFile(files);
 
 } catch (err) {
     console.error(err);
