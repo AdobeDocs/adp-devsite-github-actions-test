@@ -70,7 +70,9 @@ function normalizeLinksInRedirectsFile(files) {
 try {
     const files = getMarkdownFiles();
     files.forEach(file => {
-        normalizeLinksInMarkdownFile(files, file);
+        if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/guides/index.md') {
+            normalizeLinksInMarkdownFile(files, file);
+        }
     });
     normalizeLinksInRedirectsFile(files);
 
