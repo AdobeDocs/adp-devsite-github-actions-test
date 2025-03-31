@@ -51,7 +51,7 @@ function normalizeLink(link, ) {
 function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
     
-    const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})`, "gm"));
+    const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})(")`, "gm"));
     [...matches].forEach(m => {
         console.log(m[0]);
     })
