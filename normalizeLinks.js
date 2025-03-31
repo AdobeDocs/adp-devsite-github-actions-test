@@ -48,7 +48,7 @@ function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
 
     // (\[[^]]*]\()([^)]*)(\))
 
-    const re = new RegExp('\\[[^\\]]*]\\(with.dot\\)', "gm");
+    const re = new RegExp('\\[[^\\]]*]\\([^)]*\\)', "gm");
     const matches = matchAll(data, re);
     [...matches].forEach(m => {
         console.log(`${m[0]} ! ${m[1]}`);
