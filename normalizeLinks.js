@@ -36,9 +36,16 @@ function normalizeLink(link, ) {
     // and replacing '/index' with '/' (but this must be done after the file extension is removed)
 
     // - remove file extension
-    // - remove index filename
+        // if it matches a file, then it must have file extension. can remove via path.extname
+        // if it doesn't, then leave no file extension to remove
     // - remove '/' prefix
+        // simply remove because it's not needed and def not part of file name
     // - remove './' prefix
+        // simply remove because it's not needed and def not part of file name
+    // - remove index filename
+        // at this point, extension has been removed, and unnecessary prefixes have been stripped off
+        // so can straight up see if the path ends with index
+        // if it's in the current dir of file, then replace with '/'. if not, then just delete 'index', e.g. Guides/index turns into Guides/
 }
 
 function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
