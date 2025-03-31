@@ -55,13 +55,21 @@ function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
     const filePattern = '[^)#]*';
     const re = new RegExp(`(\\[[^\\]]*]\\()(${filePattern})(#[^\\()]*)?(\\))`, "gm");
     const matches = matchAll(data, re);
-    const links = [...matches].map(m => m[2]);
-    console.log([...links]);
-    
-    // links.forEach(link => {
-    //     const normalizedLink = normalizeLink(link);
-    //     data = data.replaceAll(new RegExp(find, "gm"), replace);
-    // })
+    const links = new Set([...matches].map(m => m[2]));
+    // console.log([...links]);
+
+    const linkMap = new Map();
+    links.forEach(link => {
+        linkMap.set(link,'Chewie');
+    })
+
+    linkMap.forEach((to, from) => {
+        const find = getFindPattern(from);
+        const replace = getReplacePattern(to);
+        data = data.replaceAll(new RegExp(find, "gm"), replace);
+    });
+
+    console.log(data);
     // fs.writeFileSync(file, data, 'utf-8');
 }
 
