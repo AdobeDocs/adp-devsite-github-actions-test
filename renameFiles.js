@@ -25,12 +25,6 @@ function toUrl(file, renameBaseWithoutExt) {
     return `${file.substring(0, end)}${newBaseWithoutExt}`
 }
 
-function renameFile(file, renameBaseWithoutExt) {
-    const url = toUrl(file, renameBaseWithoutExt);
-    const ext = path.extname(file);
-    return `${url}${ext}`
-}
-
 function toRelativeFile(file, fromFile) {
     const fromDir = path.dirname(fromFile);
     return path.relative(fromDir, file);
@@ -39,6 +33,12 @@ function toRelativeFile(file, fromFile) {
 function toRelativeUrl(file, fromFile) {
     const relativeFile = toRelativeFile(file, fromFile);
     return toUrl(relativeFile, f => f);
+}
+
+function renameFile(file, renameBaseWithoutExt) {
+    const url = toUrl(file, renameBaseWithoutExt);
+    const ext = path.extname(file);
+    return `${url}${ext}`
 }
 
 function getFileMap(files) {
@@ -50,12 +50,6 @@ function getFileMap(files) {
         }
     });
     return map;
-}
-
-function renameFiles(map) {
-    map.forEach((to, from) => {
-        fs.renameSync(from, to);
-    });
 }
 
 function getLinkMap(fileMap, file) {
@@ -110,6 +104,12 @@ function appendRedirects(fileMap) {
     const currData = readRedirectionsFile();
     const data = [...currData, ...newData];
     writeRedirectionsFile(data);
+}
+
+function renameFiles(map) {
+    map.forEach((to, from) => {
+        fs.renameSync(from, to);
+    });
 }
 
 try {
