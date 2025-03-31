@@ -3,6 +3,7 @@
   "name": "dev-site-documentation-template",
   "version": "1.0.0",
   "license": "Apache-2.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/AdobeDocs/dev-site-documentation-template"
@@ -12,23 +13,11 @@
     "url": "https://github.com/icaraps"
   },
   "dependencies": {
-    "@adobe/gatsby-theme-aio": "^4.14.6",
-    "gatsby": "4.22.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "resolutions": {
-    "sharp": "0.33.0",
-    "gatsby-sharp": "1.12.0"
-  },
   "scripts": {
-    "start": "gatsby build && gatsby serve",
-    "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
-    "dev": "gatsby develop",
-    "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "dev:worker": "node --experimental-vm-modules worker/dev.js",
     "test:links": "remark src/pages --quiet --frail",
     "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
     "buildNavigation": "node buildNavigation.js",
@@ -41,7 +30,10 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "glob": "11.0.0",
+    "miniflare": "^2.13.0",
     "remark-cli": "^11.0.0",
     "remark-validate-links": "^12.1.0"
   }
