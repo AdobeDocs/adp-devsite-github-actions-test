@@ -41,7 +41,7 @@ function normalizeLink(link, ) {
     // - remove './' prefix
 }
 
-function normalizeLinksInFile({ file, find, replace}) {
+function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
     let data = fs.readFileSync(file, 'utf8');
     const links = []; // TODO - extract links using find regex
     links.forEach(link => {
@@ -51,12 +51,21 @@ function normalizeLinksInFile({ file, find, replace}) {
     fs.writeFileSync(file, data, 'utf-8');
 }
 
-function normalizeLinksInMarkdownFile() {
-    normalizeLinksInFile()
+function normalizeLinksInMarkdownFile(files, file) {
+    normalizeLinksInFile({
+        file,
+        getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
+        getReplacePattern: (to) => `$1${to}$3$4`,
+    })
 }
 
-function normalizeLinksInRedirectsFile() {
-    normalizeLinksInFile();
+function normalizeLinksInRedirectsFile(files) {
+    const file = getRedirectionsFilePath();
+    normalizeLinksInFile({
+        file,
+        getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
+        getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
+    });
 }
 
 try {
@@ -64,7 +73,7 @@ try {
     files.forEach(file => {
         normalizeLinksInMarkdownFile(files, file);
     });
-    normalizeLinksInRedirectsFile(files, file);
+    normalizeLinksInRedirectsFile(files);
 
 } catch (err) {
     console.error(err);
