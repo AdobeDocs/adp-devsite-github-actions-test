@@ -34,7 +34,8 @@
     "buildNavigation": "node buildNavigation.js",
     "buildRedirections": "node buildRedirections.js",
     "normalizeLinks": "node normalizeLinks.js",
-    "renameFiles": "node renameFiles.js"
+    "renameFiles": "node renameFiles.js",
+    "listLinks": "node listLinks.js"
   },
   "remarkConfig": {
     "plugins": [
