@@ -49,11 +49,14 @@ function normalizeLink(link, ) {
 }
 
 function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
+    console.log('~~ filePattern: ', filePattern);
+
     let data = fs.readFileSync(file, 'utf8');
 
     const findFile = getFindPattern(filePattern);
     const matches = matchAll(data, new RegExp(findFile, "gm"));
     const links = new Set([...matches].map(m => m[2]));
+    console.log([...matches]);
 
     const linkMap = new Map();
     links.forEach(link => {
@@ -84,6 +87,7 @@ function normalizeLinksInRedirectsFile(files) {
     const file = getRedirectionsFilePath();
     normalizeLinksInFile({
         file,
+        filePattern: '[^"#]*',
         getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
     });
@@ -92,11 +96,11 @@ function normalizeLinksInRedirectsFile(files) {
 try {
     const files = getMarkdownFiles();
     files.forEach(file => {
-        if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/Guides/index.md') {
-            normalizeLinksInMarkdownFile(files, file);
-        }
+        // if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/Guides/index.md') {
+        //     normalizeLinksInMarkdownFile(files, file);
+        // }
     });
-    // normalizeLinksInRedirectsFile(files);
+    normalizeLinksInRedirectsFile(files);
 
 } catch (err) {
     console.error(err);
