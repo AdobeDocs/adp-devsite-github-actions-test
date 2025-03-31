@@ -48,35 +48,33 @@ function normalizeLink(link, ) {
         // if it's in the current dir of file, then replace with '/'. if not, then just delete 'index', e.g. Guides/index turns into Guides/
 }
 
-function normalizeLinksInFile({ file, getFindPattern, getReplacePattern}) {
+function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
-    // console.log(data);
 
-    const filePattern = '[^)#]*';
-    const re = new RegExp(`(\\[[^\\]]*]\\()(${filePattern})(#[^\\()]*)?(\\))`, "gm");
-    const matches = matchAll(data, re);
+    const findFile = getFindPattern(filePattern);
+    const matches = matchAll(data, new RegExp(findFile, "gm"));
     const links = new Set([...matches].map(m => m[2]));
-    // console.log([...links]);
 
     const linkMap = new Map();
     links.forEach(link => {
+        // TODO
         linkMap.set(link,'Chewie');
     })
 
     linkMap.forEach((to, from) => {
-        const find = getFindPattern(from);
-        const replace = getReplacePattern(to);
-        data = data.replaceAll(new RegExp(find, "gm"), replace);
+        const findFrom = getFindPattern(from);
+        const replaceTo = getReplacePattern(to);
+        data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
     });
 
-    console.log(data);
-    // fs.writeFileSync(file, data, 'utf-8');
+    fs.writeFileSync(file, data, 'utf-8');
 }
 
 function normalizeLinksInMarkdownFile(files, file) {
     console.log(file);
     normalizeLinksInFile({
         file,
+        filePattern: '[^)#]*',
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
         getReplacePattern: (to) => `$1${to}$3$4`,
     })
