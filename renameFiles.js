@@ -16,6 +16,11 @@ function toKebabCase(str) {
         .join('-');
 }
 
+function toEdsCase(str) {
+    const isValid = Boolean((/^([a-z0-9-]*)$/.test(str)));
+    return isValid ? str : toKebabCase(str);
+}
+
 function toUrl(file, renameBaseWithoutExt) {
     const base = path.basename(file);
     const ext = path.extname(file);
@@ -44,7 +49,7 @@ function renameFile(file, renameBaseWithoutExt) {
 function getFileMap(files) {
     const map = new Map();
     files.forEach(from => { 
-        const to = renameFile(from, toKebabCase)
+        const to = renameFile(from, toEdsCase)
         if(to !== from) {
             map.set(from, to) 
         }
