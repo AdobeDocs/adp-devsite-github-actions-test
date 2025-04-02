@@ -2,8 +2,7 @@ const path = require('path');
 const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
-const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./scriptUtils.js');
-const { getMarkdownFiles, toUrl, toRelativeUrl } = require('./normalizeLinks.js');
+const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath, getMarkdownFiles, toUrl, toRelativeUrl } = require('./scriptUtils.js');
 
 function toKebabCase(str) {
     return str && str
