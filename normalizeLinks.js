@@ -52,10 +52,14 @@ function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePat
     
     // let data = fs.readFileSync(file, 'utf8');
     const data = `
+        "Destination" : "/github-actions-test/"
         "Source" : "/github-actions-test/file"
+        "Source" : "/github-actions-test/file.md"
+        "Source" : "/github-actions-test/file.md#JumpLink"
+        "Source" : "/github-actions-test/file.mdNotAMatch"
     `;
     
-    const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})(")`, "gm"));
+    const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})(#[^"]*)?(")`, "gm"));
     [...matches].forEach(m => {
         console.log(m[0]);
     })
