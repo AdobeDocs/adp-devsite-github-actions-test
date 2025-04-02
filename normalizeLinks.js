@@ -49,32 +49,19 @@ function normalizeLink(link, ) {
 }
 
 function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
-    
-    // let data = fs.readFileSync(file, 'utf8');
-    const data = `
-        "Destination" : "/github-actions-test/"
-        "Source" : "/github-actions-test/file"
-        "Source" : "/github-actions-test/file.md"
-        "Source" : "/github-actions-test/file.md#JumpLink"
-        "Source" : "/github-actions-test/file.mdNotAMatch"
-    `;
-    
-    const matches = matchAll(data, new RegExp(getFindPattern(filePattern), "gm"));
-    [...matches].forEach(m => {
-        console.log(m[0]);
+    let data = fs.readFileSync(file, 'utf8');
+
+    const linkMap = new Map();
+    links.forEach(link => {
+        // TODO
+        linkMap.set(link,'Chewie');
     })
 
-    // const linkMap = new Map();
-    // links.forEach(link => {
-    //     // TODO
-    //     linkMap.set(link,'Chewie');
-    // })
-
-    // linkMap.forEach((to, from) => {
-    //     const findFrom = getFindPattern(from);
-    //     const replaceTo = getReplacePattern(to);
-    //     data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
-    // });
+    linkMap.forEach((to, from) => {
+        const findFrom = getFindPattern(from);
+        const replaceTo = getReplacePattern(to);
+        data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
+    });
 
     // fs.writeFileSync(file, data, 'utf-8');
 }
@@ -103,9 +90,9 @@ console.log();
 try {
     const files = getMarkdownFiles();
     files.forEach(file => {
-        // if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/Guides/index.md') {
-        //     normalizeLinksInMarkdownFile(files, file);
-        // }
+        if(file === '/Users/melissag/Projects/adp-devsite-github-actions-test/src/pages/Guides/index.md') {
+            normalizeLinksInMarkdownFile(files, file);
+        }
     });
     normalizeLinksInRedirectsFile(files);
 
