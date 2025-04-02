@@ -49,7 +49,11 @@ function normalizeLink(link, ) {
 }
 
 function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
-    let data = fs.readFileSync(file, 'utf8');
+    
+    // let data = fs.readFileSync(file, 'utf8');
+    const data = `
+        "Source" : "/github-actions-test/file"
+    `;
     
     const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})(")`, "gm"));
     [...matches].forEach(m => {
@@ -91,6 +95,7 @@ function normalizeLinksInRedirectsFile(files) {
     });
 }
 
+console.log();
 try {
     const files = getMarkdownFiles();
     files.forEach(file => {
@@ -103,6 +108,7 @@ try {
 } catch (err) {
     console.error(err);
 }
+console.log();
 
 module.exports = {
     getMarkdownFiles,
