@@ -48,20 +48,25 @@ function normalizeLink(link, ) {
         // if it's in the current dir of file, then replace with '/'. if not, then just delete 'index', e.g. Guides/index turns into Guides/
 }
 
-function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePattern }) {
+function normalizeLinksInFile({ file, filePattern, fileIndex, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
 
-    const linkMap = new Map();
-    links.forEach(link => {
-        // TODO
-        linkMap.set(link,'Chewie');
-    })
+    const findFile = getFindPattern(filePattern);
+    const matches = matchAll(data, new RegExp(findFile, "gm"));
+    const links = [...matches].map(m => m[fileIndex]);
+    console.log([...links]);
 
-    linkMap.forEach((to, from) => {
-        const findFrom = getFindPattern(from);
-        const replaceTo = getReplacePattern(to);
-        data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
-    });
+    // const linkMap = new Map();
+    // links.forEach(link => {
+    //     // TODO
+    //     linkMap.set(link,'Chewie');
+    // })
+
+    // linkMap.forEach((to, from) => {
+    //     const findFrom = getFindPattern(from);
+    //     const replaceTo = getReplacePattern(to);
+    //     data = data.replaceAll(new RegExp(findFrom, "gm"), replaceTo);
+    // });
 
     // fs.writeFileSync(file, data, 'utf-8');
 }
@@ -71,6 +76,7 @@ function normalizeLinksInMarkdownFile(files, file) {
     normalizeLinksInFile({
         file,
         filePattern: '[^)#]*',
+        fileIndex: 2,
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
         getReplacePattern: (to) => `$1${to}$3$4`,
     })
@@ -81,8 +87,9 @@ function normalizeLinksInRedirectsFile(files) {
     normalizeLinksInFile({
         file,
         filePattern: '[^"#]*',
-        getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
+        fileIndex: 5,
+        getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix})(${from})(#[^"]*)?(")`,
+        getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$6$7`,
     });
 }
 
