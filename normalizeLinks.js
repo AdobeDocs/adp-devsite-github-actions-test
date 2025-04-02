@@ -59,7 +59,7 @@ function normalizeLinksInFile({ file, filePattern, getFindPattern, getReplacePat
         "Source" : "/github-actions-test/file.mdNotAMatch"
     `;
     
-    const matches = matchAll(data, new RegExp(`(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${filePattern})(#[^"]*)?(")`, "gm"));
+    const matches = matchAll(data, new RegExp(getFindPattern(filePattern), "gm"));
     [...matches].forEach(m => {
         console.log(m[0]);
     })
