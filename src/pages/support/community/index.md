@@ -1,5 +1,15 @@
-# Community
+[../FAQ/](../FAQ/)
 
-## We are here to help
+[../FAQ/index](../FAQ/index)
 
-Lorem ipsum
+[../FAQ/index.md](../FAQ/index.md)
+
+[../../test/inline-alert](../../test/inline-alert)
+
+[../../test/inline-alert.md](../../test/inline-alert.md)
+
+[../../](../../)
+
+[../../index](../../index)
+
+[../../index.md](../../index.md)
