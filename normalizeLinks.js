@@ -29,7 +29,7 @@ function toRelativeUrl(file, fromFile) {
     return toUrl(relativeFile, f => f);
 }
 
-function normalizeLink(link, ) {
+function normalizeLink(link, file) {
     // e.g. with.dot - can't assume this is the file extension
     // need to compare with the actual equivalent file
     // easy enough to remove '/' prefix, './' prefix, 
