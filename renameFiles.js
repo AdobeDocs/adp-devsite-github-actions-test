@@ -6,7 +6,7 @@ const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } =
 
 function getMarkdownFiles() {
     return globSync(__dirname + '/src/pages/**/*.md')
-        .map(f => path.resolve(__dirname + '/src/pages', f));
+        .map(f => path.resolve(f));
 }
 
 function toKebabCase(str) {
