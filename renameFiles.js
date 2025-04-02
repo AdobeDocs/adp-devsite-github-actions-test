@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
 const { globSync }= require('glob');
-const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./buildRedirections.js');
+const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./scriptUtils.js');
 
 function getMarkdownFiles() {
     return globSync(__dirname + '/src/pages/**/*.md')
