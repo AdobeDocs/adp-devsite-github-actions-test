@@ -8,10 +8,10 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const PORT = DEV_PORT || 3003;
+const PORT = 3003;
 
 // TODO: ensure `DOCS_DIRECTORY` starts with `/`
-const DOCS_DIRECTORY = process.env.DIRECTORY ||  './src/pages';
+const DOCS_DIRECTORY = process.env.DIRECTORY ||  'src/pages';
 const OWNER = process.env.OWNER || 'AdobeDocs';
 const REPO = process.env.OWNER || 'adp-devsite-github-actions-test';
 const REF = process.env.OWNER || 'main';
