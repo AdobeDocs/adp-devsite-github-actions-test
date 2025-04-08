@@ -17,8 +17,6 @@ contributors:
     - https://github.com/undavide
 ---
 
-# Building your first add-on with the Document API
-
 ```
 git clone https://github.com/AdobeDocs/express-add-on-samples.git
 ```
@@ -200,8 +198,6 @@ rect.width = width;
 rect.height = height;
 rect.translation = { x: 50, y: 50 };
 ```
-
-Dimensions and positions are straightforward while assigning a fill color is a two-step process.
 
 ```js
 const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
@@ -553,9 +549,6 @@ const addColumns = (columNumber, gutter, color) => {
 
 export { addColumns, addRows };
 ```
-
-As planned, `createRect()` conveniently acts as a rectangles factory function, consumed by `addRows()` and `addColumns()`. Since the color is received as a Hex string (like `"#ffcccc"`), we make use of the `colorUtil.fromHex()` method to convert into a Color instance—see `shapeUtils.js`, line 9.
-
 
 ```js
 const addRows = (rowsNumber, gutter, color) => {
