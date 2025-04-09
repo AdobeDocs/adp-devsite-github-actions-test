@@ -1,31 +1,3 @@
-
-
-```bash
-git clone https://github.com/AdobeDocs/express-add-on-samples.git
-```
-
-```bash
-cd express-add-on-samples/document-sandbox-samples/express-grids-addon/grids-design-end
-
-npm install
-npm run build
-npm run start
-```
-
-```json
-{
-    // ...
-    "entryPoints": [
-        {
-            "type": "panel",
-            "id": "panel1",
-            "main": "index.html",
-            "documentSandbox": "code.js" // 👈 here
-        }
-    ]
-}
-```
-
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
