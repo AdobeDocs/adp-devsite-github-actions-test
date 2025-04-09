@@ -432,23 +432,6 @@ runtime.exposeApi({
 ```
 
 ```js
-addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-  // Using the current page.
-  let currentNode = editor.context.insertionParent;
-  let page = null;
-
-  while (currentNode) {
-    if (currentNode.type === "Page") {
-      page = currentNode;
-      break;
-    }
-    currentNode = currentNode.parent;
-  }
-// ... rest of the code
-}
-```
-
-```js
 // ...
 var rowsRect = [];
 for (let i = 0; i < rows; i++) {
@@ -477,8 +460,6 @@ for (let i = 0; i < cols; i++) {
 }
 cols.forEach((rect) => page.artboards.first.children.append(rect));
 ```
-
-We now have most of what is needed to complete the Grids add-on; we're in dire need of a better structure, though.
 
 ### Organizing the code
 
@@ -551,91 +532,6 @@ const addColumns = (columNumber, gutter, color) => {
 };
 
 export { addColumns, addRows };
-```
-
-```js
-const addRows = (rowsNumber, gutter, color) => {
-    // ...
-    var rows = [];
-    // ...
-
-    const rowsGroup = editor.createGroup(); // creating a group
-    page.artboards.first.children.append(rowsGroup); // appending to the page
-    rowsGroup.children.append(...rows); // appending rectangles
-};
-// 👆 same in addColumns()
-```
-
-```js
-// ...
-rowsGroup.children.append(...rows);
-rowsGroup.locked = true;
-```
-
-```js
-// ...
-rowsGroup.blendMode = constants.BlendMode.multiply;
-rowsGroup.locked = true;
-```
-
-```js
-const addRows = (rowsNumber, gutter, color) => {
-    // ...
-    rowsGroup.locked = true;
-    return rowsGroup; // 👈 returning the group
-};
-
-const addColumns = (columNumber, gutter, color) => {
-    // ...
-    columnsGroup.locked = true;
-    return columnsGroup; // 👈
-};
-```
-
-```js
-addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-	// ...
-
-	const rowGroup = addRows(rows, gutter, rowColor);
-	const columnGroup = addColumns(columns, gutter, columnColor);
-
-	// create a parent group
-	const gridGroup = editor.createGroup();
-	page.artboards.first.children.append(gridGroup);
-	gridGroup.children.append(rowGroup, columnGroup); // filling with Rows and Columns
-	gridGroup.locked = true;
-}
-```
-
-```js
-gridGroup.removeFromParent(); // voilà
-```
-
-```js
-let gridRef = null; // 👈 Grids group reference
-
-function start() {
-    runtime.exposeApi({
-        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-            // ...
-            const gridGroup = editor.createGroup();
-            // ...
-            gridRef = gridGroup; // 👈 storing the group for later
-        },
-        deleteGrid() {
-            if (gridRef) {
-                try {
-                    gridRef.removeFromParent(); // 👈 removing from the document
-                    gridRef = null; //    clearing the reference
-                } catch (error) {
-                    console.error(error);
-                    return "Error: the Grid could not be deleted.";
-                }
-            }
-        },
-    });
-}
-start();
 ```
 
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
