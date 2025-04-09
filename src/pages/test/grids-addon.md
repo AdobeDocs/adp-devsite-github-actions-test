@@ -1,3 +1,31 @@
+
+
+```bash
+git clone https://github.com/AdobeDocs/express-add-on-samples.git
+```
+
+```bash
+cd express-add-on-samples/document-sandbox-samples/express-grids-addon/grids-design-end
+
+npm install
+npm run build
+npm run start
+```
+
+```json
+{
+    // ...
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "documentSandbox": "code.js" // 👈 here
+        }
+    ]
+}
+```
+
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
@@ -74,6 +102,32 @@ start();
 // empty
 ```
 
+```js
+runtime.exposeApi({
+    log: (...args) => {
+        console.log(...args);
+    },
+    createShape: (shape) => {
+        // ...
+        this.log("Shape created."); // ❌
+    },
+});
+```
+
+The _method shorthand syntax_ provides a proper `this` reference instead.
+
+```js
+runtime.exposeApi({
+    log(...args) {
+        console.log(...args);
+    },
+    createShape(shape) {
+        // ...
+        this.log("Shape created."); // ✅
+    },
+});
+```
+
 <CodeBlock slots="heading, code" repeat="4" languages="index.html, index.js, code.js, shapeUtils.js"/>
 
 #### iframe
@@ -141,6 +195,68 @@ start();
 
 ```js
 // empty
+```
+
+```js
+import { editor, colorUtils, constants } from "express-document-sdk";
+```
+
+
+```js
+const rect = editor.createRectangle();
+rect.width = width;
+rect.height = height;
+rect.translation = { x: 50, y: 50 };
+```
+
+
+```js
+const col = colorUtils.fromRGB(0.9, 0.5, 0.9);
+const fillColor = editor.makeColorFill(col);
+rect.fill = fillColor;
+```
+
+```js
+// appending the rect object to the scene
+editor.context.insertionParent.children.append(rect);
+```
+
+```js
+// ...
+const doc = editor.documentRoot; // document
+const currentPage = doc.pages.first; // page
+const currentArtboard = currentPage.artboards.first; // artboard
+currentArtboard.children.append(rect); // children
+// or
+editor.documentRoot.pages.first.artboards.first.children.append(rect);
+```
+
+```bash
+npm install @spectrum-web-components/button
+npm install @spectrum-web-components/action-button
+npm install @spectrum-web-components/button-group
+npm install @spectrum-web-components/field-label
+npm install @spectrum-web-components/number-field
+npm install @spectrum-web-components/slider
+npm install @spectrum-web-components/swatch
+npm install @spectrum-web-components/theme
+```
+
+```js
+import "@spectrum-web-components/styles/typography.css";
+
+import "@spectrum-web-components/theme/src/themes.js";
+import "@spectrum-web-components/theme/theme-light.js";
+import "@spectrum-web-components/theme/express/theme-light.js";
+import "@spectrum-web-components/theme/express/scale-medium.js";
+import "@spectrum-web-components/theme/sp-theme.js";
+
+import "@spectrum-web-components/button/sp-button.js";
+import "@spectrum-web-components/button-group/sp-button-group.js";
+import "@spectrum-web-components/field-label/sp-field-label.js";
+import "@spectrum-web-components/number-field/sp-number-field.js";
+import "@spectrum-web-components/slider/sp-slider.js";
+import "@spectrum-web-components/swatch/sp-swatch.js";
 ```
 
 <CodeBlock slots="heading, code" repeat="2" languages="index.html, ui/index.js"/>
@@ -327,6 +443,73 @@ function start() {
 start();
 ```
 
+```bash
+rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
+```
+
+```js
+// ...
+runtime.exposeApi({
+    addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+        const doc = editor.documentRoot;
+        const page = doc.pages.first;
+        const rowWidth = page.width;
+        const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
+    },
+});
+```
+
+```js
+addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+  // Using the current page.
+  let currentNode = editor.context.insertionParent;
+  let page = null;
+
+  while (currentNode) {
+    if (currentNode.type === "Page") {
+      page = currentNode;
+      break;
+    }
+    currentNode = currentNode.parent;
+  }
+// ... rest of the code
+}
+```
+
+```js
+// ...
+var rowsRect = [];
+for (let i = 0; i < rows; i++) {
+    let r = editor.createRectangle();
+    r.width = page.width;
+    r.height = rowHeight;
+    // moving the row in place
+    r.translation = { x: 0, y: gutter + (gutter + rowHeight) * i };
+    rowsRect.push(r);
+}
+// adding the rows to the page
+rowsRect.forEach((rect) => page.artboards.first.children.append(rect));
+```
+
+```js
+const doc = editor.documentRoot;
+const page = doc.pages.first;
+var colsRect = [];
+const colWidth = (page.width - (cols + 1) * gutter) / cols;
+for (let i = 0; i < cols; i++) {
+    let r = editor.createRectangle();
+    r.width = colWidth;
+    r.height = page.height;
+    r.translation = { x: gutter + (gutter + colWidth) * i, y: 0 };
+    cols.push(r);
+}
+cols.forEach((rect) => page.artboards.first.children.append(rect));
+```
+
+We now have most of what is needed to complete the Grids add-on; we're in dire need of a better structure, though.
+
+### Organizing the code
+
 <CodeBlock slots="heading, code" repeat="2" languages="documentSandbox/code.js, documentSandbox/shapeUtils.js" />
 
 #### documentSandbox/code.js
@@ -396,6 +579,91 @@ const addColumns = (columNumber, gutter, color) => {
 };
 
 export { addColumns, addRows };
+```
+
+```js
+const addRows = (rowsNumber, gutter, color) => {
+    // ...
+    var rows = [];
+    // ...
+
+    const rowsGroup = editor.createGroup(); // creating a group
+    page.artboards.first.children.append(rowsGroup); // appending to the page
+    rowsGroup.children.append(...rows); // appending rectangles
+};
+// 👆 same in addColumns()
+```
+
+```js
+// ...
+rowsGroup.children.append(...rows);
+rowsGroup.locked = true;
+```
+
+```js
+// ...
+rowsGroup.blendMode = constants.BlendMode.multiply;
+rowsGroup.locked = true;
+```
+
+```js
+const addRows = (rowsNumber, gutter, color) => {
+    // ...
+    rowsGroup.locked = true;
+    return rowsGroup; // 👈 returning the group
+};
+
+const addColumns = (columNumber, gutter, color) => {
+    // ...
+    columnsGroup.locked = true;
+    return columnsGroup; // 👈
+};
+```
+
+```js
+addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+	// ...
+
+	const rowGroup = addRows(rows, gutter, rowColor);
+	const columnGroup = addColumns(columns, gutter, columnColor);
+
+	// create a parent group
+	const gridGroup = editor.createGroup();
+	page.artboards.first.children.append(gridGroup);
+	gridGroup.children.append(rowGroup, columnGroup); // filling with Rows and Columns
+	gridGroup.locked = true;
+}
+```
+
+```js
+gridGroup.removeFromParent(); // voilà
+```
+
+```js
+let gridRef = null; // 👈 Grids group reference
+
+function start() {
+    runtime.exposeApi({
+        addGrid({ columns, rows, gutter, columnColor, rowColor }) {
+            // ...
+            const gridGroup = editor.createGroup();
+            // ...
+            gridRef = gridGroup; // 👈 storing the group for later
+        },
+        deleteGrid() {
+            if (gridRef) {
+                try {
+                    gridRef.removeFromParent(); // 👈 removing from the document
+                    gridRef = null; //    clearing the reference
+                } catch (error) {
+                    console.error(error);
+                    return "Error: the Grid could not be deleted.";
+                }
+            }
+        },
+    });
+}
+start();
 ```
 
 <CodeBlock slots="heading, code" repeat="5" languages="index.html, index.js, styles.css, code.js, shapeUtils.js" />
