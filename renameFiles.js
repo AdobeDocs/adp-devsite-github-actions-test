@@ -90,7 +90,7 @@ function renameLinksInRedirectsFile(fileMap) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
+        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${from})(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
     });
 }
