@@ -32,13 +32,8 @@ function toUrl(file, renameBaseWithoutExt) {
     return `${file.substring(0, end)}${newBaseWithoutExt}`
 }
 
-function toRelativeFile(file, fromFile) {
-    const fromDir = path.dirname(fromFile);
-    return path.relative(fromDir, file);
-}
-
-function toRelativeUrl(file, fromFile) {
-    const relativeFile = toRelativeFile(file, fromFile);
+function toRelativeUrl(file, fromDir) {
+    const relativeFile = path.relative(fromDir, file);
     return toUrl(relativeFile, f => f);
 }
 
@@ -59,11 +54,11 @@ function getFileMap(files) {
     return map;
 }
 
-function getLinkMap(fileMap, file) {
+function getLinkMap(fileMap, relativeToDir) {
     const linkMap = new Map();    
     fileMap.forEach((toFile, fromFile) => {
-        const fromUrl = toRelativeUrl(fromFile, file);
-        const toUrl = toRelativeUrl(toFile, file);
+        const fromUrl = toRelativeUrl(fromFile, relativeToDir);
+        const toUrl = toRelativeUrl(toFile, relativeToDir);
         linkMap.set(fromUrl, toUrl);
     });
     return linkMap;
@@ -80,9 +75,10 @@ function replaceLinksInFile({ file, linkMap, getFindPattern, getReplacePattern }
 }
 
 function renameLinksInMarkdownFile(fileMap, file) {
+    const dir = path.dirname(file);
     replaceLinksInFile({ 
         file, 
-        linkMap: getLinkMap(fileMap, file),
+        linkMap: getLinkMap(fileMap, dir),
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
         getReplacePattern: (to) => `$1${to}$3$4`,
     });
@@ -90,9 +86,10 @@ function renameLinksInMarkdownFile(fileMap, file) {
 
 function renameLinksInRedirectsFile(fileMap) {
     const file = getRedirectionsFilePath();
+    const dir = path.dirname(file);
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, file),
+        linkMap: getLinkMap(fileMap, dir),
         getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
     });
@@ -100,7 +97,8 @@ function renameLinksInRedirectsFile(fileMap) {
 
 function appendRedirects(fileMap) {
     const file = getRedirectionsFilePath();
-    const linkMap = getLinkMap(fileMap, file);
+    const dir = path.dirname(file);
+    const linkMap = getLinkMap(fileMap, dir);
     const newData = [];
     linkMap.forEach((to, from) => {
         newData.push({
