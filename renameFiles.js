@@ -95,6 +95,16 @@ function renameLinksInRedirectsFile(fileMap) {
     });
 }
 
+function renameLinksInGatsbyConfigFile(fileMap, file) {
+    const dir = 'src/pages';
+    replaceLinksInFile({
+        file,
+        linkMap: getLinkMap(fileMap, dir),
+        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/${from})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1/${to}$3$4`,
+    });
+}
+
 function appendRedirects(fileMap) {
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
@@ -129,6 +139,11 @@ try {
     if(fs.existsSync(redirectsFile)) {
         renameLinksInRedirectsFile(fileMap);
         appendRedirects(fileMap);
+    }
+
+    const gatsbyConfigFile = 'gatsby-config.js';
+    if(fs.existsSync(gatsbyConfigFile)) {
+        renameLinksInGatsbyConfigFile(fileMap, gatsbyConfigFile);
     }
 
 } catch (err) {
