@@ -8,7 +8,7 @@ const { siteMetadata, pathPrefix } = require('./gatsby-config.js');
 try {
     if(!pathPrefix) {
         throw new TypeError("pathPrefix not found");
-    } 
+    }
 
     let topNavMarkdown = ``;
     // TODO: prob need url fixer from gatsby theme
@@ -46,10 +46,12 @@ try {
     siteMetadata.pages?.forEach((navItem) => {
         //let pathText = navItem.path ? navItem.path : '';
         if(navItem.path) {
+            navItem = buildDirectoryIndexFile(navItem);
             topNavMarkdown += `    - [${navItem.title}](${navItem.path})\n`;
         } else {
             topNavMarkdown += `    - ${navItem.title}\n`;
             navItem.menu.forEach((menuItem) =>{
+                menuItem = buildDirectoryIndexFile(menuItem);
                 topNavMarkdown += `        - [${menuItem.title}](${menuItem.path})\n`;
             });
         }
@@ -59,7 +61,7 @@ try {
         topNavMarkdown += `\n- subPages:\n`;
         let sideNavMarkdown = ``;
         let depth = 1;
-    
+
         sideNavMarkdown += buildSideNavRecursively(siteMetadata.subPages, depth);
         topNavMarkdown +=  sideNavMarkdown;
     }
@@ -71,18 +73,26 @@ try {
 } catch (err) {
     console.error(err);
 }
+
+function buildDirectoryIndexFile(navItem){
+    // when it's internal link, any directory should point specifically to index.md.
+    if (!navItem.path.startsWith("http") && navItem.path.endsWith('/')){
+        navItem.path = navItem.path + 'index.md';
+    }
+    return navItem;
+}
 // subpages menu should only appear on the subpages path
 // need to check paths to
 function buildSideNavRecursively(sideNav, depth) {
     let sideNavMarkdown = '';
 
     for (var k in sideNav) {
-        let header = sideNav[k].header ? 'header' : ''; 
+        let header = sideNav[k].header ? 'header' : '';
+        sideNav[k] = buildDirectoryIndexFile(sideNav[k]);
         sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path}) ${header}\n`;
-
         if (sideNav[k].pages) {
             sideNavMarkdown += buildSideNavRecursively(sideNav[k].pages, depth+1);
-        } 
+        }
     }
     return sideNavMarkdown;
 }
@@ -96,10 +106,10 @@ function insertSpace(indentLevel) {
 }
 
 // src/pages/topNav.md
-// src/pages/sideNav.md 
+// src/pages/sideNav.md
 // src/pages/get-started/sideNav.md
 
-// go through each subPages and find each path that relates to a subfolder 
+// go through each subPages and find each path that relates to a subfolder
 
 
 // title with path only
