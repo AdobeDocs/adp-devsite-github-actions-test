@@ -10,7 +10,9 @@ function getMarkdownFiles() {
 }
 
 function toKebabCase(str) {
-    return str && str
+    const isScreamingSnakeCase = new RegExp(/^[A-Z0-9_]*$/gm).test(str);
+    str = isScreamingSnakeCase ? str.toLowerCase() : str;
+    return str
         .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
         .map(x => x.toLowerCase())
         .join('-');
@@ -30,13 +32,8 @@ function toUrl(file, renameBaseWithoutExt) {
     return `${file.substring(0, end)}${newBaseWithoutExt}`
 }
 
-function toRelativeFile(file, fromFile) {
-    const fromDir = path.dirname(fromFile);
-    return path.relative(fromDir, file);
-}
-
-function toRelativeUrl(file, fromFile) {
-    const relativeFile = toRelativeFile(file, fromFile);
+function toRelativeUrl(fromDir, file) {
+    const relativeFile = path.relative(fromDir, file);
     return toUrl(relativeFile, f => f);
 }
 
@@ -57,11 +54,11 @@ function getFileMap(files) {
     return map;
 }
 
-function getLinkMap(fileMap, file) {
+function getLinkMap(fileMap, relativeToDir) {
     const linkMap = new Map();    
     fileMap.forEach((toFile, fromFile) => {
-        const fromUrl = toRelativeUrl(fromFile, file);
-        const toUrl = toRelativeUrl(toFile, file);
+        const fromUrl = toRelativeUrl(relativeToDir, fromFile);
+        const toUrl = toRelativeUrl(relativeToDir, toFile);
         linkMap.set(fromUrl, toUrl);
     });
     return linkMap;
@@ -78,9 +75,10 @@ function replaceLinksInFile({ file, linkMap, getFindPattern, getReplacePattern }
 }
 
 function renameLinksInMarkdownFile(fileMap, file) {
+    const dir = path.dirname(file);
     replaceLinksInFile({ 
         file, 
-        linkMap: getLinkMap(fileMap, file),
+        linkMap: getLinkMap(fileMap, dir),
         getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
         getReplacePattern: (to) => `$1${to}$3$4`,
     });
@@ -88,17 +86,29 @@ function renameLinksInMarkdownFile(fileMap, file) {
 
 function renameLinksInRedirectsFile(fileMap) {
     const file = getRedirectionsFilePath();
+    const dir = path.dirname(file);
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, file),
-        getFindPattern: (from) => `(")(Source|Destination)("\\s*:\\s*")(${pathPrefix}${from})(#[^"]*)?(")`,
+        linkMap: getLinkMap(fileMap, dir),
+        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${from})(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
+    });
+}
+
+function renameLinksInGatsbyConfigFile(fileMap, file) {
+    const dir = 'src/pages';
+    replaceLinksInFile({
+        file,
+        linkMap: getLinkMap(fileMap, dir),
+        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/${from})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1/${to}$3$4`,
     });
 }
 
 function appendRedirects(fileMap) {
     const file = getRedirectionsFilePath();
-    const linkMap = getLinkMap(fileMap, file);
+    const dir = path.dirname(file);
+    const linkMap = getLinkMap(fileMap, dir);
     const newData = [];
     linkMap.forEach((to, from) => {
         newData.push({
@@ -118,14 +128,23 @@ function renameFiles(map) {
 }
 
 try {
-    const files = getMarkdownFiles();
-    const fileMap = getFileMap(files);
-    files.forEach(file => {
+    const markdownFiles = getMarkdownFiles();
+    const fileMap = getFileMap(markdownFiles);
+    markdownFiles.forEach(file => {
         renameLinksInMarkdownFile(fileMap, file);
     });
-    renameLinksInRedirectsFile(fileMap);
-    appendRedirects(fileMap);
     renameFiles(fileMap);
+
+    const redirectsFile = getRedirectionsFilePath();
+    if(fs.existsSync(redirectsFile)) {
+        renameLinksInRedirectsFile(fileMap);
+        appendRedirects(fileMap);
+    }
+
+    const gatsbyConfigFile = 'gatsby-config.js';
+    if(fs.existsSync(gatsbyConfigFile)) {
+        renameLinksInGatsbyConfigFile(fileMap, gatsbyConfigFile);
+    }
 
 } catch (err) {
     console.error(err);
