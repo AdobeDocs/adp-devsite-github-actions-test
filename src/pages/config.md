@@ -2,38 +2,38 @@
     - /github-actions-test/
 
 - versions:
-    - [v2.0](/index.md) selected
+    - [v2.0](index.md) selected
     - [v1.4](https://github.com/AdobeDocs/dev-site)
 
 - pages:
-    - [Cat Analytics](/index.md)
-    - [Guides](/guides/index.md)
+    - [Cat Analytics](index.md)
+    - [Guides](guides/index.md)
     - API Reference
-        - [Cat Reference v2.0](/api/index.md)
-        - [Cat Reference v1.4](/api/1-4.md)
-    - [Support](/support/index.md)
-    - [Test](/test/index.md)
+        - [Cat Reference v2.0](api/index.md)
+        - [Cat Reference v1.4](api/1-4.md)
+    - [Support](support/index.md)
+    - [Test](test/index.md)
 
 - subPages:
-    - [Get Started](/guides/index.md)
-        - [Dummy an OAuth Client](/guides/dummy_oauth_client/index.md)
-        - [Dummy OAuth using POSTMAN](/guides/dummy_using_postman/index.md)
-    - [Cat Metrics API](/guides/dummy_metrics_api/index.md)
-    - [Migrating](/guides/migrating/index.md)
-    - [Overview](/support/index.md) header
-        - [Help](/support/index.md)
-        - [FAQ](/support/FAQ/index.md)
-        - [How to contribute](/support/contribute/index.md)
-    - [Community](/support/community/index.md) header
-        - [Information](/support/community/index.md)
-    - [Test](/test/index.md)
-        - [Code](/test/code/index.md)
-        - [CodeBlock](/test/code-block/index.md)
-        - [CodeBlock with Picklist](/test/code-block-with-picklist/index.md)
-        - [CodeBlock without Picklist](/test/code-block-without-picklist/index.md)
-        - [Code in List](/test/code-in-list/index.md)
-        - [Code in Table](/test/code-in-table/index.md)
-        - [InlineAlert](/test/inline-alert/index.md)
-        - [ListBlock](/test/list-block/index.md)
-        - [RedoclyAPIBlock](/test/redocly-api-block/index.md)
-        - [TabsBlock](/test/tabs-block/index.md)
+    - [Get Started](guides/index.md)
+        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md)
+        - [Dummy OAuth using POSTMAN](guides/dummy_using_postman/index.md)
+    - [Cat Metrics API](guides/dummy_metrics_api/index.md)
+    - [Migrating](guides/migrating/index.md)
+    - [Overview](support/index.md) header
+        - [Help](support/index.md)
+        - [FAQ](support/FAQ/index.md)
+        - [How to contribute](support/contribute/index.md)
+    - [Community](support/community/index.md) header
+        - [Information](support/community/index.md)
+    - [Test](test/index.md)
+        - [Code](test/code/index.md)
+        - [CodeBlock](test/code-block/index.md)
+        - [CodeBlock with Picklist](test/code-block-with-picklist/index.md)
+        - [CodeBlock without Picklist](test/code-block-without-picklist/index.md)
+        - [Code in List](test/code-in-list/index.md)
+        - [Code in Table](test/code-in-table/index.md)
+        - [InlineAlert](test/inline-alert/index.md)
+        - [ListBlock](test/list-block/index.md)
+        - [RedoclyAPIBlock](test/redocly-api-block/index.md)
+        - [TabsBlock](test/tabs-block/index.md)
