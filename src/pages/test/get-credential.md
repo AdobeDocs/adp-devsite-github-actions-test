@@ -1,4 +1,4 @@
-<GetCredential className="getCredentialContainer" templateId={template_id} productName={product_name} >
+<GetCredential className="getCredentialContainer" templateId="664e39607dcc7c0e5a4a035b" productName="Express Embed SDK" >
 
 <GetCredentialSignIn title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." buttonText="Sign in to create credentials" />
 
@@ -10,7 +10,7 @@
 
 <GetCredentialFormProducts label="Included products and services">
 
-<GetCredentialFormProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialFormProduct label="Adobe Express Embed SDK" icon='../images/adobe-express.svg' />
 
 </GetCredentialFormProducts>
 
@@ -58,7 +58,7 @@ An API Key credential was created. The API key credential identifies your applic
 
 <GetCredentialCardProducts label="Included products and services">
 
-<GetCredentialCardProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialCardProduct label="Adobe Express Embed SDK" icon='../images/adobe-express.svg' />
 
 </GetCredentialCardProducts>
 
@@ -114,7 +114,7 @@ View your existing Adobe Express Embed SDK credentials and generate new ones. Qu
 
 <GetCredentialReturnProducts label="Included products and services">
 
-<GetCredentialReturnProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialReturnProduct label="Adobe Express Embed SDK" icon='../images/adobe-express.svg' />
 
 </GetCredentialReturnProducts>
 
@@ -126,7 +126,7 @@ View your existing Adobe Express Embed SDK credentials and generate new ones. Qu
 
 <GetCredentialRequestAccessRestrictedAccessProducts label="Included products and services">
 
-<GetCredentialRequestAccessRestrictedAccessProductsProduct label="Adobe Express Embed SDK" icon={creativeCloud} />
+<GetCredentialRequestAccessRestrictedAccessProductsProduct label="Adobe Express Embed SDK" icon='../images/adobe-express.svg' />
 
 </GetCredentialRequestAccessRestrictedAccessProducts>
 
