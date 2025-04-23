@@ -1,5 +1,3 @@
-<!-- test credential
-
 <GetCredential className="getCredentialContainer" templateId={template_id} productName={product_name} >
 
 <GetCredentialSignIn title="Get credentials" paragraph="Create unique credentials that you will use to call Adobe Express Embed SDK from your application." buttonText="Sign in to create credentials" />
@@ -136,4 +134,4 @@ View your existing Adobe Express Embed SDK credentials and generate new ones. Qu
 
 </GetCredentialRequestAccess>
 
-</GetCredential> -->
+</GetCredential>
