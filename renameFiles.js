@@ -85,8 +85,8 @@ function renameLinksInRedirectsFile(fileMap) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${from})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
+        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
     });
 }
 
@@ -107,8 +107,8 @@ function appendRedirects(fileMap) {
     const newData = [];
     linkMap.forEach((to, from) => {
         newData.push({
-            Source:  `${pathPrefix}${from}`, 
-            Destination: `${pathPrefix}${to}`,
+            Source:  `${pathPrefix}${toUrl(from)}`, 
+            Destination: `${pathPrefix}${toUrl(to)}`,
         })
     });
     const currData = readRedirectionsFile();
