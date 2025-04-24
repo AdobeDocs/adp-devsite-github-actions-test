@@ -12,7 +12,7 @@
         - [Cat Reference v2.0](api/index.md)
         - [Cat Reference v1.4](api/1-4.md)
     - [Support](support/index.md)
-    - [Test](test/index.md)
+    - [Test](test/code.md)
 
 - subPages:
     - [Get Started](guides/index.md)
