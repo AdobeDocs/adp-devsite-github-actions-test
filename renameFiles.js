@@ -23,7 +23,7 @@ function toEdsCase(str) {
     return isValid ? str : toKebabCase(str);
 }
 
-function toUrl(file, renameBaseWithoutExt) {
+function toUrl(file, renameBaseWithoutExt = name => name) {
     const base = path.basename(file);
     const ext = path.extname(file);
     const end = file.length - base.length;
