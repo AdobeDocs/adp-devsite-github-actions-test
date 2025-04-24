@@ -1,4 +1,4 @@
-<!-- <CodeBlock slots="heading, code" repeat="5"/>
+<CodeBlock slots="heading, code" repeat="5"/>
 
 #### iframe
 
@@ -79,4 +79,4 @@ start();
 ```js
 // empty 2
 
-``` -->
+```
