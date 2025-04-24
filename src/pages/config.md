@@ -15,8 +15,8 @@
     - [Test](test/index.md)
 
 - subPages:
-    - [Get Started](/guides/index.md)
-        - [Dummy an OAuth Client](/guides/dummy_oauth_client/index.md)
+    - [Get Started](guides/index.md)
+        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md)
         - [Dummy OAuth using POSTMAN](guides/dummy_using_postman/index.md)
     - [Cat Metrics API](guides/dummy_metrics_api/index.md)
     - [Migrating](guides/migrating/index.md)
