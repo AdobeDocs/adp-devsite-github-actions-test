@@ -2,38 +2,38 @@
     - /github-actions-test/
 
 - versions:
-    - [v2.0](index.md) selected
+    - [v2.0](/github-actions-test/index.md) selected
     - [v1.4](https://github.com/AdobeDocs/dev-site)
 
 - pages:
-    - [Cat Analytics](index.md)
-    - [Guides](guides/index.md)
+    - [Cat Analytics](/github-actions-test/index.md)
+    - [Guides](/github-actions-test/guides/index.md)
     - API Reference
-        - [Cat Reference v2.0](api/index.md)
-        - [Cat Reference v1.4](api/1-4.md)
-    - [Support](support/index.md)
-    - [Test](test/code.md)
+        - [Cat Reference v2.0](/github-actions-test/api/index.md)
+        - [Cat Reference v1.4](/github-actions-test/api/1-4.md)
+    - [Support](/github-actions-test/support/index.md)
+    - [Test](/github-actions-test/test/code.md)
 
 - subPages:
-    - [Get Started](/guides/index.md)
-        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md)
-        - [Dummy OAuth using POSTMAN](/guides/dummy_using_postman/index.md)
-    - [Cat Metrics API](guides/dummy_metrics_api/index.md)
-    - [Migrating](guides/migrating/index.md)
-    - [Overview](support/index.md) header
-        - [Help](support/index.md)
-        - [FAQ](support/FAQ/index.md)
-        - [How to contribute](support/contribute/index.md)
-    - [Community](support/community/index.md) header
-        - [Information](support/community/index.md)
-    - [Test](test/code.md)
-        - [Code](test/code.md)
-        - [CodeBlock](test/code-block.md)
-        - [CodeBlock with Picklist](test/code-block-with-picklist.md)
-        - [CodeBlock without Picklist](test/code-block-without-picklist.md)
-        - [Code in List](test/code-in-list.md)
-        - [Code in Table](test/code-in-table.md)
-        - [InlineAlert](test/inline-alert.md)
-        - [ListBlock](test/list-block.md)
-        - [RedoclyAPIBlock](test/redocly-api-block.md)
-        - [TabsBlock](test/tabs-block.md)
+    - [Get Started](/github-actions-test/guides/index.md)
+        - [Dummy an OAuth Client](/github-actions-test/guides/dummy_oauth_client/index.md)
+        - [Dummy OAuth using POSTMAN](/github-actions-test/guides/dummy_using_postman/index.md)
+    - [Cat Metrics API](/github-actions-test/guides/dummy_metrics_api/index.md)
+    - [Migrating](/github-actions-test/guides/migrating/index.md)
+    - [Overview](/github-actions-test/support/index.md) header
+        - [Help](/github-actions-test/support/index.md)
+        - [FAQ](/github-actions-test/support/FAQ/index.md)
+        - [How to contribute](/github-actions-test/support/contribute/index.md)
+    - [Community](/github-actions-test/support/community/index.md) header
+        - [Information](/github-actions-test/support/community/index.md)
+    - [Test](/github-actions-test/test/code.md)
+        - [Code](/github-actions-test/test/code.md)
+        - [CodeBlock](/github-actions-test/test/code-block.md)
+        - [CodeBlock with Picklist](/github-actions-test/test/code-block-with-picklist.md)
+        - [CodeBlock without Picklist](/github-actions-test/test/code-block-without-picklist.md)
+        - [Code in List](/github-actions-test/test/code-in-list.md)
+        - [Code in Table](/github-actions-test/test/code-in-table.md)
+        - [InlineAlert](/github-actions-test/test/inline-alert.md)
+        - [ListBlock](/github-actions-test/test/list-block.md)
+        - [RedoclyAPIBlock](/github-actions-test/test/redocly-api-block.md)
+        - [TabsBlock](/github-actions-test/test/tabs-block.md)
