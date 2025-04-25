@@ -23,18 +23,13 @@ function toEdsCase(str) {
     return isValid ? str : toKebabCase(str);
 }
 
-function toUrl(file, renameBaseWithoutExt) {
+function toUrl(file, renameBaseWithoutExt = name => name) {
     const base = path.basename(file);
     const ext = path.extname(file);
     const end = file.length - base.length;
     const baseWithoutExt = base.substring(0, base.length - ext.length);
     const newBaseWithoutExt = renameBaseWithoutExt(baseWithoutExt);
     return `${file.substring(0, end)}${newBaseWithoutExt}`
-}
-
-function toRelativeUrl(fromDir, file) {
-    const relativeFile = path.relative(fromDir, file);
-    return toUrl(relativeFile, f => f);
 }
 
 function renameFile(file, renameBaseWithoutExt) {
@@ -57,9 +52,9 @@ function getFileMap(files) {
 function getLinkMap(fileMap, relativeToDir) {
     const linkMap = new Map();    
     fileMap.forEach((toFile, fromFile) => {
-        const fromUrl = toRelativeUrl(relativeToDir, fromFile);
-        const toUrl = toRelativeUrl(relativeToDir, toFile);
-        linkMap.set(fromUrl, toUrl);
+        const fromRelFile = path.relative(relativeToDir, fromFile);
+        const toRelFile = path.relative(relativeToDir, toFile);
+        linkMap.set(fromRelFile, toRelFile);
     });
     return linkMap;
 }
@@ -90,8 +85,8 @@ function renameLinksInRedirectsFile(fileMap) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${from})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${to}$5$6`,
+        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(/?)(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6$7`,
     });
 }
 
@@ -112,8 +107,8 @@ function appendRedirects(fileMap) {
     const newData = [];
     linkMap.forEach((to, from) => {
         newData.push({
-            Source:  `${pathPrefix}${from}`, 
-            Destination: `${pathPrefix}${to}`,
+            Source:  `${pathPrefix}${toUrl(from)}`, 
+            Destination: `${pathPrefix}${toUrl(to)}`,
         })
     });
     const currData = readRedirectionsFile();
