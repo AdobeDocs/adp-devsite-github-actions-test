@@ -74,8 +74,8 @@ function renameLinksInMarkdownFile(fileMap, file) {
     replaceLinksInFile({ 
         file, 
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
-        getReplacePattern: (to) => `$1${to}$3$4`,
+        getFindPattern: (from) => `(\\[[^\\]]*]\\()(/|./)?(${from})(#[^\\()]*)?(\\))`,
+        getReplacePattern: (to) => `$1$2${to}$4$5`,
     });
 }
 
@@ -95,8 +95,8 @@ function renameLinksInGatsbyConfigFile(fileMap, file) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/${from})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1/${to}$3$4`,
+        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/|./)?(${from})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2${to}$4$5`,
     });
 }
 
