@@ -1,13 +1,15 @@
 const path = require('path');
 const fs = require('node:fs');
 const { pathPrefix } = require('./gatsby-config.js');
-const { globSync }= require('glob');
-const { readRedirectionsFile, writeRedirectionsFile, getRedirectionsFilePath } = require('./scriptUtils.js');
-
-function getMarkdownFiles() {
-    return globSync(__dirname + '/src/pages/**/*.md')
-        .map(f => path.resolve(f));
-}
+const { 
+    readRedirectionsFile, 
+    writeRedirectionsFile, 
+    getRedirectionsFilePath, 
+    getMarkdownFiles, 
+    getFindPatternForMarkdownFiles,
+    getReplacePatternForMarkdownFiles,
+    replaceLinksInFile 
+} = require('./scriptUtils.js');
 
 function toKebabCase(str) {
     const isScreamingSnakeCase = new RegExp(/^[A-Z0-9_]*$/gm).test(str);
@@ -59,23 +61,13 @@ function getLinkMap(fileMap, relativeToDir) {
     return linkMap;
 }
 
-function replaceLinksInFile({ file, linkMap, getFindPattern, getReplacePattern }) {
-    let data = fs.readFileSync(file, 'utf8');
-    linkMap.forEach((to, from) => {
-        const find = getFindPattern(from);
-        const replace = getReplacePattern(to);
-        data = data.replaceAll(new RegExp(find, "gm"), replace);
-    });
-    fs.writeFileSync(file, data, 'utf-8');
-}
-
 function renameLinksInMarkdownFile(fileMap, file) {
     const dir = path.dirname(file);
     replaceLinksInFile({ 
         file, 
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(\\[[^\\]]*]\\()(${from})(#[^\\()]*)?(\\))`,
-        getReplacePattern: (to) => `$1${to}$3$4`,
+        getFindPattern: getFindPatternForMarkdownFiles,
+        getReplacePattern: getReplacePatternForMarkdownFiles,
     });
 }
 
@@ -95,8 +87,8 @@ function renameLinksInGatsbyConfigFile(fileMap, file) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/${from})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1/${to}$3$4`,
+        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/|./)?(${from})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2${to}$4$5`,
     });
 }
 
