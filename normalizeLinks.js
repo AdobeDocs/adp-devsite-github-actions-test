@@ -26,10 +26,7 @@ function normalizeLinksInMarkdownFile(file, files) {
         let to = relativeFrom;
 
         // ensure link includes file name and extension
-        if(optionalPrefix.endsWith('/') && to === '') {
-            to = 'index.md';
-        }
-        if(to.endsWith('/')) {
+        if(to.endsWith('/') || optionalPrefix.endsWith('/') && to === '') {
             to = `${to}index.md`
         }
         if(!to.endsWith('.md')) {
