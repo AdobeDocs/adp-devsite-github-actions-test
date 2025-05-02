@@ -19,11 +19,7 @@ function normalizeLinksInMarkdownFile(file, files) {
     [...links].forEach(link => {
         const optionalPrefix = link[2] ?? '';
         const from = link[3] ?? '';
-
-        // ensure canonical relative path
-        const absoluteFrom = path.resolve(relativeToDir, from);
-        const relativeFrom = path.relative(relativeToDir, absoluteFrom);
-        let to = relativeFrom;
+        let to = from;
 
         // ensure link includes file name and extension
         if(to.endsWith('/') || optionalPrefix.endsWith('/') && to === '') {
@@ -32,6 +28,12 @@ function normalizeLinksInMarkdownFile(file, files) {
         if(!to.endsWith('.md')) {
             to = `${to}.md`;
         }
+
+        // ensure simplest relative path
+        // this removes trailing slash, so need to do this after the file name and extension checks above
+        const absolute = path.resolve(relativeToDir, to);
+        const relative = path.relative(relativeToDir, absolute);
+        to = relative;
 
         // ensure the link we constructed above exists
         const toExists = relativeFiles.find(file => to === file);
