@@ -22,10 +22,10 @@ function normalizeLinksInMarkdownFile(file, files) {
         let to = from;
 
         // ensure link includes file name and extension
-        if(to.endsWith('/') || optionalPrefix.endsWith('/') && to === '') {
+        if(to.endsWith('/') || optionalPrefix.endsWith('/') && !to) {
             to = `${to}index.md`
         }
-        if(!to.endsWith('.md') && to !== '') {
+        if(!to.endsWith('.md') && to) {
             to = `${to}.md`;
         }
 
