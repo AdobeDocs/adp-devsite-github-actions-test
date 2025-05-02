@@ -17,11 +17,15 @@ function normalizeLinksInMarkdownFile(file, files) {
     let data = fs.readFileSync(file, 'utf8');
     const links = matchAll(data, new RegExp(linkPattern, "gm"));
     [...links].forEach(link => {
+        // ensure canonical relative path
+        const from = link[3] ?? '';
+        const absoluteFrom = path.resolve(relativeToDir, from);
+        const relativeFrom = path.relative(relativeToDir, absoluteFrom);
+        let to = relativeFrom;
 
         // ensure link includes file name and extension
-        const from = link[3] ?? '';
-        let to = from;
-        if(link[2]?.endsWith('/') && to === '') {
+        const optionalPrefix = link[2] ?? '';
+        if(optionalPrefix.endsWith('/') && to === '') {
             to = 'index.md';
         }
         if(to.endsWith('/')) {
