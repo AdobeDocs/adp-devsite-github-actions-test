@@ -45,7 +45,7 @@ the root of the document.
 
 ## Methods
 
-### createEllipse()
+#### createEllipse()
 
 • **createEllipse**(): [`EllipseNode`](ellipse-node.md)
 
