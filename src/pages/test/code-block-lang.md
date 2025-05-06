@@ -136,9 +136,7 @@ Throws if the input is empty or is not legal SVG path syntax.
 
 a path node with a default stroke and no initial fill.
 
-
 <hr/>
-
 
 ### createRectangle()
 
