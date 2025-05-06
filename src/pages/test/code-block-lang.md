@@ -33,7 +33,7 @@ User's current selection context
 
 <hr />
 
-#### documentRoot
+## documentRoot
 
 • `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
 
