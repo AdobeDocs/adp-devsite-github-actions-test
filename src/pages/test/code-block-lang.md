@@ -70,7 +70,7 @@ a group node.
 
 <hr />
 
-### createImageContainer()
+#### createImageContainer()
 
 • **createImageContainer**(`bitmapData`, `options`): [`MediaContainerNode`](media-container-node.md)
 
@@ -104,7 +104,7 @@ MediaContainerNode representing the top container node of the multi-node structu
 
 <hr />
 
-### createLine()
+## createLine()
 
 • **createLine**(): [`LineNode`](line-node.md)
 
