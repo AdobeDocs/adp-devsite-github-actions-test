@@ -45,7 +45,7 @@ the root of the document.
 
 ## Methods
 
-#### createEllipse()
+### createEllipse()
 
 • **createEllipse**(): [`EllipseNode`](ellipse-node.md)
 
@@ -58,7 +58,7 @@ Transform values default to 0.
 
 <hr />
 
-### createGroup()
+#### createGroup()
 
 • **createGroup**(): [`GroupNode`](group-node.md)
 
