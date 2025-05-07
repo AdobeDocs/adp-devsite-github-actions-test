@@ -289,3 +289,41 @@ a function which edits the document model.
 `Promise` `void`
 
 a Promise that resolves when the lambda has finished running, or rejects if the lambda throws an error.
+
+
+## Methods
+
+### `[iterator]`()
+
+• **\[iterator\]**(): `Iterator` `T`, `any`, `any`
+
+Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
+
+#### Returns
+
+`Iterator` `T`, `any`, `any`
+
+## testing
+
+## `[testinline]`()
+
+• **\[iterator\]**(): `Iterator` `T`, `any`, `any`
+
+Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
+
+#### Returns
+
+`Iterator` `T`, `any`, `any`
+
+## testing1
+
+#### `[testinline1]`()
+
+• **\[iterator\]**(): `Iterator` `T`, `any`, `any`
+
+Iterates over all the items in this list. Mutations that occur mid-iteration are not reflected by the iterator.
+
+#### Returns
+
+`Iterator` `T`, `any`, `any`
+
