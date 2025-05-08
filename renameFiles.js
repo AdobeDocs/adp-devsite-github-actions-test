@@ -5,6 +5,7 @@ const {
     readRedirectionsFile, 
     writeRedirectionsFile, 
     getRedirectionsFilePath, 
+    getDeployableFiles,
     getMarkdownFiles, 
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
@@ -144,7 +145,7 @@ function renameFiles(map) {
 }
 
 try {
-    const files = getMarkdownFiles();
+    const files = getDeployableFiles();
     const fileMap = getFileMap(files);
 
     const mdFiles = getMarkdownFiles();

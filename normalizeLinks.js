@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('node:fs');
 const matchAll = require('string.prototype.matchall');
 const { 
+    getDeployableFiles,
     getMarkdownFiles, 
     replaceLinksInFile, 
     getFindPatternForMarkdownFiles: getFindPattern, 
@@ -60,7 +61,7 @@ function normalizeLinksInMarkdownFile(file, files) {
 }
 
 try {
-    const files = getMarkdownFiles();
+    const files = getDeployableFiles();
     const mdFiles = getMarkdownFiles();
     mdFiles.forEach(mdFile => {
         normalizeLinksInMarkdownFile(mdFile, files);

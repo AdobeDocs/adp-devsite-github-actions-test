@@ -26,9 +26,19 @@ function writeRedirectionsFile(data) {
     fs.writeFileSync(redirectionsFilePath, JSON.stringify(redirectionsData));
 }
 
-function getMarkdownFiles() {
-    return globSync(__dirname + '/src/pages/**/*.md')
+function getFiles(fileExtensions) {
+    const fileExtensionsPattern = fileExtensions.join('|');
+    return globSync(__dirname + `/src/pages/**/*+(${fileExtensionsPattern})`)
         .map(f => path.resolve(f));
+}
+
+function getDeployableFiles() {
+    // files types deployed to EDS in process-mds.sh 
+    return getFiles(['.md', '.json']);
+}
+
+function getMarkdownFiles() {
+    return getFiles(['.md']);
 }
 
 function removeFileExtension(file, renameBaseWithoutExt = name => name) {
@@ -57,6 +67,7 @@ module.exports = {
     getRedirectionsFilePath,
     readRedirectionsFile,
     writeRedirectionsFile,
+    getDeployableFiles,
     getMarkdownFiles,
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
