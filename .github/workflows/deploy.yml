@@ -135,8 +135,8 @@ jobs:
           json: true
           json_raw_format: true
           files: |
-            src/pages
-            static
+            src/pages/**
+            static/**
 
       - name: Deploy changes
         if: steps.changed-files-specific.outputs.any_changed == 'true'
