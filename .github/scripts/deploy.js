@@ -1,12 +1,12 @@
 module.exports = async ({ core, changes, isStage, isProd }) => {
-  core.debug('Inside deploy.js');
+  console.log('Inside deploy.js');
 
-  core.debug('changes: ');
-  core.debug(changes);
+  console.log('changes: ');
+  console.log(changes);
 
-  core.debug('isStage: ');
-  core.debug(isStage.toLowerCase() === 'true');
+  console.log('isStage: ');
+  console.log(isStage.toLowerCase() === 'true');
 
-  core.debug('isProd: ');
-  core.debug(isProd.toLowerCase() === 'true');
+  console.log('isProd: ');
+  console.log(isProd.toLowerCase() === 'true');
 }
