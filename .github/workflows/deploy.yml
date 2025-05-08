@@ -140,17 +140,18 @@ jobs:
 
       - name: Deploy changes
         if: steps.changed-files-specific.outputs.any_changed == 'true'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const script = require('./.github/scripts/deploy.js');
             core.debug(${{ steps.changed-files-specific.outputs.all_modified_files }});
-            
-            await script({
+
+            script({
               core,
               changes: ${{ steps.changed-files-specific.outputs.all_modified_files }},
               isStage:"${{ contains(inputs.env, 'stage') }}",
-              isProd:"${{ contains(inputs.env, 'prod') }}" });
+              isProd:"${{ contains(inputs.env, 'prod') }}" 
+            });
 
       # - name: Deploy to stage
       #   if: needs.set-state.outputs.deploy_stage == 'true'
