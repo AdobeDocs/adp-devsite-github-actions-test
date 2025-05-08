@@ -8,7 +8,7 @@ const {
     getMarkdownFiles, 
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
-    toUrl,
+    removeFileExtension,
     replaceLinksInFile 
 } = require('./scriptUtils.js');
 
@@ -27,9 +27,9 @@ function toEdsCase(str) {
 }
 
 function renameFile(file, renameBaseWithoutExt) {
-    const url = toUrl(file, renameBaseWithoutExt);
+    const renamedFileWithoutExt = removeFileExtension(file, renameBaseWithoutExt);
     const ext = path.extname(file);
-    return `${url}${ext}`
+    return `${renamedFileWithoutExt}${ext}`
 }
 
 function getFileMap(files) {
@@ -73,8 +73,8 @@ function renameLinksInRedirectsFile(fileMap) {
     replaceLinksInFile({
         file,
         linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(/?)(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6$7`,
+        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeFileExtension(from)})(/?)(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeFileExtension(to)}$5$6$7`,
     });
 }
 
@@ -95,8 +95,8 @@ function appendRedirects(fileMap) {
     const newData = [];
     linkMap.forEach((to, from) => {
         newData.push({
-            Source:  `${pathPrefix}${toUrl(from)}`, 
-            Destination: `${pathPrefix}${toUrl(to)}`,
+            Source:  `${pathPrefix}${removeFileExtension(from)}`, 
+            Destination: `${pathPrefix}${removeFileExtension(to)}`,
         })
     });
     const currData = readRedirectionsFile();

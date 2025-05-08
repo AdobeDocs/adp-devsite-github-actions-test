@@ -31,7 +31,7 @@ function getMarkdownFiles() {
         .map(f => path.resolve(f));
 }
 
-function toUrl(file, renameBaseWithoutExt = name => name) {
+function removeFileExtension(file, renameBaseWithoutExt = name => name) {
     const base = path.basename(file);
     const ext = path.extname(file);
     const end = file.length - base.length;
@@ -60,6 +60,6 @@ module.exports = {
     getMarkdownFiles,
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
-    toUrl,
+    removeFileExtension,
     replaceLinksInFile
 };
