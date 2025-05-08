@@ -145,7 +145,7 @@ jobs:
           script: |
             const script = require('./.github/scripts/deploy.js');
 
-            script({
+            await script({
               core,
               changes:${{ steps.changed-files-specific.outputs.all_modified_files }},
               isStage:"${{ contains(inputs.env, 'stage') }}",
