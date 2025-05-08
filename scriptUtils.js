@@ -31,6 +31,15 @@ function getMarkdownFiles() {
         .map(f => path.resolve(f));
 }
 
+function toUrl(file, renameBaseWithoutExt = name => name) {
+    const base = path.basename(file);
+    const ext = path.extname(file);
+    const end = file.length - base.length;
+    const baseWithoutExt = base.substring(0, base.length - ext.length);
+    const newBaseWithoutExt = renameBaseWithoutExt(baseWithoutExt);
+    return `${file.substring(0, end)}${newBaseWithoutExt}`
+}
+
 const getFindPatternForMarkdownFiles = (from) => `(\\[[^\\]]*]\\()(/|./)?(${from})(#[^\\()]*)?(\\))`;
 const getReplacePatternForMarkdownFiles = (to) => `$1$2${to}$4$5`;
 
@@ -51,5 +60,6 @@ module.exports = {
     getMarkdownFiles,
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
+    toUrl,
     replaceLinksInFile
 };

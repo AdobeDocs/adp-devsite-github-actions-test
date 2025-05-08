@@ -8,6 +8,7 @@ const {
     getMarkdownFiles, 
     getFindPatternForMarkdownFiles,
     getReplacePatternForMarkdownFiles,
+    toUrl,
     replaceLinksInFile 
 } = require('./scriptUtils.js');
 
@@ -23,15 +24,6 @@ function toKebabCase(str) {
 function toEdsCase(str) {
     const isValid = Boolean((/^([a-z0-9-]*)$/.test(str)));
     return isValid ? str : toKebabCase(str);
-}
-
-function toUrl(file, renameBaseWithoutExt = name => name) {
-    const base = path.basename(file);
-    const ext = path.extname(file);
-    const end = file.length - base.length;
-    const baseWithoutExt = base.substring(0, base.length - ext.length);
-    const newBaseWithoutExt = renameBaseWithoutExt(baseWithoutExt);
-    return `${file.substring(0, end)}${newBaseWithoutExt}`
 }
 
 function renameFile(file, renameBaseWithoutExt) {
