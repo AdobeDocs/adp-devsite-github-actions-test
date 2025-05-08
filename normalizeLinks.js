@@ -22,17 +22,20 @@ function normalizeLinksInMarkdownFile(file, files) {
         let to = from;
 
         // ensure link includes file name and extension
-        if(to.endsWith('/') || optionalPrefix.endsWith('/') && !to) {
+        const toHasTrailingSlash = to.endsWith('/') || optionalPrefix.endsWith('/') && !to;
+        if(toHasTrailingSlash) {
             to = `${to}index.md`
         }
         if(!to.endsWith('.md') && to) {
             to = `${to}.md`;
         }
 
+        // temporarily use local machine's path separator (i.e. '\' for Windows, '/' for Mac) 
+        // to compare files retrieved from local machine
         to = to.replaceAll('/', path.sep);
 
         // ensure simplest relative path
-        // this removes trailing slash, so need to do this after the file name and extension checks above
+        // this removes trailing slash, so need to do this after check for trailing slash above
         const absolute = path.resolve(relativeToDir, to);
         const relative = path.relative(relativeToDir, absolute);
         to = relative;
@@ -40,6 +43,7 @@ function normalizeLinksInMarkdownFile(file, files) {
         // ensure the link we constructed above exists
         const toExists = relativeFiles.find(file => to === file);
 
+        // revert back to URL path separator '/'
         to = to.replaceAll(path.sep, '/');
 
         if(to !== from && toExists) {
