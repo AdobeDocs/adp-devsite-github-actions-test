@@ -133,6 +133,7 @@ jobs:
         uses: tj-actions/changed-files@v46.0.5
         with:
           json: true
+          escape_json: true
           files: |
             src/pages/**
             static/**
