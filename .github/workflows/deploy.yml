@@ -144,11 +144,9 @@ jobs:
         with:
           script: |
             const script = require('./.github/scripts/deploy.js');
-            core.debug(${{ steps.changed-files-specific.outputs.all_modified_files }});
 
             script({
               core,
-              changes: ${{ steps.changed-files-specific.outputs.all_modified_files }},
               isStage:"${{ contains(inputs.env, 'stage') }}",
               isProd:"${{ contains(inputs.env, 'prod') }}" 
             });
