@@ -106,14 +106,6 @@ jobs:
         with:
           cmd: install
 
-      - name: Get changed files in the docs folder
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v46.0.5
-        with:
-          json: true
-          json_raw_format: true
-          files: docs
-
       - name: Build navigation file
         if: needs.set-state.outputs.build_navigation == 'true'
         uses: borales/actions-yarn@v4
@@ -136,13 +128,35 @@ jobs:
         run: |
             bash .github/scripts/process-mds.sh cache prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
 
-      - name: Deploy to stage
-        if: needs.set-state.outputs.deploy_stage == 'true'
-        run: |
-            bash .github/scripts/process-mds.sh preview stage ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+      - name: Get changed files in the src/pages and static folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v46.0.5
+        with:
+          json: true
+          json_raw_format: true
+          files: |
+            src/pages
+            static
 
-      - name: Deploy to prod
-        if: needs.set-state.outputs.deploy_prod == 'true'
-        run: |            
-            bash .github/scripts/process-mds.sh preview prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
-            bash .github/scripts/process-mds.sh live prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+      - name: Deploy changes
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const script = require('./.github/scripts/deploy.js');
+            await script({
+              core,
+              changes: ${{ steps.changed-files-specific.outputs.all_modified_files }},
+              isStage:"${{ contains(inputs.env, 'stage') }}",
+              isProd:"${{ contains(inputs.env, 'prod') }}" });
+
+      # - name: Deploy to stage
+      #   if: needs.set-state.outputs.deploy_stage == 'true'
+      #   run: |
+      #       bash .github/scripts/process-mds.sh preview stage ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+
+      # - name: Deploy to prod
+      #   if: needs.set-state.outputs.deploy_prod == 'true'
+      #   run: |
+      #       bash .github/scripts/process-mds.sh preview prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
+      #       bash .github/scripts/process-mds.sh live prod ${{ needs.set-state.outputs.branch_short_ref }} "${{ needs.set-state.outputs.path_prefix }}"
