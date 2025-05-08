@@ -1,39 +1,14 @@
 - pathPrefix:
     - /github-actions-test/
 
-- versions:
-    - [v2.0](/github-actions-test/index.md) selected
-    - [v1.4](https://github.com/AdobeDocs/dev-site)
-
 - pages:
-    - [Cat Analytics](/github-actions-test/index.md)
-    - [Guides](/github-actions-test/guides/index.md)
-    - API Reference
-        - [Cat Reference v2.0](/github-actions-test/api/index.md)
-        - [Cat Reference v1.4](/github-actions-test/api/1-4.md)
-    - [Support](/github-actions-test/support/index.md)
-    - [Test](/github-actions-test/test/code.md)
+    - [index](/)
+    - [SCREAMING_SNAKE_CASE](/SCREAMING_SNAKE_CASE)
+    - [with.dot](/with.dot)
+    - [Guides](/Guides/)
 
 - subPages:
-    - [Get Started](/github-actions-test/guides/index.md)
-        - [Dummy an OAuth Client](/github-actions-test/guides/dummy_oauth_client/index.md)
-        - [Dummy OAuth using POSTMAN](/github-actions-test/guides/dummy_using_postman/index.md)
-    - [Cat Metrics API](/github-actions-test/guides/dummy_metrics_api/index.md)
-    - [Migrating](/github-actions-test/guides/migrating/index.md)
-    - [Overview](/github-actions-test/support/index.md) header
-        - [Help](/github-actions-test/support/index.md)
-        - [FAQ](/github-actions-test/support/FAQ/index.md)
-        - [How to contribute](/github-actions-test/support/contribute/index.md)
-    - [Community](/github-actions-test/support/community/index.md) header
-        - [Information](/github-actions-test/support/community/index.md)
-    - [Test](/github-actions-test/test/code.md)
-        - [Code](/github-actions-test/test/code.md)
-        - [CodeBlock](/github-actions-test/test/code-block.md)
-        - [CodeBlock with Picklist](/github-actions-test/test/code-block-with-picklist.md)
-        - [CodeBlock without Picklist](/github-actions-test/test/code-block-without-picklist.md)
-        - [Code in List](/github-actions-test/test/code-in-list.md)
-        - [Code in Table](/github-actions-test/test/code-in-table.md)
-        - [InlineAlert](/github-actions-test/test/inline-alert.md)
-        - [ListBlock](/github-actions-test/test/list-block.md)
-        - [RedoclyAPIBlock](/github-actions-test/test/redocly-api-block.md)
-        - [TabsBlock](/github-actions-test/test/tabs-block.md)
+    - [Guides](/Guides/) 
+        - [SCREAMING_SNAKE_CASE](/Guides/SCREAMING_SNAKE_CASE) 
+        - [same-name-same-dir](/Guides/same-name-same-dir) 
+        - [SentenceCase](/Guides/SentenceCase) 
