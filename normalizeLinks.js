@@ -57,8 +57,9 @@ function normalizeLinksInMarkdownFile(file, files) {
 
 try {
     const files = getMarkdownFiles();
-    files.forEach(file => {
-        normalizeLinksInMarkdownFile(file, files);
+    const mdFiles = getMarkdownFiles();
+    mdFiles.forEach(mdFile => {
+        normalizeLinksInMarkdownFile(mdFile, files);
     });
     
 } catch (err) {

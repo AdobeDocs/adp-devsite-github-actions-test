@@ -119,12 +119,13 @@ function renameFiles(map) {
 }
 
 try {
-    const markdownFiles = getMarkdownFiles();
-    const fileMap = getFileMap(markdownFiles);
-    markdownFiles.forEach(file => {
-        renameLinksInMarkdownFile(fileMap, file);
+    const files = getMarkdownFiles();
+    const fileMap = getFileMap(files);
+
+    const mdFiles = getMarkdownFiles();
+    mdFiles.forEach(mdFile => {
+        renameLinksInMarkdownFile(fileMap, mdFile);
     });
-    renameFiles(fileMap);
 
     const redirectsFile = getRedirectionsFilePath();
     if(fs.existsSync(redirectsFile)) {
@@ -136,6 +137,8 @@ try {
     if(fs.existsSync(gatsbyConfigFile)) {
         renameLinksInGatsbyConfigFile(fileMap, gatsbyConfigFile);
     }
+
+    renameFiles(fileMap);
 
 } catch (err) {
     console.error(err);
