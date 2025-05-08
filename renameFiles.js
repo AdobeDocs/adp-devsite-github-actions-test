@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('node:fs');
-const { pathPrefix } = require('./gatsby-config.js');
+const { pathPrefix: pathPrefixFromGatsbyConfig } = require('./gatsby-config.js');
 const { 
     readRedirectionsFile, 
     writeRedirectionsFile, 
@@ -24,6 +24,39 @@ function toKebabCase(str) {
 function toEdsCase(str) {
     const isValid = Boolean((/^([a-z0-9-]*)$/.test(str)));
     return isValid ? str : toKebabCase(str);
+}
+
+function getPathPrefixFromConfig() {
+    const CONFIG_PATH = path.join('src', 'pages', 'config.md');
+    if (!fs.existsSync(CONFIG_PATH)) {
+        return null;
+    }
+    
+    const data = fs.readFileSync(CONFIG_PATH).toString();
+    if(!data) {
+        return null;
+    }
+
+    const lines = data.split("\n");
+    
+    // find the pathPrefix key
+    const keyIndex = lines.findIndex(line => new RegExp(/\s*-\s*pathPrefix:/).test(line));
+    if (keyIndex < 0) {
+        return null;
+    }
+    
+    // find the pathPrefix value
+    const line = lines.slice(keyIndex + 1)?.find(line => new RegExp(/\s*-/).test(line));
+    if(!line) {
+        null;
+    }
+
+    // extract pathPrefix
+    const pathPrefixLine = line.match(new RegExp(/(\s*-\s*)(\S*)(\s*)/));
+    if(!pathPrefixLine) {
+        return null;
+    }
+    return pathPrefixLine[2];
 }
 
 function renameFile(file, renameBaseWithoutExt) {
@@ -67,7 +100,7 @@ function renameLinksInMarkdownFile(fileMap, file) {
     });
 }
 
-function renameLinksInRedirectsFile(fileMap) {
+function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
     replaceLinksInFile({
@@ -88,7 +121,7 @@ function renameLinksInGatsbyConfigFile(fileMap, file) {
     });
 }
 
-function appendRedirects(fileMap) {
+function appendRedirects(fileMap, pathPrefix) {
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
     const linkMap = getLinkMap(fileMap, dir);
@@ -120,9 +153,10 @@ try {
     });
 
     const redirectsFile = getRedirectionsFilePath();
+    const pathPrefix = getPathPrefixFromConfig() ?? pathPrefixFromGatsbyConfig;
     if(fs.existsSync(redirectsFile)) {
-        renameLinksInRedirectsFile(fileMap);
-        appendRedirects(fileMap);
+        renameLinksInRedirectsFile(fileMap, pathPrefix);
+        appendRedirects(fileMap, pathPrefix);
     }
 
     const gatsbyConfigFile = 'gatsby-config.js';
