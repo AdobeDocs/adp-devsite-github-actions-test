@@ -14,8 +14,6 @@ User's current selection context
 
 #### Returns
 
-<hr />
-
 ## documentRoot
 
 • `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
