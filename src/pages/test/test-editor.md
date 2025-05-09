@@ -37,6 +37,4 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
-<hr />
-
 #### createGroup()
