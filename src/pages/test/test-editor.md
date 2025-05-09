@@ -47,6 +47,4 @@ Transform values default to 0.
 
 a group node.
 
-<hr />
-
 #### createImageContainer()
