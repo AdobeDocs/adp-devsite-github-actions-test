@@ -10,7 +10,7 @@ module.exports = async ({ core, changes, deletions, operation, siteEnv, branch, 
 
   if(siteEnv.includes('stage')) {
     edsSiteEnv = "adp-devsite-stage";
-    codeRepoBranch = branch;
+    codeRepoBranch = "stage";
   } else if(siteEnv.includes('prod')) {
     edsSiteEnv = "adp-devsite";
     codeRepoBranch = "main";
