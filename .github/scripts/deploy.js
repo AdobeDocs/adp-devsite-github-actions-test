@@ -23,7 +23,7 @@ module.exports = async ({ core, exec, changes, deletions, operation, siteEnv, br
 
   changes.forEach((file) => {
     const theFilePath = `${pathPrefix}/${file}`;
-    const url = `https://admin.hlx.page/${operation}/adobedocs/${edsSiteEnv}/${codeRepoBranch}/${path}`;
+    const url = `https://admin.hlx.page/${operation}/adobedocs/${edsSiteEnv}/${codeRepoBranch}/${theFilePath}`;
     const cmd = `curl -X${httpMethod} -vi ${args} ${url}`;
 
     console.log('the command: ');
