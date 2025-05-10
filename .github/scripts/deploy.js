@@ -1,4 +1,4 @@
-module.exports = async ({ core, exec, changes, deletions, isStage, isProd }) => {
+module.exports = async ({ core, exec, changes, deletions, operation, deployEnv, branch, pathPrefix }) => {
   console.log('Inside deploy.js');
 
   console.log('exec: ');
@@ -10,12 +10,26 @@ module.exports = async ({ core, exec, changes, deletions, isStage, isProd }) => 
   console.log('deletions: ');
   console.log(deletions);
 
-  console.log('isStage: ');
-  console.log(isStage.toLowerCase() === 'true');
+  console.log('operation: ');
+  console.log(operation);
 
-  console.log('isProd: ');
-  console.log(isProd.toLowerCase() === 'true');
+  console.log('deployEnv: ');
+  console.log(deployEnv);
+
+  console.log('branch: ');
+  console.log(branch);
+
+  console.log('pathPrefix: ');
+  console.log(pathPrefix);
 
   // "https://admin.hlx.page/${OPERATION}/adobedocs/${site}/${code_repo_branch}/${path}"
+  // exec('curl -s https://example.com', (error, stdout, stderr) => {
+  //   if (error) {
+  //     console.error(`exec error: ${error}`);
+  //     return;
+  //   }
+  //   console.log(`stdout: ${stdout}`);
+  //   console.error(`stderr: ${stderr}`);
+  // });
 
 }
