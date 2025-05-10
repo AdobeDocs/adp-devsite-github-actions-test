@@ -151,7 +151,7 @@ jobs:
               changes: ${{ steps.changed-files-specific.outputs.all_changed_files }},
               deletions: ${{ steps.changed-files-specific.outputs.deleted_files }},
               operation: "preview",
-              deployEnv: "stage",
+              site: "stage",
               branch: "${{ needs.set-state.outputs.branch_short_ref }}",
               pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
             });

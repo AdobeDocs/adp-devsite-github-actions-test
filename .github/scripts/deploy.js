@@ -1,35 +1,45 @@
-module.exports = async ({ core, exec, changes, deletions, operation, deployEnv, branch, pathPrefix }) => {
-  console.log('Inside deploy.js');
+module.exports = async ({ core, exec, changes, deletions, operation, siteEnv, branch, pathPrefix }) => {
+  let httpMethod, edsSiteEnv, codeRepoBranch, args;
+  if(operation.includes('cache') || operation.includes('preview') || operation.includes('live')) {
+    httpMethod = 'POST';
+  } else {
+    console.error('Unknown operation method');
+  }
 
-  console.log('exec: ');
-  console.log(exec);
+  if(siteEnv.includes('stage')) {
+    edsSiteEnv = "adp-devsite-stage";
+    codeRepoBranch = branch;
+  } else if(siteEnv.includes('prod')) {
+    edsSiteEnv = "adp-devsite";
+    codeRepoBranch = "main";
+  } else {
+    console.error('Unknown env to deploy to');
+  }
 
-  console.log('changes: ');
-  console.log(changes);
+  // hacky way to deploy to our adp-devsite-stage env
+  if(siteEnv.includes('stage') && operation.includes('preview')) {
+    args = `--header x-content-source-authorization: ${branch}`;
+  }
 
-  console.log('deletions: ');
-  console.log(deletions);
+  changes.forEach((file) => {
+    const theFilePath = `${pathPrefix}/${file}`;
+    const url = `https://admin.hlx.page/${operation}/adobedocs/${edsSiteEnv}/${codeRepoBranch}/${path}`;
+    const cmd = `curl -X${httpMethod} -vi ${args} ${url}`;
 
-  console.log('operation: ');
-  console.log(operation);
+    console.log('the command: ');
+    console.log(cmd);
+    console.log();
 
-  console.log('deployEnv: ');
-  console.log(deployEnv);
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      console.error(`stderr: ${stderr}`);
+    });
+  });
 
-  console.log('branch: ');
-  console.log(branch);
 
-  console.log('pathPrefix: ');
-  console.log(pathPrefix);
-
-  // "https://admin.hlx.page/${OPERATION}/adobedocs/${site}/${code_repo_branch}/${path}"
-  // exec('curl -s https://example.com', (error, stdout, stderr) => {
-  //   if (error) {
-  //     console.error(`exec error: ${error}`);
-  //     return;
-  //   }
-  //   console.log(`stdout: ${stdout}`);
-  //   console.error(`stderr: ${stderr}`);
-  // });
 
 }
