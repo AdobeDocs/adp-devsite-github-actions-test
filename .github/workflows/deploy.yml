@@ -147,7 +147,6 @@ jobs:
 
             await script({
               core,
-              exec,
               changes: ${{ steps.changed-files-specific.outputs.all_changed_files }},
               deletions: ${{ steps.changed-files-specific.outputs.deleted_files }},
               operation: "preview",

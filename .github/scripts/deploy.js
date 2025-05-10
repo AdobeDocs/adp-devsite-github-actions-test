@@ -1,4 +1,6 @@
-module.exports = async ({ core, exec, changes, deletions, operation, siteEnv, branch, pathPrefix }) => {
+const { exec } = require('child_process');
+
+module.exports = async ({ core, changes, deletions, operation, siteEnv, branch, pathPrefix }) => {
   let httpMethod, edsSiteEnv, codeRepoBranch, args;
   if(operation.includes('cache') || operation.includes('preview') || operation.includes('live')) {
     httpMethod = 'POST';
@@ -23,7 +25,7 @@ module.exports = async ({ core, exec, changes, deletions, operation, siteEnv, br
 
   changes.forEach((file) => {
     const theFilePath = `${pathPrefix}/${file}`;
-    const url = `https://admin.hlx.page/${operation}/adobedocs/${edsSiteEnv}/${codeRepoBranch}/${theFilePath}`;
+    const url = `https://admin.hlx.page/${operation}/adobedocs/${edsSiteEnv}/${codeRepoBranch}${theFilePath}`;
     const cmd = `curl -X${httpMethod} -vi ${args} ${url}`;
 
     console.log('the command: ');
@@ -39,7 +41,4 @@ module.exports = async ({ core, exec, changes, deletions, operation, siteEnv, br
       console.error(`stderr: ${stderr}`);
     });
   });
-
-
-
 }
