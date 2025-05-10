@@ -20,7 +20,7 @@ module.exports = async ({ core, changes, deletions, operation, siteEnv, branch, 
 
   // hacky way to deploy to our adp-devsite-stage env
   if(siteEnv.includes('stage') && operation.includes('preview')) {
-    args = `--header x-content-source-authorization: ${branch}`;
+    args = `"--header x-content-source-authorization: ${branch}"`;
   }
 
   changes.forEach((file) => {
