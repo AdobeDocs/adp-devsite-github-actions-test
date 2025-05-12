@@ -14,7 +14,7 @@ User's current selection context
 
 [`Context`](context.md)
 
-<hr/>
+<hr />
 
 ## documentRoot
 
