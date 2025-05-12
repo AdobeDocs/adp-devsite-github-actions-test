@@ -61,8 +61,7 @@ Response content type: `application/json`
   },
   "url": "string"
 }
-Model: 
-[ActionResultDTO {
+Model: [ActionResultDTO] {
 description: OpenWhisk Action invocation result
 name        string
             Action name
