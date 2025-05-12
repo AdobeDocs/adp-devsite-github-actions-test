@@ -24,3 +24,68 @@ Returns the details of the namespace associated with the specified organization 
 | `X-Api-Key` (`string`: _header_)     | Api key                                         |
 
 #### _Responses:_
+
+
+Response content type: `application/json`
+|Code|Description|
+|--- |--- |
+|200|Successful operation Example value:
+{
+  "name": "string",
+  "code": "string",
+  "namespace": "string",
+  "version": "string",
+  "params": [
+    {
+      "key": "string",
+      "value": {}
+    }
+  ],
+  "annotations": [
+    {
+      "key": "string",
+      "value": {}
+    }
+  ],
+  "limits": {
+    "timeout": "string",
+    "memory": "string",
+    "logs": "string"
+  },
+  "exec": {
+    "kind": "string",
+    "binary": false,
+    "components": [
+      "string"
+    ]
+  },
+  "url": "string"
+}
+Model: 
+[ActionResultDTO {
+description: OpenWhisk Action invocation result
+name        string
+            Action name
+code        string
+            Action code
+namespace   string
+            Action namespace
+version     string
+            Action version
+annotations [Action annotations
+            KeyValuePairDTO {
+            description: OpenWhisk Action param
+            key     string
+                    Param Name
+            value   {
+                        description: Param value
+                    }
+            }]
+duration    integer($int32)
+            Duration
+version     string
+            Action Version
+response    {
+            description:    
+            Action invocation response
+}|
