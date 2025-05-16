@@ -38,3 +38,4 @@
         - [RedoclyAPIBlock](/github-actions-test/test/redocly-api-block.md)
         - [TabsBlock](/github-actions-test/test/tabs-block.md)
         - [hrtagTest](/github-actions-test/test/test-hr-0.md)
+        - [BadgeTest](/github-actions-test/test/test-badge.md)
