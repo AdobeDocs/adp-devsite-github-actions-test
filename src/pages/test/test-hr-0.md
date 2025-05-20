@@ -18,8 +18,6 @@ User's current selection context
 
 User's express root node
 
-<HorizontalLine />
-
 ## documentRoot
 
 • `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
