@@ -1,4 +1,4 @@
-# Class: Editor new3
+# Class: Editor new4
 
 Entry point for APIs that read or modify the document's content.
 
