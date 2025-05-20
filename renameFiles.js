@@ -67,7 +67,7 @@ function renameFile(file, renameBaseWithoutExt) {
 }
 
 function normalizeFolderName(name) {
-    return name.replace(/[._]/g, '-');
+    return name.replace(/\./g, '-');
 }
 
 function getFolderMap(files) {
