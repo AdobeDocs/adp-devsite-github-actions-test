@@ -14,6 +14,7 @@ User's current selection context
 
 [`Context`](context.md)
 
+<HorizontalLine/>
 
 User's express root node
 
