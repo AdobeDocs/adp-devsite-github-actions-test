@@ -60,8 +60,11 @@ function getPathPrefixFromConfig() {
     return pathPrefixLine[2];
 }
 
-function renameFile(file, renameBaseWithoutExt) {
-    const renamedFileWithoutExt = removeFileExtension(file, renameBaseWithoutExt);
+function toEdsPath(file) {
+    const renamedFileWithoutExt = removeFileExtension(file)
+        .split(path.sep)
+        .map(token => toEdsCase(token))
+        .join(path.sep);
     const ext = path.extname(file);
     return `${renamedFileWithoutExt}${ext}`
 }
@@ -69,7 +72,7 @@ function renameFile(file, renameBaseWithoutExt) {
 function getFileMap(files) {
     const map = new Map();
     files.forEach(from => { 
-        const to = renameFile(from, toEdsCase)
+        const to = toEdsPath(from)
         if(to !== from) {
             map.set(from, to) 
         }
@@ -138,9 +141,32 @@ function appendRedirects(fileMap, pathPrefix) {
     writeRedirectionsFile(data);
 }
 
+function deleteEmptyDirectoryUpwards(startDir, stopDir) {
+    const isEmpty = fs.readdirSync(startDir).length === 0;
+    if(isEmpty && startDir !== stopDir) {
+        fs.rmdirSync(startDir);
+        deleteEmptyDirectoryUpwards(path.dirname(startDir), stopDir);
+    }
+}
+
 function renameFiles(map) {
+    // create new dirs
+    map.forEach((to, _) => {
+        const toDir = path.dirname(to);
+        if (!fs.existsSync(toDir)) { 
+            fs.mkdirSync(toDir, { recursive: true });
+        }
+    });
+
+    // rename
     map.forEach((to, from) => {
         fs.renameSync(from, to);
+    });
+
+    // delete old dirs
+    map.forEach((_, from) => {
+        const fromDir = path.dirname(from);
+        deleteEmptyDirectoryUpwards(fromDir, __dirname);
     });
 }
 
