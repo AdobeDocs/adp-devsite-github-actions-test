@@ -1,4 +1,4 @@
-# Class: Editor new2
+# Class: Editor new3
 
 Entry point for APIs that read or modify the document's content.
 
@@ -14,7 +14,7 @@ User's current selection context
 
 [`Context`](context.md)
 
-<HorizontalLine/>
+<HorizontalLine />
 
 User's express root node
 
