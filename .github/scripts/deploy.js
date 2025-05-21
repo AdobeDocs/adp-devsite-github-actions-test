@@ -58,7 +58,7 @@ module.exports = async ({ core, changes, deletions, operation, siteEnv, branch, 
         return;
       }
 
-      console.log(`::group:: Deleting ${operation} on ${theFilePath} \nThe command: ${cmd} \n${deleteExecOut} \n::endgroup::`);
+      console.log(`::group:: Deleting ${operation} on ${theFilePath} \nThe command: ${deleteCmd} \n${deleteExecOut} \n::endgroup::`);
     });
   });
 }
