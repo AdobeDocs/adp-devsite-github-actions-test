@@ -13,152 +13,43 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/github-actions-test/',
   siteMetadata: {
-    versions: [
-      {
-        title: 'v2.0',
-        selected: true
-      },
-      {
-        title: 'v1.4',
-        path: 'https://github.com/AdobeDocs/dev-site'
-      }
-    ],
     pages: [
       {
-        title: 'Cat Analytics',
+        title: 'index',
         path: '/'
       },
       {
-        title: 'Guides',
+        title: 'SCREAMING_SNAKE_CASE',
+        path: '/SCREAMING_SNAKE_CASE'
+      },
+      {
+        title: 'with.dot',
+        path: '/with.dot'
+      },
+      {
+        title: 'guides',
         path: '/guides/'
-      },
-      {
-        title: 'API Reference',
-        menu: [
-          {
-            title: 'Cat Reference v2.0',
-            description: 'Cat Reporting API',
-            path: '/api/index.md'
-          },
-          {
-            title: 'Cat Reference v1.4',
-            description: 'Cat API Spec',
-            path: '/api/1-4.md'
-          }
-        ]
-      },
-      {
-        title: 'Support',
-        path: '/support/'
-      },
-      {
-        title: 'Test',
-        path: '/test/'
       }
     ],
     subPages: [
       {
-        title: 'Get Started',
+        title: 'guides',
         path: '/guides/',
         pages: [
           {
-            title: 'Dummy an OAuth Client',
-            path: '/guides/dummy_oauth_client/'
-          },
-          {
-            title: 'Dummy OAuth using POSTMAN',
-            path: '/guides/dummy_using_postman/'
-          }
-        ]
-      },
-      {
-        title: 'Cat Metrics API',
-        path: '/guides/dummy_metrics_api/'
-      },
-      {
-        title: 'Migrating',
-        path: '/guides/migrating/'
-      },
-      {
-        title: 'Overview',
-        path: '/support/',
-        header: true,
-        pages: [
-          {
-            title: 'Help',
-            path: '/support/'
-          },
-          {
-            title: 'FAQ',
-            path: '/support/FAQ/'
-          },
-          {
-            title: 'How to contribute',
-            path: '/support/contribute/'
-          }
-        ]
-      },
-      {
-        title: 'Community',
-        path: '/support/community/',
-        header: true,
-        pages: [
-          {
-            title: 'Information',
-            path: '/support/community/'
-          }
-        ]
-      },
-      {
-        title: 'Test',
-        path: '/test/',
-        pages: [
-          {
             title: 'AppConfig.types',
-            path: '/test/AppConfig.types/enumerations/text-to-image-app-version'
+            path: '/guides/AppConfig.types/enumerations/text_to.image-app-version'
           },
           {
-            title: 'Code',
-            path: '/test/code'
+            title: 'SCREAMING_SNAKE_CASE',
+            path: '/guides/SCREAMING_SNAKE_CASE'
           },
           {
-            title: 'CodeBlock',
-            path: '/test/code-block'
-          },
-          {
-            title: 'CodeBlock with Picklist',
-            path: '/test/code-block-with-picklist'
-          },
-          {
-            title: 'CodeBlock without Picklist',
-            path: '/test/code-block-without-picklist'
-          },
-          {
-            title: 'Code in List',
-            path: '/test/code-in-list'
-          },
-          {
-            title: 'Code in Table',
-            path: '/test/code-in-table'
-          },
-          {
-            title: 'InlineAlert',
-            path: '/test/inline-alert'
-          },
-          {
-            title: 'ListBlock',
-            path: '/test/list-block'
-          },
-          {
-            title: 'RedoclyAPIBlock',
-            path: '/test/redocly-api-block'
-          },
-          {
-            title: 'TabsBlock',
-            path: '/test/tabs-block'
+            title: 'SentenceCase',
+            path: '/guides/SentenceCase'
           }
         ]
-      },
+      }
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]
