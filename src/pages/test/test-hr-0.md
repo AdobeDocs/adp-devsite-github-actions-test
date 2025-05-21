@@ -14,7 +14,9 @@ User's current selection context
 
 [`Context`](context.md)
 
-<HorizontalLine />
+<HorizontalLine slots="variant" />
+
+dashed
 
 User's express root node
 
