@@ -94,6 +94,16 @@ function getLinkMap(fileMap, relativeToDir) {
     return linkMap;
 }
 
+function renameLinksInGatsbyConfigFile(fileMap, file) {
+    const dir = path.join('src', 'pages');
+    replaceLinksInFile({
+        file,
+        linkMap: getLinkMap(fileMap, dir),
+        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/|./)?(${from})(#[^'"]*)?(['"])`,
+        getReplacePattern: (to) => `$1$2${to}$4$5`,
+    });
+}
+
 function renameLinksInMarkdownFile(fileMap, file) {
     const dir = path.dirname(file);
     replaceLinksInFile({ 
@@ -112,16 +122,6 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
         linkMap: getLinkMap(fileMap, dir),
         getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeFileExtension(from)})(/?)(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeFileExtension(to)}$5$6$7`,
-    });
-}
-
-function renameLinksInGatsbyConfigFile(fileMap, file) {
-    const dir = path.join('src', 'pages');
-    replaceLinksInFile({
-        file,
-        linkMap: getLinkMap(fileMap, dir),
-        getFindPattern: (from) => `(['"]?path['"]?\\s*:\\s*['"])(/|./)?(${from})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2${to}$4$5`,
     });
 }
 
