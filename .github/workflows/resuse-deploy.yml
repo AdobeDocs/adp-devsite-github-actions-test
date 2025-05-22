@@ -4,6 +4,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  reuse deployment:
+  reuse_deployment:
     name: Reuse Deployment
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy.yml@main
