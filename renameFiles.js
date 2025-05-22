@@ -213,7 +213,9 @@ function renameFiles(map) {
     // delete old dirs
     map.forEach((_, from) => {
         const fromDir = path.dirname(from);
-        deleteEmptyDirectoryUpwards(fromDir, __dirname);
+        if (!fs.existsSync(fromDir)) { 
+            deleteEmptyDirectoryUpwards(fromDir, __dirname);
+        }
     });
 }
 
