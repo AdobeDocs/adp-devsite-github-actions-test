@@ -114,44 +114,48 @@ module.exports = {
         path: '/test/',
         pages: [
           {
+            title: 'AppConfig.types',
+            path: '/test/AppConfig.types/enumerations/text-to-image-app-version'
+          },
+          {
             title: 'Code',
-            path: '/test/code/'
+            path: '/test/code'
           },
           {
             title: 'CodeBlock',
-            path: '/test/code-block/'
+            path: '/test/code-block'
           },
           {
             title: 'CodeBlock with Picklist',
-            path: '/test/code-block-with-picklist/'
+            path: '/test/code-block-with-picklist'
           },
           {
             title: 'CodeBlock without Picklist',
-            path: '/test/code-block-without-picklist/'
+            path: '/test/code-block-without-picklist'
           },
           {
             title: 'Code in List',
-            path: '/test/code-in-list/'
+            path: '/test/code-in-list'
           },
           {
             title: 'Code in Table',
-            path: '/test/code-in-table/'
+            path: '/test/code-in-table'
           },
           {
             title: 'InlineAlert',
-            path: '/test/inline-alert/'
+            path: '/test/inline-alert'
           },
           {
             title: 'ListBlock',
-            path: '/test/list-block/'
+            path: '/test/list-block'
           },
           {
             title: 'RedoclyAPIBlock',
-            path: '/test/redocly-api-block/'
+            path: '/test/redocly-api-block'
           },
           {
             title: 'TabsBlock',
-            path: '/test/tabs-block/'
+            path: '/test/tabs-block'
           }
         ]
       },
