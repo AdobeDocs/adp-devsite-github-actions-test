@@ -66,6 +66,39 @@ function renameFile(file, renameBaseWithoutExt) {
     return `${renamedFileWithoutExt}${ext}`
 }
 
+function normalizeFolderName(name) {
+    return name.replace(/\./g, '-');
+}
+
+function getFolderMap(files) {
+  const folderMap = new Map();
+  const folderSet = new Set();
+
+  files.forEach((file) => {
+    let dir = path.dirname(file);
+
+    while (dir && !folderSet.has(dir)) {
+      const parent = path.dirname(dir);
+
+      if (parent === dir || /^[A-Z]:\\?$/i.test(dir)) break;
+
+      folderSet.add(dir);
+      dir = parent;
+    }
+  });
+
+  Array.from(folderSet)
+    .sort((a, b) => b.length - a.length)
+    .forEach((from) => {
+      const segments = from.split(path.sep);
+      const renamedSegments = segments.map(normalizeFolderName);
+      const to = path.join(...renamedSegments);
+      folderMap.set(from, to);
+    });
+
+  return folderMap;
+}
+
 function getFileMap(files) {
     const map = new Map();
     files.forEach(from => { 
@@ -138,6 +171,38 @@ function appendRedirects(fileMap, pathPrefix) {
     writeRedirectionsFile(data);
 }
 
+function renameFolders(folderMap) {
+    const sorted = Array.from(folderMap.entries()).sort(
+        ([a], [b]) => b.split(path.sep).length - a.split(path.sep).length
+    );
+
+    for (const [from, to] of sorted) {
+        try {
+            if (from !== to && fs.existsSync(from)) {
+                if (!fs.existsSync(to)) { 
+                    fs.mkdirSync(to, { recursive: true });
+                }
+
+                const items = fs.readdirSync(from); 
+                for (const item of items) {
+                    const fromItem = path.join(from, item);
+                    const toItem = path.join(to, item);
+
+                    if (fs.existsSync(toItem)) {
+                        fs.rmSync(toItem, { recursive: true, force: true });
+                    }
+
+                    fs.renameSync(fromItem, toItem);
+                }
+
+                fs.rmdirSync(from); 
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }
+}
+
 function renameFiles(map) {
     map.forEach((to, from) => {
         fs.renameSync(from, to);
@@ -145,8 +210,16 @@ function renameFiles(map) {
 }
 
 try {
-    const files = getDeployableFiles();
-    const fileMap = getFileMap(files);
+    const originalFiles = getDeployableFiles();
+    // console.log("originalFiles",originalFiles);
+
+    const folderMap = getFolderMap(originalFiles);
+    // console.log("folderMap---",folderMap);
+    
+    renameFolders(folderMap); 
+
+    const updatedFiles = getDeployableFiles();
+    const fileMap = getFileMap(updatedFiles);
 
     const mdFiles = getMarkdownFiles();
     mdFiles.forEach(mdFile => {
