@@ -137,11 +137,12 @@ function renameLinksInMarkdownFile(fileMap, file) {
 function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
+    const linkMap = getLinkMap(fileMap, dir);
 
     // rename redirects for correct paths
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, dir),
+        linkMap,
         getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
     });
@@ -150,13 +151,13 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     // (handle non-existent paths added by 'buildRedirections.js')
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, dir),
+        linkMap,
         getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}$5$6`,
     });
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, dir),
+        linkMap,
         getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$5$6`,
     });
@@ -166,7 +167,7 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     // (handle non-existent paths added by 'buildRedirections.js')
     replaceLinksInFile({
         file,
-        linkMap: getLinkMap(fileMap, dir),
+        linkMap,
         getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)}/)(#[^'"]*)?(['"])`,
         getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}/$5$6`,
     });
