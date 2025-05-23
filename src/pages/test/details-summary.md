@@ -61,9 +61,9 @@ Any changes to the `manifest.json` will *require a manual reload of your add-on*
 
 ![Refresh manifest](./img/playground-refresh-manifest.png)
 
-<InlineAlert slots="text1 " variant="info"/>
+<InlineAlert slots="text1,text2" variant="info"/>
 
-It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
+It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.yesssssssssssssssssssssssssssss
 
 <DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
