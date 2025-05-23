@@ -2,7 +2,7 @@
 
 It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.
 
-<detailsblock slots = "summary, list"/>
+<detailsblock slots = "heading, list"/>
 
 Click to view a list of steps to sideload an add-on in Adobe Express
 
