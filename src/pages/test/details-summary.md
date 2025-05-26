@@ -69,4 +69,12 @@ It's _possible_ to achieve the same result when a document is _already_ open cli
 
 ![Add-on testing](./img/playground-alt-testing.png)
 
+_ArtboardList_ represents an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
 
+ArtboardList _represents_ an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
+
+ArtboardList represents an _ordered_ list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
+
+ArtboardList represents an ordered _list_ of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
+
+ArtboardList represents an ordered list of _ArtboardNodes_ arranged in a timeline _sequence_, where they are called "_scenes_."
