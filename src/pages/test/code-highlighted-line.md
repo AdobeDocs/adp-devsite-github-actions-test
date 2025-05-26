@@ -1,4 +1,4 @@
-```console line="1-2, 5, 9-20"
+```console line="1-2, 5, 9-20" line-offset="3"
 curl -i -X POST 'https://graffias.adobe.io/graffias/graphql' 
     -H 'Accept-Encoding: gzip, deflate, br' 
     -H 'Content-Type: application/json' 
