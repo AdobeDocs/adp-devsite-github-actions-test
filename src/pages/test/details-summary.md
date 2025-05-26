@@ -22,7 +22,7 @@ hideBreadcrumbNav: false
 
 <DetailsBlock slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
-- Click the **avatar icon** in the top right corner of Adobe Express, then the gear icon to **open the Settings**.
+- Click the **avatar icon** in the top right corner of _Adobe_ Express, then the gear icon to **open the Settings**.
 - Enable **Add-on Development** if it's not already enabled. You might need to read the **Developer Terms of Use** first.
 - Close the Settings dialog.
 
@@ -63,7 +63,7 @@ Any changes to the `manifest.json` will *require a manual reload of your add-on*
 
 <InlineAlert slots="text1,text2" variant="info"/>
 
-It's possible to achieve the same result when a document is already open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.yesssssssssssssssssssssssssssss
+It's _possible_ to achieve the same result when a document is _already_ open clicking the **Add-ons** icon on the left hand rail, then browse to Your add-ons and switch on **Add-on testing**.yesssssssssssssssssssssssssssss
 
 <DetailsBlock slots="image"  summary="Click to see the screenshot" />
 
