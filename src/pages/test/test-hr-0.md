@@ -1,4 +1,4 @@
-<HeroSimple slots="heading, text" background="red"  className="hero-gradient" />
+<HeroSimple slots="heading, text" background="linear-gradient(180deg, #c946eb 0%, #6372f5 100%)"  className="hero-gradient" />
 
 ## Build add-ons for Adobe Express
 
