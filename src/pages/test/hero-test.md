@@ -1,4 +1,4 @@
-<HeroSimple slots="backgroundImage, image, heading, text" background="green"/>
+<HeroSimple slots="backgroundImage, image, heading, text"/>
 
 ![Hero image](./images/thumbs-coming-soon.png)
 
