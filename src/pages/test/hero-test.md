@@ -1,6 +1,8 @@
-<HeroSimple slots="backgroundImage, heading, text" background="green"/>
+<HeroSimple slots="backgroundImage, image, heading, text" background="green"/>
 
 ![Hero image](./images/thumbs-coming-soon.png)
+
+![SideImage](./images/basic-js.png)
 
 ## Build add-ons for Adobe Express
 
