@@ -1,6 +1,6 @@
 <HeroSimple slots="image, heading, text" background="linear-gradient(180deg, #c946eb 0%, #6372f5 100%)"/>
 
-![Hero image](./images/thumbs-coming-soon.png)
+![Hero image](./images/Explore_Image_3.webp)
 
 ## Build add-ons for Adobe Express
 

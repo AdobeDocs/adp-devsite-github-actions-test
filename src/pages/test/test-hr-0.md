@@ -6,7 +6,6 @@
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-
 ## Class: Editor new4
 
 Entry point for APIs that read or modify the document's content.
