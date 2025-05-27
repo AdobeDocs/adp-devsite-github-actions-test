@@ -1,4 +1,12 @@
-# Class: Editor new4
+<HeroSimple slots="image, heading, text" background="green"/>
+
+![Hero image](./images/Explore_Image_3.webp)
+
+## Build add-ons for Adobe Express
+
+Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+
+## Class: Editor new4
 
 Entry point for APIs that read or modify the document's content.
 
@@ -9,20 +17,6 @@ Entry point for APIs that read or modify the document's content.
 • `get` **context**(): [`Context`](context.md)
 
 User's current selection context
-
-Add one or more items to the end of the list. The last argument will become the last item in this list. Items are
-removed from their previous parent, if any – or if an item is already in _this_ list, its index is simply changed.
-
-_ArtboardList_ represents an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-
-ArtboardList _represents_ an ordered list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-
-ArtboardList represents an _ordered_ list of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-
-ArtboardList represents an ordered _list_ of ArtboardNodes arranged in a timeline sequence, where they are called "scenes."
-
-ArtboardList represents an ordered list of _ArtboardNodes_ arranged in a timeline _sequence_, where they are called "_scenes_."
-
 
 #### Returns
 
