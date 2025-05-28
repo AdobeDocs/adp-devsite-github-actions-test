@@ -1,6 +1,6 @@
 [//]: # (copied from https://github.com/AdobeDocs/developer-distribute/blob/eds-migration/src/pages/index.md?plain=1#L36-L64)
 
-<Details slots="header , list" summary = "Text Description of Diagram" subText="Diagram listing common use cases:"/>
+<Details slots="header , list" repeat="4" summary = "Text Description of Diagram" subText="Diagram listing common use cases:"/>
 
 - Developer Distribution (Start with the listing metadata):
 
