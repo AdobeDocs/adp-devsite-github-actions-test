@@ -1,4 +1,4 @@
-<IconCard slots="image, heading, text, text1" repeat="2" />
+<ActionTeaser slots="image, heading, text, text1" repeat="2" />
 
 ![SideImage](./images/basic-js.png)
 
@@ -16,7 +16,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](./getting_started/developer-journey.md#discover)
 
-<IconCard slots="image, heading, text" repeat="1" />
+<ActionTeaser slots="image, heading, text" repeat="1" />
 
 ![SideImage](./images/basic-js.png)
 
