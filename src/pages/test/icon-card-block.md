@@ -16,7 +16,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 [Find inspiration →](./getting_started/developer-journey.md#discover)
 
-<ActionTeaser slots="image, heading, text" repeat="1" />
+<ActionTeaser slots="image, heading, text , text1" repeat="1" />
 
 ![SideImage](./images/basic-js.png)
 
