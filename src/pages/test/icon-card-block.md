@@ -32,8 +32,6 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 ### Discover1
 
-Explore how add-ons can expand capabilities and streamline creative workflows.
-
 [Find inspiration →](./getting_started/developer-journey.md#discover)
 
 ![SideImage](./images/thumbs-coming-soon.png)
