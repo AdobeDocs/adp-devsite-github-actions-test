@@ -24,7 +24,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 
 Explore how add-ons can expand capabilities and streamline creative workflows.
 
-<ActionTeaser slots="image, heading, text , text1 , text2" repeat="3" />
+<ActionTeaser slots="image, heading, text , text1 , text2" repeat="4" />
 
 ![SideImage](./images/basic-js.png)
 
@@ -55,3 +55,13 @@ Explore how add-ons can expand capabilities and streamline creative workflows.
 Explore how add-ons can expand capabilities and streamline creative workflows -  1.
 
 [Find inspiration →](./getting_started/developer-journey.md#discover)
+
+[SideImage](./images/Explore_Image_3.webp)
+
+### Discover1
+
+[Find inspiration →](./getting_started/developer-journey.md#discover)
+
+Explore how add-ons can expand capabilities and streamline creative workflows.
+
+Explore how add-ons can expand capabilities and streamline creative workflows -  1.
