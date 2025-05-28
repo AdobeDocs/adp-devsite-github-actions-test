@@ -56,7 +56,7 @@ Explore how add-ons can expand capabilities and streamline creative workflows - 
 
 [Find inspiration →](./getting_started/developer-journey.md#discover)
 
-[SideImage](./images/Explore_Image_3.webp)
+![SideImage](./images/Explore_Image_3.webp)
 
 ### Discover1
 
