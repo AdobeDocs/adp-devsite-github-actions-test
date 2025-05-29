@@ -20,4 +20,4 @@ User's express root node
 
 ## documentRoot
 
-• `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
+• `get` **documentRoot**(): [`ExpressRootNode`](/developer-console/express-root-node/)
