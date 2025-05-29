@@ -20,6 +20,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.7.0
         with:
           args: >
+            --base-directory ./src/pages/
             --verbose
             --exclude-mail
             --accept 200,301
