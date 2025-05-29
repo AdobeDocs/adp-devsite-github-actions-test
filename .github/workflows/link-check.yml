@@ -32,7 +32,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           source "$HOME/.cargo/env"
-          cargo install --force lychee
+          cargo install --git https://github.com/lycheeverse/lychee.git --force
 
       - name: Check Lychee Version
         run: |
