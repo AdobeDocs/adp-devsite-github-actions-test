@@ -10,6 +10,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm install glob
+
+      - name: Check local markdown links
+        run: node check-local-links.js
+
       - name: Run Lychee to check links
         uses: lycheeverse/lychee-action@v2
         with:
