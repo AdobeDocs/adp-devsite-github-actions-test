@@ -10,12 +10,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Run Lychee to check links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: >
-            --base-directory ./src
-            --verbose
-            --exclude-mail
+      - name: Install Rust & Lychee v2
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          source "$HOME/.cargo/env"
+          cargo install lychee
+
+      - name: Run Lychee with internal path support
+        run: |
+          source "$HOME/.cargo/env"
+          lychee './**/*.md' \
+            --base-directory ./src \
+            --verbose \
+            --exclude-mail \
+            --no-progress \
             --accept 200,301
-            './**/*.md'
