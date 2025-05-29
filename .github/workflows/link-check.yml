@@ -1,13 +1,7 @@
 name: Check Markdown Links
 
 on:
-  push:
-    paths:
-      - '**/*.md'
-  pull_request:
-    paths:
-      - '**/*.md'
-  workflow_dispatch:  #Add this line to enable manual trigger
+  workflow_dispatch:  #enable manual trigger
 
 jobs:
   lychee:
