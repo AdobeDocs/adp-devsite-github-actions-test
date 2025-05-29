@@ -1,6 +1,9 @@
 - pathPrefix:
     - /github-actions-test/
 
+- siteWideBanner:
+   {"icon":"info","text":["content 1","content 2"],"button":"learn more","buttonLink":"link","align":"center","isClose":true}
+
 - versions:
     - [v2.0](/) selected
     - [v1.4](https://github.com/AdobeDocs/dev-site) 

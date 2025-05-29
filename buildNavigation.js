@@ -6,9 +6,9 @@ const fs = require('node:fs');
 const { siteMetadata, pathPrefix } = require('./gatsby-config.js');
 
 try {
-    if(!pathPrefix) {
+    if (!pathPrefix) {
         throw new TypeError("pathPrefix not found");
-    } 
+    }
 
     let topNavMarkdown = ``;
     // TODO: prob need url fixer from gatsby theme
@@ -20,11 +20,16 @@ try {
     topNavMarkdown += `- pathPrefix:\n`;
     topNavMarkdown += `    - ${pathPrefix}\n`;
 
+    if (siteMetadata.siteWideBanner) {
+        topNavMarkdown += `\n- siteWideBanner:\n`;
+        topNavMarkdown += `   ${JSON.stringify(siteMetadata.siteWideBanner)}\n`;
+    }
+
     if (siteMetadata.home) {
         topNavMarkdown += '\n- home:\n';
         topNavMarkdown += `    - [${siteMetadata.home.title}](${siteMetadata.home.path})\n`;
 
-        if(siteMetadata.home.hidden) {
+        if (siteMetadata.home.hidden) {
             topNavMarkdown += `    - hidden\n`;
         }
     }
@@ -39,29 +44,29 @@ try {
         });
     }
 
-    if(siteMetadata.pages) {
+    if (siteMetadata.pages) {
         topNavMarkdown += `\n- pages:\n`;
     }
 
     siteMetadata.pages?.forEach((navItem) => {
         //let pathText = navItem.path ? navItem.path : '';
-        if(navItem.path) {
+        if (navItem.path) {
             topNavMarkdown += `    - [${navItem.title}](${navItem.path})\n`;
         } else {
             topNavMarkdown += `    - ${navItem.title}\n`;
-            navItem.menu.forEach((menuItem) =>{
+            navItem.menu.forEach((menuItem) => {
                 topNavMarkdown += `        - [${menuItem.title}](${menuItem.path})\n`;
             });
         }
     });
 
-    if(siteMetadata.subPages) {
+    if (siteMetadata.subPages) {
         topNavMarkdown += `\n- subPages:\n`;
         let sideNavMarkdown = ``;
         let depth = 1;
-    
+
         sideNavMarkdown += buildSideNavRecursively(siteMetadata.subPages, depth);
-        topNavMarkdown +=  sideNavMarkdown;
+        topNavMarkdown += sideNavMarkdown;
     }
 
     let configFilePath = path.resolve(__dirname + '/src/pages/config.md');
@@ -77,19 +82,19 @@ function buildSideNavRecursively(sideNav, depth) {
     let sideNavMarkdown = '';
 
     for (var k in sideNav) {
-        let header = sideNav[k].header ? 'header' : ''; 
+        let header = sideNav[k].header ? 'header' : '';
         sideNavMarkdown += `${insertSpace(depth)}- [${sideNav[k].title}](${sideNav[k].path}) ${header}\n`;
 
         if (sideNav[k].pages) {
-            sideNavMarkdown += buildSideNavRecursively(sideNav[k].pages, depth+1);
-        } 
+            sideNavMarkdown += buildSideNavRecursively(sideNav[k].pages, depth + 1);
+        }
     }
     return sideNavMarkdown;
 }
 
 function insertSpace(indentLevel) {
     let spaces = ``;
-    for(var i=0; i<indentLevel; i++){
+    for (var i = 0; i < indentLevel; i++) {
         spaces += `    `
     }
     return spaces;
