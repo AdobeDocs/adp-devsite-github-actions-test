@@ -1,50 +1,21 @@
 name: Check Markdown Links
 
 on:
-  workflow_dispatch:  # Manual trigger only
+  workflow_dispatch:  #enable manual trigger
 
 jobs:
-  link-check:
+  lychee:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Cache Rust and Cargo
-        uses: actions/cache@v4
+      - name: Run Lychee to check links
+        uses: lycheeverse/lychee-action@v2
         with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            ~/.cargo/bin
-            ~/.rustup
-          key: ${{ runner.os }}-cargo-lychee
-
-      - name: Install Rust (if not cached)
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-          echo 'source "$HOME/.cargo/env"' >> ~/.bashrc
-          source "$HOME/.cargo/env"
-
-      - name: Install Latest Lychee
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          source "$HOME/.cargo/env"
-          cargo install --git https://github.com/lycheeverse/lychee.git --force
-
-      - name: Check Lychee Version
-        run: |
-          source "$HOME/.cargo/env"
-          lychee --version
-
-      - name: Run Lychee with --base-directory
-        run: |
-          source "$HOME/.cargo/env"
-          lychee './**/*.md' \
-            --base-directory ./src \
-            --verbose \
-            --no-progress \
-            --exclude-mail \
+          args: >
+            --include-fragments
+            --verbose
+            --exclude-mail
             --accept 200,301
+            './**/*.md'
