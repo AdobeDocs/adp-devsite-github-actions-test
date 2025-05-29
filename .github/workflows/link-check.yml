@@ -1,20 +1,22 @@
-name: Check Links
+name: 🔗 Check Markdown Links
 
 on:
   push:
     paths:
-      - "**/*.md"
+      - '**/*.md'
   pull_request:
     paths:
-      - "**/*.md"
+      - '**/*.md'
+  workflow_dispatch:  # 👈 Add this line to enable manual trigger
 
 jobs:
   lychee:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 📦 Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Check for broken links
+      - name: 🔍 Run Lychee to check links
         uses: lycheeverse/lychee-action@v1.7.0
         with:
           args: >
