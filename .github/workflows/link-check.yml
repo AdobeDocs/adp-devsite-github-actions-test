@@ -14,7 +14,6 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           args: >
-            --root-dir ./src/pages/
             --verbose
             --exclude-mail
             --accept 200,301
