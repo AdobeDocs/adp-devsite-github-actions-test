@@ -1,0 +1,24 @@
+name: Check Links
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+  pull_request:
+    paths:
+      - "**/*.md"
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@v1.7.0
+        with:
+          args: >
+            --verbose
+            --exclude-mail
+            --accept 200,301
+            './**/*.md'
