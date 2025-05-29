@@ -22,7 +22,7 @@ try {
 
     if (siteMetadata.siteWideBanner) {
         topNavMarkdown += `\n- siteWideBanner:\n`;
-        topNavMarkdown += `   - ${JSON.stringify(siteMetadata.siteWideBanner)}\n`;
+        topNavMarkdown += `   - [sidewide](${JSON.stringify(siteMetadata.siteWideBanner)}) \n`;
     }
 
     if (siteMetadata.home) {
