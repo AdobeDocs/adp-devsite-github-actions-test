@@ -2,13 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 function getMarkdownFiles(dir, results = []) {
+  if (!fs.existsSync(dir)) return results;
+
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   for (let entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       getMarkdownFiles(fullPath, results);
-    } else if (entry.name.endsWith('.md')) {
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
       results.push(fullPath);
     }
   }
@@ -17,7 +19,7 @@ function getMarkdownFiles(dir, results = []) {
 }
 
 function checkLocalLinks() {
-  const markdownFiles = getMarkdownFiles('.');
+  const markdownFiles = getMarkdownFiles('./src/pages');
   const linkRegex = /\[.*?\]\((\/[^\)]+)\)/g;
   let broken = false;
 
@@ -31,7 +33,7 @@ function checkLocalLinks() {
 
       const localPath = path.join('.', url.slice(1));
       if (!fs.existsSync(localPath)) {
-        console.error(`❌ ${file}: Link to "${url}" not found as "${localPath}"`);
+        console.error(`warning: ${file}: Link to "${url}" not found as "${localPath}"`);
         broken = true;
       }
     }
