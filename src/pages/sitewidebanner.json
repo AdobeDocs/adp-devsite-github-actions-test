@@ -1,0 +1,1 @@
+{"icon":"info","text":["content 1","content 2"],"button":"learn more","buttonLink":"link","align":"center","isClose":true}
