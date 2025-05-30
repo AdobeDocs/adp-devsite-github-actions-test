@@ -15,9 +15,6 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
-        run: npm install glob
-
       - name: Check local markdown links
         run: node check-local-links.js
 
