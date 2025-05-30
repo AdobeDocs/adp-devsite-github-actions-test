@@ -1,45 +1,47 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
 
-const ROOT_DIR = '/src/pages/'
+function getMarkdownFiles(dir, results = []) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-const MD_GLOB = '**/*.md';
+  for (let entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      getMarkdownFiles(fullPath, results);
+    } else if (entry.name.endsWith('.md')) {
+      results.push(fullPath);
+    }
+  }
 
-const LINK_REGEX = /\[.*?\]\((\/[^\)]+)\)/g;
+  return results;
+}
 
 function checkLocalLinks() {
-  let brokenLinksFound = false;
+  const markdownFiles = getMarkdownFiles('.');
+  const linkRegex = /\[.*?\]\((\/[^\)]+)\)/g;
+  let broken = false;
 
-  const files = glob.sync(MD_GLOB, { nodir: true });
-
-  files.forEach((file) => {
-    const content = fs.readFileSync(file, 'utf-8');
+  for (const file of markdownFiles) {
+    const content = fs.readFileSync(file, 'utf8');
     let match;
 
-    while ((match = LINK_REGEX.exec(content)) !== null) {
-      const url = match[1]; // e.g., /developer-console/abc/
-
+    while ((match = linkRegex.exec(content)) !== null) {
+      const url = match[1];
       if (/^(http|https|mailto):/.test(url)) continue;
 
-      const localPath = path.join(ROOT_DIR, url.substring(1));
-
+      const localPath = path.join('.', url.slice(1));
       if (!fs.existsSync(localPath)) {
-        console.error(
-          `Broken local link in file "${file}": "${url}" does not exist as "${localPath}"`
-        );
-        brokenLinksFound = true;
+        console.error(`❌ ${file}: Link to "${url}" not found as "${localPath}"`);
+        broken = true;
       }
     }
-  });
+  }
 
-  if (brokenLinksFound) {
-    console.error('\n Some local links are broken.');
+  if (broken) {
     process.exit(1);
   } else {
-    console.log(' All local links are valid.');
+    console.log('✅ All local links are valid.');
   }
 }
 
-// Run the check
 checkLocalLinks();
