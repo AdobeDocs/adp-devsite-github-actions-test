@@ -36,7 +36,8 @@
     "buildRedirections": "node buildRedirections.js",
     "renameFiles": "node renameFiles.js",
     "normalizeLinks": "node normalizeLinks.js",
-    "checkLocalLinks": "node check-local-links.js"
+    "checkLocalLinks": "node check-local-links.js",
+    "buildSiteWideBanner": "node buildSiteWideBanner.js"
   },
   "remarkConfig": {
     "plugins": [
