@@ -7,7 +7,10 @@ try {
     let sideWideBanner = ``;
     if (siteMetadata.siteWideBanner) {
         sideWideBanner = {
-            "data": siteMetadata.siteWideBanner,
+            "total": 1,
+            "offset": 0,
+            "limit": 1,
+            "data": [siteMetadata.siteWideBanner],
             ":type": "sheet"
         };
     }
