@@ -1,11 +1,11 @@
 {
-    "icon": "info",
-    "text": [
-        "content 1",
-        "content 2"
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "data": [
+      {
+        "test": "123"
+      }
     ],
-    "button": "learn more",
-    "buttonLink": "link",
-    "align": "center",
-    "isClose": true
-}
+    ":type": "sheet"
+  }
