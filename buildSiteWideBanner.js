@@ -12,10 +12,10 @@ try {
         };
     }
 
-    const configFilePath = path.resolve(__dirname, 'src/pages/sitewidebanner.json');
+    const siteWideBanner = path.resolve(__dirname, 'src/pages/site-wide-banner.json');
 
-    fs.writeFileSync(configFilePath, JSON.stringify(sideWideBanner));
-    console.log(`Generated file: ${configFilePath}`);
+    fs.writeFileSync(siteWideBanner, JSON.stringify(sideWideBanner));
+    console.log(`Generated file: ${siteWideBanner}`);
 } catch (err) {
     console.error(err);
 }
