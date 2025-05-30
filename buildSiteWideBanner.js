@@ -10,7 +10,7 @@ try {
     sideWideBanner = JSON.stringify(siteMetadata.siteWideBanner);
   }
 
-  let configFilePath = path.resolve(__dirname + '/src/pages/sidewitebanner.json');
+  let configFilePath = path.resolve(__dirname + '/src/pages/sitewidebanner.json');
   fs.writeFileSync(configFilePath, sideWideBanner);
   console.log(`Generated file: ${configFilePath}`);
 
