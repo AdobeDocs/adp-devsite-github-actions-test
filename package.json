@@ -35,7 +35,7 @@
     "buildRedirections": "node buildRedirections.js",
     "renameFiles": "node renameFiles.js",
     "normalizeLinks": "node normalizeLinks.js",
-    "buildSideWideBanner": "node buildSideWideBanner.js"
+    "buildSiteWideBanner": "node buildSideWiteBanner.js"
   },
   "remarkConfig": {
     "plugins": [
