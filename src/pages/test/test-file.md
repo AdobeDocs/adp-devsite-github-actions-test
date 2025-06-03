@@ -24,6 +24,24 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 - [Learn more](https://https://www.typescriptlang.org/)
 
+<Info-Card slots="link, image, heading, text" repeat="2"/>
+
+[Express Document API](grids-addon.md)
+
+![Grids add-on](images/thumbs-grids-addon.png)
+
+### Creating a Grid System add-on with the Adobe Express Document API
+
+Davide Barranca - November 6th, 2023
+
+[Coming Soon...](stats-addon.md)
+
+![Coming Soon](images/thumbs-stats-addon.png)
+
+### Creating a Stats add-on with the Adobe Express Communication API
+
+Davide Barranca - December 14th, 2023
+
 ### GET /runtime/admin/namespaces/{orgId}/{intId}
 
 Returns the details of the namespace associated with the specified organization and integration.
