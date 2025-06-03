@@ -23,12 +23,26 @@ async function checkExternalLink(url) {
   try {
     const response = await fetch(url, {
       method: 'HEAD',
-      timeout: 10000, // 10 second timeout
+      timeout: 30000, // Increased to 30 second timeout
       redirect: 'follow'
     });
     // Consider both OK responses and redirects (status 200-399) as valid
     return response.ok;
   } catch (error) {
+    // If it's a timeout error, try one more time with GET method
+    if (error.message.includes('timeout')) {
+      try {
+        console.log(`Retrying ${url} with GET method...`);
+        const response = await fetch(url, {
+          method: 'GET',
+          timeout: 30000,
+          redirect: 'follow'
+        });
+        return response.ok;
+      } catch (retryError) {
+        return false;
+      }
+    }
     return false;
   }
 }
