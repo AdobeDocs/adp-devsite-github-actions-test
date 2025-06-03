@@ -1,1 +1,17 @@
-{"total":1,"offset":0,"limit":1,"data":[{"icon":"info","text":["content 1","content 2"],"button":"learn more","buttonLink":"link","align":"center","isClose":true}],":type":"sheet"}
+{
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "data": [
+        {
+            "icon": "warning",
+            "text": [
+                "The Service Account (JWT) credentials have been deprecated in favor of the OAuth Server-to-Server credentials.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            ],
+            "button": "Learn More",
+            "buttonLink": "link"
+        }
+    ],
+    ":type": "sheet"
+}
