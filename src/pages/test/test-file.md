@@ -10,15 +10,13 @@ Adobe I/O Runtime supports the following API endpoints for interacting programma
 2. For all the API calls on this page, the base URL is:  
    `https://api.adobe.io/`
 
-<Product-Card slots="icon, text, button" theme="light" width="50%" />
+<Product-Card slots="icon, text, button" theme="light" repeat="2" />
 
 ![lit-logo](../images/adobe-express.svg)
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
 - [Learn more](https://lit.dev/)
-
-<Product-Card slots="icon, text, button" theme="light" width="50%" />
 
 ![lit-logo](../images/adobe-express.svg)
 
@@ -42,6 +40,6 @@ Returns the details of the namespace associated with the specified organization 
 #### _Responses:_
 
 Response content type: `application/json`
-|Code|Description|
-|--- |--- |
-|200|Successful operation Example value|
+| Code | Description                        |
+| ---- | ---------------------------------- |
+| 200  | Successful operation Example value |
