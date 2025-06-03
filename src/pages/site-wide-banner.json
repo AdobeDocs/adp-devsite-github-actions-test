@@ -10,7 +10,8 @@
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
             ],
             "button": "Learn More",
-            "buttonLink": "link"
+            "buttonLink": "link",
+            "isClose": true
         }
     ],
     ":type": "sheet"
