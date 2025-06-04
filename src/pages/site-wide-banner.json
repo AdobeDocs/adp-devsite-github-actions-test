@@ -4,14 +4,12 @@
     "limit": 1,
     "data": [
         {
-            "icon": "warning",
+            "icon": "info",
             "text": [
-                "The Service Account (JWT) credentials have been deprecated in favor of the OAuth Server-to-Server credentials.",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+                "The Service Account (JWT) credentials have been deprecated in favor of the OAuth Server-to-Server credentials."
             ],
             "button": "Learn More",
-            "buttonLink": "link",
-            "isClose": true
+            "buttonLink": "https://developer.adobe.com/"
         }
     ],
     ":type": "sheet"
