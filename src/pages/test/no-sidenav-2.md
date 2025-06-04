@@ -1,0 +1,1 @@
+This page isn't in config.md, so it shouldn't have a sidenav.
