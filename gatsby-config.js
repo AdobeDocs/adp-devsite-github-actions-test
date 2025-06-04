@@ -13,14 +13,6 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/github-actions-test/',
   siteMetadata: {
-    siteWideBanner : {
-      icon : "info", 
-      text : ["content 1" , "content 2"],
-      button : "learn more",
-      buttonLink : "link",
-      align : "center",
-      isClose : true
-    },
     versions: [
       {
         title: 'v2.0',
