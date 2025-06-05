@@ -13,6 +13,7 @@
         - [Cat Reference v1.4](/api/1-4.md)
     - [Support](/support/index.md)
     - [Test](/test/index.md)
+    - [no-sidenav-1](/no-sidenav-1.md)
 
 - subPages:
     - [Get Started](/guides/index.md) 
