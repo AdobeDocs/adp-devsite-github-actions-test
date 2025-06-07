@@ -1,4 +1,4 @@
-<HeroSimple slots="image, heading, text" variant="halfWidth" />
+<HeroSimple slots="image, heading, text" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" />
 
 ![Hero image](./images/Explore_Image_3.webp)
 
