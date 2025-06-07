@@ -30,7 +30,7 @@ User's express root node
 
 • `get` **documentRoot**(): [`ExpressRootNode`](express-root-node.md)
 
-<Product-Card slots="icon,text, button" repeat="2" theme="light" />
+<Product-Card slots="icon,text, buttons" repeat="2" theme="light" />
 
 ![lit-logo](../images/adobe-express.svg)
 
