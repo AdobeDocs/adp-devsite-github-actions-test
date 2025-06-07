@@ -10,19 +10,26 @@ Adobe I/O Runtime supports the following API endpoints for interacting programma
 2. For all the API calls on this page, the base URL is:  
    `https://api.adobe.io/`
 
-<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
+
+<Product-Card slots="icon,  heading , text, buttons" theme="light" repeat="2" />
 
 ![lit-logo](../images/adobe-express.svg)
+
+## Product 1
 
 Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
 
-- [Learn more](https://lit.dev/)
+[Learn more](https://lit.dev/)
+[View Docs](https://lit.dev/)
 
 ![lit-logo](../images/adobe-express.svg)
 
+## Product 2
+
 TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
 
-- [Learn more](https://https://www.typescriptlang.org/)
+[Learn more](https://https://www.typescriptlang.org/)
+[View Docs](https://lit.dev/)
 
 <Info-Card slots="link, image, heading, text" repeat="2"/>
 
