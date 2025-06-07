@@ -1,4 +1,4 @@
-<Product-Card slots="icon, text, button" theme="light" repeat="2" />
+<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
 
 ![lit-logo](../images/adobe-express.svg)
 
@@ -12,3 +12,5 @@ Lit is a simple library for building fast, lightweight web components. It's buil
 TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
 
 [Learn more](https://https://www.typescriptlang.org/)
+[View Docs](https://lit.dev/)
+
