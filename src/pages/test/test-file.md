@@ -10,7 +10,7 @@ Adobe I/O Runtime supports the following API endpoints for interacting programma
 2. For all the API calls on this page, the base URL is:  
    `https://api.adobe.io/`
 
-<Product-Card slots="icon, text, button" theme="light" repeat="2" />
+<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
 
 ![lit-logo](../images/adobe-express.svg)
 
