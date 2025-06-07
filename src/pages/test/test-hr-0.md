@@ -1,4 +1,4 @@
-<HeroSimple slots="image, heading, text" background="green"/>
+<HeroSimple slots="image, heading, text" variant="halfWidth" />
 
 ![Hero image](./images/Explore_Image_3.webp)
 

@@ -1,3 +1,11 @@
+<HeroSimple slots="image, heading, text" variant="fullWidth" />
+
+![Hero image](./images/Explore_Image_3.webp)
+
+## Build add-ons for Adobe Express
+
+Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+
 # Adobe I/O Runtime API Reference
 
 ## API endpoints
