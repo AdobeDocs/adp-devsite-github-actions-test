@@ -1,4 +1,4 @@
-<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
+<Product-Card slots="icon, text, buttons" theme="light" repeat="3" />
 
 ![lit-logo](../images/adobe-express.svg)
 
@@ -13,3 +13,10 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 [Learn more](https://https://www.typescriptlang.org/)
 [View Docs](https://lit.dev/)
+
+![lit-logo](../images/adobe-express.svg)
+
+TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
+
+- [Learn more](https://https://www.typescriptlang.org/)
+- [View Docs](https://lit.dev/)
