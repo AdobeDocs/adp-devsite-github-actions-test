@@ -68,3 +68,11 @@ Response content type: `application/json`
 | Code | Description                        |
 | ---- | ---------------------------------- |
 | 200  | Successful operation Example value |
+
+<Product-Card slots="icon,text, buttons" theme="light" />
+
+![lit-logo](../images/adobe-express.svg)
+
+Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
+
+[Learn more](https://lit.dev/)
