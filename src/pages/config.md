@@ -37,5 +37,6 @@
         - [Code in Table](/test/code-in-table.md) 
         - [InlineAlert](/test/inline-alert.md) 
         - [ListBlock](/test/list-block.md) 
+        - [OnThisPage](/test/onthispage.md) 
         - [RedoclyAPIBlock](/test/redocly-api-block.md) 
         - [TabsBlock](/test/tabs-block.md) 
