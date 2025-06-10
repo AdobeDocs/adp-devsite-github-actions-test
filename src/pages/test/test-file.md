@@ -4,8 +4,6 @@
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
 
-# Adobe I/O Runtime API Reference
-
 ## API endpoints
 
 Adobe I/O Runtime supports the following API endpoints for interacting programmatically with the service. 
