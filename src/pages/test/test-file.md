@@ -1,4 +1,4 @@
-<HeroSimple slots="image, heading, text" />
+<HeroSimple slots="heading, text" />
 
 ## Build add-ons for Adobe Express
 
