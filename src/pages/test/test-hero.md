@@ -1,4 +1,4 @@
-<HeroSimple slots="image, heading, text , buttons" variant="fullWidth" textColor="white" />
+<HeroSimple slots="image, heading, text , buttons" variant="fullWidth" textColor="navy" />
 
 ![Hero image](./images/hero-image.png)
 
