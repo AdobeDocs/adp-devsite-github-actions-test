@@ -1,11 +1,8 @@
-<HeroSimple slots="heading, text , buttons" textColor="white" />
+<HeroSimple slots="heading, text" textColor="white" />
 
 ## Build add-ons for Adobe Express
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
-
-[Explore our APIs](https://adobe.io)
-[Learn more](https://adobe.io)
 
 ## API endpoints
 
