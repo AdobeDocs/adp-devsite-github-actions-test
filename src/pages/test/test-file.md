@@ -1,6 +1,4 @@
-<HeroSimple slots="image, heading, text" variant="fullWidth" />
-
-![Hero image](./images/Explore_Image_3.webp)
+<HeroSimple slots="image, heading, text" />
 
 ## Build add-ons for Adobe Express
 
