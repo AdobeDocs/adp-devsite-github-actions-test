@@ -1,10 +1,12 @@
-<HeroSimple slots="image, heading, text" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
+<HeroSimple slots="image, heading, text , buttons" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
 
 ![Hero image](./images/Explore_Image_3.webp)
 
 ## Build add-ons for Adobe Express
 
 Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+
+[Explore our APIs](https://adobe.io)
 
 ## Class: Editor new4
 
