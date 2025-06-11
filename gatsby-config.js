@@ -12,6 +12,7 @@
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/github-actions-test/',
+  siteMetadata: {
     versions: [
       {
         title: 'v2.0',
