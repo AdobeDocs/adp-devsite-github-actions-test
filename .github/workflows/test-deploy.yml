@@ -123,7 +123,7 @@ jobs:
           script: |
             const script = require('./scripts/deploy.js');
 
-            const patterns = ['src/pages/**/*','static/**/*'];
+            const patterns = ['src/pages/**','!src/pages/**/','static/**','!static/**/'];
             const globber = await glob.create(patterns.join('\n'));
             const files = await globber.glob();
             console.log(files);
