@@ -52,3 +52,16 @@ Using an iconset reference from one of the `icons-workflow` or `icons-ui` packag
 <InlineAlert slots="text" variant="help"/>
 
 Using an iconset reference from one of the `icons-workflow` or `icons-ui` packages in the `name` on an `sp-icon` should no longer be used (ie: `<sp-icon name="ui:Arrow100"></sp-icon>`), since it's deprecated. Use the specific named import mentioned in the first bullet above, instead.
+
+<InlineAlert slots="text1,text2" />
+
+**Join Us: Office Hours for Adobe Express Developers**
+
+Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
+
+<DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
+  
+1. Click the **Add-ons icon** in the left hand rail.
+2. Enable the **Add-on Development** switch on the top right corner.
+3. Click the **Launch code playground** button.
+4. Click the **Script** tab.
