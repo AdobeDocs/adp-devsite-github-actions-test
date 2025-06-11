@@ -59,3 +59,9 @@ Using an iconset reference from one of the `icons-workflow` or `icons-ui` packag
 
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
+<DetailsBlock slots="list"  summary="Click to view a list of steps to open the Code Playground" />
+  
+1. Click the **Add-ons icon** in the left hand rail.
+2. Enable the **Add-on Development** switch on the top right corner.
+3. Click the **Launch code playground** button.
+4. Click the **Script** tab.
