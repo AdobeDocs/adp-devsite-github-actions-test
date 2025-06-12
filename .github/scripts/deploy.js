@@ -34,8 +34,8 @@ module.exports = async ({ core, changes, deletions, operation, siteEnv, branch, 
     const cmd = `curl -X${httpMethod} -vi ${args} ${url}`;
 
     exec(cmd, (error, execOut, execErr) => {
-      if (error) {
-        console.error(`::group:: Error ${theFilePath} \n${execErr} \n::endgroup::`)
+      if (execOut.includes('x-error')) {
+        console.error(`::group:: Error ${theFilePath} \n${execOut} \n::endgroup::`)
         return;
       }
 
