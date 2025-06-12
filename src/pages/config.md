@@ -13,6 +13,7 @@
         - [Cat Reference v1.4](/api/1-4.md)
     - [Support](/support/index.md)
     - [Test](/test/index.md)
+    - [no-sidenav-1](/no-sidenav-1.md)
 
 - subPages:
     - [Get Started](/guides/index.md) 
@@ -36,5 +37,6 @@
         - [Code in Table](/test/code-in-table.md) 
         - [InlineAlert](/test/inline-alert.md) 
         - [ListBlock](/test/list-block.md) 
+        - [OnThisPage with Sidenav](/test/onthispage-with-sidenav.md) 
         - [RedoclyAPIBlock](/test/redocly-api-block.md) 
         - [TabsBlock](/test/tabs-block.md) 
