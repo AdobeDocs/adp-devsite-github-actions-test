@@ -31,6 +31,7 @@ jobs:
       deploy_prod: ${{ contains(inputs.env, 'prod') }}
       base_Sha: ${{ github.event.inputs.baseSha }}
       deploy_All: ${{ github.event.inputs.deployAll }}
+      repo_name: $ {{ github.event.repository.name }}
 
     steps:
       - name: Checkout
@@ -123,11 +124,34 @@ jobs:
           script: |
             const script = require('./scripts/deploy.js');
 
-            const patterns = ['src/pages/**/*.*','static/**/*.*'];
             const globber = await glob.create(patterns.join('\n'));
             const files = await globber.glob();
-            console.log(files);
 
+            const globberSrcFiles =  glob.create(patterns[0]);
+            const globberStaticFiles = glob.create(patterns[1]);
+
+            const srcFiles = await globberSrcFiles.glob();
+            const staticFiles = await globberStaticFiles.glob();
+
+            const srcFilesFixedPaths = [];
+            srcFiles.forEach((path) => {
+              let pathSplitter = path.split(`${github.event.repository.name}/src/pages`);
+              if(pathSplitter.length > 1){
+                  srcFilesFixedPaths.push(`${github.event.repository.name}/src/pages${pathSplitter[1]`)
+              }
+            });
+
+            console.log(srcFilesFixedPaths);
+
+            const staticFilesPaths = [];
+            staticFiles.forEach((path) => {
+              let pathSplitter = path.split(`${github.event.repository.name}/static`);
+              if(pathSplitter.length > 1){
+                  staticFilesPaths.push(`${github.event.repository.name}/static${pathSplitter[1]`)
+              }
+            });
+
+            console.log(staticFilesPaths);
       - name: Sleep for 30 seconds before cleaning stage cache
         if: needs.set-state.outputs.deploy_stage == 'true'
         run: sleep 30s
