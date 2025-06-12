@@ -123,9 +123,7 @@ jobs:
           script: |
             const script = require('./scripts/deploy.js');
 
-            const globber = await glob.create(patterns.join('\n'));
-            const files = await globber.glob();
-
+            const patterns = ['src/pages/**/*.*','static/**/*.*'];
             const globberSrcFiles =  glob.create(patterns[0]);
             const globberStaticFiles = glob.create(patterns[1]);
 
