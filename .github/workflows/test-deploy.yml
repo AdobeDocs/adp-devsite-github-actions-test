@@ -31,7 +31,6 @@ jobs:
       deploy_prod: ${{ contains(inputs.env, 'prod') }}
       base_Sha: ${{ github.event.inputs.baseSha }}
       deploy_All: ${{ github.event.inputs.deployAll }}
-      repo_name: $ {{ github.event.repository.name }}
 
     steps:
       - name: Checkout
@@ -135,9 +134,9 @@ jobs:
 
             const srcFilesFixedPaths = [];
             srcFiles.forEach((path) => {
-              let pathSplitter = path.split(`${github.event.repository.name}/src/pages`);
+              let pathSplitter = path.split(`${{ github.event.repository.name }}/src/pages`);
               if(pathSplitter.length > 1){
-                  srcFilesFixedPaths.push(`${github.event.repository.name}/src/pages${pathSplitter[1]`)
+                  srcFilesFixedPaths.push(`${{ github.event.repository.name }}/src/pages${pathSplitter[1]`)
               }
             });
 
@@ -145,9 +144,9 @@ jobs:
 
             const staticFilesPaths = [];
             staticFiles.forEach((path) => {
-              let pathSplitter = path.split(`${github.event.repository.name}/static`);
+              let pathSplitter = path.split(`${{ github.event.repository.name }}/static`);
               if(pathSplitter.length > 1){
-                  staticFilesPaths.push(`${github.event.repository.name}/static${pathSplitter[1]`)
+                  staticFilesPaths.push(`${{ github.event.repository.name }}/static${pathSplitter[1]`)
               }
             });
 
