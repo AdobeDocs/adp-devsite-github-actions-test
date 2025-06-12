@@ -102,6 +102,7 @@ jobs:
       - name: Get all files src/pages and static folder
         if: needs.set-state.outputs.deploy_All == 'true'
         id: all-files
+        uses: actions/github-script@v7
         with:
           script: |
             const patterns = ['src/pages/**/*.*','static/**/*.*'];
