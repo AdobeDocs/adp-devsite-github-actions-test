@@ -124,8 +124,8 @@ jobs:
             const script = require('./scripts/deploy.js');
 
             const patterns = ['src/pages/**/*.*','static/**/*.*'];
-            const globberSrcFiles =  glob.create(patterns[0]);
-            const globberStaticFiles = glob.create(patterns[1]);
+            const globberSrcFiles = await glob.create(patterns[0]);
+            const globberStaticFiles = await glob.create(patterns[1]);
 
             const srcFiles = await globberSrcFiles.glob();
             const staticFiles = await globberStaticFiles.glob();
