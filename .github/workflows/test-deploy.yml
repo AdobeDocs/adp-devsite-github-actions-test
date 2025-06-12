@@ -131,7 +131,6 @@ jobs:
             const serializedAllFiles = JSON.stringify(srcFilesFixedPaths.concat(staticFilesPaths));
             core.setOutput('all_files', serializedAllFiles);
 
-
       - name: Deploy only changed files to stage
         if: needs.set-state.outputs.deploy_stage == 'true' && steps.changed-files-specific.outputs.any_modified == 'true' && needs.set-state.outputs.deploy_All == 'false'
         uses: actions/github-script@v7
