@@ -65,7 +65,7 @@ jobs:
       - run: echo "Deploy to prod - ${{ needs.set-state.outputs.deploy_prod }}"
       - run: echo "Path prefix - ${{ needs.set-state.outputs.path_prefix }}"
       - run: echo "Repository org - ${{ github.event.repository.owner.login }}"
-      - run: echo "Repository name - ${{ github.event.repository.name }}"
+      - run: echo "Repository name - "
       - run: echo "Repository branch - ${{ needs.set-state.outputs.branch_short_ref }}"
       - run: echo "Base Sha - ${{ needs.set-state.outputs.base_Sha }}"
       - run: echo "Deploy All - ${{ needs.set-state.outputs.deploy_All }}"    
@@ -134,9 +134,9 @@ jobs:
 
             const srcFilesFixedPaths = [];
             srcFiles.forEach((path) => {
-              let pathSplitter = path.split(`${{ github.event.repository.name }}/src/pages`);
+              let pathSplitter = path.split(`/src/pages`);
               if(pathSplitter.length > 1){
-                  srcFilesFixedPaths.push(`${{ github.event.repository.name }}/src/pages${pathSplitter[1]`)
+                  srcFilesFixedPaths.push(`/src/pages${pathSplitter[1]`)
               }
             });
 
@@ -144,9 +144,9 @@ jobs:
 
             const staticFilesPaths = [];
             staticFiles.forEach((path) => {
-              let pathSplitter = path.split(`${{ github.event.repository.name }}/static`);
+              let pathSplitter = path.split(`/static`);
               if(pathSplitter.length > 1){
-                  staticFilesPaths.push(`${{ github.event.repository.name }}/static${pathSplitter[1]`)
+                  staticFilesPaths.push(`/static${pathSplitter[1]`)
               }
             });
 
