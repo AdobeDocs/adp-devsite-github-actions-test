@@ -116,7 +116,7 @@ jobs:
             srcFiles.forEach((path) => {
               let pathSplitter = path.split(`${{ github.event.repository.name }}/src/pages`);
               if(pathSplitter.length > 1){
-                  srcFilesFixedPaths.push(`${{ github.event.repository.name }}/src/pages${pathSplitter[1]}`)
+                  srcFilesFixedPaths.push(`src/pages${pathSplitter[1]}`)
               }
             });
 
@@ -124,7 +124,7 @@ jobs:
             staticFiles.forEach((path) => {
               let pathSplitter = path.split(`${{ github.event.repository.name }}/static`);
               if(pathSplitter.length > 1){
-                  staticFilesPaths.push(`${{ github.event.repository.name }}/static${pathSplitter[1]}`)
+                  staticFilesPaths.push(`static${pathSplitter[1]}`)
               }
             });
 
