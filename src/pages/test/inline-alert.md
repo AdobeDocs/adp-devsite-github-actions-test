@@ -65,12 +65,3 @@ Receive real-time support, have your questions answered, and connect with both e
 2. Enable the **Add-on Development** switch on the top right corner.
 3. Click the **Launch code playground** button.
 4. Click the **Script** tab.
-
-
-<Announcement slots="heading, text, button" variant ="secondary"/>
-
-### Are you an existing developer?
-
-Action required: Add trader details to continue EU distribution.
-
-[Add trader details now.](https://express.adobe.com/add-ons?mode=submission)
