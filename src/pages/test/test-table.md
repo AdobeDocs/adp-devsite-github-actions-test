@@ -15,7 +15,7 @@ Sign Gov admins should note the minor differences from the content below. *Descr
 | client_secret  | The ID obtained from the OAuth configuration page.     | yes        | Authenticates the application.                                      |
 | refresh_token  | The refresh token received during the previous step.   | yes        |                                                                     |
 
-<table border="1" columnWidths="20,30,10,40" >
+<table>
     <thead>
         <tr>
             <th>Parameter</th>
