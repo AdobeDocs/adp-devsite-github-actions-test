@@ -132,23 +132,23 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const patterns = [
         // for paths that exist in the repo
         {
-            getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
-            getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
+            getFindPattern: (from) => `^(${pathPrefix}${toUrl(from)})(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${toUrl(to)}$2`,
         },
         // for paths that don't end in a trailing slash but should, i.e. non-existent paths added by 'buildRedirections.js'
         {
-            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#[^'"]*)?(['"])`,
-            getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}$5$6`,
+            getFindPattern: (from) => `^(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${removeTrailingSlash(toUrl(to))}$2`,
         },
         // for paths that end with '/index' but should end with a trailing slash, i.e. non-normalized paths added by 'buildRedirections.js'
         {
-            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#[^'"]*)?(['"])`,
-            getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$5$6`,
+            getFindPattern: (from) => `^(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$2`,
         },
         // for paths that end in a trailing slash, but shouldn't, i.e. non-existent paths added by 'buildRedirections.js'
         {
-            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)}/)(#[^'"]*)?(['"])`,
-            getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}/$5$6`,
+            getFindPattern: (from) => `^(${pathPrefix}${toUrl(from)}/)(#.*)?$`,
+            getReplacePattern: (to) => `${toUrl(to)}/$2`,
         },
     ];
 }
