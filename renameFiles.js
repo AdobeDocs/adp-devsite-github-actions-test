@@ -215,22 +215,22 @@ try {
 
     const mdFiles = getMarkdownFiles();
     mdFiles.forEach((mdFile) => {
-        renameLinksInMarkdownFile(fileMap, mdFile);
+        // renameLinksInMarkdownFile(fileMap, mdFile);
     });
 
     const redirectsFile = getRedirectionsFilePath();
     const pathPrefix = getPathPrefixFromConfig() ?? pathPrefixFromGatsbyConfig;
     if (fs.existsSync(redirectsFile)) {
         renameLinksInRedirectsFile(fileMap, pathPrefix);
-        appendRedirects(fileMap, pathPrefix);
+        // appendRedirects(fileMap, pathPrefix);
     }
 
     const gatsbyConfigFile = 'gatsby-config.js';
     if (fs.existsSync(gatsbyConfigFile)) {
-        renameLinksInGatsbyConfigFile(fileMap, gatsbyConfigFile);
+        // renameLinksInGatsbyConfigFile(fileMap, gatsbyConfigFile);
     }
 
-    renameFiles(fileMap);
+    // renameFiles(fileMap);
 } catch (err) {
     console.error(err);
 }
