@@ -124,6 +124,10 @@ function renameLinksInMarkdownFile(fileMap, file) {
     });
 }
 
+function findPatternAndFile(url, patterns, files) {
+    return ['hello', 'world'];
+}
+
 function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
@@ -151,22 +155,55 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
             getReplacePattern: (to) => `${toUrl(to)}/$2`,
         },
     ];
-}
 
-function appendRedirects(fileMap, pathPrefix) {
-    const file = getRedirectionsFilePath();
-    const dir = path.dirname(file);
-    const linkMap = getLinkMap(fileMap, dir);
-    const newData = [];
-    linkMap.forEach((to, from) => {
-        newData.push({
+    const currRedirects = readRedirectionsFile();
+    const newRedirects = [];
+
+    currRedirects.forEach(({ currSourceUrl: fromSourceUrl, currDestinationUrl: fromDestinationUrl }) => {
+        const [sourcePattern, fromSourceFile] = findPatternAndFile(fromSourceUrl, patterns, linkMap.keys());
+        const [destinationPattern, toDestinationFile] = findPatternAndFile(fromDestinationUrl, patterns, linkMap.keys());
+        const toSourceUrl = linkMap.get(fromSourceFile); // + replace
+        const toDestinationUrl = linkMap.get(toDestinationFile); // + replace
+
+        if (!toSourceUrl && !toDestinationUrl) {
+            newRedirects.push({
+                Source: fromSourceUrl,
+                Destination: fromDestinationUrl,
+            });
+        } else if (!toSourceUrl && toDestinationUrl) {
+            newRedirects.push({
+                Source: fromSourceUrl,
+                Destination: toDestinationUrl,
+            });
+        } else if (toSourceUrl && !toDestinationUrl) {
+            newRedirects.push({
+                Source: fromSourceUrl,
+                Destination: fromDestinationUrl,
+            });
+            newRedirects.push({
+                Source: toSourceUrl,
+                Destination: fromDestinationUrl,
+            });
+        } else {
+            newRedirects.push({
+                Source: fromSourceUrl,
+                Destination: toDestinationUrl,
+            });
+            newRedirects.push({
+                Source: toSourceUrl,
+                Destination: toDestinationUrl,
+            });
+        }
+    });
+
+    linkMap.forEach((from, to) => {
+        newRedirects.push({
             Source: `${pathPrefix}${toUrl(from)}`,
             Destination: `${pathPrefix}${toUrl(to)}`,
         });
     });
-    const currData = readRedirectionsFile();
-    const data = [...currData, ...newData];
-    writeRedirectionsFile(data);
+
+    writeRedirectionsFile(newRedirects);
 }
 
 function deleteEmptyDirectoryUpwards(startDir, stopDir) {
@@ -213,7 +250,6 @@ try {
     const pathPrefix = getPathPrefixFromConfig() ?? pathPrefixFromGatsbyConfig;
     if (fs.existsSync(redirectsFile)) {
         renameLinksInRedirectsFile(fileMap, pathPrefix);
-        // appendRedirects(fileMap, pathPrefix);
     }
 
     const gatsbyConfigFile = 'gatsby-config.js';
