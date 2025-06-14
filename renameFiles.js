@@ -124,13 +124,8 @@ function renameLinksInMarkdownFile(fileMap, file) {
     });
 }
 
-function getPatternAndFile(url, patterns, files) {
+function getRenamedUrl(fromUrl, patterns, linkMap) {
     return ['hello', 'world'];
-}
-
-function getUrl(pattern, file, linkMap) {
-    // replaceLinksInString
-    return '!';
 }
 
 function renameLinksInRedirectsFile(fileMap, pathPrefix) {
@@ -164,39 +159,37 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const currRedirects = readRedirectionsFile();
     const newRedirects = [];
 
-    currRedirects.forEach(({ currSourceUrl: fromSourceUrl, currDestinationUrl: fromDestinationUrl }) => {
-        const [sourcePattern, fromSourceFile] = getPatternAndFile(fromSourceUrl, patterns, linkMap.keys());
-        const [destinationPattern, toDestinationFile] = getPatternAndFile(fromDestinationUrl, patterns, linkMap.keys());
-        const toSourceUrl = getUrl(sourcePattern, fromSourceFile, linkMap);
-        const toDestinationUrl = getUrl(destinationPattern, toDestinationFile, linkMap);
+    currRedirects.forEach(({ Source: fromSource, Destination: fromDestination }) => {
+        const toSource = getRenamedUrl(fromSource, patterns, linkMap);
+        const toDestination = getRenamedUrl(fromDestination, patterns, linkMap);
 
-        if (!toSourceUrl && !toDestinationUrl) {
+        if (!toSource && !toDestination) {
             newRedirects.push({
-                Source: fromSourceUrl,
-                Destination: fromDestinationUrl,
+                Source: fromSource,
+                Destination: fromDestination,
             });
-        } else if (!toSourceUrl && toDestinationUrl) {
+        } else if (!toSource && toDestination) {
             newRedirects.push({
-                Source: fromSourceUrl,
-                Destination: toDestinationUrl,
+                Source: fromSource,
+                Destination: toDestination,
             });
-        } else if (toSourceUrl && !toDestinationUrl) {
+        } else if (toSource && !toDestination) {
             newRedirects.push({
-                Source: fromSourceUrl,
-                Destination: fromDestinationUrl,
+                Source: fromSource,
+                Destination: fromDestination,
             });
             newRedirects.push({
-                Source: toSourceUrl,
-                Destination: fromDestinationUrl,
+                Source: toSource,
+                Destination: fromDestination,
             });
         } else {
             newRedirects.push({
-                Source: fromSourceUrl,
-                Destination: toDestinationUrl,
+                Source: fromSource,
+                Destination: toDestination,
             });
             newRedirects.push({
-                Source: toSourceUrl,
-                Destination: toDestinationUrl,
+                Source: toSource,
+                Destination: toDestination,
             });
         }
     });
