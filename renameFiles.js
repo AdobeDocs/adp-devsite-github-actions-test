@@ -124,8 +124,13 @@ function renameLinksInMarkdownFile(fileMap, file) {
     });
 }
 
-function findPatternAndFile(url, patterns, files) {
+function getPatternAndFile(url, patterns, files) {
     return ['hello', 'world'];
+}
+
+function getUrl(pattern, file, linkMap) {
+    // replaceLinksInString
+    return '!';
 }
 
 function renameLinksInRedirectsFile(fileMap, pathPrefix) {
@@ -160,10 +165,10 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const newRedirects = [];
 
     currRedirects.forEach(({ currSourceUrl: fromSourceUrl, currDestinationUrl: fromDestinationUrl }) => {
-        const [sourcePattern, fromSourceFile] = findPatternAndFile(fromSourceUrl, patterns, linkMap.keys());
-        const [destinationPattern, toDestinationFile] = findPatternAndFile(fromDestinationUrl, patterns, linkMap.keys());
-        const toSourceUrl = linkMap.get(fromSourceFile); // + replace
-        const toDestinationUrl = linkMap.get(toDestinationFile); // + replace
+        const [sourcePattern, fromSourceFile] = getPatternAndFile(fromSourceUrl, patterns, linkMap.keys());
+        const [destinationPattern, toDestinationFile] = getPatternAndFile(fromDestinationUrl, patterns, linkMap.keys());
+        const toSourceUrl = getUrl(sourcePattern, fromSourceFile, linkMap);
+        const toDestinationUrl = getUrl(destinationPattern, toDestinationFile, linkMap);
 
         if (!toSourceUrl && !toDestinationUrl) {
             newRedirects.push({
@@ -203,7 +208,7 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
         });
     });
 
-    writeRedirectionsFile(newRedirects);
+    // writeRedirectionsFile(newRedirects);
 }
 
 function deleteEmptyDirectoryUpwards(startDir, stopDir) {
