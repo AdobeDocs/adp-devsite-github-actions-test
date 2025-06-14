@@ -129,37 +129,28 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     const dir = path.dirname(file);
     const linkMap = getLinkMap(fileMap, dir);
 
-    // rename redirects for correct paths
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
-    });
-
-    // rename redirects for paths that don't end in a trailing slash but should
-    // (handle non-existent paths added by 'buildRedirections.js')
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}$5$6`,
-    });
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$5$6`,
-    });
-
-    // rename redirects for paths that end in a trailing slash but shouldn't
-    // (handle non-existent paths added by 'buildRedirections.js')
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)}/)(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}/$5$6`,
-    });
+    const patterns = [
+        // for paths that exist in the repo
+        {
+            getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
+            getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
+        },
+        // for paths that don't end in a trailing slash but should, i.e. non-existent paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#[^'"]*)?(['"])`,
+            getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}$5$6`,
+        },
+        // for paths that end with '/index' but should end with a trailing slash, i.e. non-normalized paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#[^'"]*)?(['"])`,
+            getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$5$6`,
+        },
+        // for paths that end in a trailing slash, but shouldn't, i.e. non-existent paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)}/)(#[^'"]*)?(['"])`,
+            getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}/$5$6`,
+        },
+    ];
 }
 
 function appendRedirects(fileMap, pathPrefix) {
