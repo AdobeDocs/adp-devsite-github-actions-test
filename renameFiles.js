@@ -125,7 +125,25 @@ function renameLinksInMarkdownFile(fileMap, file) {
 }
 
 function getRenamedUrl(fromUrl, patterns, linkMap) {
-    return ['hello', 'world'];
+    let pattern, fromFile;
+    patterns.forEach((p) => {
+        linkMap.forEach((_, f) => {
+            const find = p.getFindPattern(f);
+            const test = new RegExp(find).test(fromUrl);
+            if (test) {
+                pattern = p;
+                fromFile = f;
+            }
+        });
+    });
+    return pattern && fromFile
+        ? replaceLinksInString({
+              file: fromFile,
+              linkMap,
+              getFindPattern: pattern.getFindPattern,
+              getReplacePattern: pattern.getReplacePattern,
+          })
+        : null;
 }
 
 function renameLinksInRedirectsFile(fileMap, pathPrefix) {
@@ -194,7 +212,7 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
         }
     });
 
-    linkMap.forEach((from, to) => {
+    linkMap.forEach((to, from) => {
         newRedirects.push({
             Source: `${pathPrefix}${toUrl(from)}`,
             Destination: `${pathPrefix}${toUrl(to)}`,
