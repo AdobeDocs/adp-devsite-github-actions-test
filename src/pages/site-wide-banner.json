@@ -4,6 +4,7 @@
     "limit": 1,
     "data": [
         {
+            "bgColor" : "warning" ,
             "icon": "info",
             "text": [
                 "Good morning! This is a shorter message example."
