@@ -11,6 +11,7 @@ on:
         options:
           - stage
           - prod
+          - stage & prod
       baseSha:
         description: "Use base SHA commit to deploy from (empty string defaults to last commit before HEAD)"
         type: string
