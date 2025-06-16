@@ -11,12 +11,16 @@ on:
         options:
           - stage
           - prod
+          - stage & prod
       baseSha:
         description: "Use base SHA commit to deploy from (empty string defaults to last commit before HEAD)"
         type: string
         required: false
         default: ""
-
+      deployAll:
+        description: "Force deploy all files"
+        type: boolean
+        default: false
 jobs:
   deployment:
     name: Deployment
@@ -24,3 +28,4 @@ jobs:
     with:
       env: ${{ inputs.env }}
       baseSha: ${{ inputs.baseSha }}
+      deployAll: ${{ inputs.deployAll }}
