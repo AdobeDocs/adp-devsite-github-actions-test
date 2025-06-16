@@ -187,6 +187,22 @@ jobs:
               pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
             });
 
+      - name: Clean cache on all files on stage
+        if: needs.set-state.outputs.deploy_stage == 'true' && needs.set-state.outputs.deploy_All == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./scripts/deploy.js');
+
+            await script({
+              core,
+              changes: ${{ steps.all-files.outputs.all_files }},
+              deletions: [],
+              operation: "cache",
+              siteEnv: "stage",
+              branch: "${{ needs.set-state.outputs.branch_short_ref }}",
+              pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
+            });
 
       - name: Deploy only changed files to prod (Step 1 of 2)
         if: needs.set-state.outputs.deploy_prod == 'true' && steps.changed-files-specific.outputs.any_modified == 'true' && needs.set-state.outputs.deploy_All == 'false'
@@ -199,6 +215,23 @@ jobs:
               core,
               changes: ${{ steps.changed-files-specific.outputs.all_changed_files }},
               deletions: ${{ steps.changed-files-specific.outputs.deleted_files }},
+              operation: "preview",
+              siteEnv: "prod",
+              branch: "${{ needs.set-state.outputs.branch_short_ref }}",
+              pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
+            });
+
+      - name: Force deploy all files to prod (Step 1 of 2)
+        if: needs.set-state.outputs.deploy_prod == 'true' && needs.set-state.outputs.deploy_All == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./scripts/deploy.js');
+
+            await script({
+              core,
+              changes: ${{ steps.all-files.outputs.all_files }},
+              deletions: [],
               operation: "preview",
               siteEnv: "prod",
               branch: "${{ needs.set-state.outputs.branch_short_ref }}",
@@ -221,6 +254,23 @@ jobs:
               core,
               changes: ${{ steps.changed-files-specific.outputs.all_changed_files }},
               deletions: ${{ steps.changed-files-specific.outputs.deleted_files }},
+              operation: "live",
+              siteEnv: "prod",
+              branch: "${{ needs.set-state.outputs.branch_short_ref }}",
+              pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
+            });
+
+      - name: Force deploy all files to prod (Step 2 of 2)
+        if: needs.set-state.outputs.deploy_prod == 'true' && needs.set-state.outputs.deploy_All == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./scripts/deploy.js');
+
+            await script({
+              core,
+              changes: ${{ steps.all-files.outputs.all_files }},
+              deletions: [],
               operation: "live",
               siteEnv: "prod",
               branch: "${{ needs.set-state.outputs.branch_short_ref }}",
@@ -253,6 +303,33 @@ jobs:
               core,
               changes: ${{ steps.changed-files-specific.outputs.all_changed_files }},
               deletions: ${{ steps.changed-files-specific.outputs.deleted_files }},
+              operation: "cache",
+              siteEnv: "prod",
+              branch: "${{ needs.set-state.outputs.branch_short_ref }}",
+              pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
+            });
+
+      - name: Clean cache on all files on prod
+        if: needs.set-state.outputs.deploy_prod == 'true' && needs.set-state.outputs.deploy_All == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./scripts/deploy.js');
+
+            await script({
+              core,
+              changes: ${{ steps.all-files.outputs.all_files }},
+              deletions: [],
+              operation: "cache",
+              siteEnv: "stage",
+              branch: "${{ needs.set-state.outputs.branch_short_ref }}",
+              pathPrefix: "${{ needs.set-state.outputs.path_prefix }}"
+            });
+
+            await script({
+              core,
+              changes: ${{ steps.all-files.outputs.all_files }},
+              deletions: [],
               operation: "cache",
               siteEnv: "prod",
               branch: "${{ needs.set-state.outputs.branch_short_ref }}",
