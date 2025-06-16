@@ -16,3 +16,11 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 Action required: Add trader details to continue EU distribution.
 
 - [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+- 
+<Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-dark-gray" />
+
+### Are you an existing developer?
+
+Action required: Add trader details to continue EU distribution.
+
+- [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
