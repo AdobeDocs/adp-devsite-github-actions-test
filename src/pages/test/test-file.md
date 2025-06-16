@@ -21,6 +21,14 @@ Adobe I/O Runtime supports the following API endpoints for interacting programma
 Action required: Add trader details to continue EU distribution.
 
 - [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
+- 
+<Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-navy" />
+
+### Are you an existing developer?
+
+Action required: Add trader details to continue EU distribution.
+
+- [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
 
 <Announcement slots="heading, text, button" variant="secondary"/>
 
