@@ -14,14 +14,14 @@ Adobe I/O Runtime supports the following API endpoints for interacting programma
 2. For all the API calls on this page, the base URL is:  
    `https://api.adobe.io/`
 
-<Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-gray" />
+<Announcement slots="heading, text, button" variant="secondary" />
 
 ### Are you an existing developer?
 
 Action required: Add trader details to continue EU distribution.
 
 - [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
-- 
+
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-navy" />
 
 ### Are you an existing developer?
