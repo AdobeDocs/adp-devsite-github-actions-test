@@ -10,4 +10,4 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <Details slots="list"  summary="Click to view a list of steps to enable the Development Mode" />
 
-[Details](../images/grids-addon-folder-structure.png)
+![SideImage](./images/basic-js.png)
