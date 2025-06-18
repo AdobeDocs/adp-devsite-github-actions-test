@@ -60,3 +60,17 @@ Using an iconset reference from one of the `icons-workflow` or `icons-ui` packag
 Receive real-time support, have your questions answered, and connect with both experts and peers for discussions on all things related to add-ons. Join us every month on Wednesdays at 8 AM PT. [Register for our next session here](https://developer.adobe.com/developers-live).
 
 [ccintrev@adobe.com](mailto:ccintrev@adobe.com)
+
+<DiscoverBlock width="100%" slots="heading, link, text"/>
+
+## Techncial requirements
+
+Review the [technical requirements](./technical-requirements.md) for using Adobe Express Embed SDK in your web application and the app’s supported languages.
+
+## Troubleshooting
+
+If you run into any issues, check out our [Troubleshooting](../troubleshooting/express-unavailable-error.md) section for common problems and solutions, or check the [FAQ](../troubleshooting/faq/index.md) for answers to common questions.
+
+## Next Steps
+
+Are you ready to start playing with some code? Check out our [Tutorials](../tutorials/index.md) to see the latest SDK version in action!
