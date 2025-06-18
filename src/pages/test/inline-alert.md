@@ -349,3 +349,7 @@ Add-ons that meet the following criteria do not require the add-on's developer t
 
 These requirements are a "living document" and will be updated over time, as our guidelines - and the technology itself - evolve. If you have any questions about a specific case or issue, or would like to learn more about our requirements, please [contact us](mailto:cc-extensibility-genai-integration-support@adobe.com).
 
+
+<DetailsBlock slots="image"  summary="Click to see the screenshot" />
+
+![Refresh manifest](../getting_started/img/playground-refresh-manifest.png)
