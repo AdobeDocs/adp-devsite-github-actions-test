@@ -61,15 +61,19 @@ Receive real-time support, have your questions answered, and connect with both e
 
 [ccintrev@adobe.com](mailto:ccintrev@adobe.com)
 
-<DiscoverBlock slots="heading, link ,text"/>
+<DiscoverBlock width = "100%" slots="heading, link ,text"/>
 
 ## Techncial requirements
 
 Review the [technical requirements](./technical-requirements.md) for using Adobe Express Embed SDK in your web application and the app’s supported languages.
 
+<DiscoverBlock width = "100%" slots="heading, link ,text"/>
+
 ## Troubleshooting
 
 If you run into any issues, check out our [Troubleshooting](../troubleshooting/express-unavailable-error.md) section for common problems and solutions, or check the [FAQ](../troubleshooting/faq/index.md) for answers to common questions.
+
+<DiscoverBlock width = "100%" slots="heading, link ,text"/>
 
 ## Next Steps
 
