@@ -69,15 +69,19 @@ Receive real-time support, have your questions answered, and connect with both e
 
 Once you have successfully initialized the SDK, a Promise will be returned containing the `CCEverywhere` object.
 
-<DiscoverBlock slots="link, text" repeat ="3" />
+<DiscoverBlock slots="link, text"/>
 
 [Editor API](../../v4/sdk/src/workflows/3p/editor-workflow/classes/editor-workflow.md)
 
 Provides API References for /Editor API.
 
+<DiscoverBlock slots="link, text"/>
+
 [Module API](../../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow.md)
 
 Provides API References for /Module API.
+
+<DiscoverBlock slots="link, text"/>
 
 [Quick Action API](../../v4/sdk/src/workflows/3p/quick-action-workflow/classes/quick-action-workflow.md)
 
