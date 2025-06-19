@@ -40,3 +40,8 @@
         - [OnThisPage with Sidenav](/test/onthispage-with-sidenav.md) 
         - [RedoclyAPIBlock](/test/redocly-api-block.md) 
         - [TabsBlock](/test/tabs-block.md) 
+        - [TestUrl](/test/test-url.md)
+        - [TestUrl-withadot](./test/test-url.md)
+        - [TestUrl-noforwardslash](test/test-url.md)
+        - [Fullpath](https://experienceleaguecommunities.adobe.com/t5/adobe-developer/ct-p/adobe-io) 
+
