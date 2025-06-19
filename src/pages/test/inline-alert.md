@@ -61,7 +61,7 @@ Receive real-time support, have your questions answered, and connect with both e
 
 [ccintrev@adobe.com](mailto:ccintrev@adobe.com)
 
-<DiscoverBlock slots="heading, text" repeat ="3" />
+<DiscoverBlock slots="heading, link, text" repeat ="3" />
 
 ## Techncial requirements
 
