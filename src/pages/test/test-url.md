@@ -16,16 +16,16 @@
 
 ### path relative link to a file without a trailing slash
 
-[path-test/pathname](path-test/pathname)
+[path-test/pathname](path-test/pathname.md)
 
 ### path relative link to a file with a trailing slash
 
-[path-test/pathname/](path-test/pathname/)
+[path-test/pathname/](path-test/pathname/index.md)
 
 ### path relative link to a file with a trailing slash goes to index.md
 
-[path-test/](path-test/)
+[path-test/](path-test/index.md)
 
 ### path relative link to a file without a trailing slash goes to index.md
 
-[path-test](path-test)
+[path-test](path-test.md)
