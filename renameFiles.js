@@ -190,36 +190,47 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
     currRedirects.forEach(({ Source: currSource, Destination: currDestination }) => {
         const newSource = getRenamedUrl(currSource, patterns, linkMap);
         const newDestination = getRenamedUrl(currDestination, patterns, linkMap);
+        console.log();
+        console.log({
+            Source: currSource,
+            Destination: currDestination,
+        });
         if (!newSource && !newDestination) {
-            newRedirects.push({
+            console.log('1 - 0 newSrc 0 newDest');
+            console.log({
                 Source: currSource,
                 Destination: currDestination,
             });
         } else if (!newSource && newDestination) {
-            newRedirects.push({
+            console.log('2 - 0 newSrc 1 newDest');
+            console.log({
                 Source: currSource,
                 Destination: newDestination,
             });
         } else if (newSource && !newDestination) {
-            newRedirects.push({
+            console.log('3 - 1 newSrc 0 newDest');
+            console.log({
                 Source: currSource,
                 Destination: currDestination,
             });
-            newRedirects.push({
+            console.log({
                 Source: newSource,
                 Destination: currDestination,
             });
         } else {
-            newRedirects.push({
+            console.log('4 - 1 newSrc 1 newDest');
+            console.log({
                 Source: currSource,
                 Destination: newDestination,
             });
-            newRedirects.push({
+            console.log({
                 Source: newSource,
                 Destination: newDestination,
             });
         }
+        console.log();
     });
+    console.log();
 
     linkMap.forEach((currName, newName) => {
         newRedirects.push({
@@ -228,7 +239,7 @@ function renameLinksInRedirectsFile(fileMap, pathPrefix) {
         });
     });
 
-    writeRedirectionsFile(newRedirects);
+    // writeRedirectionsFile(newRedirects);
 }
 
 function deleteEmptyDirectoryUpwards(startDir, stopDir) {
