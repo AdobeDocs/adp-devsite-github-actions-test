@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('node:fs');
-const { pathPrefix: pathPrefixFromGatsbyConfig } = require('./gatsby-config.js');
 const {
+    getPathPrefix,
     readRedirectionsFile,
     writeRedirectionsFile,
     getRedirectionsFilePath,
@@ -45,39 +45,6 @@ function removeTrailingSlash(str) {
         str = str.substring(0, index);
     }
     return str;
-}
-
-function getPathPrefixFromConfig() {
-    const CONFIG_PATH = path.join('src', 'pages', 'config.md');
-    if (!fs.existsSync(CONFIG_PATH)) {
-        return null;
-    }
-
-    const data = fs.readFileSync(CONFIG_PATH).toString();
-    if (!data) {
-        return null;
-    }
-
-    const lines = data.split('\n');
-
-    // find the pathPrefix key
-    const keyIndex = lines.findIndex((line) => new RegExp(/\s*-\s*pathPrefix:/).test(line));
-    if (keyIndex < 0) {
-        return null;
-    }
-
-    // find the pathPrefix value
-    const line = lines.slice(keyIndex + 1)?.find((line) => new RegExp(/\s*-/).test(line));
-    if (!line) {
-        null;
-    }
-
-    // extract pathPrefix
-    const pathPrefixLine = line.match(new RegExp(/(\s*-\s*)(\S*)(\s*)/));
-    if (!pathPrefixLine) {
-        return null;
-    }
-    return pathPrefixLine[2];
 }
 
 function toEdsPath(file) {
@@ -229,7 +196,7 @@ try {
     });
 
     const redirectsFile = getRedirectionsFilePath();
-    const pathPrefix = getPathPrefixFromConfig() ?? pathPrefixFromGatsbyConfig;
+    const pathPrefix = getPathPrefix();
     if (fs.existsSync(redirectsFile)) {
         renameLinksInRedirectsFile(fileMap, pathPrefix);
         appendRedirects(fileMap, pathPrefix);
