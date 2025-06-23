@@ -46,7 +46,7 @@ There are three types of principals, each with different applicable values for t
 | -------------- | -------------------- | ----- |
 | user           | user's email address | Indicates a specific user |
 | group          | user group name      | Indicates a [user goup](https://helpx.adobe.com/enterprise/using/user-groups.html) |
-| predefined     | either: <br />- everybody<br /> - authenticated<br /> - all | Indicates a special principal (see below) |
+| predefined     | either: everybody, authenticated, all | Indicates a special principal (see below) |
 
 ### Predefined principals
 
