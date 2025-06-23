@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('node:fs');
 const { globSync } = require('glob');
-const { pathPrefix: pathPrefixFromGatsbyConfig } = require('./gatsby-config.js');
 
 function getPathPrefixFromConfig() {
     const CONFIG_PATH = path.join('src', 'pages', 'config.md');
@@ -36,8 +35,13 @@ function getPathPrefixFromConfig() {
     return pathPrefixLine[2];
 }
 
+function getPathPrefixFromGatsbyConfig() {
+    const { pathPrefix } = require('./gatsby-config.js');
+    return pathPrefix;
+}
+
 function getPathPrefix() {
-    return getPathPrefixFromConfig() ?? pathPrefixFromGatsbyConfig;
+    return getPathPrefixFromConfig() ?? getPathPrefixFromGatsbyConfig();
 }
 
 function getRedirectionsFilePath() {
