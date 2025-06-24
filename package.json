@@ -24,18 +24,16 @@
   "scripts": {
     "start": "gatsby build && gatsby serve",
     "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
-    "dev": "gatsby develop",
+    "dev:gatsby": "gatsby develop",
+    "dev": "node ./dev.mjs",
     "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "test:links": "remark src/pages --quiet --frail",
     "lint": "docker run --rm -e RUN_LOCAL=true --env-file '.github/super-linter.env' -v \"$PWD\":/tmp/lint github/super-linter:slim-v4.10.1",
     "buildNavigation": "node buildNavigation.js",
-    "buildRedirections": "node buildRedirections.js",
-    "renameFiles": "node renameFiles.js",
-    "normalizeLinks": "node normalizeLinks.js",
-    "checkLinks": "node check-links.js",
-    "buildSiteWideBanner": "node buildSiteWideBanner.js"
+    "buildRedirections": "node buildRedirections.js"
   },
   "remarkConfig": {
     "plugins": [
@@ -44,8 +42,8 @@
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
+    "express": "5.1.0",
     "glob": "11.0.0",
-    "markdown-link-check": "^3.13.7",
     "remark-cli": "^11.0.0",
     "remark-validate-links": "^12.1.0"
   }
