@@ -11,6 +11,7 @@ const {
     getReplacePatternForMarkdownFiles,
     removeFileExtension,
     replaceLinksInFile,
+    replaceLinksInString,
 } = require('./scriptUtils.js');
 
 function toKebabCase(str) {
@@ -101,58 +102,100 @@ function renameLinksInMarkdownFile(fileMap, file) {
     });
 }
 
-function renameLinksInRedirectsFile(fileMap, pathPrefix) {
-    const file = getRedirectionsFilePath();
-    const dir = path.dirname(file);
-    const linkMap = getLinkMap(fileMap, dir);
-
-    // rename redirects for correct paths
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source|Destination)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}$5$6`,
+function getRenamedUrl(fromUrl, patterns, linkMap) {
+    let pattern;
+    patterns.forEach((p) => {
+        linkMap.forEach((_, f) => {
+            const find = p.getFindPattern(f);
+            const test = new RegExp(find).test(fromUrl);
+            if (test) {
+                pattern = p;
+            }
+        });
     });
-
-    // rename redirects for paths that don't end in a trailing slash but should
-    // (handle non-existent paths added by 'buildRedirections.js')
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}$5$6`,
-    });
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$5$6`,
-    });
-
-    // rename redirects for paths that end in a trailing slash but shouldn't
-    // (handle non-existent paths added by 'buildRedirections.js')
-    replaceLinksInFile({
-        file,
-        linkMap,
-        getFindPattern: (from) => `(['"]?)(Source)(['"]?\\s*:\\s*['"])(${pathPrefix}${toUrl(from)}/)(#[^'"]*)?(['"])`,
-        getReplacePattern: (to) => `$1$2$3${pathPrefix}${toUrl(to)}/$5$6`,
-    });
+    const toUrl = pattern
+        ? replaceLinksInString({
+              string: fromUrl,
+              linkMap,
+              getFindPattern: pattern.getFindPattern,
+              getReplacePattern: pattern.getReplacePattern,
+          })
+        : null;
+    return toUrl;
 }
 
-function appendRedirects(fileMap, pathPrefix) {
+function renameLinksInRedirectsFile(fileMap, pathPrefix) {
+    const patterns = [
+        // paths that exist in the repo
+        {
+            getFindPattern: (from) => `^(${pathPrefix}${toUrl(from)})(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${toUrl(to)}$2`,
+        },
+        // paths that don't end in a trailing slash but should, i.e. non-existent paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `^(${pathPrefix}${removeTrailingSlash(toUrl(from))})(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${removeTrailingSlash(toUrl(to))}$2`,
+        },
+        // paths that end with '/index' but should end with a trailing slash, i.e. non-normalized paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `^(${pathPrefix}${removeTrailingSlash(toUrl(from))}/index)(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${removeTrailingSlash(toUrl(to))}/index$2`,
+        },
+        // paths that end in a trailing slash, but shouldn't, i.e. non-existent paths added by 'buildRedirections.js'
+        {
+            getFindPattern: (from) => `^(${pathPrefix}${toUrl(from)}/)(#.*)?$`,
+            getReplacePattern: (to) => `${pathPrefix}${toUrl(to)}/$2`,
+        },
+    ];
+
     const file = getRedirectionsFilePath();
     const dir = path.dirname(file);
     const linkMap = getLinkMap(fileMap, dir);
-    const newData = [];
+    const newRedirects = [];
+
+    const currRedirects = readRedirectionsFile();
+    currRedirects.forEach(({ Source: currSource, Destination: currDestination }) => {
+        const newSource = getRenamedUrl(currSource, patterns, linkMap);
+        const newDestination = getRenamedUrl(currDestination, patterns, linkMap);
+        if (!newSource && !newDestination) {
+            newRedirects.push({
+                Source: currSource,
+                Destination: currDestination,
+            });
+        } else if (!newSource && newDestination) {
+            newRedirects.push({
+                Source: currSource,
+                Destination: newDestination,
+            });
+        } else if (newSource && !newDestination) {
+            newRedirects.push({
+                Source: currSource,
+                Destination: currDestination,
+            });
+            newRedirects.push({
+                Source: newSource,
+                Destination: currDestination,
+            });
+        } else {
+            newRedirects.push({
+                Source: currSource,
+                Destination: newDestination,
+            });
+            newRedirects.push({
+                Source: newSource,
+                Destination: newDestination,
+            });
+        }
+    });
+
     linkMap.forEach((to, from) => {
-        newData.push({
+        newRedirects.push({
             Source: `${pathPrefix}${toUrl(from)}`,
             Destination: `${pathPrefix}${toUrl(to)}`,
         });
     });
-    const currData = readRedirectionsFile();
-    const data = [...currData, ...newData];
-    writeRedirectionsFile(data);
+
+    writeRedirectionsFile(newRedirects);
 }
 
 function deleteEmptyDirectoryUpwards(startDir, stopDir) {
@@ -199,7 +242,6 @@ try {
     const pathPrefix = getPathPrefix();
     if (fs.existsSync(redirectsFile)) {
         renameLinksInRedirectsFile(fileMap, pathPrefix);
-        appendRedirects(fileMap, pathPrefix);
     }
 
     const gatsbyConfigFile = 'gatsby-config.js';
