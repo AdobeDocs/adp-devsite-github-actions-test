@@ -94,12 +94,17 @@ const getReplacePatternForMarkdownFiles = (to) => `$1$2${to}$4$5`;
 
 function replaceLinksInFile({ file, linkMap, getFindPattern, getReplacePattern }) {
     let data = fs.readFileSync(file, 'utf8');
+    data = replaceLinksInString({ string: data, linkMap, getFindPattern, getReplacePattern });
+    fs.writeFileSync(file, data, 'utf-8');
+}
+
+function replaceLinksInString({ string, linkMap, getFindPattern, getReplacePattern }) {
     linkMap.forEach((to, from) => {
         const find = getFindPattern(from);
         const replace = getReplacePattern(to);
-        data = data.replaceAll(new RegExp(find, 'gm'), replace);
+        string = string.replaceAll(new RegExp(find, 'gm'), replace);
     });
-    fs.writeFileSync(file, data, 'utf-8');
+    return string;
 }
 
 module.exports = {
@@ -113,4 +118,5 @@ module.exports = {
     getReplacePatternForMarkdownFiles,
     removeFileExtension,
     replaceLinksInFile,
+    replaceLinksInString,
 };
