@@ -30,6 +30,18 @@
         {
             "Source": "/github-actions-test/guides/AppConfig.types/enumerations/text_to.image-app-version/",
             "Destination": "/github-actions-test/guides/AppConfig.types/enumerations/text_to.image-app-version"
+        },
+        {
+            "Source": "/github-actions-test/",
+            "Destination": "/github-actions-test/with.dot"
+        },
+        {
+            "Source": "/github-actions-test/SCREAMING_SNAKE_CASE",
+            "Destination": "/github-actions-test/guides/"
+        },
+        {
+            "Source": "/github-actions-test/#anchor",
+            "Destination": "/github-actions-test/with.dot#anchor"
         }
     ],
     ":type": "sheet"
