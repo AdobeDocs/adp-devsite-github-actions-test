@@ -2,13 +2,13 @@
     - /github-actions-test/
 
 - pages:
-    - [index](/)
-    - [SCREAMING_SNAKE_CASE](/SCREAMING_SNAKE_CASE)
-    - [with.dot](/with.dot)
-    - [guides](/guides/)
+    - [index](/index.md)
+    - [SCREAMING_SNAKE_CASE](/SCREAMING_SNAKE_CASE.md)
+    - [with.dot](/with.dot.md)
+    - [guides](/guides/index.md)
 
 - subPages:
-    - [guides](/guides/) 
-        - [AppConfig.types](/guides/AppConfig.types/enumerations/text_to.image-app-version) 
-        - [SCREAMING_SNAKE_CASE](/guides/SCREAMING_SNAKE_CASE) 
-        - [SentenceCase](/guides/SentenceCase) 
+    - [guides](/guides/index.md) 
+        - [AppConfig.types](/guides/AppConfig.types/enumerations/text_to.image-app-version.md) 
+        - [SCREAMING_SNAKE_CASE](/guides/SCREAMING_SNAKE_CASE.json) 
+        - [SentenceCase](/guides/SentenceCase.json) 
