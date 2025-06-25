@@ -118,7 +118,7 @@ Lit is a simple library for building fast, lightweight web components. It's buil
 
 [Learn more](https://lit.dev/)
 
-<Columns slots="image, heading, text, links" repeat ="2 />
+<Columns slots="image, heading, text, links" repeat ="2" />
 
 ![MSFT Teams logo](../images/adobe-express.svg)
 
