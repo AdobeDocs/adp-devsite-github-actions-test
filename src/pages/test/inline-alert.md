@@ -63,14 +63,26 @@ Receive real-time support, have your questions answered, and connect with both e
 
 <DiscoverBlock slots="heading, link, text"/>
 
-## Techncial requirements
+## API References
 
-Review the [technical requirements](./technical-requirements.md) for using Adobe Express Embed SDK in your web application and the app’s supported languages.
+[CCEverywhere](../../v4/sdk/src/3p/cc-everywhere/classes/cc-everywhere.md)
 
-## Troubleshooting
+Once you have successfully initialized the SDK, a Promise will be returned containing the `CCEverywhere` object.
 
-If you run into any issues, check out our [Troubleshooting](../troubleshooting/express-unavailable-error.md) section for common problems and solutions, or check the [FAQ](../troubleshooting/faq/index.md) for answers to common questions.
+<DiscoverBlock slots="link, text"/>
 
-## Next Steps
+[Editor API](../../v4/sdk/src/workflows/3p/editor-workflow/classes/editor-workflow.md)
 
-Are you ready to start playing with some code? Check out our [Tutorials](../tutorials/index.md) to see the latest SDK version in action!
+Provides API References for /Editor API.
+
+<DiscoverBlock slots="link, text"/>
+
+[Module API](../../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow.md)
+
+Provides API References for /Module API.
+
+<DiscoverBlock slots="link, text"/>
+
+[Quick Action API](../../v4/sdk/src/workflows/3p/quick-action-workflow/classes/quick-action-workflow.md)
+
+Provides API References for /Quick Action API.
