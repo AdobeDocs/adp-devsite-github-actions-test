@@ -11,21 +11,21 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 
 <Columns slots="image, heading, text, links" variant="vertical" repeat ="2" />
 
-![MSFT Teams logo](../images/adobe-express.svg)
+![Discover](./images/discover.webp)
 
-### Microsoft teams
+### Discover
 
-Easily share Creative Cloud assets and files, and get comment notifications on your prototypes.
+Explore how add-ons can expand capabilities and streamline creative workflows.
 
-- [Learn more](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
+- [Find inspiration →](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
 
-![JIRA Cloud logo](../images/adobe-express.svg)
+![Learn](./images/learn.webp)
 
-### JIRA Cloud
+### Learn
 
-Make designer to developer handoffs easy. Find the latest designs and specs and get thumbnail previews and asset info.
+Familiarize and experiment with powerful features in our Code Playground.
 
-- [Learn more](https://www.atlassian.com/enterprise/cloud)
+- [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
 
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-gray" />
 
