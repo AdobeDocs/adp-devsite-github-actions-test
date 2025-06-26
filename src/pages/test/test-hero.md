@@ -27,32 +27,6 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 - [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
 
-<Columns slots="image, heading, text, links" variant="vertical" repeat ="3" />
-
-![Discover](./images/discover.webp)
-
-### Discover
-
-Explore how add-ons can expand capabilities and streamline creative workflows.
-
-- [Find inspiration →](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
-
-![Learn](./images/learn.webp)
-
-### Learn
-
-Familiarize and experiment with powerful features in our Code Playground.
-
-- [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
-
-![Discover](./images/discover.webp)
-
-### Discover
-
-Explore how add-ons can expand capabilities and streamline creative workflows.
-
-- [Find inspiration →](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
-
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-gray" />
 
 ### Are you an existing developer?
