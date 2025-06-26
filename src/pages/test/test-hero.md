@@ -34,7 +34,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 Action required: Add trader details to continue EU distribution.
 
 - [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
-- 
+
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-dark-gray" />
 
 ### Are you an existing developer?
@@ -43,7 +43,7 @@ Action required: Add trader details to continue EU distribution.
 
 - [Add trader details now.](https://new.express.adobe.com/add-ons?mode=submission)
 
-<Columns slots="image, heading, text, buttons" variant="vertical" repeat ="2" />
+<Columns slots="image, heading, text, buttons" repeat ="2" />
 
 ![Discover](./images/columns-img.webp)
 
