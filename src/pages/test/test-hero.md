@@ -9,7 +9,7 @@ Expand the capabilities of the quick and easy create-anything app. Empower the g
 [Explore our APIs](https://adobe.io)
 [Learn more](https://adobe.io)
 
-<Columns slots="image, heading, text, links" variant="vertical" repeat ="2" />
+<Columns slots="image, heading, text, links" variant="vertical" repeat ="3" />
 
 ![Discover](./images/discover.webp)
 
