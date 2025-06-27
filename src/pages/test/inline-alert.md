@@ -87,7 +87,7 @@ Provides API References for /Module API.
 
 Provides API References for /Quick Action API.
 
-<Columns slots="image, heading, text, links" variant="horizontal" repeat ="4"/>
+<Columns slots="image, heading, text, links" variant="vertical" repeat ="4"/>
 
 ![Discover](./getting_started/img/devjourney-1-discovery.png)
 
