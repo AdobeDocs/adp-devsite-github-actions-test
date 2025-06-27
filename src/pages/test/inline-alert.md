@@ -86,3 +86,37 @@ Provides API References for /Module API.
 [Quick Action API](../../v4/sdk/src/workflows/3p/quick-action-workflow/classes/quick-action-workflow.md)
 
 Provides API References for /Quick Action API.
+
+<Columns slots="image, heading, text, links" variant="horizontal" repeat ="4"/>
+
+![Discover](./getting_started/img/devjourney-1-discovery.png)
+
+### Discover
+
+Explore how add-ons can expand capabilities and streamline creative workflows.
+
+- [Find inspiration →](./getting-started/developer-journey.md#discover)
+
+![Learn](./getting_started/img/devjourney-2-learn.png)
+
+### Learn
+
+Familiarize and experiment with powerful features in our Code Playground.
+
+- [Dive deeper →](./getting-started/developer-journey.md#learn)
+
+![Develop](./getting_started/img/devjourney-3-develop.png)
+
+### Develop
+
+Transform your ideas into a polished product following our best practices.
+
+- [Start building →](./getting-started/developer-journey.md#develop)
+
+![Distribute](./getting_started/img/devjourney-4-distribute.png)
+
+### Distribute
+
+Share your add-on with the world in the Adobe Express Marketplace.
+
+- [Launch now →](./getting-started/developer-journey.md#distribute)
