@@ -1,3 +1,11 @@
+<HeroSimple slots="heading, text, buttons" background="rgb(141, 52, 78)"/>
+
+# What's New: Introducing a new enterprise credential
+
+For partners to build and distribute server-to-server integrations.
+
+[Learn more](https://lit.dev/)
+
 <Product-Card slots="icon, heading , text, buttons" theme="light" />
 
 ![lit-logo](../images/adobe-express.svg)
