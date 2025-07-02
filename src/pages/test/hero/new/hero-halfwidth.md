@@ -2,9 +2,9 @@
 
 <Hero slots="image, icon, heading, text, buttons" variant="halfwidth" />
 
-![Creative Cloud banner](../../assets/cc-hero.png)
+![Creative Cloud banner](../../../assets/cc-hero.png)
 
-![After Effects Logo](../../assets/ae_appicon_64.svg)
+![After Effects Logo](../../../assets/ae_appicon_64.svg)
 
 #  Extend the Power of After Effects
 

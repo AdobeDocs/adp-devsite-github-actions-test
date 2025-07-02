@@ -1,11 +1,9 @@
-[//]: # (Copied from https://devsite-1716--adp-devsite-stage--adobedocs.aem.page/github-actions-test/test/test-hero)
+[//]: # (Copied from https://github.com/AdobeDocs/cc-everywhere/blob/eds-migration-new/src/pages/guides/index.md?plain=1#L39-L45, https://stage--adp-devsite-stage--adobedocs.aem.page/express/embed-sdk/docs/guides/, https://devsite-1716--adp-devsite-stage--adobedocs.aem.page/github-actions-test/test/test-hero)
 
-<HeroSimple slots="image, heading, text, buttons" variant="fullwidth" textColor="white" />
+<HeroSimple slots="image, heading, text" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white"/>
 
-![Hero image](../../assets/hero.png)
+![Hero image](../../../assets/wide-SDK-Banner-570x400.png)
 
-## Build add-ons for Adobe Express
+# Adobe Express Embed SDK
 
-Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
-
-[Explore our APIs](https://adobe.io) [Learn more](https://adobe.io)
+Seamlessly embed Adobe Express on your website with our SDK.

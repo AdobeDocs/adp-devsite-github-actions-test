@@ -2,7 +2,7 @@
 
 <SiteHero slots="image, heading, text" background="rgb(64, 34, 138)"/>
 
-![Hero image](../../assets/site.png)
+![Hero image](../../../assets/site.png)
 
 # Adobe Express Developer Community test
 

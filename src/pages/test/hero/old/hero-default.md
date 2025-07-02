@@ -2,7 +2,7 @@
 
 <Hero slots="image, heading, text, buttons" background="rgb(64, 34, 138)"/>
 
-![Hero image](../../assets/cc-hero.png)
+![Hero image](../../../assets/cc-hero.png)
 
 # Build a custom Helix adobe.io site 
 

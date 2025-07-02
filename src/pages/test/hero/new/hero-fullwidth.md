@@ -3,7 +3,7 @@
 
 <Hero slots="image, heading, text, buttons" variant="fullwidth" background="rgb(51, 51, 51)" />
 
-![IO banner](../../assets/hero.png)
+![IO banner](../../../assets/hero.png)
 
 
 # The most memorable digital experiences are unleashed by developer creativity

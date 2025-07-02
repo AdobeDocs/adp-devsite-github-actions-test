@@ -2,7 +2,7 @@
 
 <SiteHero slots="image, heading, text, buttons" variant="xl" background="rgb(64, 34, 138)"/>
 
-![Hero image](../../assets/hero.png)
+![Hero image](../../../assets/hero.png)
 
 # Unlock the power of Photoshop APIs, now in the cloud
 

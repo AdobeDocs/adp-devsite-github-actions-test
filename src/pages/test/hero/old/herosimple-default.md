@@ -2,7 +2,7 @@
 
 <HeroSimple slots="image, heading, text" background="rgb(64, 34, 138)"/>
 
-![Hero image](../../assets/hero.png)
+![Hero image](../../../assets/hero.png)
 
 # Adobe Photoshop and Lightroom API
 
