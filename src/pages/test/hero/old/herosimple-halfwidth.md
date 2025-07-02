@@ -1,6 +1,6 @@
 [//]: # (Copied from https://stage--adp-devsite-stage--adobedocs.aem.page/github-actions-test/test/test-hr-0)
 
-<HeroSimple slots="image, heading, text, buttons" background=linear-gradient(180deg, #c946eb, #6372f5) variant="halfwidth" textColor="white" />
+<HeroSimple slots="image, heading, text, buttons" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfwidth" textColor="white" />
 
 ![Hero image](../../assets/image0.png)
 
