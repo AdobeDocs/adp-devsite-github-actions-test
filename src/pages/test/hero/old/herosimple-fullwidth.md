@@ -1,11 +1,13 @@
-[//]: # (Based from https://devsite-1716--adp-devsite-stage--adobedocs.aem.page/github-actions-test/test/test-hero, https://github.com/AdobeDocs/cc-everywhere/blob/eds-migration-new/src/pages/guides/index.md?plain=1#L39-L45, https://stage--adp-devsite-stage--adobedocs.aem.page/express/embed-sdk/docs/guides/)
 
-<HeroSimple slots="image, heading, text, buttons" variant="fullWidth" textColor="white"/>
+[//]: # (Based from https://github.com/adobe/aio-theme?tab=readme-ov-file#hero-block)
 
-![Hero image](../../../assets/hero.png)
+<HeroSimple slots="image, heading, text, buttons" variant="fullWidth" background="rgb(51, 51, 51)" />
 
-## Build add-ons for Adobe Express
+![IO banner](../../../assets/hero.png)
 
-Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+# The most memorable digital experiences are unleashed by developer creativity
 
-[Explore our APIs](https://adobe.io) [Learn more](https://adobe.io)
+Adobe products and technologies power them
+
+* [Explore our APIs](https://adobe.io)
+* [Subscribe](https://adobe.io)
