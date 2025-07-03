@@ -5,8 +5,8 @@
 
 ![Hero image](../../../assets/hero.png)
 
-## Build add-ons for Adobe Express
+## The most memorable digital experiences are unleashed by developer creativity
 
-Expand the capabilities of the quick and easy create-anything app. Empower the global creative community with solutions for millions of users.
+Adobe products and technologies power them
 
-[Explore our APIs](https://adobe.io) [Learn more](https://adobe.io)
+[Explore our APIs](https://adobe.io) [Subscribe](https://adobe.io)

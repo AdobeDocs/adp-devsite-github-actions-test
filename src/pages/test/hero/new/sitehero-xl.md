@@ -1,4 +1,4 @@
-[//]: # (Based from https://docs.google.com/document/d/1Z2CJ3U2uo6oAWYYwSHycGKX8IifmMs0mHzQdparqmYc/edit?tab=t.0#heading=h.xp3vovg9nv3x, https://stage--adp-devsite--adobedocs.aem.page/tools/sidekick/blocks/sitehero)
+[//]: # (Based on https://docs.google.com/document/d/1Z2CJ3U2uo6oAWYYwSHycGKX8IifmMs0mHzQdparqmYc/edit?tab=t.0#heading=h.xp3vovg9nv3x, https://stage--adp-devsite--adobedocs.aem.page/tools/sidekick/blocks/sitehero)
 
 <SiteHero slots="image, heading, text, buttons" variant="xl" background="rgb(64, 34, 138)"/>
 
