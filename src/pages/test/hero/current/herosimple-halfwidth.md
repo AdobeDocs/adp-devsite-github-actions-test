@@ -3,7 +3,7 @@
 
 <HeroSimple slots="image, heading, text, buttons" background="linear-gradient(180deg, #c946eb, #6372f5)" variant="halfWidth" textColor="white" />
 
-![After Effects Logo](../../../assets/ae_appicon_64.svg)
+![Creative Cloud banner](../../../assets/cc-hero.png)
 
 #  Extend the Power of After Effects
 
