@@ -26,7 +26,7 @@ Block with image and specified width
 
 <DiscoverBlock slots="image, heading, link, text" width="25%"/>
 
-![Adobe Experience Cloud](./assets/experience-cloud.png)
+![Adobe Experience Cloud](/assets/experience-cloud.png)
 
 ### Adobe Experience League
 
@@ -42,7 +42,7 @@ Ask/answer questions or participate in discussions around the Adobe Developer co
 
 <DiscoverBlock slots="image, heading, link, text" width="25%"/>
 
-![GitHub](./assets/github.png)
+![GitHub](/assets/github.png)
 
 ### GitHub
 
@@ -64,7 +64,7 @@ View open pull requests for the repository.
 
 <DiscoverBlock slots="image, heading, link, text" width="25%"/>
 
-![Slack](./assets/slack.png)
+![Slack](/assets/slack.png)
 
 ### Slack
 
