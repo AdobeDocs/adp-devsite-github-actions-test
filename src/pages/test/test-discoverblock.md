@@ -26,7 +26,7 @@ Block with image and specified width
 
 <DiscoverBlock slots="image, heading, link, text" width="25%"/>
 
-![Adobe Experience Cloud](./assets/experience_cloud.png)
+![Adobe Experience Cloud](./assets/experience-cloud.png)
 
 ### Adobe Experience League
 
