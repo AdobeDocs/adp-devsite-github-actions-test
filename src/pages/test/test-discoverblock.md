@@ -19,6 +19,30 @@ Open discussion and support with community experts and Adobe staff.
 
 Chat with other InDesign Server Developers.
 
+<DiscoverBlock width="30%" slots="heading, link, text"/>
+
+## InDesign Server Forum 1
+
+[InDesign Server Developers](https://community.adobe.com/t5/indesign/ct-p/ct-indesign?page=1&sort=latest_replies&filter=all&lang=all&tabid=discussions&topics=label-serverdevelopers)
+
+Chat with other InDesign Server Developers.
+
+<DiscoverBlock width="30%" slots="heading, link, text"/>
+
+## InDesign Server Forum 2
+
+[InDesign Server Developers](https://community.adobe.com/t5/indesign/ct-p/ct-indesign?page=1&sort=latest_replies&filter=all&lang=all&tabid=discussions&topics=label-serverdevelopers)
+
+Chat with other InDesign Server Developers.
+
+<DiscoverBlock width="30%" slots="heading, link, text"/>
+
+## InDesign Server Forum 3
+
+[InDesign Server Developers](https://community.adobe.com/t5/indesign/ct-p/ct-indesign?page=1&sort=latest_replies&filter=all&lang=all&tabid=discussions&topics=label-serverdevelopers)
+
+Chat with other InDesign Server Developers.
+
 # Test 2
 
 Block with image and specified width
