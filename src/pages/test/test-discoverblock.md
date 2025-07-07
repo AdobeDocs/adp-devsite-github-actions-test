@@ -101,3 +101,70 @@ Submission form to request joining #Measure, an industry-wide slack channel for 
 [Measure slack](https://measure.slack.com/messages/adobe-launch)
 
 The #adobe-launch channel within Measure Slack.
+
+# Test 3
+
+Block with image and specified width
+[data-collection-apis page](https://developer.adobe.com/data-collection-apis/docs/support/)
+
+<DiscoverBlock slots="image, heading, link, text" width="25%"/>
+
+![Adobe Experience Cloud](../assets/experience-cloud.png)
+
+### Adobe Experience League
+
+[Data collection forum](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-data/ct-p/adobe-launch-community)
+
+Ask/answer questions, participate in discussions, or submit ideas around the Data collection APIs.
+
+<DiscoverBlock slots="image, link, text" width="25%"/>
+
+![Adobe Experience Cloud](../assets/experience-cloud.png)
+
+[Adobe Developer forum](https://experienceleaguecommunities.adobe.com/t5/adobe-i-o-console/ct-p/adobe-io-console)
+
+Ask/answer questions or participate in discussions around the Adobe Developer console.
+
+<DiscoverBlock slots="image, heading, link, text" width="25%"/>
+
+![GitHub](../assets/github.png)
+
+### GitHub
+
+[Contributing](https://github.com/AdobeDocs/data-collection-apis/blob/main/.github/CONTRIBUTING.md)
+
+Learn how you can contribute to the Data collection API documentation.
+
+<DiscoverBlock slots="image, link, text" width="25%"/>
+
+![GitHub](../assets/github.png)
+
+[Issues](https://github.com/AdobeDocs/data-collection-apis/issues)
+
+Submit an issue to the repo for Adobe to address.
+
+<DiscoverBlock slots="image, link, text" width="25%"/>
+
+![GitHub](../assets/github.png)
+
+[Pull requests](https://github.com/AdobeDocs/data-collection-apis/pulls)
+
+View open pull requests for the repository.
+
+<DiscoverBlock slots="image, heading, link, text" width="25%"/>
+
+![Slack](../assets/slack.png)
+
+### Slack
+
+[Request an invite](https://join.measure.chat)
+
+Submission form to request joining #Measure, an industry-wide slack channel for multiple data collection platforms.
+
+<DiscoverBlock slots="image, link, text" width="25%"/>
+
+![Slack](../assets/slack.png)
+
+[Measure slack](https://measure.slack.com/messages/adobe-launch)
+
+The #adobe-launch channel within Measure Slack.
