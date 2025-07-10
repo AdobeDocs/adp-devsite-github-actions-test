@@ -45,4 +45,5 @@
         - [TestUrl-noforwardslash](test/test-url.md)
         - [Fullpath](https://experienceleaguecommunities.adobe.com/t5/adobe-developer/ct-p/adobe-io) 
         - [hidebreadcrumb](/test/hide-breadcrumb-nav.md)
+        - [resourcesblock](/test/test-resources-block.md)
 
