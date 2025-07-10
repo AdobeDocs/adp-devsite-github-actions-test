@@ -11,15 +11,6 @@ description: Overview of the Adobe Experience Platform data collection APIs.
 
 The Adobe Experience Platform data collection APIs provide a universal way to ingest, standardize, and persist customer data from across your organization.
 
-<Resources slots="heading, links"/>
-
-#### Resources
-
-* [Quick start guide](getting-started/index.md)
-* [Endpoint guides](endpoints/index.md)
-* [API reference](api/index.md)
-* [Github repository](https://github.com/AdobeDocs/data-collection-apis)
-
 
 <Resources slots="heading, links"/>
 
