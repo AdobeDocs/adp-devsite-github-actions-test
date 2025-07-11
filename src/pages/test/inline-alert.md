@@ -122,7 +122,7 @@ Share your add-on with the world in the Adobe Express Marketplace.
 - [Launch now →](./getting-started/developer-journey.md#distribute)
 
 
-<Details slots="list"  summary="see the Changelog" />
+<Details slots="header , list" repeat="5"  summary="see the Changelog" />
 
 **January 9th, 2024**
 
