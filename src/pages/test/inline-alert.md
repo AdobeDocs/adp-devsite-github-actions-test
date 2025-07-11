@@ -120,3 +120,39 @@ Transform your ideas into a polished product following our best practices.
 Share your add-on with the world in the Adobe Express Marketplace.
 
 - [Launch now →](./getting-started/developer-journey.md#distribute)
+
+
+<Details slots="list"  summary="see the Changelog" />
+
+**January 9th, 2024**
+
+- Added additional information on the project's setup.
+- Renamed `createStroke()` to `makeStroke()`: according to the new naming convention, `make*` is used for plain objects and helper utilities, whereas `create*` is reserved to live document objects, e.g., `createEllipse()`.
+- Improved explanations for importing Spectrum Web Components.
+
+**December 3rd, 2023**
+
+- Removed the experimental warning from the document model sandbox APIs.
+- Importing `colorUtils` instead of `utils` from `"express-document-sdk"`; the built-in `colorUtils.fromHex()` method replaces the custom `hexToColor()`.
+- In the new API, nodes don't have the `fills` property (and it's `append()` method) anymore; instead, they use `fill`, to which a `ColorFill` is assigned.
+
+**November 29th, 2023**
+
+- `apiProxy()` now accepts `"documentSandbox"` as a parameter, instead of `"script"`.
+- `manifest.json` now accepts `"documentSandbox"` in lieu of the `"script"` property for the document sandbox entry point. This requires the `"@adobe/ccweb-add-on-scripts"` dependency to be updated to version `"^1.1.0"` or newer in the `package.json` file.
+- `addOnSandboxSdk` is now imported from `"add-on-sdk-document-sandbox"` (it used to be `"AddOnScriptSdk"`).
+- `editor` and other modules are now imported from `"express-document-sdk"` (it used to be `"express"`).
+- The `webpack.config.js` file has been updated to reflect the new imports (see the `externals` object) in both the `express-grids-addon` and `express-addon-document-api-template` projects.
+- `Constants` are now `constants` (lowercase), and their enumerations have changed (e.g., `BlendModeValue` is now `BlendMode`).
+- `translateX` and `translateY` have conflated in the new `translation` property.
+- The group's warning about the operations order (create, append, fill) has been removed; groups can now be created, filled and appended.
+
+**November 21st, 2023**
+
+- Editor API are now called the Document API, which are part of the Document Model Sandbox.
+- Update the add-on folders to reflect the new naming convention (`script` is now `documentSandbox`).
+- Update Reference Documentation links and screenshots.
+
+**November 6th, 2023**
+
+- First publication.
