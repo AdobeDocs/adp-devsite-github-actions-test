@@ -200,6 +200,6 @@ There are two special principals:
 
 | Principal Type | Additions recipient              | Updates and Deletion id   | Notes                                                                               |
 | -------------- | -------------------------------- | ------------------------- | ----------------------------------------------------------------------------------- |
-| user           | mailto: user's email address     | user id                   | Indicates a specific user                                                           |
-| group          | name: user group name            | group id                  | Indicates a [user group](https://helpx.adobe.com/enterprise/using/user-groups.html)  |
-| predefined     | name: predefined principal name  | predefined principal id   | Indicates a special [predefined principal](#predefined-principals)                  |
+| user           | mailto:{user's email address}    | {user id}                 | Indicates a specific user                                                           |
+| group          | name:{user group name}           | {group id}                | Indicates a [user goup](https://helpx.adobe.com/enterprise/using/user-groups.html) |
+| predefined     | name:{predefined principal name} | {predifined principal id} | Indicates a special [predefined principal](#predefined-principals)                  |
