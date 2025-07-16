@@ -33,4 +33,4 @@ jobs:
       env: ${{ inputs.env }}
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
-      generateAISummary:: ${{ inputs.generateAISummary }}
+      generateAISummary: ${{ inputs.generateAISummary }}
