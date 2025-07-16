@@ -21,9 +21,13 @@ on:
         description: "Force deploy all files"
         type: boolean
         default: false
+      generateAISummary:
+        description: "Generate AI Summary"
+        type: boolean
+        default: true
 jobs:
   deployment:
-    name: Deployment
+    name: Generate AI Summary
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/generateSummary.yml@ai
     with:
       env: ${{ inputs.env }}
