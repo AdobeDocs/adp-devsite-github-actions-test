@@ -21,7 +21,7 @@ on:
         description: "Force deploy all files"
         type: boolean
         default: false
-      generateAISummary:
+      generateSummary:
         description: "Generate AI Summary"
         type: boolean
         default: true
@@ -33,4 +33,4 @@ jobs:
       env: ${{ inputs.env }}
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
-      generateAISummary: ${{ inputs.generateAISummary }}
+      generateSummary: ${{ inputs.generateSummary }}
