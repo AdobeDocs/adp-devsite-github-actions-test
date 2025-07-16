@@ -35,4 +35,4 @@ jobs:
       deployAll: ${{ inputs.deployAll }}
       generateAISummary: ${{ inputs.generateAISummary }}
     secrets:
-      ADP_CHATGPT_API_KEY: ${{ secrets.ADP_DUMMY }}
+      ADP_CHATGPT_API_KEY: ${{ secrets.ADP_CHATGPT_API_KEY }}
