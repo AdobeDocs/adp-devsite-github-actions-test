@@ -102,10 +102,6 @@ jobs:
         with:
           node-version: '16.15.0'
           
-      - name: Install dependencies
-        run: |
-          npm install @azure/openai
-          
       - name: Run Content Summarizer
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
