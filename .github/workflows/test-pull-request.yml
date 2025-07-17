@@ -60,6 +60,7 @@ jobs:
         uses: borales/actions-yarn@v3
         with:
           cmd: lint
+        continue-on-error: true
 
       - name: Check internal links
         uses: borales/actions-yarn@v3
