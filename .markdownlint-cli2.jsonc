@@ -1,0 +1,15 @@
+
+{
+    "files": ["**/*.md"],
+    "ignore": ["node_modules"],
+  
+    // Reference the rule config
+    "config": ".markdownlint.jsonc",
+  
+    // Set severity levels
+    "severity": {
+      "MD025": "warning",
+      "MD009": "error"
+    }
+  }
+  

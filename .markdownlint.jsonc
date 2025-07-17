@@ -1,0 +1,8 @@
+
+{
+    
+    "default": false, // disables all rules
+    "MD025": true,
+    "MD009": true,
+  }
+  
