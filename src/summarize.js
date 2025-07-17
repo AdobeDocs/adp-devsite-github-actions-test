@@ -1,5 +1,5 @@
-import { AzureOpenAI } from "openai";
-const fs = require('fs').promises;
+import { AzureOpenAI } from 'openai';
+import { promises as fs } from 'fs';
 
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
