@@ -1,0 +1,15 @@
+
+{
+    "files": ["**/*.md"],
+    "ignore": ["node_modules"],
+  
+    // Reference the rule config
+    "config": ".markdownlint.jsonc",
+  
+    // Set severity levels
+    "severity": {
+      "MD013": "warning",  // Line length as warning
+      "MD009": "error"     // Trailing spaces as error
+    }
+  }
+  
