@@ -3,7 +3,7 @@
 
 - versions:
     - [v2.0](/index.md) selected
-    - [v1.4](https://github.com/AdobeDocs/dev-site) 
+    - [v1.4](https://github.com/AdobeDocs/dev-site)
 
 - pages:
     - [Cat Analytics](/index.md)
