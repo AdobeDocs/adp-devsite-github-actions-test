@@ -47,4 +47,5 @@
         - [hidebreadcrumb](/test/hide-breadcrumb-nav.md)
         - [resourcesblock](/test/test-resources-block.md)
         - [resourcesblocknohero](/test/test-resources-block-nohero.md)
+        - [ai summary](/test/test-discoverblock-for-summary.md)
 
