@@ -21,15 +21,8 @@ default: false
 #################
 # Rules by tags #
 #################
-blanks-around-fences: true    # Fenced code blocks should be surrounded by blank lines
-blanks-around-headings: true  # Headings should be surrounded by blank lines
-blanks-around-lists: true     # Lists should be surrounded by blank lines
-code-block-style:
-  style: "fenced"
 code-fence-style:
   style: "backtick"
-emphasis-style:
-  style: "consistent"
 fenced-code-language: true    # Fenced code blocks should have a language specified
 heading-start-left: true      # Headings must start at the beginning of the line
 heading-style:
@@ -41,9 +34,5 @@ no-missing-space-atx: true    # No space after hash on atx style heading
 no-reversed-links: true
 no-space-in-code: true
 no-space-in-emphasis: true
-no-space-in-links: true
 single-h1: { "front_matter_title" : "" }  # Only one h1 heading per file
 no-alt-text: true #require alt-text
-single-trailing-newline: true   # Files should end with a single newline character
-strong-style:
-  style: "consistent"
