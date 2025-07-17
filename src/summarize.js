@@ -1,4 +1,4 @@
-const { AzureOpenAI } = require('@azure/openai');
+import { AzureOpenAI } from "openai";
 const fs = require('fs').promises;
 
 const owner = "AdobeDocs";
