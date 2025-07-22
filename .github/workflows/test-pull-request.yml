@@ -18,6 +18,8 @@ name: Latest Pull Request
 on:
   pull_request:
     branches: [main]
+    paths:
+      - 'src/pages/**'
 
 ###############
 # Set the Job #
@@ -87,3 +89,12 @@ jobs:
         uses: borales/actions-yarn@v3
         with:
           cmd: build
+
+  ai-summary:
+    name: AI Summary on Changed Content
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout changed dev content
+        run: node src/pr-scripts.js
+
+      - name: Generate AI Summary
