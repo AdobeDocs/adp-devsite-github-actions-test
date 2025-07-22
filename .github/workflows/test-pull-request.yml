@@ -48,6 +48,10 @@ jobs:
       # Run Linters against code base #
       ################################
       - name: Lint Code Base
+        #
+        # Use full version number to avoid cases when a next
+        # released version is buggy
+        # About slim image: https://github.com/github/super-linter#slim-image
         uses: github/super-linter/slim@v4.10.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -89,25 +93,8 @@ jobs:
   ai-summary:
     name: AI Summary on Changed Content
     runs-on: ubuntu-latest
-    environment: azure-openai
-    
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.15.0'
-          
-      - name: Install dependencies
-        run: npm install
-          
-      - name: Run Content Summarizer
-        env:
-          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
-          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-        run: |
-          node src/summarize.js
+      - name: checkout changed dev content
+        run: node src/pr-scripts.js
+
+      - name: Generate AI Summary
