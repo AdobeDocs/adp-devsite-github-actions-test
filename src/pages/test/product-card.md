@@ -1,4 +1,4 @@
-<HeroSimple slots="heading, text, video , buttons" background="rgb(141, 52, 78)"  />
+<HeroSimple slots="heading, text, video , buttons" background="rgb(141, 52, 78)" variant="halfWidth" />
 
 # What's New: Introducing a new enterprise credential
 
