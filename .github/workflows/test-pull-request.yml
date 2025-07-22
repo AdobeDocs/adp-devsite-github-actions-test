@@ -100,16 +100,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node v16
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.15.0'
-
-      - name: Install dependencies
-        run: npm install node-fetch@2
-
       - name: checkout changed dev content
-        run: node src/pr-scripts.js
+        run: 
+          npm install
+          node src/pr-scripts.js
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}

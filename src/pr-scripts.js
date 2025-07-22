@@ -1,9 +1,5 @@
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
-const fs = require('fs');
-const fetch = require('node-fetch');
-// const path = require('path');
-const { generateKeywords } = require('./keywords-scripts');
 
 const prNumber = process.env.PR_ID;
 
@@ -50,6 +46,7 @@ async function fetchPRInformation() {
             if (contentResponse.ok) {
                 const content = await contentResponse.text();
                 allContent += `\n\n--- File: ${file.filename} ---\n\n${content}`;
+                console.log(allContent);
             } else {
                 console.log(`Failed to fetch content for ${file.filename}`);
             }
@@ -66,10 +63,10 @@ async function fetchPRInformation() {
         // console.log(`Content written to: ${outputPath}`);
 
         // Generate keywords using the content
-        const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
-        const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
-        const keywords = await generateKeywords(openAIEndpoint, openAIAPIKey, allContent);
-        console.log('Generated Keywords:', keywords);
+        // const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
+        // const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
+        // const keywords = await generateKeywords(openAIEndpoint, openAIAPIKey, allContent);
+        // console.log('Generated Keywords:', keywords);
 
     } catch (error) {
         console.error('Error fetching PR information:', error);
