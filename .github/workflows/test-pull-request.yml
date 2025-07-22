@@ -127,8 +127,11 @@ jobs:
 
       - name: Install dependencies and run script
         uses: borales/actions-yarn@v3
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          YARN_ENABLE_HARDENED_MODE: false
         with:
-          cmd: install
+          cmd: install --mode=update-lockfile
           
       - name: Run PR script
         run: node src/pr-scripts.js
