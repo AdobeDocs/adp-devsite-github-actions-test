@@ -1,8 +1,10 @@
-<HeroSimple slots="heading, text, buttons" background="rgb(141, 52, 78)"/>
+<HeroSimple slots="heading, text, video , buttons" background="rgb(141, 52, 78)"  />
 
 # What's New: Introducing a new enterprise credential
 
 For partners to build and distribute server-to-server integrations.
+
+https://drive.google.com/file/d/18QGdVVVW1xGEyD5GF3TmoBf8kqIg5BaR/view?usp=drive_link
 
 [Learn more](https://lit.dev/)
 
