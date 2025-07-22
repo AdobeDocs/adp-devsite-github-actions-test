@@ -42,7 +42,8 @@ jobs:
           # Full git history is needed to get a proper list of changed files
           # within `super-linter`
           fetch-depth: 0
-      - run: cat ".github/super-linter.env" >> "$GITHUB_ENV"
+      - name: Load Super Linter Environment
+        run: cat ".github/super-linter.env" >> "$GITHUB_ENV"
 
       ################################
       # Run Linters against code base #
@@ -96,7 +97,7 @@ jobs:
     steps:
       - name: checkout changed dev content
         run: node src/pr-scripts.js
-      env:
-        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
-        AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-        PR_ID: ${{ github.event.pull_request.number }}
+        env:
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+          PR_ID: ${{ github.event.pull_request.number }}
