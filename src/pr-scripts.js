@@ -4,6 +4,48 @@ const repo = "adp-devsite-github-actions-test";
 const prNumber = process.env.PR_ID;
 const githubToken = process.env.GITHUB_TOKEN;
 
+async function generateKeywords( endpoint, apiKey, content) {
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        messages: [
+          { 
+            role: "system", 
+            content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
+          },
+          { 
+            role: "user", 
+            content: `Generate a summary of the following content in the format:
+                  ---
+                  title: [Title of the Document]
+                  description: [Brief description of the document]
+                  keywords:
+                  - [Keyword 1]
+                  - [Keyword 2]
+                  - [Keyword 3]
+                  - [Keyword 4]
+                  - [Keyword 5]
+                  ---
+                  Content: ${content}`
+          }
+        ],
+        max_tokens: 800,
+        temperature: 1,
+        top_p: 1,
+      })
+    });
+  
+    const result = await response.json();
+    console.log(result);    
+    console.log(result.choices[0].message.content);
+    // return result.choices[0].message.content;
+  }
+
 async function fetchPRInformation() {
     try {
         // fetch PR data
@@ -49,7 +91,7 @@ async function fetchPRInformation() {
             if (contentResponse.ok) {
                 const content = await contentResponse.text();
                 allContent += `\n\n--- File: ${file.filename} ---\n\n${content}`;
-                console.log(allContent);
+                // console.log(allContent);
             } else {
                 console.log(`Failed to fetch content for ${file.filename}`);
             }
@@ -60,15 +102,11 @@ async function fetchPRInformation() {
             allContent = 'No matching files found in src/pages directory (excluding config.md)';
         }
 
-        // Write content to a file that GitHub Actions can read
-        // const outputPath = path.join(process.cwd(), 'pr_content.txt');
-        // fs.writeFileSync(outputPath, allContent);
-        // console.log(`Content written to: ${outputPath}`);
 
         // Generate keywords using the content
-        // const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
-        // const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
-        // const keywords = await generateKeywords(openAIEndpoint, openAIAPIKey, allContent);
+        const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
+        const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
+        await generateKeywords(openAIEndpoint, openAIAPIKey, allContent);
         // console.log('Generated Keywords:', keywords);
 
     } catch (error) {
