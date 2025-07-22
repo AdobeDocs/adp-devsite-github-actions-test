@@ -4,7 +4,7 @@
 
 For partners to build and distribute server-to-server integrations.
 
-https://drive.google.com/file/d/18QGdVVVW1xGEyD5GF3TmoBf8kqIg5BaR/view?usp=drive_link
+https://drive.google.com/file/d/18QGdVVVW1xGEyD5GF3TmoBf8kqIg5BaR/view?usp=sharing
 
 [Learn more](https://lit.dev/)
 
