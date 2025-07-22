@@ -101,7 +101,7 @@ jobs:
           fetch-depth: 0
 
       - name: checkout changed dev content
-        run: 
+        run: |
           npm install
           node src/pr-scripts.js
         env:
