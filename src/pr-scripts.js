@@ -2,13 +2,15 @@ const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 
 const prNumber = process.env.PR_ID;
+const githubToken = process.env.GITHUB_TOKEN;
 
 async function fetchPRInformation() {
     try {
         // fetch PR data
         const prResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}`, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
             }
         });
 
@@ -19,7 +21,8 @@ async function fetchPRInformation() {
         // fetch the files changed in this PR
         const filesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/files`, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
             }
         });
 
