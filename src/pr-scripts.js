@@ -1,9 +1,10 @@
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
-const prNumber = 39;
 const fs = require('fs');
-const path = require('path');
+// const path = require('path');
 const { generateKeywords } = require('./keywords-scripts');
+
+const prNumber = process.env.PR_ID;
 
 async function fetchPRInformation() {
     try {
@@ -59,9 +60,9 @@ async function fetchPRInformation() {
         }
 
         // Write content to a file that GitHub Actions can read
-        const outputPath = path.join(process.cwd(), 'pr_content.txt');
-        fs.writeFileSync(outputPath, allContent);
-        console.log(`Content written to: ${outputPath}`);
+        // const outputPath = path.join(process.cwd(), 'pr_content.txt');
+        // fs.writeFileSync(outputPath, allContent);
+        // console.log(`Content written to: ${outputPath}`);
 
         // Generate keywords using the content
         const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
