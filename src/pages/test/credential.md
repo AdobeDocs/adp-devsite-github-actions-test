@@ -1,0 +1,1 @@
+<GetCredential templateId="1236547890" productName="Express Embed SDK" jsonDefinition="./credential/get-credential.json" />
