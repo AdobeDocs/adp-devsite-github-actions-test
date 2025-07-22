@@ -1,6 +1,7 @@
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 const fs = require('fs');
+const fetch = require('node-fetch');
 // const path = require('path');
 const { generateKeywords } = require('./keywords-scripts');
 

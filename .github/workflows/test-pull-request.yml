@@ -105,6 +105,9 @@ jobs:
         with:
           node-version: '16.15.0'
 
+      - name: Install dependencies
+        run: npm install node-fetch@2
+
       - name: checkout changed dev content
         run: node src/pr-scripts.js
         env:
