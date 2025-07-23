@@ -22,7 +22,7 @@ async function generateKeywords( endpoint, apiKey, content) {
             role: "user", 
             content: `Generate a summary of the following content in the format:
                   ---
-                  title: [Title of the Document]
+                  title: [Short summary of the entire document]
                   description: [Brief description of the document]
                   keywords:
                   - [Keyword 1]
@@ -41,9 +41,7 @@ async function generateKeywords( endpoint, apiKey, content) {
     });
   
     const result = await response.json();
-    console.log(result);    
     console.log(result.choices[0].message.content);
-    // return result.choices[0].message.content;
   }
 
 async function fetchPRInformation() {
