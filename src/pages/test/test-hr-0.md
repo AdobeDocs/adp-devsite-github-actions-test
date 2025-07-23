@@ -4,7 +4,7 @@
 
 For partners to build and distribute server-to-server integrations.
 
-[video_alt](https://main--adp-devsite--adobedocs.aem.page/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
+[video_alt](https://drive.google.com/drive/folders/1Rjhc8H_SPm8DmzRMl0MUIvl7hJoZvrft)
 
 [Learn more](https://lit.dev/)
 
