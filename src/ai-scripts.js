@@ -16,7 +16,7 @@ async function createMetadata(endpoint, apiKey, content) {
           role: "user",
           content: `Generate a summary of the following content in the format:
                 ---
-                title: [Short summary of the entire document]
+                title: [Same as the heading1 content]
                 description: [Brief description of the document]
                 keywords:
                 - [Keyword 1]
