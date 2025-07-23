@@ -4,23 +4,23 @@ const repo = "adp-devsite-github-actions-test";
 const prNumber = process.env.PR_ID;
 const githubToken = process.env.GITHUB_TOKEN;
 
-async function generateKeywords( endpoint, apiKey, content) {
+async function generateKeywords(endpoint, apiKey, content) {
 
     const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        messages: [
-          { 
-            role: "system", 
-            content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
-          },
-          { 
-            role: "user", 
-            content: `Generate a summary of the following content in the format:
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            messages: [
+                {
+                    role: "system",
+                    content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
+                },
+                {
+                    role: "user",
+                    content: `Generate a summary of the following content in the format:
                   ---
                   title: [Short summary of the entire document]
                   description: [Brief description of the document]
@@ -32,17 +32,17 @@ async function generateKeywords( endpoint, apiKey, content) {
                   - [Keyword 5]
                   ---
                   Content: ${content}`
-          }
-        ],
-        max_tokens: 800,
-        temperature: 1,
-        top_p: 1,
-      })
+                }
+            ],
+            max_tokens: 800,
+            temperature: 1,
+            top_p: 1,
+        })
     });
-  
+
     const result = await response.json();
     console.log(result.choices[0].message.content);
-  }
+}
 
 async function fetchPRInformation() {
     try {
@@ -70,22 +70,22 @@ async function fetchPRInformation() {
             throw new Error(`GitHub API request failed when fetching files: ${filesResponse.status}`);
         }
         const filesData = await filesResponse.json();
-        
+
         // Filter files in src/pages directory and exclude config.md
-        const pagesFiles = filesData.filter(file => 
-            file.filename.startsWith('src/pages/') && 
+        const pagesFiles = filesData.filter(file =>
+            file.filename.startsWith('src/pages/') &&
             !file.filename.endsWith('config.md')
         );
-        
+
         let allContent = '';
-        
+
         for (const file of pagesFiles) {
             const contentResponse = await fetch(file.raw_url, {
                 headers: {
                     'Accept': 'application/vnd.github.v3.raw'
                 }
             });
-            
+
             if (contentResponse.ok) {
                 const content = await contentResponse.text();
                 allContent += `\n\n--- File: ${file.filename} ---\n\n${content}`;
@@ -94,7 +94,7 @@ async function fetchPRInformation() {
                 console.log(`Failed to fetch content for ${file.filename}`);
             }
         }
-        
+
         if (pagesFiles.length === 0) {
             console.log('No matching files found in src/pages directory (excluding config.md)');
             allContent = 'No matching files found in src/pages directory (excluding config.md)';
