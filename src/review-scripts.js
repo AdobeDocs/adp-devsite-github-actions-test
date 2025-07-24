@@ -65,8 +65,8 @@ async function reviewPR() {
                 comments: [
                     {
                         path: targetFile.filename,
-                        position: targetFile.patch.split('\n').length - 1,
-                        body: `suggestion: Add this metadata block at the very front of the document:\n\n\`\`\`yaml\n${suggestion}\n\`\`\`\n\nThis will improve the document's discoverability and provide better context for readers.`
+                        position: 1,
+                        body: `\`\`\`suggestion\n${suggestion}\n\`\`\`\n.`
                     }
                 ]
             })
