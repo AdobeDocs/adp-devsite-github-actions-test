@@ -3,7 +3,7 @@ const repo = "adp-devsite-github-actions-test";
 
 // FIXME: hard coded, should update
 const prNumber = 42;
-const path = "pages/ai-test/app-builder-index.md";
+const path = "src/pages/ai-test/app-builder-index.md";
 const suggestion = `---
 	title: Getting Started with App Builder
 	description: This document provides comprehensive introductory guides for new users to begin working with App Builder and Adobe I/O Runtime. It covers setting up the development environment, creating applications, publishing, troubleshooting, and delves into serverless development fundamentals, deployment, and best practices.
@@ -32,6 +32,25 @@ async function reviewPR() {
         const prData = await prResponse.json();
         console.log('PR found:', prData.title);
 
+        // Fetch PR files to get the correct position information
+        const filesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/files`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
+            }
+        });
+
+        if (!filesResponse.ok) {
+            throw new Error(`GitHub API request failed when fetching files: ${filesResponse.status}`);
+        }
+
+        const filesData = await filesResponse.json();
+        const targetFile = filesData.find(file => file.filename === path);
+
+        if (!targetFile) {
+            throw new Error(`Target file ${path} not found in PR`);
+        }
+
         // Create a review with a comment suggestion
         const reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
             method: 'POST',
@@ -45,10 +64,9 @@ async function reviewPR() {
                 event: 'COMMENT',
                 comments: [
                     {
-                        path: path,
-                        body: `suggestion: Add this metadata block at the very front of the document:\n\n\`\`\`yaml\n${suggestion}\n\`\`\`\n\nThis will improve the document's discoverability and provide better context for readers.`,
-                        line: 1,
-                        side: 'RIGHT'
+                        path: targetFile.filename,
+                        position: targetFile.patch.split('\n').length - 1,
+                        body: `suggestion: Add this metadata block at the very front of the document:\n\n\`\`\`yaml\n${suggestion}\n\`\`\`\n\nThis will improve the document's discoverability and provide better context for readers.`
                     }
                 ]
             })
