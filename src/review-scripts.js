@@ -13,7 +13,7 @@ const suggestion = `---
 	- Adobe I/O Runtime
 	- Development Environment
 	- Serverless Deployment
-	---`;
+---`;
 const githubToken = process.env.GITHUB_TOKEN;
 
 async function reviewPR() {
@@ -66,7 +66,7 @@ async function reviewPR() {
                     {
                         path: targetFile.filename,
                         position: 1,
-                        body: `\`\`\`suggestion\n${suggestion}\n\`\`\`\n.`
+                        body: `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`
                     }
                 ]
             })
