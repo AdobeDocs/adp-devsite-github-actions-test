@@ -1,6 +1,9 @@
 const fs = require('fs');
 
 async function createMetadata(endpoint, apiKey, content) {
+  // Extract the file path from the content
+  const pathMatch = content.match(/--- File: (.*?) ---/);
+  const filePath = pathMatch ? pathMatch[1] : '';
 
   const response = await fetch(endpoint, {
     method: 'POST',
@@ -37,11 +40,12 @@ async function createMetadata(endpoint, apiKey, content) {
   });
 
   const result = await response.json();
-  console.log(result.choices[0].message.content);
+  const aiContent = result.choices[0].message.content;
   
-  // Write the content to a file
-  fs.writeFileSync('ai_content.txt', result.choices[0].message.content, 'utf8');
-  console.log('Successfully wrote AI content to ai_content.txt');
+  // Write both file path and AI content to the file
+  const fullContent = `--- File: ${filePath} ---\n${aiContent}`;
+  fs.writeFileSync('ai_content.txt', fullContent, 'utf8');
+  console.log('Successfully wrote AI content with file path to ai_content.txt');
 }
 
 async function EditMetadata(endpoint, apiKey, metadata, changedContent, fullContent) {

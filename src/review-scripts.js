@@ -4,15 +4,21 @@ const repo = "adp-devsite-github-actions-test";
 const fs = require('fs');
 
 const prNumber = process.env.PR_ID;
-// FIXME: hard coded, should update
-const path = "src/pages/ai-test/app-builder-index.md";
 
+let path;
 let suggestion;
 try {
-    suggestion = fs.readFileSync('ai_content.txt', 'utf8');
+    const aiContent = fs.readFileSync('ai_content.txt', 'utf8');
+    const pathMatch = aiContent.match(/--- File: (.*?) ---\n/);
+    path = pathMatch ? pathMatch[1] : '';
+    suggestion = aiContent.replace(/--- File: .*? ---\n/, '');
+    
+    if (!path) {
+        throw new Error('Could not extract file path from ai_content.txt');
+    }
 } catch (error) {
     console.error('Error reading ai_content.txt:', error);
-    suggestion = '';
+    process.exit(1);
 }
 
 const githubToken = process.env.GITHUB_TOKEN;
