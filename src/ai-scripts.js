@@ -36,6 +36,10 @@ async function createMetadata(endpoint, apiKey, content) {
 
   const result = await response.json();
   console.log(result.choices[0].message.content);
+  
+  // Write the content to a file
+  fs.writeFileSync('ai_content.txt', result.choices[0].message.content, 'utf8');
+  console.log('Successfully wrote AI content to ai_content.txt');
 }
 
 async function EditMetadata(endpoint, apiKey, metadata, changedContent, fullContent) {

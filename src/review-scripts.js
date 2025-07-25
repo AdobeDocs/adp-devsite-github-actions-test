@@ -1,19 +1,20 @@
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 
+const fs = require('fs');
+
+const prNumber = process.env.PR_ID;
 // FIXME: hard coded, should update
-const prNumber = 42;
 const path = "src/pages/ai-test/app-builder-index.md";
-const suggestion = `---
-	title: Getting Started with App Builder
-	description: This document provides comprehensive introductory guides for new users to begin working with App Builder and Adobe I/O Runtime. It covers setting up the development environment, creating applications, publishing, troubleshooting, and delves into serverless development fundamentals, deployment, and best practices.
-	keywords:
-	- App Builder
-	- Getting Started
-	- Adobe I/O Runtime
-	- Development Environment
-	- Serverless Deployment
----`;
+
+let suggestion;
+try {
+    suggestion = fs.readFileSync('ai_content.txt', 'utf8');
+} catch (error) {
+    console.error('Error reading ai_content.txt:', error);
+    suggestion = '';
+}
+
 const githubToken = process.env.GITHUB_TOKEN;
 
 async function reviewPR() {
