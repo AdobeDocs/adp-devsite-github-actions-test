@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 async function createMetadata(endpoint, apiKey, content) {
 
   const response = await fetch(endpoint, {
