@@ -58,6 +58,21 @@ async function reviewPR() {
             throw new Error(`Target file ${path} not found in PR`);
         }
 
+        // Fetch the original file content, and get the first line
+        const contentResponse = await fetch(targetFile.raw_url, {
+            headers: {
+                'Accept': 'application/vnd.github.v3.raw',
+                'Authorization': `Bearer ${githubToken}`
+            }
+        });
+
+        if (!contentResponse.ok) {
+            throw new Error(`Failed to fetch file content: ${contentResponse.status}`);
+        }
+
+        const content = await contentResponse.text();
+        const firstLine = content.split('\n')[0];
+
         // Create a review with a comment suggestion
         const reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
             method: 'POST',
@@ -72,8 +87,8 @@ async function reviewPR() {
                 comments: [
                     {
                         path: targetFile.filename,
-                        position: 0,
-                        body: `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`
+                        position: 1,
+                        body: `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\`\n`
                     }
                 ]
             })
