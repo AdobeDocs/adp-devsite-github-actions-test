@@ -72,7 +72,7 @@ async function reviewPR() {
                 comments: [
                     {
                         path: targetFile.filename,
-                        position: 1,
+                        position: 0,
                         body: `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`
                     }
                 ]
