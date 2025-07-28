@@ -48,8 +48,13 @@ async function createMetadata(endpoint, apiKey, content) {
   console.log('Successfully wrote AI content with file path to ai_content.txt');
 }
 
-async function EditMetadata(endpoint, apiKey, metadata, changedContent, fullContent) {
+async function EditMetadata(endpoint, apiKey, metadata, fullContent) {
+  console.log("metadata", metadata);
+  console.log("fullContent", fullContent);
+}
 
+function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
+  return content.startsWith('---') && content.split('---').length > 2;
 }
 
 // Main function to read pr_content.txt and generate metadata
@@ -68,7 +73,14 @@ async function processContent() {
       return;
     }
 
-    await createMetadata(openAIEndpoint, openAIAPIKey, content);
+    if (hasMetadata(content)) {
+      const parts = content.split('---');
+      const metadata = parts.slice(1, 2).join('---').trim();
+      const fullContent = parts.slice(2).join('---').trim();
+      await EditMetadata(openAIEndpoint, openAIAPIKey, metadata, fullContent);
+    } else {
+      await createMetadata(openAIEndpoint, openAIAPIKey, content);
+    }
 
   } catch (error) {
     console.error('Error processing content:', error);
