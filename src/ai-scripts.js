@@ -54,6 +54,7 @@ async function EditMetadata(endpoint, apiKey, metadata, fullContent) {
 }
 
 function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
+  console.log(content.split('---'));
   return content.startsWith('---') && content.split('---').length > 2;
 }
 
