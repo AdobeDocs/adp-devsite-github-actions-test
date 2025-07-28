@@ -1,10 +1,6 @@
 const fs = require('fs');
 
-async function createMetadata(endpoint, apiKey, content) {
-  // Extract the file path from the content
-  const pathMatch = content.match(/--- File: (.*?) ---/);
-  const filePath = pathMatch ? pathMatch[1] : '';
-
+async function createMetadata(endpoint, apiKey, filepath, content) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -43,19 +39,21 @@ async function createMetadata(endpoint, apiKey, content) {
   const aiContent = result.choices[0].message.content;
   
   // Write both file path and AI content to the file
-  const fullContent = `--- File: ${filePath} ---\n${aiContent}`;
+  const fullContent = `--- File: ${filepath} ---\n${aiContent}`;
   fs.writeFileSync('ai_content.txt', fullContent, 'utf8');
   console.log('Successfully wrote AI content with file path to ai_content.txt');
 }
 
-async function EditMetadata(endpoint, apiKey, metadata, fullContent) {
+async function EditMetadata(endpoint, apiKey, filepath, metadata, fullContent) {
   console.log("metadata", metadata);
   console.log("fullContent", fullContent);
 }
 
 function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
-  console.log(content.split('---'));
-  return content.startsWith('---') && content.split('---').length > 2;
+  content.split('---').forEach((part, index) => {
+    console.log(index, part);
+  });
+  return content.startsWith('---') && content.split('---').length >= 2;
 }
 
 // Main function to read pr_content.txt and generate metadata
@@ -63,8 +61,13 @@ async function processContent() {
   const fs = require('fs');
 
   try {
-    const content = fs.readFileSync('pr_content.txt', 'utf8');
+    let content = fs.readFileSync('pr_content.txt', 'utf8');
     console.log('Successfully read content from pr_content.txt');
+
+    // Extract the file path from the content
+    const pathMatch = content.match(/--- File: (.*?) ---/);
+    const filePath = pathMatch ? pathMatch[1] : '';
+    content = content.replace(`--- File: ${filePath} ---`, '');
 
     const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
     const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
@@ -78,9 +81,9 @@ async function processContent() {
       const parts = content.split('---');
       const metadata = parts.slice(1, 2).join('---').trim();
       const fullContent = parts.slice(2).join('---').trim();
-      await EditMetadata(openAIEndpoint, openAIAPIKey, metadata, fullContent);
+      await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent);
     } else {
-      await createMetadata(openAIEndpoint, openAIAPIKey, content);
+      await createMetadata(openAIEndpoint, openAIAPIKey, filePath, content);
     }
 
   } catch (error) {
