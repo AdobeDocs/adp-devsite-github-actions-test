@@ -83,8 +83,10 @@ async function reviewPR() {
             // If metadata exists, replace it
             const metadataStart = content.indexOf('---');
             const metadataEnd = content.indexOf('---', metadataStart + 3) + 3;
-            const metadataLines = content.slice(metadataStart, metadataEnd).split('\n').length;
-            reviewBody = `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`;
+            const metadataLines = content.slice(0, metadataEnd).split('\n').length;
+            const contentLines = content.split('\n');
+            const startLine = contentLines.findIndex(line => line.trim() === '---') + 1;
+            const endLine = startLine + metadataLines - 1;
 
             // Create a review with a comment suggestion targeting the metadata section
             reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
@@ -100,7 +102,9 @@ async function reviewPR() {
                     comments: [
                         {
                             path: targetFile.filename,
-                            line: metadataLines,
+                            start_line: startLine - 1,
+                            line: endLine,
+                            start_side: 'RIGHT',
                             side: 'RIGHT',
                             body: reviewBody
                         }
