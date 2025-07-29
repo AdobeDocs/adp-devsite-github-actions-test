@@ -44,7 +44,7 @@ async function createMetadata(endpoint, apiKey, filepath, content) {
   console.log('Successfully wrote AI content with file path to ai_content.txt');
 }
 
-async function EditMetadata(endpoint, apiKey, filepath, metadata, fullContent) {
+async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -77,7 +77,7 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fullContent) {
               ${metadata}
 
               Content to analyze:
-              ${fullContent}`
+              ${fileContent}`
         }
       ],
       max_tokens: 800,
