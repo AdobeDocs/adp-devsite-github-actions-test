@@ -45,15 +45,58 @@ async function createMetadata(endpoint, apiKey, filepath, content) {
 }
 
 async function EditMetadata(endpoint, apiKey, filepath, metadata, fullContent) {
-  console.log("metadata", metadata);
-  console.log("fullContent", fullContent);
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      messages: [
+        {
+          role: "system",
+          content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
+        },
+        {
+          role: "user",
+          content: `Review and make minimal necessary updates to the following metadata based on the content. Keep the same format and only change what needs to be updated.
+    
+            Expected format:
+              ---
+              title: [Same as the heading1 content]
+              description: [Brief description of the document]
+              keywords:
+              - [Keyword 1]
+              - [Keyword 2]
+              - [Keyword 3]
+              - [Keyword 4]
+              - [Keyword 5]
+              ---
+
+              Current metadata:
+              ${metadata}
+
+              Content to analyze:
+              ${fullContent}`
+        }
+      ],
+      max_tokens: 800,
+      temperature: 1,
+      top_p: 1,
+    })
+  });
+
+  const result = await response.json();
+  const aiContent = result.choices[0].message.content;
+  
+  // Write both file path and AI content to the file
+  const fullContent = `--- File: ${filepath} ---\n${aiContent}`;
+  fs.writeFileSync('ai_content.txt', fullContent, 'utf8');
+  console.log('Successfully wrote AI content with file path to ai_content.txt');
 }
 
 function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
-  content.split('---').forEach((part, index) => {
-    console.log(index, part);
-  });
-  return content.startsWith('---') && content.split('---').length >= 2;
+  return content.split('---').length >= 2;
 }
 
 // Main function to read pr_content.txt and generate metadata
@@ -81,8 +124,6 @@ async function processContent() {
       const parts = content.split('---');
       const metadata = parts.slice(1, 2).join('---').trim();
       const fullContent = parts.slice(2).join('---').trim();
-      console.log("metadata", metadata);
-      console.log("fullContent", fullContent);
       await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent);
     } else {
       await createMetadata(openAIEndpoint, openAIAPIKey, filePath, content);
