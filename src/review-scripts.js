@@ -23,6 +23,10 @@ try {
 
 const githubToken = process.env.GITHUB_TOKEN;
 
+function hasMetadata(content) {
+    return content.split('---').length >= 2;
+}
+
 async function reviewPR() {
     try {
         const prResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}`, {
@@ -73,26 +77,62 @@ async function reviewPR() {
         const content = await contentResponse.text();
         const firstLine = content.split('\n')[0];
 
-        // Create a review with a comment suggestion
-        const reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/vnd.github+json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${githubToken}`
-            },
-            body: JSON.stringify({
-                body: `AI suggestion`,
-                event: 'COMMENT',
-                comments: [
-                    {
-                        path: targetFile.filename,
-                        position: 1,
-                        body: `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\`\n`
-                    }
-                ]
-            })
-        });
+        let reviewBody;
+        let reviewResponse;
+        if (hasMetadata(content)) {
+            // If metadata exists, replace it
+            const metadataStart = content.indexOf('---');
+            const metadataEnd = content.indexOf('---', metadataStart + 3) + 3;
+            const metadataLines = content.slice(0, metadataEnd).split('\n').length;
+            reviewBody = `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`;
+
+            // Create a review with a comment suggestion targeting the metadata section
+            reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${githubToken}`
+                },
+                body: JSON.stringify({
+                    body: `AI suggestion`,
+                    event: 'COMMENT',
+                    comments: [
+                        {
+                            path: targetFile.filename,
+                            line: metadataLines,
+                            side: 'RIGHT',
+                            body: reviewBody
+                        }
+                    ]
+                })
+            });
+        } else {
+            // If no metadata, insert at the beginning
+            reviewBody = `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\`\n`;
+            
+            // Create a review with a comment suggestion
+            reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${githubToken}`
+                },
+                body: JSON.stringify({
+                    body: `AI suggestion`,
+                    event: 'COMMENT',
+                    comments: [
+                        {
+                            path: targetFile.filename,
+                            line: 1,
+                            side: 'RIGHT',
+                            body: reviewBody
+                        }
+                    ]
+                })
+            });
+        }
 
         if (!reviewResponse.ok) {
             const errorBody = await reviewResponse.text();
