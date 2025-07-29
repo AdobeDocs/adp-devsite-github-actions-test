@@ -2,7 +2,7 @@
 
 # What's New: Introducing a new enterprise credential
 
-For partners to build and [distribute](https://developer.adobe.com/express/add-ons/docs/guides/?aio_external) server-to-server integrations.
+For partners to build and distribute server-to-server integrations.
 
 [video_alt](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/video/test-video.mp4)
 
@@ -10,7 +10,7 @@ For partners to build and [distribute](https://developer.adobe.com/express/add-o
 
 # Class: Editor new4
 
-Entry point for APIs that read or modify the document's content.
+Entry point for [APIs](https://developer.adobe.com/express/add-ons/docs/guides/?aio_external) that read or modify the document's content.
 
 ## Accessors
 
