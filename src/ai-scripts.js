@@ -81,6 +81,8 @@ async function processContent() {
       const parts = content.split('---');
       const metadata = parts.slice(1, 2).join('---').trim();
       const fullContent = parts.slice(2).join('---').trim();
+      console.log("metadata", metadata);
+      console.log("fullContent", fullContent);
       await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent);
     } else {
       await createMetadata(openAIEndpoint, openAIAPIKey, filePath, content);
