@@ -12,7 +12,7 @@ try {
     const pathMatch = aiContent.match(/--- File: (.*?) ---\n/);
     path = pathMatch ? pathMatch[1] : '';
     suggestion = aiContent.replace(/--- File: .*? ---\n/, '');
-    
+
     if (!path) {
         throw new Error('Could not extract file path from ai_content.txt');
     }
@@ -80,16 +80,21 @@ async function reviewPR() {
         let reviewBody;
         let reviewResponse;
         if (hasMetadata(content)) {
-            // If metadata exists, replace it
-            const metadataStart = content.indexOf('---');
-            const metadataEnd = content.indexOf('---', metadataStart + 3) + 3;
-            const metadataLines = content.slice(0, metadataEnd).split('\n').length;
-            const contentLines = content.split('\n');
-            const startLine = contentLines.findIndex(line => line.trim() === '---') + 1;
-            const endLine = startLine + metadataLines - 1;
-
-            // Set the review body with the suggestion
-            reviewBody = `\`\`\`suggestion\n${suggestion}\n\`\`\``;
+            // Find the line number of the second '---'
+            let metadataEnd = 0;
+            const lines = content.split('\n');
+            let dashCount = 0;
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].trim() === '---') {
+                    dashCount++;
+                    if (dashCount === 2) {
+                        metadataEnd = i + 1;
+                        break;
+                    }
+                }
+            }
+            
+            reviewBody = `\`\`\`suggestion\n${suggestion}\n\`\`\`\n`;
 
             // Create a review with a comment suggestion targeting the metadata section
             reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
@@ -105,9 +110,9 @@ async function reviewPR() {
                     comments: [
                         {
                             path: targetFile.filename,
-                            start_line: startLine - 1,
-                            line: endLine,
+                            start_line: 1,
                             start_side: 'RIGHT',
+                            line: metadataEnd,
                             side: 'RIGHT',
                             body: reviewBody
                         }
@@ -117,7 +122,7 @@ async function reviewPR() {
         } else {
             // If no metadata, insert at the beginning
             reviewBody = `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\`\n`;
-            
+
             // Create a review with a comment suggestion
             reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
                 method: 'POST',
