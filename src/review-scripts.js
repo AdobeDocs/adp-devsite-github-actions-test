@@ -88,6 +88,9 @@ async function reviewPR() {
             const startLine = contentLines.findIndex(line => line.trim() === '---') + 1;
             const endLine = startLine + metadataLines - 1;
 
+            // Set the review body with the suggestion
+            reviewBody = `\`\`\`suggestion\n${suggestion}\n\`\`\``;
+
             // Create a review with a comment suggestion targeting the metadata section
             reviewResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
                 method: 'POST',
