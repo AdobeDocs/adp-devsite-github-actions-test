@@ -1,4 +1,6 @@
 const fs = require('fs');
+const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
+const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
 
 async function createMetadata(endpoint, apiKey, filepath, content) {
   const response = await fetch(endpoint, {
@@ -37,11 +39,8 @@ async function createMetadata(endpoint, apiKey, filepath, content) {
 
   const result = await response.json();
   const aiContent = result.choices[0].message.content;
-  
-  // Write both file path and AI content to the file
-  const fullContent = `--- File: ${filepath} ---\n${aiContent}`;
-  fs.writeFileSync('ai_content.txt', fullContent, 'utf8');
-  console.log('Successfully wrote AI content with file path to ai_content.txt');
+
+  return  `--- File: ${filepath} ---\n${aiContent}\n`;
 }
 
 async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
@@ -89,10 +88,7 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
   const result = await response.json();
   const aiContent = result.choices[0].message.content;
   
-  // Write both file path and AI content to the file
-  const fullContent = `--- File: ${filepath} ---\n${aiContent}`;
-  fs.writeFileSync('ai_content.txt', fullContent, 'utf8');
-  console.log('Successfully wrote AI content with file path to ai_content.txt');
+  return `--- File: ${filepath} ---\n${aiContent}\n`;
 }
 
 function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
@@ -101,33 +97,46 @@ function hasMetadata(content) { // FIXME:this is a little tricky for metadata ch
 
 // Main function to read pr_content.txt and generate metadata
 async function processContent() {
-  const fs = require('fs');
+  if (!openAIEndpoint || !openAIAPIKey) {
+    console.error('Missing required environment variables: AZURE_OPENAI_ENDPOINT or AZURE_OPENAI_API_KEY');
+    return;
+  }
 
   try {
     let content = fs.readFileSync('pr_content.txt', 'utf8');
     console.log('Successfully read content from pr_content.txt');
 
-    // Extract the file path from the content
-    const pathMatch = content.match(/--- File: (.*?) ---/);
-    const filePath = pathMatch ? pathMatch[1] : '';
-    content = content.replace(`--- File: ${filePath} ---`, '');
-
-    const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
-    const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
-
-    if (!openAIEndpoint || !openAIAPIKey) {
-      console.error('Missing required environment variables: AZURE_OPENAI_ENDPOINT or AZURE_OPENAI_API_KEY');
-      return;
+    // Split content by file markers
+    const fileContents = content.split(/--- File: (?=.*? ---)/);
+    // Remove the first empty element if exists
+    if (fileContents[0].trim() === '') {
+      fileContents.shift();
     }
 
-    if (hasMetadata(content)) {
-      const parts = content.split('---');
-      const metadata = parts.slice(1, 2).join('---').trim();
-      const fullContent = parts.slice(2).join('---').trim();
-      await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent);
-    } else {
-      await createMetadata(openAIEndpoint, openAIAPIKey, filePath, content);
+    let allGeneratedContent = '';
+
+    for (const fileContent of fileContents) {
+      if (!fileContent.trim()) continue;
+
+      // Extract file path and content
+      const pathMatch = fileContent.match(/(.*?) ---\n([\s\S]*)/);
+      if (!pathMatch) continue;
+
+      const [, filePath, fileText] = pathMatch;
+      const cleanContent = fileText.trim();
+
+      if (hasMetadata(cleanContent)) {
+        const parts = cleanContent.split('---');
+        const metadata = parts.slice(1, 2).join('---').trim();
+        const fullContent = parts.slice(2).join('---').trim();
+        allGeneratedContent += await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent);
+      } else {
+        allGeneratedContent += await createMetadata(openAIEndpoint, openAIAPIKey, filePath, cleanContent);
+      }
     }
+
+    fs.writeFileSync('ai_content.txt', allGeneratedContent, 'utf8');
+    console.log('Successfully wrote all content to ai_content.txt');
 
   } catch (error) {
     console.error('Error processing content:', error);
