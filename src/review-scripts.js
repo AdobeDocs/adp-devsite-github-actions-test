@@ -48,15 +48,31 @@ const githubApi = {
 function readAiContent() {
     try {
         const aiContent = fs.readFileSync('ai_content.txt', 'utf8');
-        const pathMatch = aiContent.match(/--- File: (.*?) ---\n/);
-        const path = pathMatch ? pathMatch[1] : '';
-        const suggestion = aiContent.replace(/--- File: .*? ---\n/, '');
-
-        if (!path) {
-            throw new Error('Could not extract file path from ai_content.txt');
+        
+        // Split content by file markers
+        const fileContents = aiContent.split(/--- File: (?=.*? ---)/);
+        // Remove the first empty element if exists
+        if (fileContents[0].trim() === '') {
+            fileContents.shift();
         }
 
-        return { path, suggestion };
+        const files = [];
+        for (const fileContent of fileContents) {
+            if (!fileContent.trim()) continue;
+
+            // Extract file path and content
+            const pathMatch = fileContent.match(/(.*?) ---\n([\s\S]*)/);
+            if (!pathMatch) continue;
+
+            const [, path, suggestion] = pathMatch;
+            files.push({ path, suggestion: suggestion.trim() });
+        }
+
+        if (files.length === 0) {
+            throw new Error('Could not extract any file content from ai_content.txt');
+        }
+
+        return files;
     } catch (error) {
         console.error('Error reading ai_content.txt:', error);
         process.exit(1);
@@ -108,11 +124,11 @@ function prepareReviewComment(targetFile, content, suggestion) {
     };
 }
 
-async function createReview(comment) {
+async function createReview(comments) {
     const reviewData = {
-        body: 'AI suggestion',
+        body: 'AI suggestions',
         event: 'COMMENT',
-        comments: [comment]
+        comments: comments
     };
 
     const response = await githubApi.fetchWithAuth(
@@ -129,8 +145,8 @@ async function createReview(comment) {
 
 async function reviewPR() {
     try {
-        // Read AI content
-        const { path, suggestion } = readAiContent();
+        // Read AI content for all files
+        const files = readAiContent();
 
         // Fetch PR data
         const prResponse = await githubApi.fetchWithAuth(githubApi.getPrUrl());
@@ -140,19 +156,32 @@ async function reviewPR() {
         // Fetch PR files
         const filesResponse = await githubApi.fetchWithAuth(githubApi.getPrFilesUrl());
         const filesData = await filesResponse.json();
-        const targetFile = filesData.find(file => file.filename === path);
 
-        if (!targetFile) {
-            throw new Error(`Target file ${path} not found in PR`);
+        // Process each file and prepare comments
+        const comments = [];
+        for (const { path, suggestion } of files) {
+            const targetFile = filesData.find(file => file.filename === path);
+
+            if (!targetFile) {
+                console.warn(`Target file ${path} not found in PR, skipping...`);
+                continue;
+            }
+
+            // Fetch file content
+            const contentResponse = await githubApi.fetchWithAuth(targetFile.raw_url);
+            const content = await contentResponse.text();
+
+            // Prepare comment for this file
+            const comment = prepareReviewComment(targetFile, content, suggestion);
+            comments.push(comment);
         }
 
-        // Fetch file content
-        const contentResponse = await githubApi.fetchWithAuth(targetFile.raw_url);
-        const content = await contentResponse.text();
+        if (comments.length === 0) {
+            throw new Error('No valid files to review');
+        }
 
-        // Prepare and create review
-        const comment = prepareReviewComment(targetFile, content, suggestion);
-        const reviewData = await createReview(comment);
+        // Create single review with all comments
+        const reviewData = await createReview(comments);
 
         console.log('Review created successfully:', {
             id: reviewData.id,
