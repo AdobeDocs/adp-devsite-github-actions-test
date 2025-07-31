@@ -10,13 +10,13 @@ For partners to build and distribute server-to-server integrations.
 
 # Class: Editor new4
 
-Entry point for [APIs](https://developer.adobe.com/express/add-ons/docs/guides/?aio_external) that read or modify the document's content.
+Entry point for [APIs](https://developer.adobe.com/express/add-ons/docs/guides/?aio_external) that read or modify the [document's content](https://developer.adobe.com/express/add-ons/docs/guides/).
 
 ## Accessors
 
 ### context
 
-• `get` **context**(): [`Context`](context.md)
+• `get` **context**(): [`Context`](context.md?aio_external)
 
 User's current selection context
 
