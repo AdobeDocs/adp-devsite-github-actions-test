@@ -38,7 +38,7 @@ User's express root node
 
 <Columns slots="image, heading, text, links" variant="vertical" repeat ="2" />
 
-![Discover](./images/discover.webp)
+![Discover](../images/adobe-express.svg)
 
 ### Discover
 
@@ -46,7 +46,7 @@ Explore how add-ons can expand capabilities and streamline creative [workflows](
 
 - [Find inspiration →](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
 
-![Learn](./images/learn.webp)
+![Discover](../images/adobe-express.svg)
 
 ### Learn
 
@@ -54,14 +54,9 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 - [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
 
-<Info-Columns solts="heading , link" repeat="2" />
+<Info-Columns solts="heading , link" />
 
 ### Heading 1
-
-- [Test1](./test-url.md?aio_external)
-- [Test2](./test-url.md?aio_external)
-
-### Heading 2
 
 - [Test1](./test-url.md?aio_external)
 - [Test2](./test-url.md?aio_external)
