@@ -35,3 +35,33 @@ User's express root node
 ## documentRoot
 
 • `test` **documentRoot**(): [`ExpressRootNode`](/developer-console/express-root-node.md)
+
+<Columns slots="image, heading, text, links" variant="vertical" repeat ="2" />
+
+![Discover](./images/discover.webp)
+
+### Discover
+
+Explore how add-ons can expand capabilities and streamline creative [workflows](./test-hr.md?aio_external).
+
+- [Find inspiration →](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
+
+![Learn](./images/learn.webp)
+
+### Learn
+
+Familiarize and experiment with powerful features in our Code Playground.
+
+- [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
+
+<Info-Columns solts="heading , link" repeat="2" />
+
+### Heading 1
+
+- [Test1](./test-url.md?aio_external)
+- [Test2](./test-url.md?aio_external)
+
+### Heading 2
+
+- [Test1](./test-url.md?aio_external)
+- [Test2](./test-url.md?aio_external)
