@@ -54,7 +54,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 - [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
 
-<Info-Columns solts="heading , link" />
+<Info-Columns solts="heading , buttons" />
 
 ### Heading 1
 
