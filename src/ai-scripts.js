@@ -96,15 +96,15 @@ function hasMetadata(content) { // FIXME:this is a little tricky for metadata ch
 }
 
 // Main function to read pr_content.txt and generate metadata
-async function processContent() {
+async function processContent(filename) {
   if (!openAIEndpoint || !openAIAPIKey) {
     console.error('Missing required environment variables: AZURE_OPENAI_ENDPOINT or AZURE_OPENAI_API_KEY');
     return;
   }
 
   try {
-    let content = fs.readFileSync('pr_content.txt', 'utf8');
-    console.log('Successfully read content from pr_content.txt');
+    let content = fs.readFileSync(filename, 'utf8');
+    console.log(`Successfully read content from ${filename}`);
 
     // Split content by file markers
     const fileContents = content.split(/--- File: (?=.*? ---)/);
@@ -143,4 +143,4 @@ async function processContent() {
   }
 }
 
-processContent();
+processContent(process.env.FILE_NAME);

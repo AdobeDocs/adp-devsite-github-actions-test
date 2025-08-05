@@ -144,7 +144,8 @@ jobs:
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-      
+          FILE_NAME: "pr_content.txt"
+          
       - name: Run review PR script
         run: node src/review-scripts.js
         env:
