@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { getLatestCommit, createBranch } = require('./github-api');
 
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
@@ -7,46 +8,6 @@ const githubToken = process.env.GITHUB_TOKEN;
 
 const branchRef = "heads/ai-metadata";
 const mainRef = "heads/main";
-
-async function getLatestCommit(ref) {
-    try {
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/${ref}`, {
-            method: 'GET',
-            headers: {
-                'accept': 'application/vnd.github+json'
-            }
-        });
-        if (!response.ok) {
-            throw new Error(`Failed to fetch ref: ${ref} - ${response.status}`);
-        }
-        const data = await response.json();
-        return data.object.sha;
-    } catch (error) {
-        console.error(`Error fetching latest commit for ref ${ref}:`, error);
-        throw error;
-    }
-}
-
-async function createBranch(baseRefSha){
-    // TODO: check if branch already exists
-    try {
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
-            method: 'POST',
-            headers: {
-                'accept': 'application/vnd.github+json',
-                'authorization': `Bearer ${githubToken}`
-            },
-            body: JSON.stringify({
-                ref: `refs/${branchRef}`,
-                sha: baseRefSha
-            }),
-        });
-        return response.json();
-    } catch (error) {
-        console.error('Error creating branch:', error);
-        throw error;
-    }
-}
 
 async function createBlob(content){
     try {
@@ -149,19 +110,21 @@ async function pushCommit(commitSha){
 
 async function main(){
     // get latest commit sha from main branch
-    const latestCommit = await getLatestCommit(mainRef);
+    const latestCommit = await getLatestCommit(owner, repo, mainRef);
     // console.log(latestCommit);
+
     // create a new branch from the latest commit
-    // const createBranchResult = await createBranch(latestCommit);
-    // console.log(createBranchResult);
+    const createBranchResult = await createBranch(owner, repo, branchRef, latestCommit.object.sha);
+    console.log(createBranchResult);
+
     // const blob = await createBlob("test content");
     // console.log(blob.sha);
     // const tree = await createTree(blob.sha, "444b29717bf4bd7b8a79918f65c81a607a8bcfd3");
     // console.log(tree);
     // const commit = await commitChanges("78ff5305ce73ef4b10e28ddf9815333935d625b5", "444b29717bf4bd7b8a79918f65c81a607a8bcfd3");
     // console.log(commit);
-    const pushCommitResult = await pushCommit("6241f281476fdf641cf92de7cdc08f323f167a3a");
-    console.log(pushCommitResult);
+    // const pushCommitResult = await pushCommit("6241f281476fdf641cf92de7cdc08f323f167a3a");
+    // console.log(pushCommitResult);
 }
 
 main();
