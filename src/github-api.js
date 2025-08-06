@@ -11,11 +11,11 @@ export async function getLatestCommit(owner, repo, ref) {
         if (!response.ok) {
             throw new Error(`Failed to fetch ref: ${ref} - ${response.status} - ${response.statusText}`);
         }
-        
+
         return response.json();
     } catch (error) {
         console.error(`Error fetching latest commit for ref ${ref}:`, error);
-        return null;
+        throw error;
     }
 }
 
@@ -47,6 +47,108 @@ export async function createBranch(owner, repo, branchRef, baseRefSha){
         }
     } catch (error) {
         console.error('Error in createBranch:', error);
-        return null;
+        throw error;
+    }
+}
+
+export async function createBlob(owner, repo, content){
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/blobs`, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                content: content,
+                encoding: 'utf-8'
+            })
+        });
+
+        return response.json();
+
+    } catch (error) {
+        console.error('Error creating blob:', error);
+        throw error;
+    }
+}
+
+export async function createTree(owner, repo, blobSha, branchRefSha){
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                base_tree: branchRefSha,
+                tree: [
+                    { path: 'test.txt', mode: '100644', type: 'blob', sha: blobSha }
+                ]
+            })
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error creating tree:', error);
+        throw error
+    }
+}
+
+export async function commitChanges(owner, repo, treeSha, parentCommitSha) {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits`, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: '[ai-generated]Update metadata for all documentation files',
+                tree: treeSha,
+                parents: [parentCommitSha]
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to create commit: ${response.status} - ${errorText}`);
+        }
+
+        return await response.json();
+
+    } catch (error) {
+        console.error('Error committing changes:', error);
+        throw error;
+    }
+}
+
+export async function pushCommit(owner, repo, branchRef, commitSha){
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/${branchRef}`, {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                sha: commitSha,
+                force: false
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to update ref: ${response.status} - ${errorText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error pushing commit:', error);
+        throw error;
     }
 }
