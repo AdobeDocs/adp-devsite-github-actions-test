@@ -28,6 +28,7 @@ async function getLatestCommit(ref) {
 }
 
 async function createBranch(baseRefSha){
+    // TODO: check if branch already exists
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
             method: 'POST',
@@ -57,7 +58,7 @@ async function createBlob(content){
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                content: content,
+                content: "test content",
                 encoding: 'utf-8'
             })
         });
@@ -66,7 +67,29 @@ async function createBlob(content){
         console.error('Error creating blob:', error);
         throw error;
     }
-    return response.json();
+}
+
+async function createTree(blobSha, branchRefSha){
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${githubToken}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                base_tree: branchRefSha,
+                tree: [
+                    { path: 'test.txt', mode: '100644', type: 'blob', sha: blobSha }
+                ]
+            })
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error creating tree:', error);
+        throw error;
+    }
 }
 
 async function commitChanges(treeSha, parentCommitSha) {
@@ -97,6 +120,33 @@ async function commitChanges(treeSha, parentCommitSha) {
     }
 }
 
+async function pushCommit(commitSha){
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/${branchRef}`, {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': `Bearer ${githubToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                sha: commitSha,
+                force: false
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to update ref: ${response.status} - ${errorText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error pushing commit:', error);
+        throw error;
+    }
+}
+
 async function main(){
     // get latest commit sha from main branch
     const latestCommit = await getLatestCommit(mainRef);
@@ -104,6 +154,14 @@ async function main(){
     // create a new branch from the latest commit
     // const createBranchResult = await createBranch(latestCommit);
     // console.log(createBranchResult);
+    // const blob = await createBlob("test content");
+    // console.log(blob.sha);
+    // const tree = await createTree(blob.sha, "444b29717bf4bd7b8a79918f65c81a607a8bcfd3");
+    // console.log(tree);
+    // const commit = await commitChanges("78ff5305ce73ef4b10e28ddf9815333935d625b5", "444b29717bf4bd7b8a79918f65c81a607a8bcfd3");
+    // console.log(commit);
+    const pushCommitResult = await pushCommit("6241f281476fdf641cf92de7cdc08f323f167a3a");
+    console.log(pushCommitResult);
 }
 
 main();
