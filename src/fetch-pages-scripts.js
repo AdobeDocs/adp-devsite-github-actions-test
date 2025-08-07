@@ -66,6 +66,8 @@ async function fetchMainBranchContent() {
 
                     if (contentResponse.ok) {
                         const content = await contentResponse.text();
+                        // skip files with components
+                        if (content.includes("/>"))  continue;
                         allContent += `\n\n--- File: ${item.path} ---\n\n${content}`;
                     } else {
                         console.log(`Failed to fetch content for ${item.path}`);
