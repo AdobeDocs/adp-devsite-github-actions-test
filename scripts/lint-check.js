@@ -2,9 +2,15 @@ const { execSync } = require('child_process');
 
 try {
   console.log('🔍 Running markdown linting...');
+  console.log('📦 Current directory:', process.cwd());
+  console.log('🔧 Yarn version:', execSync('yarn --version', { encoding: 'utf8' }).trim());
   
-  // Run linting and capture output
-  const lintOutput = execSync('yarn lint 2>&1', { encoding: 'utf8' });
+  // Run linting and capture output with timeout
+  console.log('🚀 Executing: yarn lint');
+  const lintOutput = execSync('yarn lint 2>&1', { 
+    encoding: 'utf8',
+    timeout: 60000 // 60 second timeout
+  });
   
   console.log('📋 Lint output:');
   console.log(lintOutput);
