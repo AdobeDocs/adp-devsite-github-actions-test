@@ -6,5 +6,8 @@
 default: false
 
 # Only enable the rule we want to check
-single-h1: 
+single-h1:
+  severity: error
+
+MD013:
   severity: warning

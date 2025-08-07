@@ -1,18 +1,18 @@
 module.exports = {
   "globs": ["**/*.md"],
   "defaultSeverity": "error",
-  "configuration": {
+    "configuration": {
     "default": false,
     // Rules that will fail PR validation (errors)
-    "no-trailing-spaces": true,
-    "no-multiple-blanks": true,
-    "line-length": true,
-    "first-line-heading": true,
-
+    "MD009": true, // no-trailing-spaces
+    "MD012": true, // no-multiple-blanks
+    "MD013": true, // line-length
+    "MD041": true, // first-line-heading
+    
     // Rules that will show warnings but not fail PR (warnings)
-    "single-h1": true, // multiple top-level headings - will be handled in workflow
-    "no-duplicate-heading": true, // will be handled in workflow
-    "no-trailing-punctuation-in-heading": true, // will be handled in workflow
+    "MD025": true, // single-h1 (multiple top-level headings) - will be handled in workflow
+    "MD024": true, // no-duplicate-heading - will be handled in workflow
+    "MD026": true, // no-trailing-punctuation-in-heading - will be handled in workflow
   },
   "frontMatter": {
     "title": "title"
