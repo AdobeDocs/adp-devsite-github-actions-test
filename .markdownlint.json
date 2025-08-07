@@ -1,0 +1,9 @@
+{
+  "default": false,
+  "MD025": {
+    "severity": "warning"
+  },
+  "MD033": {
+    "severity": "error"
+  }
+}
