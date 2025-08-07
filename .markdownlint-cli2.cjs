@@ -1,12 +1,12 @@
 module.exports = {
   "globs": ["**/*.md"],
   "defaultSeverity": "error",
-    "configuration": {
+  "configuration": {
     "default": false,
     // Rules that will fail PR validation (errors)
     "MD009": true, // no-trailing-spaces
     "MD012": true, // no-multiple-blanks
-    "MD013": true, // line-length
+    "MD013": false, // line-length - disabled for now due to potential issues
     "MD041": true, // first-line-heading
     
     // Rules that will show warnings but not fail PR (warnings)

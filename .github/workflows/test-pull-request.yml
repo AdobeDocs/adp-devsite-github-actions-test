@@ -60,6 +60,8 @@ jobs:
 
       - name: Lint Markdown files
         run: node scripts/lint-check.js
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Check internal links
         uses: borales/actions-yarn@v3
