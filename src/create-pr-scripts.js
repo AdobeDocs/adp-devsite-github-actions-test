@@ -11,6 +11,7 @@ function hasMetadata(content) {
 }
 
 async function processAIContent() {
+    let tree = [];
     try {
         // Read the ai_content.txt file
         const content = fs.readFileSync('ai_content.txt', 'utf8');
@@ -27,69 +28,44 @@ async function processAIContent() {
 
         const [, path, suggestion] = pathMatch;
 
-        console.log(path);
-        // console.log(suggestion);
         let fileContent = await getFileContent(owner, repo, path);
-        console.log("fileContent", fileContent);
-        // let cont = await fetch(fileContent.download_url, {
-        //     headers: {
-        //         'Accept': 'application/vnd.github.v3.raw',
-        //         'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
-        //     }
-        // })
-        // cont = await cont.text();
-        // console.log("content", cont);
-        // if (hasMetadata(fileContent)) {
-
-        // }else{
-        //     fileContent = suggestion + "\n" + fileContent;
-        // }
-        // console.log(fileContent);
-
-        // Process each file content
-        // for (const fileContent of files) {
-        //     if (!fileContent.trim()) continue;
-
-        //     // Extract file path and content
-        //     const pathMatch = fileContent.match(/(.*?) ---\n([\s\S]*)/);
-        //     if (!pathMatch) continue;
-
-        //     const [, path, suggestion] = pathMatch;
-
-        // }
         
-        return files;
+        if(hasMetadata(fileContent)){
+            const metadataEnd = fileContent.indexOf("---", fileContent.indexOf("---") + 1);
+            fileContent = suggestion + fileContent.slice(metadataEnd+3);
+        }
+        else{
+            fileContent = suggestion + "\n" + fileContent
+        }
+        let blob = await createBlob(owner, repo, fileContent);
+        tree.push({ path: path, mode: '100644', type: 'blob', sha: blob.sha });
+        
+        return tree;
     } catch (error) {
         console.error('Error processing AI content:', error);
         throw error;
     }
 }
 
-async function prepatreTreeObject(path, suggestionContent){
-    
+
+async function main(){
+
+    // get latest commit sha from main branch
+    const latestCommit = await getLatestCommit(owner, repo, mainRef);
+
+    // create a new branch from the latest commit
+    const createdBranch = await createBranch(owner, repo, branchRef, latestCommit.object.sha);
+
+    const treeArray = await processAIContent();
+    console.log(treeArray);
+
+    const tree = await createTree(owner, repo, createdBranch.object.sha, treeArray);
+    console.log(tree);
+
+    const commit = await commitChanges(owner, repo, tree.sha, createdBranch.object.sha);
+
+    const pushCommitResult = await pushCommit(owner, repo, branchRef, commit.sha);
 }
 
+main();
 
-// async function main(){
-
-//     // get latest commit sha from main branch
-//     const latestCommit = await getLatestCommit(owner, repo, mainRef);
-
-//     // create a new branch from the latest commit
-//     const createdBranch = await createBranch(owner, repo, branchRef, latestCommit.object.sha);
-
-//     await processAIContent();
-
-//     const blob = await createBlob(owner, repo, "test contents\nanother test content");
-
-//     const tree = await createTree(owner, repo, createdBranch.object.sha, [{ path: "test.txt", mode: '100644', type: 'blob', sha: blob.sha }]);
-
-//     const commit = await commitChanges(owner, repo, tree.sha, createdBranch.object.sha);
-
-//     const pushCommitResult = await pushCommit(owner, repo, branchRef, commit.sha);
-
-// }
-
-// main();
-
-processAIContent();
