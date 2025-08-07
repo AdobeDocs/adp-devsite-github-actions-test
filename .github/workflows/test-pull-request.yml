@@ -52,6 +52,7 @@ jobs:
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
 
       - name: Setup Node v16 for Yarn v3
         uses: actions/setup-node@v3
@@ -76,7 +77,7 @@ jobs:
       - name: Check internal links
         uses: borales/actions-yarn@v3
         with:
-          cmd: test:links
+          cmd: checkLinks
 
       - name: Build site
         if: ${{ success() }}
