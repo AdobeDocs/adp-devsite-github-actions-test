@@ -18,7 +18,7 @@ async function fetchMainBranchContent() {
         const contentsResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/src/pages`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                // 'Authorization': `Bearer ${githubToken}`
+                'Authorization': `Bearer ${githubToken}`
             }
         });
 
@@ -34,7 +34,7 @@ async function fetchMainBranchContent() {
             const pathResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    // 'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `Bearer ${githubToken}`
                 }
             });
 
@@ -60,7 +60,7 @@ async function fetchMainBranchContent() {
                     const contentResponse = await fetch(item.download_url, {
                         headers: {
                             'Accept': 'application/vnd.github.v3.raw',
-                            // 'Authorization': `Bearer ${githubToken}`
+                            'Authorization': `Bearer ${githubToken}`
                         }
                     });
 

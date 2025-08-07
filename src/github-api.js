@@ -1,3 +1,21 @@
+export async function getFileContent(owner, repo, path) {
+    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+        method: 'GET',
+        headers: {
+            'accept': 'application/vnd.github+json',
+            'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+        }
+    });
+    const data = await response.json();
+    const fileContent = await fetch(data.download_url, {
+        headers: {
+            'accept': 'application/vnd.github.v3.raw',
+            'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+        }
+    }).then(res => res.text());
+    return fileContent;
+}
+
 export async function getLatestCommit(owner, repo, ref) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/${ref}`, {
@@ -19,7 +37,7 @@ export async function getLatestCommit(owner, repo, ref) {
     }
 }
 
-export async function createBranch(owner, repo, branchRef, baseRefSha){
+export async function createBranch(owner, repo, branchRef, baseRefSha) {
     try {
         // Try to get the existing branch
         try {
@@ -51,7 +69,7 @@ export async function createBranch(owner, repo, branchRef, baseRefSha){
     }
 }
 
-export async function createBlob(owner, repo, content){
+export async function createBlob(owner, repo, content) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/blobs`, {
             method: 'POST',
@@ -74,7 +92,7 @@ export async function createBlob(owner, repo, content){
     }
 }
 
-export async function createTree(owner, repo, blobSha, branchRefSha){
+export async function createTree(owner, repo, blobSha, branchRefSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
             method: 'POST',
@@ -126,7 +144,7 @@ export async function commitChanges(owner, repo, treeSha, parentCommitSha) {
     }
 }
 
-export async function pushCommit(owner, repo, branchRef, commitSha){
+export async function pushCommit(owner, repo, branchRef, commitSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/${branchRef}`, {
             method: 'PATCH',
