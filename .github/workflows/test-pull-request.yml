@@ -59,9 +59,7 @@ jobs:
           cmd: install
 
       - name: Lint Markdown files
-        run: |
-          chmod +x lint-check.sh
-          ./lint-check.sh
+        run: node scripts/lint-check.js
 
       - name: Check internal links
         uses: borales/actions-yarn@v3
