@@ -9,7 +9,7 @@ const fs = require('fs');
 const SKIP_EXTENSIONS = [
     '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', 
     '.mp4', '.webm', '.mov', '.mp3', '.wav',
-    '.pdf', '.zip', '.tar', '.gz'
+    '.pdf', '.zip', '.tar', '.gz', '.json'
 ];
 
 async function fetchMainBranchContent() {
