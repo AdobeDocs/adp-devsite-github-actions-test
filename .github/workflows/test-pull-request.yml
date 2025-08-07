@@ -45,21 +45,6 @@ jobs:
       - name: Load Super Linter Environment
         run: cat ".github/super-linter.env" >> "$GITHUB_ENV"
 
-      ################################
-      # Run Linters against code base #
-      ################################
-      - name: Lint Code Base
-        #
-        # Use full version number to avoid cases when a next
-        # released version is buggy
-        # About slim image: https://github.com/github/super-linter#slim-image
-        uses: github/super-linter/slim@v4.10.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BRANCH: main
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_GITHUB_ACTIONS: true
-
       - name: Setup Node v16 for Yarn v3
         uses: actions/setup-node@v3
         with:
@@ -79,6 +64,10 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         with:
           cmd: install
+
+      - name: Lint Markdown files
+        with:
+          cmd: lint:md
 
       - name: Check internal links
         uses: borales/actions-yarn@v3
@@ -104,10 +93,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
+
       - name: Enable Corepack for Yarn v3
         run: corepack enable
-        
+
       - name: Install Yarn v3
         uses: borales/actions-yarn@v3
         with:
@@ -132,20 +121,20 @@ jobs:
           YARN_ENABLE_HARDENED_MODE: false
         with:
           cmd: install --mode=update-lockfile
-          
+
       - name: Run PR script
         run: node src/pr-scripts.js
         env:
           PR_ID: ${{ github.event.pull_request.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Run AI metadata generation script
         run: node src/ai-scripts.js
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           FILE_NAME: "pr_content.txt"
-          
+
       - name: Run review PR script
         run: node src/review-scripts.js
         env:
