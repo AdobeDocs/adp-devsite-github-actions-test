@@ -1,1 +1,13 @@
-.github/linters/.markdownlint.yml
+---
+# Markdown Linter Configuration
+# Only enabling the no-multiple-h1 rule as requested
+
+# Disable all rules by default
+default: false
+
+# Only enable the rule we want to check
+single-h1:
+  severity: error
+
+MD013:
+  severity: warning
