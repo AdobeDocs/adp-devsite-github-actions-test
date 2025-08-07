@@ -15,31 +15,34 @@ async function processAIContent() {
     try {
         // Read the ai_content.txt file
         const content = fs.readFileSync('ai_content.txt', 'utf8');
-        
+
         // Split the content using the regex pattern
         const files = content.split(/--- File: (?=.*? ---)/);
-        
+
         // Remove empty first element if exists
         if (files[0].trim() === '') {
             files.shift();
         }
 
-        const pathMatch = files[1].match(/(.*?) ---\n([\s\S]*)/);
+        for (const file of files) {
+            if (!file.trim()) continue;
 
-        const [, path, suggestion] = pathMatch;
+            const pathMatch = file.match(/(.*?) ---\n([\s\S]*)/);
+            const [, path, suggestion] = pathMatch;
 
-        let fileContent = await getFileContent(owner, repo, path);
-        
-        if(hasMetadata(fileContent)){
-            const metadataEnd = fileContent.indexOf("---", fileContent.indexOf("---") + 1);
-            fileContent = suggestion + fileContent.slice(metadataEnd+3);
+            let fileContent = await getFileContent(owner, repo, path);
+
+            if (hasMetadata(fileContent)) {
+                const metadataEnd = fileContent.indexOf("---", fileContent.indexOf("---") + 1);
+                fileContent = suggestion + fileContent.slice(metadataEnd + 3);
+            }
+            else {
+                fileContent = suggestion + "\n" + fileContent
+            }
+            let blob = await createBlob(owner, repo, fileContent);
+            tree.push({ path: path, mode: '100644', type: 'blob', sha: blob.sha });
         }
-        else{
-            fileContent = suggestion + "\n" + fileContent
-        }
-        let blob = await createBlob(owner, repo, fileContent);
-        tree.push({ path: path, mode: '100644', type: 'blob', sha: blob.sha });
-        
+
         return tree;
     } catch (error) {
         console.error('Error processing AI content:', error);
@@ -48,7 +51,7 @@ async function processAIContent() {
 }
 
 
-async function main(){
+async function main() {
 
     // get latest commit sha from main branch
     const latestCommit = await getLatestCommit(owner, repo, mainRef);
@@ -57,10 +60,8 @@ async function main(){
     const createdBranch = await createBranch(owner, repo, branchRef, latestCommit.object.sha);
 
     const treeArray = await processAIContent();
-    console.log(treeArray);
 
     const tree = await createTree(owner, repo, createdBranch.object.sha, treeArray);
-    console.log(tree);
 
     const commit = await commitChanges(owner, repo, tree.sha, createdBranch.object.sha);
 

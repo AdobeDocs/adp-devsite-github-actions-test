@@ -92,7 +92,7 @@ export async function createBlob(owner, repo, content) {
     }
 }
 
-export async function createTree(owner, repo, blobSha, branchRefSha) {
+export async function createTree(owner, repo, branchRefSha, treeArray) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
             method: 'POST',
@@ -103,9 +103,7 @@ export async function createTree(owner, repo, blobSha, branchRefSha) {
             },
             body: JSON.stringify({
                 base_tree: branchRefSha,
-                tree: [
-                    { path: 'test.txt', mode: '100644', type: 'blob', sha: blobSha }
-                ]
+                tree: treeArray
             })
         });
         return response.json();
