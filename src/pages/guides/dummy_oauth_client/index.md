@@ -1,3 +1,14 @@
+---
+title: Creating an OAuth Client
+description: This document provides an extensive overview and structured content on "Creating an OAuth Client." It covers a comprehensive range of sections, denoted from Heading A through Heading Z, and details best practices, substeps, and considerations for each major step involved in the OAuth client creation process.
+keywords:
+- OAuth
+- client creation
+- authentication
+- best practices
+- documentation
+---
+
 # Creating an OAuth Client
 
 ## Heading A

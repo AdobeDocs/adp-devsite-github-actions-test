@@ -1,3 +1,14 @@
+---
+title: curl Command for Adobe Graffias GraphQL Introspection
+description: This document provides an example of a curl command used to perform a POST request to the Adobe Graffias GraphQL API, including necessary headers for authentication and content type, and transferring an introspection JSON file payload.
+keywords:
+- curl
+- GraphQL
+- Adobe Graffias
+- API authentication
+- introspection
+---
+
 ```console data-line="1-2, 5, 9-20" data-line-offset="3"
 curl -i -X POST 'https://graffias.adobe.io/graffias/graphql' 
     -H 'Accept-Encoding: gzip, deflate, br' 

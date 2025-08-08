@@ -1,12 +1,18 @@
 ---
+title: Set Up Access, Environment, and Tools New2
+description: Learn how to acquire access, credentials, and set up the necessary local environment and tools to begin developing with Adobe App Builder. This guide covers required systems, Adobe Experience Cloud Identity Management, Adobe Developer Console, GitHub setup, tool installation, and supported environments.
 keywords:
-- Acquire Access
+- Access
 - Credentials
 - Local Environment
-- Set up
+- Developer Tools
+- Adobe App Builder
+- Identity Management
+original:
   title: Set Up Access, Environment, and Tools
   description: App Builder is a complete framework that enables enterprise developers to build and deploy custom web applications that extend Adobe Experience Cloud solutions and run on Adobe infrastructure.
 ---
+
 
 # Set Up Access, Environment, and Tools New2
 
