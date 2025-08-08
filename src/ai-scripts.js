@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { hasMetadata } = require('./file-operation');
 const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
 
@@ -90,10 +91,6 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
   const aiContent = result.choices[0].message.content;
   
   return `--- File: ${filepath} ---\n${aiContent}\n`;
-}
-
-function hasMetadata(content) { // FIXME:this is a little tricky for metadata checking, need refine logic later
-  return content.split('---').length >= 2;
 }
 
 // Main function to read pr_content.txt and generate metadata

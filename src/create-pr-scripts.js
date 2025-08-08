@@ -1,14 +1,11 @@
 const fs = require('fs');
 const { getFileContent, getLatestCommit, createBranch, createBlob, createTree, commitChanges, pushCommit } = require('./github-api');
+const { hasMetadata } = require('./file-operation');
 
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 const branchRef = "heads/ai-metadata";
 const mainRef = "heads/main";
-
-function hasMetadata(content) {
-    return content.split('---').length >= 2;
-}
 
 async function processAIContent() {
     let tree = [];
