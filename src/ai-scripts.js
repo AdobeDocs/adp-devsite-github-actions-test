@@ -58,7 +58,7 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
         },
         {
           role: "user",
-          content: `Review and make minimal necessary updates to the following metadata based on the content. Keep the same format and only change what needs to be updated.
+          content: `Review and make minimal necessary updates to the following metadata based on the content. Keep the same format and only change what needs to be updated. If there is metadata that is not in the template, keep it at the end of the metadata.
     
             Expected format:
               ---
@@ -70,6 +70,7 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
               - [Keyword 3]
               - [Keyword 4]
               - [Keyword 5]
+              other original metadata
               ---
 
               Current metadata:
