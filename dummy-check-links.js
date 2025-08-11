@@ -1,1 +1,1 @@
-console.error('dummy error');           
+throw new Error('dummy error');
