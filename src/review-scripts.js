@@ -1,7 +1,8 @@
+const fs = require('fs');
+const { hasMetadata } = require('./file-operation');
+
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
-
-const fs = require('fs');
 
 const prNumber = process.env.PR_ID;
 const githubToken = process.env.GITHUB_TOKEN;
@@ -77,10 +78,6 @@ function readAiContent() {
         console.error('Error reading ai_content.txt:', error);
         process.exit(1);
     }
-}
-
-function hasMetadata(content) {
-    return content.split('---').length >= 2;
 }
 
 function findMetadataEnd(content) {
