@@ -1,7 +1,7 @@
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 
-```console
+```console - disableLineNumbers
 curl -i -X POST 'https://graffias.adobe.io/graffias/graphql' 
     -H 'Accept-Encoding: gzip, deflate, br' 
     -H 'Content-Type: application/json' 
@@ -18,7 +18,7 @@ curl -i -X POST 'https://graffias.adobe.io/graffias/graphql'
 
 1. Validation error. If you see the following error, it is because you did not pass in an authorization header to an action expecting one.
 
-    ```bash
+    ```bash  - disableLineNumbers
     {"error": "cannot validate token, reason: missing authorization header"}
     ```
 
@@ -57,67 +57,3 @@ Returns the details of the namespace associated with the specified organization 
 | `X-Api-Key` (`string`: _header_)     | Api key                                         |
 
 #### _Responses:_
-
-
-Response content type: `application/json`
-|Code|Description|
-|--- |--- |
-|200|Successful operation Example value:
-{
-  "name": "string",
-  "code": "string",
-  "namespace": "string",
-  "version": "string",
-  "params": [
-    {
-      "key": "string",
-      "value": {}
-    }
-  ],
-  "annotations": [
-    {
-      "key": "string",
-      "value": {}
-    }
-  ],
-  "limits": {
-    "timeout": "string",
-    "memory": "string",
-    "logs": "string"
-  },
-  "exec": {
-    "kind": "string",
-    "binary": false,
-    "components": [
-      "string"
-    ]
-  },
-  "url": "string"
-}
-Model: [ActionResultDTO] {
-description: OpenWhisk Action invocation result
-name        string
-            Action name
-code        string
-            Action code
-namespace   string
-            Action namespace
-version     string
-            Action version
-annotations [Action annotations
-            KeyValuePairDTO {
-            description: OpenWhisk Action param
-            key     string
-                    Param Name
-            value   {
-                        description: Param value
-                    }
-            }]
-duration    integer($int32)
-            Duration
-version     string
-            Action Version
-response    {
-            description:    
-            Action invocation response
-}|
