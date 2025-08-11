@@ -1,3 +1,14 @@
+---
+title: Testing path relative link relative to current directory
+description: This document demonstrates various formats of path and root-relative links, including examples of referencing files with and without trailing slashes, accessing parent directories, and differentiating explicit and implicit file targets in markdown.
+keywords:
+- path relative link
+- root relative link
+- trailing slash
+- parent directory
+- markdown navigation
+---
+
 # Testing path relative link relative to current directory
 
 [path-test/index.md](path-test/index.md)

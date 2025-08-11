@@ -1,3 +1,14 @@
+---
+title: Sign in from CLI
+description: This document provides a step-by-step guide on signing in to the Adobe Developer Console from the Command Line Interface (CLI) to start building App Builder Applications. It covers the login process, storing authentication tokens, and preparing your local environment for development.
+keywords:
+- Adobe Developer Console
+- CLI login
+- aio login
+- Authentication token
+- App Builder Applications
+---
+
 // copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1
 // page https://developer.adobe.com/app-builder/docs/getting_started/first_app/
 
