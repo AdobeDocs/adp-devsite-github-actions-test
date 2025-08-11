@@ -168,3 +168,25 @@ export async function pushCommit(owner, repo, branchRef, commitSha) {
         throw error;
     }
 }
+
+export async function createPR(owner, repo, headRef, baseRef) {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: '[ai-pr]Update metadata for all documentation files',
+                head: headRef,
+                base: baseRef
+            })
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error creating PR:', error);
+        throw error;
+    }
+}

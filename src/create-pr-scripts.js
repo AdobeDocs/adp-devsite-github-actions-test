@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { getFileContent, getLatestCommit, createBranch, createBlob, createTree, commitChanges, pushCommit } = require('./github-api');
+const { getFileContent, getLatestCommit, createBranch, createBlob, createTree, commitChanges, pushCommit, createPR } = require('./github-api');
 const { hasMetadata } = require('./file-operation');
 
 const owner = "AdobeDocs";
@@ -63,6 +63,8 @@ async function main() {
     const commit = await commitChanges(owner, repo, tree.sha, createdBranch.object.sha);
 
     const pushCommitResult = await pushCommit(owner, repo, branchRef, commit.sha);
+
+    const pr = await createPR(owner, repo, "ai-metadata", "main");
 }
 
 main();
