@@ -1,3 +1,14 @@
+---
+title: Adobe Assurance Public APIs
+description: This document provides guidance on using Adobe Assurance Public APIs and includes essential information on making API requests, handling validation errors related to authorization headers, and testing application functionality within Adobe I/O Runtime. Key instructions and error solutions are highlighted to assist developers in effective API integration and troubleshooting.
+keywords:
+- Adobe Assurance Public APIs
+- API authorization
+- Adobe I/O Runtime
+- Validation error
+- Application testing
+---
+
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 

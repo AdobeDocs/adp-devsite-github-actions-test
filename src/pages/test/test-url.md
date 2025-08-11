@@ -1,3 +1,14 @@
+---
+title: Testing path relative link relative to current directory
+description: This document demonstrates various ways to create and reference path links in documentation, covering relative links, root-relative links, parent directory navigation, explicit current directory references, and the behavior of trailing slashes when linking to files and directories.
+keywords:
+- relative link
+- root-relative link
+- parent directory
+- trailing slash
+- index.md
+---
+
 # Testing path relative link relative to current directory
 
 [path-test/index.md](path-test/index.md)
