@@ -1,4 +1,4 @@
-export async function getFileContent(owner, repo, path) {
+async function getFileContent(owner, repo, path) {
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
         method: 'GET',
         headers: {
@@ -16,7 +16,7 @@ export async function getFileContent(owner, repo, path) {
     return fileContent;
 }
 
-export async function getLatestCommit(owner, repo, ref) {
+async function getLatestCommit(owner, repo, ref) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/${ref}`, {
             method: 'GET',
@@ -37,7 +37,7 @@ export async function getLatestCommit(owner, repo, ref) {
     }
 }
 
-export async function createBranch(owner, repo, branchRef, baseRefSha) {
+async function createBranch(owner, repo, branchRef, baseRefSha) {
     try {
         // Try to get the existing branch
         try {
@@ -69,7 +69,7 @@ export async function createBranch(owner, repo, branchRef, baseRefSha) {
     }
 }
 
-export async function createBlob(owner, repo, content) {
+async function createBlob(owner, repo, content) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/blobs`, {
             method: 'POST',
@@ -92,7 +92,7 @@ export async function createBlob(owner, repo, content) {
     }
 }
 
-export async function createTree(owner, repo, branchRefSha, treeArray) {
+async function createTree(owner, repo, branchRefSha, treeArray) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
             method: 'POST',
@@ -113,7 +113,7 @@ export async function createTree(owner, repo, branchRefSha, treeArray) {
     }
 }
 
-export async function commitChanges(owner, repo, treeSha, parentCommitSha) {
+async function commitChanges(owner, repo, treeSha, parentCommitSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits`, {
             method: 'POST',
@@ -142,7 +142,7 @@ export async function commitChanges(owner, repo, treeSha, parentCommitSha) {
     }
 }
 
-export async function pushCommit(owner, repo, branchRef, commitSha) {
+async function pushCommit(owner, repo, branchRef, commitSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/${branchRef}`, {
             method: 'PATCH',
@@ -169,7 +169,7 @@ export async function pushCommit(owner, repo, branchRef, commitSha) {
     }
 }
 
-export async function createPR(owner, repo, headRef, baseRef) {
+async function createPR(owner, repo, headRef, baseRef) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, {
             method: 'POST',
@@ -190,3 +190,14 @@ export async function createPR(owner, repo, headRef, baseRef) {
         throw error;
     }
 }
+
+module.exports = {
+    getFileContent,
+    getLatestCommit,
+    createBranch,
+    createBlob,
+    createTree,
+    commitChanges,
+    pushCommit,
+    createPR
+};
