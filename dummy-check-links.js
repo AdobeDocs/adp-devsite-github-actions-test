@@ -1,1 +1,1 @@
-console.log('dummy check-links');           
+console.error('dummy error');           

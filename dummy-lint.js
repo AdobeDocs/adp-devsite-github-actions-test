@@ -1,1 +1,1 @@
-console.log('dummy lint');
+console.log('dummy log');
