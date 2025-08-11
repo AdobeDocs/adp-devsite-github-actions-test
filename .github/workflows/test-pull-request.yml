@@ -6,7 +6,7 @@ on:
     paths:
       - 'src/pages/**'
 jobs:
-  validate:
+  Validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
