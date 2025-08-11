@@ -1,12 +1,12 @@
 ---
 title: Testing path relative link relative to current directory
-description: This document provides examples and explanations of various Markdown link formats, including path-relative links, root-relative links, and handling of links with and without trailing slashes, as well as links to files and directories.
+description: This document explores various types of link paths in Markdown, including path-relative, root-relative, and explicit references to files and directories. Each example demonstrates how different syntaxes resolve links within a project structure.
 keywords:
 - Markdown links
 - relative paths
-- root relative links
-- trailing slash
+- root-relative
 - directory navigation
+- file referencing
 ---
 
 # Testing path relative link relative to current directory

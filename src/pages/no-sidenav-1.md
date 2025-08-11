@@ -1,6 +1,6 @@
 ---
 title: Sidenav Visibility Based on config.md subPages
-description: This document explains that the current page does not appear in the `config.md subPages` list, indicating that it should not display a sidenav navigation panel.
+description: This document explains that the current page is not listed in the `config.md` subPages array, and as a result, it should not display a sidebar navigation.
 keywords:
 - sidenav
 - config.md

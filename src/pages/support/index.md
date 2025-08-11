@@ -1,12 +1,12 @@
 ---
 title: Test
-description: This document provides an overview of general principles of effective writing, structure, and organization using placeholder text for demonstration purposes. It discusses topics such as positioning, formatting, and stylistic considerations.
+description: This document provides an overview of foundational concepts related to effective text formatting, content organization, and the use of basic structural elements in written communication.
 keywords:
-- Writing
-- Structure
-- Organization
-- Formatting
-- Placeholder text
+- text formatting
+- content organization
+- document structure
+- written communication
+- foundational concepts
 ---
 
 # Test

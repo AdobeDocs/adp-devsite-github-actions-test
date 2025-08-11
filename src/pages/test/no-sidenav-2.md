@@ -1,12 +1,12 @@
 ---
-title: Sidenav Visibility Based on SubPages Configuration
-description: This document explains that the current page should not display a sidenav because it is not listed in the `config.md subPages` configuration.
+title: Sidenav Configuration
+description: This document explains why a specific page does not include a sidenav, noting that it is not listed in the `config.md subPages` configuration.
 keywords:
-- sidenav
 - config.md
 - subPages
+- sidenav
 - navigation
-- page visibility
+- page configuration
 ---
 
 This page isn't in `config.md subPages`, so it shouldn't have a sidenav.

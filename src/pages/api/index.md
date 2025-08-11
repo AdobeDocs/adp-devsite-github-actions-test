@@ -1,12 +1,12 @@
 ---
 title: Cat API Spec 2.0
-description: Specification document for version 2.0 of the Cat API, including endpoints and usage details.
+description: Specification document for Cat API version 2.0, detailing endpoints and functionalities.
 keywords:
 - Cat API
-- API specification
-- Endpoints
+- Specification
 - Version 2.0
-- Petstore
+- Endpoints
+- API documentation
 openAPISpec: /petstore.json
 ---
  

@@ -1,14 +1,12 @@
 ---
 title: Adobe Assurance Public APIs Overview
-
-description: This document provides guidance and examples for interacting with Adobe Assurance Public APIs, including authorization requirements, error handling, and best practices for developing and testing applications using Adobe I/O Runtime and local development environments.
-
+description: This document provides an overview of how to interact with Adobe Assurance Public APIs, including example API calls, handling common errors related to authorization, and best practices for developing and testing applications using Adobe I/O Runtime and App Builder tools.
 keywords:
 - Adobe Assurance
 - Public APIs
-- Authentication
-- Error Handling
+- Authorization header
 - Adobe I/O Runtime
+- App Builder
 ---
 
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24

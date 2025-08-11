@@ -1,2 +1,2 @@
-Sure! Please provide the content you'd like summarized.
+Certainly! Please provide the content you would like summarized.
 

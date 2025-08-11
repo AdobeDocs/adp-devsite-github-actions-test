@@ -1,10 +1,10 @@
 ---
 title: Community
-description: This document introduces the community and highlights its commitment to assisting members with testing, reuse, and collaborative work. It serves as a welcome and overview of the support available.
+description: This document outlines the support and collaborative efforts within the community, emphasizing assistance, testing, reuse, and collective work.
 keywords:
 - community
-- collaboration
 - support
+- collaboration
 - testing
 - reuse
 ---

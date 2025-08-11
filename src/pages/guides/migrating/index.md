@@ -1,12 +1,12 @@
 ---
 title: Migrating
-description: This document discusses the process and considerations involved in migration, focusing on planning, execution, and challenges. It emphasizes efficient strategies, adaptability, and key factors for a successful transition.
+description: This document discusses strategies and considerations for migrating processes or systems, focusing on effective planning, execution, and overcoming potential challenges associated with transitions.
 keywords:
 - migration
+- transition
 - planning
+- challenges
 - execution
-- adaptability
-- strategies
 ---
 
 # Migrating
