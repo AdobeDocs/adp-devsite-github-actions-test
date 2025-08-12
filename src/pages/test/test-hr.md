@@ -47,11 +47,10 @@ Returns the details of the namespace associated with the specified organization 
 
 #### _Responses:_
 
-
-Response content type: `application/json`
-|Code|Description|
+|Code|Description |
 |--- |--- |
-|200|Successful operation Example value:
+|200|Successful operation Example value:|
+```
 {
   "name": "string",
   "code": "string",
@@ -109,7 +108,8 @@ version     string
 response    {
             description:    
             Action invocation response
-}|
+}
+```
 
 #### Returns
 
