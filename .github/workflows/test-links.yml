@@ -29,6 +29,6 @@ jobs:
           cd ./utils
           npm install
         
-      - name: Validate Links
+      - name: Test Links
         run: node ./utils/bin/checkLinks.js
 
