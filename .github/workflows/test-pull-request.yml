@@ -23,13 +23,13 @@ jobs:
         run: node ./dummy-lint.js
 
       - name: List Utils Directory
-        run: ls -la ./utils
+        run: ls -la ./utils/bin/
 
       - name: Check Links
         uses: actions/github-script@v7
         with:
           script: |
-            const checkLinks = require('./utils/checkLinks.js');
+            const checkLinks = require('./utils/bin/checkLinks.js');
             await checkLinks();
 
 
