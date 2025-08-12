@@ -55,7 +55,7 @@ jobs:
       - name: Install utils dependencies
         run: |
           cd ./utils
-          yarn install --mode=update-lockfile
+          npm install
 
       - name: Lint
         run: node ./dummy-lint.js
