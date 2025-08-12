@@ -1,0 +1,35 @@
+---
+name: Lint
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout Utils Repo
+        uses: actions/checkout@v4
+        with:
+          repository: AdobeDocs/adp-devsite-utils
+          path: utils
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install utils dependencies
+        run: |
+          cd ./utils
+          npm install
+
+      - name: Lint
+        run: node ./dummy-lint.js
+
+

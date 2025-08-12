@@ -1,12 +1,12 @@
 ---
-name: Latest Pull Request
+name: Links
 on:
   pull_request:
     branches: [main]
     paths:
       - 'src/pages/**'
 jobs:
-  Validate:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,9 +28,6 @@ jobs:
         run: |
           cd ./utils
           npm install
-
-      - name: Lint
-        run: node ./dummy-lint.js
         
       - name: Check Links
         run: node ./utils/bin/checkLinks.js
