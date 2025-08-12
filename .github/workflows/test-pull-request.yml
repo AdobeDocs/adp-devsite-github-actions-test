@@ -23,34 +23,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
-      - name: Enable Corepack for Yarn v3
-        run: corepack enable
-        
-      - name: Install Yarn v3
-        uses: borales/actions-yarn@v3
-        with:
-          cmd: set version stable
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - name: Cache yarn dependencies
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install dependencies
-        uses: borales/actions-yarn@v3
-        env:
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
-          YARN_ENABLE_HARDENED_MODE: false
-        with:
-          cmd: install --mode=update-lockfile
 
       - name: Install utils dependencies
         run: |
@@ -59,12 +31,6 @@ jobs:
 
       - name: Lint
         run: node ./dummy-lint.js
-
-      - name: Present Working Directory
-        run: pwd
-
-      - name: List Utils Directory
-        run: ls -la ./utils/bin/
         
       - name: Check Links
         run: node ./utils/bin/checkLinks.js
