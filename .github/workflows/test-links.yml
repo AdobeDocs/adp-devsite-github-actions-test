@@ -8,4 +8,4 @@ on:
 
 jobs:
   test-links:
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy.yml@devsite-1761-test-link
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy.yml@devsite-1761-test-links
