@@ -1,0 +1,40 @@
+@startuml
+|Product Team|
+start
+:Create Pull Request;
+
+|Github Action|
+partition "pr-scripts.js"{
+  :Fetch changed content with PR id;
+  :Store full file content of changed file to "pr_content.txt";
+}
+
+partition "ai-scrips.js"{
+    :Read pr-content.txt file;
+    :Split content into metadata and contents;
+    if(hasMetadata(content)) then (yes)
+      :Update the metadata with minimum amount of necessary change;
+    else (no)
+      :Create the metadata with page contents;
+    endif
+    :Generate ai-content.txt file;
+}
+
+partition "review-scripts.js"{
+   :Read pr-content.txt file;
+   :Split content into metadata and contents;
+   if(hasMetadata(content)) then (yes)
+     :Find the end line of metadata;
+     :Replace with new metadata from start line to end line;
+   else (no)
+     :Insert metadata to the first line;
+   endif
+   :Create PR review;
+}
+
+|Product Team|
+  :Review comment;
+  :Modify comment(optional);
+  :Accept AI suggestion and commit;
+stop
+@enduml

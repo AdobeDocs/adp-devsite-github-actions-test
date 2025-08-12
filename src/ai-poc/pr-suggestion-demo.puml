@@ -1,0 +1,20 @@
+@startuml
+|Product Team|
+start
+:Create Pull Request;
+|Github Action|
+if (PR target is main/stage branch && contains changes in pages?) then (yes)
+  :Fetch changed content;
+  :Generate metadata;
+  :Comment the generated content to original PR;
+  |Product Team|
+  :Review comment;
+  :Modify comment(optional);
+  if (new comment contains "APPROVE_AI_KEYWORDS"?) then (yes)
+    :Apply previous comment content to PR;
+  else (no)
+  endif
+else (no)
+endif
+stop
+@enduml
