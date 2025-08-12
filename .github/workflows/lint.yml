@@ -6,7 +6,7 @@ on:
     paths:
       - 'src/pages/**'
 jobs:
-  validate:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install utils dependencies
+      - name: Install Utils Dependencies
         run: |
           cd ./utils
           npm install

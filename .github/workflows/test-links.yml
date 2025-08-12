@@ -1,12 +1,12 @@
 ---
-name: Links
+name: Test Links
 on:
   pull_request:
     branches: [main]
     paths:
       - 'src/pages/**'
 jobs:
-  validate:
+  test-links:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install utils dependencies
+      - name: Install Utils Dependencies
         run: |
           cd ./utils
           npm install
         
-      - name: Check Links
+      - name: Validate Links
         run: node ./utils/bin/checkLinks.js
 
