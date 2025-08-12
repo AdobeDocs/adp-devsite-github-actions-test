@@ -22,7 +22,7 @@ jobs:
       - name: Lint
         run: node ./dummy-lint.js
 
-      - name: List Utils Directory
+      - name: Present Working Directory
         run: pwd
 
       - name: List Utils Directory
