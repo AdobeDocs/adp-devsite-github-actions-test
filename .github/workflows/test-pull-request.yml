@@ -53,8 +53,7 @@ jobs:
           cmd: install --mode=update-lockfile
 
       - name: Install utils dependencies
-        run: yarn install --mode=update-lockfile
-        working-directory: ./utils
+        run: yarn install --mode=update-lockfile ./utils
 
       - name: Lint
         run: node ./dummy-lint.js
