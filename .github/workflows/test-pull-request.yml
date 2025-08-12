@@ -44,9 +44,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install utils dependencies
+      - name: Install dependencies
         uses: borales/actions-yarn@v3
-        working-directory: ./utils
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
           YARN_ENABLE_HARDENED_MODE: false
