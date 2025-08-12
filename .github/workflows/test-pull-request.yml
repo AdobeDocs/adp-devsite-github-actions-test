@@ -23,6 +23,9 @@ jobs:
         run: node ./dummy-lint.js
 
       - name: List Utils Directory
+        run: pwd
+
+      - name: List Utils Directory
         run: ls -la ./utils/bin/
 
       - name: Check Links
