@@ -115,7 +115,7 @@ response    {
 
 [`Context`](context.md)
 
-<hr />
+<HorizontalLine />
 
 ## documentRoot
 
@@ -140,7 +140,7 @@ the root of the document.
 an ellipse node with default x/y radii, a black fill, and no initial stroke.
 Transform values default to 0.
 
-<hr />
+<HorizontalLine />
 
 #### createGroup()
 
@@ -152,7 +152,7 @@ Transform values default to 0.
 
 a group node.
 
-<hr />
+<HorizontalLine />
 
 #### createImageContainer()
 
@@ -186,7 +186,7 @@ if needed to stay below an application-defined size cap).
 
 MediaContainerNode representing the top container node of the multi-node structure.
 
-<hr />
+<HorizontalLine />
 
 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
@@ -199,7 +199,7 @@ is simply dummy text of the printing and typesetting industry. Lorem Ipsum has b
 a line node with default start point and end point and a default stroke.
 Transform values default to 0.
 
-<hr />
+<HorizontalLine />
 
 [`TextNode`](text-node.md)
 
@@ -220,7 +220,7 @@ Throws if the input is empty or is not legal SVG path syntax.
 
 a path node with a default stroke and no initial fill.
 
-<hr />
+<HorizontalLine />
 
 ### createRectangle()
 
@@ -233,7 +233,7 @@ a path node with a default stroke and no initial fill.
 a rectangle node with default width and height, a black fill, and no initial stroke.
 Transform values default to 0.
 
-<hr />
+<HorizontalLine />
 
 ### createText()
 
@@ -250,7 +250,7 @@ adjust to accommodate whatever text is set.
 Note: the registration point of this text node is not guaranteed to be at the top-left of the bounding box of its
 insertion parent. Recommend using `setPositionInParent` over `translation` to set the position.
 
-<hr />
+<HorizontalLine />
 
 ### loadBitmapImage()
 
@@ -276,7 +276,7 @@ Encoded image data in PNG or JPEG format.
 
 `Promise` [`BitmapImage`](../interfaces/bitmap-image.md)
 
-<hr />
+<HorizontalLine />
 
 ### makeColorFill()
 
@@ -294,7 +294,7 @@ The color to use for the fill.
 
 [`ColorFill`](../interfaces/color-fill.md)
 
-<hr />
+<HorizontalLine />
 
 ### makeStroke()
 
@@ -324,7 +324,7 @@ See [SolidColorStroke](../interfaces/SolidColorStroke.md) for more details on th
 
 a stroke configured with the given options.
 
-<hr />
+<HorizontalLine />
 
 ### queueAsyncEdit()
 
