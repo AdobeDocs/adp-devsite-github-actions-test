@@ -53,13 +53,8 @@ jobs:
           cmd: install --mode=update-lockfile
 
       - name: Install utils dependencies
-        uses: borales/actions-yarn@v3
+        run: yarn install --mode=update-lockfile
         working-directory: ./utils
-        env:
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
-          YARN_ENABLE_HARDENED_MODE: false
-        with:
-          cmd: install --mode=update-lockfile
 
       - name: Lint
         run: node ./dummy-lint.js
