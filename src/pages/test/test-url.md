@@ -2,7 +2,7 @@
 
 [path-test/index.md](path-test/index.md)
 
-# Root relative link
+## Root relative link
 
 [/api/index.md](/api/index.md)
 
@@ -29,3 +29,7 @@
 ### path relative link to a file without a trailing slash goes to index.md
 
 [path-test](path-test.md)
+
+## wrong external link
+
+[wrong external link](https://badurl.com)

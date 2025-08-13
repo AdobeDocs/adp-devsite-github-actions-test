@@ -1,0 +1,5 @@
+plugins:
+  - remark-heading-id
+  - remark-validate-links
+  - remark-lint-no-multiple-toplevel-headings
+  - remark-frontmatter

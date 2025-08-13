@@ -27,21 +27,23 @@ async function checkExternalLink(url) {
       redirect: 'follow'
     });
     // Consider both OK responses and redirects (status 200-399) as valid
-    return response.ok;
-  } catch (error) {
-    // If it's a timeout error, try one more time with GET method
-    if (error.message.includes('timeout')) {
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          timeout: 30000,
-          redirect: 'follow'
-        });
-        return response.ok;
-      } catch (retryError) {
-        return false;
-      }
+    if (response.ok) {
+      return true;
     }
+    // If HEAD returns non-success status, fall back to GET
+  } catch (error) {
+    // If HEAD request fails completely, fall back to GET
+  }
+  
+  // Fall back to GET method
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      timeout: 30000,
+      redirect: 'follow'
+    });
+    return response.ok;
+  } catch (retryError) {
     return false;
   }
 }

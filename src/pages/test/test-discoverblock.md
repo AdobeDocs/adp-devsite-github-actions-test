@@ -43,7 +43,7 @@ Chat with other InDesign Server Developers.
 
 Chat with other InDesign Server Developers.
 
-# Test 2
+## Test 2
 
 Block with image and specified width
 [data-collection-apis page](https://developer.adobe.com/data-collection-apis/docs/support/)
@@ -102,7 +102,7 @@ Submission form to request joining #Measure, an industry-wide slack channel for 
 
 The #adobe-launch channel within Measure Slack.
 
-# Test 3
+## Test 3
 
 Block with image and specified width
 [data-collection-apis page](https://developer.adobe.com/data-collection-apis/docs/support/)
