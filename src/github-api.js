@@ -1,3 +1,4 @@
+// DOCS: https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-repository-content
 async function getFileContent(owner, repo, path) {
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
         method: 'GET',
@@ -16,6 +17,7 @@ async function getFileContent(owner, repo, path) {
     return fileContent;
 }
 
+// DOCS: https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#get-a-reference
 async function getLatestCommit(owner, repo, ref) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/${ref}`, {
@@ -37,6 +39,7 @@ async function getLatestCommit(owner, repo, ref) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#create-a-reference
 async function createBranch(owner, repo, branchRef, baseRefSha) {
     try {
         // Try to get the existing branch
@@ -69,6 +72,8 @@ async function createBranch(owner, repo, branchRef, baseRefSha) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/git/blobs?apiVersion=2022-11-28#create-a-blob
+// Blob is a file change record  in git
 async function createBlob(owner, repo, content) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/blobs`, {
@@ -79,7 +84,7 @@ async function createBlob(owner, repo, content) {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({
-                content: content,
+                content: content, // this is a overwrite action, no insert/update/delete available
                 encoding: 'utf-8'
             })
         });
@@ -92,6 +97,8 @@ async function createBlob(owner, repo, content) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/git/trees?apiVersion=2022-11-28#create-a-tree
+// Tree is a collection of blobs
 async function createTree(owner, repo, branchRefSha, treeArray) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees`, {
@@ -113,6 +120,7 @@ async function createTree(owner, repo, branchRefSha, treeArray) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/git/commits?apiVersion=2022-11-28#create-a-commit
 async function commitChanges(owner, repo, treeSha, parentCommitSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits`, {
@@ -142,6 +150,7 @@ async function commitChanges(owner, repo, treeSha, parentCommitSha) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#update-a-reference
 async function pushCommit(owner, repo, branchRef, commitSha) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/${branchRef}`, {
@@ -169,6 +178,7 @@ async function pushCommit(owner, repo, branchRef, commitSha) {
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28#create-a-pull-request
 async function createPR(owner, repo, headRef, baseRef) {
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, {
@@ -191,6 +201,23 @@ async function createPR(owner, repo, headRef, baseRef) {
     }
 }
 
+async function getFilesInPR(owner, repo, prNumber){
+    try{
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/files`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error getting files in PR:', error);
+        throw error;
+    }
+}
+
+// doing module export instead of exporting functions directly to avoid "SyntaxError: Unexpected token 'export'" in github actions environment
 module.exports = {
     getFileContent,
     getLatestCommit,
@@ -199,5 +226,6 @@ module.exports = {
     createTree,
     commitChanges,
     pushCommit,
-    createPR
+    createPR,
+    getFilesInPR
 };
