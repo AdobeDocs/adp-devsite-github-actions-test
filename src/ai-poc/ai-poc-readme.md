@@ -103,6 +103,7 @@
 - The github repo related variables (owner, repo, ref ...) are hard coded, need to be updated for production
 - The PR suggestion workflow is defined in test-pull-request.yml, and the AI metadata for all pages is defined in deploy.yml. They may need to be seperated. 
 - AI metadata for all pages workflow will create a PR targeting to main branch, which will trigger pr suggestion workflow. Pr suggestion may not appear everytime since the AI prompt requested "minimum amount of necessary change", we may need to refine the prompt to fix it? Another way is to add another condition to PR suggestion: "if the PR is created by github bot, then skip this workflow".
+- The ai-scripts.js is using templates of fixed 5 key words in prompt, may need to update a flexible amount account to the page content.
 
 
 > For any other questions, please feel free to reach out to the corn field 🌽  
