@@ -5,8 +5,5 @@ on:
 
 jobs:
   test-links:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test link
-        run: echo "Test link"
-        shell: bash
+    name: Test Links
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/test-links.yml@main
