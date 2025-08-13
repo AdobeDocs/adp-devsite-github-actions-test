@@ -7,13 +7,10 @@ if (PR target is main/stage branch && contains changes in pages?) then (yes)
   :Fetch changed content;
   :Generate metadata;
   :Comment the generated content to original PR;
-  |Product Team|
+|Product Team|
   :Review comment;
   :Modify comment(optional);
-  if (new comment contains "APPROVE_AI_KEYWORDS"?) then (yes)
-    :Apply previous comment content to PR;
-  else (no)
-  endif
+  :Accept AI suggestion and commit;
 else (no)
 endif
 stop
