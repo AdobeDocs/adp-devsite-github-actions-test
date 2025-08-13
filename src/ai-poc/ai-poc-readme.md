@@ -32,7 +32,7 @@
 ![image](images/1.9.png)
 10. To run the program on local machine, run `export export AZURE_OPENAI_ENDPOINT="<replace with you azure endpoint>"` and `export export AZURE_OPENAI_API_KEY="<replace with you azure API key>"`
 
-### Generate Github Token for API
+### Generate Github Token for API (local dev only)
 1. Click Github Avator at the right corner
 2. Click "Settings"
 ![image](images/2.2.png)
@@ -104,6 +104,7 @@
 - The PR suggestion workflow is defined in test-pull-request.yml, and the AI metadata for all pages is defined in deploy.yml. They may need to be seperated. 
 - AI metadata for all pages workflow will create a PR targeting to main branch, which will trigger pr suggestion workflow. Pr suggestion may not appear everytime since the AI prompt requested "minimum amount of necessary change", we may need to refine the prompt to fix it? Another way is to add another condition to PR suggestion: "if the PR is created by github bot, then skip this workflow".
 - The ai-scripts.js is using templates of fixed 5 key words in prompt, may need to update a flexible amount account to the page content.
+- Need a stable Azure Open AI endpoint.
 
 
 > For any other questions, please feel free to reach out to the corn field 🌽  
