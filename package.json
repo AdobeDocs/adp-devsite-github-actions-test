@@ -36,10 +36,17 @@
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
     "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
     "checkLinks": "npx --yes github:AdobeDocs/adp-devsite-utils checkLinks -v",
-    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v"
+    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
+    "lint:warnings": "remark src/pages --quiet --rc-path remark-warnings.yml",
+    "lint:errors": "remark src/pages --quiet --rc-path remark-errors.yml"
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "express": "5.1.0"
+    "express": "5.1.0",
+    "remark": "^15.0.1",
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.1",
+    "remark-lint-final-newline": "^3.0.1",
+    "remark-lint-no-heading-punctuation": "^4.0.1"
   }
 }

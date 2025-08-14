@@ -1,0 +1,4 @@
+plugins:
+  - remark-lint
+  - remark-lint-no-heading-punctuation
+
