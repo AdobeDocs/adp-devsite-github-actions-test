@@ -1,3 +1,14 @@
+---
+title: Migrating
+description: This document discusses aspects and considerations of migrating, focusing on strategies, benefits, and challenges associated with the process. It emphasizes planning, execution, and adaptation during migration.
+keywords:
+- migration
+- planning
+- adaptation
+- strategies
+- challenges
+---
+
 # Migrating
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.

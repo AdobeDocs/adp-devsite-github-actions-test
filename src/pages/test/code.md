@@ -1,3 +1,15 @@
+---
+title: Adobe I/O Runtime API Reference
+description: This document provides a comprehensive reference for the Adobe I/O Runtime API, detailing available endpoints, authentication requirements, common issues, and development tips. It includes sample requests and explains parameters necessary for interacting with the service programmatically.
+keywords:
+- Adobe I/O Runtime
+- API endpoints
+- Authentication
+- Namespace details
+- Error handling
+- Development guide
+---
+
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 
