@@ -1,10 +1,10 @@
 ---
 title: Enumeration: TextToImageAppVersion
-description: This document defines the TextToImageAppVersion enumeration, listing the available versions for the Text to Image application and their corresponding values.
+description: This document provides an overview of the TextToImageAppVersion enumeration, listing its available members and their corresponding values.
 keywords:
-- Enumeration
+- enumeration
 - TextToImageAppVersion
-- Versions
+- version control
 - V1
 - V2
 ---

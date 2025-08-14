@@ -1,12 +1,12 @@
 ---
 title: Migrating
-description: This document discusses aspects and considerations of migrating, focusing on strategies, benefits, and challenges associated with the process. It emphasizes planning, execution, and adaptation during migration.
+description: This document provides an overview of the process and considerations involved in migrating, focusing on planning, execution, and optimization. It discusses key strategies, potential challenges, and best practices to ensure a successful migration.
 keywords:
-- migration
-- planning
-- adaptation
-- strategies
-- challenges
+- Migration
+- Planning
+- Execution
+- Optimization
+- Best practices
 ---
 
 # Migrating

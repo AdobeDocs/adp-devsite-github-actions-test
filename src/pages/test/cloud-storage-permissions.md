@@ -1,17 +1,17 @@
 ---
 title: Roles and permissions
-description: Overview of roles, permissions, and access control in Adobe Cloud Storage, including how to assign roles and manage permissions using the Collaboration API.
+description: Overview of roles, permissions, and access control for Adobe Cloud Storage, including assignment and management via API and Adobe Admin Console.
 keywords:
   - Adobe Cloud Storage
-  - collaboration API
-  - roles
-  - permissions
-  - access control
-  - user groups
-  - predefined principals
-  - project permissions
-  - API requests
-  - administrators
+  - Access Control
+  - User roles
+  - Permissions
+  - Collaboration API
+  - Principal types
+  - Project permissions
+  - Admin Console
+  - User groups
+  - Predefined principals
 contributors:
   - https://github.com/michael-hodgson
   - https://github.com/lijumjose

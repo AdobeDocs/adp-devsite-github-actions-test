@@ -1,11 +1,11 @@
 ---
 title: SignatureOptions : object
-description: This document describes the SignatureOptions object used in Adobe I/O Events SDK for signature verification. It details the properties required for verifying digital signatures, including headers for digital signatures and public key paths.
+description: This document details the SignatureOptions object used in Adobe I/O Events SDK for digital signature verification. It outlines the properties required for handling digital signatures and public key paths, specifying their types and functions within the verification process.
 keywords:
 - SignatureOptions
+- digital signature
+- public key
 - Adobe I/O Events
-- Digital signature
-- Public key
 - SDK
 ---
 

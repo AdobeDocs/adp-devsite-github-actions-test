@@ -1,12 +1,12 @@
 ---
-title: Example of cURL POST Request to Graffias GraphQL Endpoint
-description: This document provides an example of how to make a POST request using cURL to the Graffias GraphQL endpoint from Adobe, including the necessary headers and the use of an introspection JSON file for the request payload.
+title: curl Command for Adobe Graffias GraphQL API
+description: This document provides a sample curl command for making a POST request to the Adobe Graffias GraphQL API endpoint. It outlines the required HTTP headers, authentication details, and how to send a JSON payload using the introspection.json file with compressed data transfer options.
 keywords:
-- cURL
-- POST request
+- curl
+- GraphQL API
 - Adobe Graffias
-- GraphQL
-- API headers
+- HTTP headers
+- authentication
 ---
 
 ```console data-line="1-2, 5, 9-20" data-line-offset="3"

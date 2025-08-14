@@ -1,12 +1,12 @@
 ---
-title: Adobe Assurance Public APIs
-description: This document provides instructions and examples for interacting with Adobe Assurance Public APIs. It covers making authenticated API requests, troubleshooting common authorization errors, and guidance for local application development and testing with Adobe I/O Runtime.
+title: API Usage and Common Issues in Adobe Developer Tools
+description: This document provides examples and guidance for using Adobe Assurance Public APIs, troubleshooting common authorization errors during development, and testing custom functionality in Adobe App Builder applications. It includes sample API request formats, error handling recommendations, and best practices for local and cloud-based development workflows.
 keywords:
-- API authentication
+- Adobe Assurance Public APIs
 - Authorization error
-- Adobe I/O Runtime
-- Local development
-- GraphQL
+- Bearer token
+- API request
+- Adobe App Builder
 ---
 
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24

@@ -1,12 +1,12 @@
 ---
 title: Community
-description: This document introduces the concept of community support, emphasizing collaboration and assistance in testing, reusing, and working together. It sets the stage for a supportive environment where members help each other.
+description: This document introduces the community, emphasizing support, collaboration, testing, reusing, and working together. It highlights the commitment to helping members and fostering an environment of shared growth.
 keywords:
 - community
 - support
 - collaboration
-- testing
 - reuse
+- teamwork
 ---
 
 # Community
