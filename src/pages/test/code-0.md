@@ -1,12 +1,12 @@
 ---
-title: Adobe Assurance Public APIs
-description: This document provides examples and guidance for using Adobe Assurance Public APIs, including making GraphQL requests, handling authorization errors, and deploying actions for development and testing in Adobe I/O Runtime.
+title: Adobe Public API Usage and Troubleshooting
+description: This document provides guidance on using Adobe public APIs, including example cURL requests for authentication, common authorization errors, and development tips for testing applications using Adobe I/O Runtime and local environments.
 keywords:
-- Adobe Assurance
-- Public APIs
-- GraphQL
-- Authorization
-- Adobe I/O Runtime
+- Adobe API
+- Authentication
+- Authorization header
+- Error handling
+- Local development
 ---
 
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24

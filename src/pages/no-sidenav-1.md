@@ -1,12 +1,12 @@
 ---
-title: Sidenav Configuration for Unlisted Pages
-description: This document explains that if a page is not included in the `config.md` subPages section, it should not display a sidenav. It outlines the criteria for showing or hiding navigation elements based on configuration settings.
+title: Sidenav Exclusion for Non-configured SubPages
+description: This document explains that pages not listed in the `config.md subPages` configuration are excluded from having a sidenav, ensuring navigational consistency and clarity within the project structure.
 keywords:
+- sidenav
 - config.md
 - subPages
-- sidenav
-- navigation visibility
-- page configuration
+- navigation
+- project structure
 ---
 
 This page isn't in `config.md subPages`, so it shouldn't have a sidenav.

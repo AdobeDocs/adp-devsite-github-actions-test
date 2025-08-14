@@ -1,6 +1,6 @@
 ---
 title: OAuth using POSTMAN
-description: This document provides an overview of implementing OAuth authentication protocols using POSTMAN, including procedures, benefits, and integration strategies.
+description: This document provides an overview of utilizing POSTMAN for OAuth authentication workflows, highlighting key concepts and practical considerations for secure API testing and integration.
 keywords:
 - OAuth
 - POSTMAN

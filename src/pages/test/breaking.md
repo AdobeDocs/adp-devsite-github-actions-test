@@ -1,12 +1,12 @@
 ---
 title: breaking
-description: This document discusses recent events or developments characterized as breaking news, highlighting urgent or noteworthy information requiring immediate attention.
+description: This document provides updates and information on current events, highlighting significant new developments and urgent news stories as they unfold.
 keywords:
-- news
-- breaking
-- update
-- urgent
-- developments
+- breaking news
+- current events
+- urgent updates
+- latest developments
+- news coverage
 ---
 
 <breaking>
