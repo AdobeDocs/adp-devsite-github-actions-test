@@ -38,11 +38,6 @@
     "checkLinks": "npx --yes github:AdobeDocs/adp-devsite-utils checkLinks -v",
     "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v"
   },
-  "remarkConfig": {
-    "plugins": [
-      "remark-validate-links"
-    ]
-  },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "express": "5.1.0",
