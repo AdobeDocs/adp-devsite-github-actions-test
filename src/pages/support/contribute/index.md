@@ -1,12 +1,12 @@
 ---
 title: Contribute
-description: This document provides guidelines and information on how to contribute to the project, including testing, reusing, and working collaboratively.
+description: This document provides guidance on how to contribute, including aspects of reuse and collaboration.
 keywords:
 - contribution
 - guidelines
-- collaboration
-- testing
 - reuse
+- collaboration
+- instructions
 ---
 
 # Contribute

@@ -1,12 +1,12 @@
 ---
 title: Testing path relative link relative to current directory
-description: This document explores various ways to create and use relative and root-relative links within directories. It provides examples of linking to files and directories using different path conventions, including links to parent and current directories, as well as handling trailing slashes and index files.
+description: This document explores various methods for creating and referencing Markdown links using different path syntaxes, including relative, root relative, explicit current directory, parent directory, and variations with trailing slashes. Each syntax is demonstrated with practical examples to clarify their behaviors and usages.
 keywords:
 - relative links
-- root-relative links
-- directory structure
-- index.md
-- path conventions
+- root relative links
+- Markdown
+- directory paths
+- linking syntax
 ---
 
 # Testing path relative link relative to current directory

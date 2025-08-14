@@ -1,12 +1,12 @@
 ---
 title: FAQ
-description: This document provides answers to frequently asked questions, specifically addressing the resolution status of all inquiries in test 3.
+description: This document provides answers to frequently asked questions, specifically addressing the topic of "All questions resolved test 3."
 keywords:
-- frequently asked questions
 - FAQ
+- frequently asked questions
+- questions resolved
 - test 3
-- inquiry resolution
-- support
+- information
 ---
 
 # FAQ

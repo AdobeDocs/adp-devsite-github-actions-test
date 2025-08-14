@@ -1,12 +1,12 @@
 ---
-title: Sidenav Visibility Criteria
-description: This document explains why the current page does not display a sidenav, noting that it is not listed in the `config.md subPages`.
+title: Sidenav Configuration for Unlisted Pages
+description: This document explains that if a page is not included in the `config.md` subPages section, it should not display a sidenav. It outlines the criteria for showing or hiding navigation elements based on configuration settings.
 keywords:
-- sidenav
 - config.md
 - subPages
-- navigation
-- page visibility
+- sidenav
+- navigation visibility
+- page configuration
 ---
 
 This page isn't in `config.md subPages`, so it shouldn't have a sidenav.

@@ -1,12 +1,12 @@
 ---
 title: heading
-description: This document provides an overview of "Lorem Ipsum," the standard dummy text used in the printing and typesetting industry since the 1500s. It details the enduring history, adaptation through technological changes, and popularization in the mid-20th century, focusing on its ubiquitous presence in publishing and design.
+description: This document provides a repetitive overview of "Lorem Ipsum," a standard placeholder text used in the printing and typesetting industry since the 1500s. It discusses the origins, historical use, and continued relevance of Lorem Ipsum through centuries, focusing on its unchanged nature and popularization by typesetting and desktop publishing tools.
 keywords:
 - Lorem Ipsum
-- printing industry
+- printing
 - typesetting
-- publishing history
 - dummy text
+- desktop publishing
 ---
 
 # heading

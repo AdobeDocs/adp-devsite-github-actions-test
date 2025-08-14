@@ -1,12 +1,12 @@
 ---
 title: Migrating
-description: This document provides an overview of the process and considerations involved in migrating, focusing on planning, execution, and optimization. It discusses key strategies, potential challenges, and best practices to ensure a successful migration.
+description: This document provides an overview of the process and considerations involved in migrating, focusing on planning, implementation, and successful execution. It highlights essential steps to ensure a smooth transition.
 keywords:
-- Migration
-- Planning
-- Execution
-- Optimization
-- Best practices
+- migration
+- planning
+- implementation
+- transition
+- execution
 ---
 
 # Migrating

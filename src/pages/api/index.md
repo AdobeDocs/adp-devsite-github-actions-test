@@ -1,6 +1,6 @@
 ---
 title: Cat API Spec 2.0
-description: Specification document for Cat API version 2.0, detailing the endpoints, data models, and functionality.
+description: This document provides the specification for version 2.0 of the Cat API, detailing its endpoints, data models, and usage instructions.
 keywords:
 - Cat API
 - API specification
