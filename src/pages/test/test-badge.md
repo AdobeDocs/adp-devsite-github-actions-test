@@ -1,14 +1,15 @@
 ---
-title: Set Up Access, Environment, and Tools New2
-description: Learn what systems you need to access, how to obtain credentials, and how to configure your local environment with the right tools to start working with Adobe App Builder.
+title: Set Up Access, Environment, and Tools
+description: This document guides enterprise developers through obtaining necessary access, configuring credentials, and preparing the local environment and tools to develop applications using Adobe App Builder.
 keywords:
 - Access
 - Credentials
 - Local Environment
 - NodeJS
 - Adobe I/O CLI
-- Developer Console
-- Visual Studio Code
+- Developer Tools
+- Adobe Experience Cloud
+other original metadata
 ---
 
 

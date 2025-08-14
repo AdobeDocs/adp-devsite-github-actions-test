@@ -1,12 +1,12 @@
 ---
 title: FAQ
-description: This document provides answers to frequently asked questions, specifically focusing on the resolution of queries in the "All questions resolved test 3" section.
+description: This document provides a compilation of frequently asked questions with all queries resolved, serving as a reference for users seeking quick answers and clarifications.
 keywords:
-- FAQ
 - frequently asked questions
-- queries
-- resolutions
-- test 3
+- FAQ
+- user support
+- resolved queries
+- reference guide
 ---
 
 # FAQ

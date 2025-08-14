@@ -1,12 +1,12 @@
 ---
 title: Enumeration: TextToImageAppVersion
-description: This document defines an enumeration named TextToImageAppVersion, outlining its available members and their corresponding values. It specifies two versions, V1 and V2, for use in the application.
+description: This document outlines the enumeration members for TextToImageAppVersion, listing available versions and their corresponding values.
 keywords:
 - enumeration
 - TextToImageAppVersion
 - version control
-- software versioning
-- enum members
+- V1
+- V2
 ---
 
 # Enumeration: TextToImageAppVersion

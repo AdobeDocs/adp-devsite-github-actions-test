@@ -1,12 +1,12 @@
 ---
 title: Dummy Metrics API
-description: This document provides an overview of the Dummy Metrics API, detailing its purpose, available endpoints, usage examples, and guidelines for integration within various applications. It is intended for developers and technical users seeking to implement or evaluate dummy metrics functionalities.
+description: This document provides an overview of the Dummy Metrics API, detailing its functionality, endpoints, and use cases for collecting and analyzing various dummy metrics within applications or testing environments.
 keywords:
 - API
-- metrics
-- integration
-- endpoints
-- developer guide
+- Metrics
+- Dummy data
+- Endpoints
+- Analysis
 ---
 
 # Dummy Metrics API

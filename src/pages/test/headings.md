@@ -1,6 +1,6 @@
 ---
 title: heading
-description: This document explores the history and significance of Lorem Ipsum as industry-standard dummy text in printing and typesetting. It outlines its origins from the 1500s, ongoing usage over five centuries, and its adaptation to electronic publishing and popularization in the 1960s with Letraset sheets and software like Aldus PageMaker.
+description: This document provides an overview of the history and enduring relevance of Lorem Ipsum, the standard dummy text used in the printing and typesetting industry. Covering its origins from the 1500s, the document outlines its evolution through centuries and its adaptation to electronic typesetting, desktop publishing, and popularisation in the 1960s.
 keywords:
 - Lorem Ipsum
 - printing industry
