@@ -105,9 +105,9 @@ function prepareReviewComment(targetFile, content, suggestion) {
         return {
             path: targetFile.filename,
             start_line: 1,
-            start_side: 'RIGHT',
-            line: metadataEnd,
-            side: 'RIGHT',
+            start_side: 'RIGHT', // "RIGHT" means the content after PR, "LEFT" means the content before PR
+            line: metadataEnd, // end_line
+            side: 'RIGHT', // end_side, "LEFT" and "RIGHT" meaning same above
             body: `\`\`\`suggestion\n${suggestion}\n\`\`\``
         };
     }
@@ -117,7 +117,7 @@ function prepareReviewComment(targetFile, content, suggestion) {
         path: targetFile.filename,
         line: 1,
         side: 'RIGHT',
-        body: `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\``
+        body: `\`\`\`suggestion\n${suggestion}\n${firstLine}\n\`\`\`` // this action is overwriting the first line with metadata, so should append the origianl first line to the suggtion's end.
     };
 }
 
