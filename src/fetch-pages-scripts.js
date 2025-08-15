@@ -67,6 +67,7 @@ async function fetchMainBranchContent() {
                     if (contentResponse.ok) {
                         const content = await contentResponse.text();
                         // skip files with components
+                        // FIXME: should not skip the non component tag like <hr/> and <meta/>
                         if (content.includes("/>"))  continue;
                         allContent += `\n\n--- File: ${item.path} ---\n\n${content}`;
                     } else {

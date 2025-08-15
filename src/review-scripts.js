@@ -1,49 +1,11 @@
 const fs = require('fs');
 const { hasMetadata } = require('./file-operation');
+const { getFileContentByContentURL, getFilesInPR, createReview } = require('./github-api');
 
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 
 const prNumber = process.env.PR_ID;
-const githubToken = process.env.GITHUB_TOKEN;
-
-// GitHub API utilities
-const githubApi = {
-    headers: {
-        'Accept': 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${githubToken}`
-    },
-    
-    async fetchWithAuth(url, options = {}) {
-        const response = await fetch(url, {
-            ...options,
-            headers: {
-                ...this.headers,
-                ...options.headers
-            }
-        });
-
-        if (!response.ok) {
-            const errorBody = await response.text();
-            throw new Error(`GitHub API request failed: ${response.status} - ${errorBody}`);
-        }
-
-        return response;
-    },
-
-    getPrUrl() {
-        return `https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}`;
-    },
-
-    getPrFilesUrl() {
-        return `${this.getPrUrl()}/files`;
-    },
-
-    getReviewsUrl() {
-        return `${this.getPrUrl()}/reviews`;
-    }
-};
 
 // File content utilities
 function readAiContent() {
@@ -94,7 +56,9 @@ function findMetadataEnd(content) {
     return 0;
 }
 
-// Review preparation
+// Prepare the body of review comment
+// DOCS: https://docs.github.com/en/rest/pulls/reviews?apiVersion=2022-11-28#create-a-review-for-a-pull-request
+// FIXME: this might be moved to github-api.js? but it checks the metadata so is not pure api function, maybe its better to seperate metadata check and comments preparation.
 function prepareReviewComment(targetFile, content, suggestion) {
     const firstLine = content.split('\n')[0];
     const hasFileMetadata = hasMetadata(content);
@@ -121,52 +85,24 @@ function prepareReviewComment(targetFile, content, suggestion) {
     };
 }
 
-async function createReview(comments) {
-    const reviewData = {
-        body: 'AI suggestions',
-        event: 'COMMENT',
-        comments: comments
-    };
-
-    const response = await githubApi.fetchWithAuth(
-        githubApi.getReviewsUrl(),
-        {
-            method: 'POST',
-            body: JSON.stringify(reviewData)
-        }
-    );
-
-    const reviewResult = await response.json();
-    return reviewResult;
-}
 
 async function reviewPR() {
     try {
         // Read AI content for all files
         const files = readAiContent();
 
-        // Fetch PR data
-        const prResponse = await githubApi.fetchWithAuth(githubApi.getPrUrl());
-        const prData = await prResponse.json();
-        console.log('PR found:', prData.title);
-
-        // Fetch PR files
-        const filesResponse = await githubApi.fetchWithAuth(githubApi.getPrFilesUrl());
-        const filesData = await filesResponse.json();
+        const PRFiles = await getFilesInPR(owner, repo, prNumber);
 
         // Process each file and prepare comments
         const comments = [];
         for (const { path, suggestion } of files) {
-            const targetFile = filesData.find(file => file.filename === path);
-
-            if (!targetFile) {
+            const targetFile = PRFiles.find(file => file.filename === path);
+            if (!targetFile) { // for safety, should not ha
                 console.warn(`Target file ${path} not found in PR, skipping...`);
                 continue;
             }
 
-            // Fetch file content
-            const contentResponse = await githubApi.fetchWithAuth(targetFile.raw_url);
-            const content = await contentResponse.text();
+            const content = await getFileContentByContentURL(targetFile.raw_url);
 
             // Prepare comment for this file
             const comment = prepareReviewComment(targetFile, content, suggestion);
@@ -178,7 +114,7 @@ async function reviewPR() {
         }
 
         // Create single review with all comments
-        const reviewData = await createReview(comments);
+        const reviewData = await createReview(owner, repo, prNumber, comments);
 
         console.log('Review created successfully:', {
             id: reviewData.id,

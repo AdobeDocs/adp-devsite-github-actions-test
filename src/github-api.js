@@ -1,21 +1,44 @@
 // DOCS: https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-repository-content
 async function getFileContent(owner, repo, path) {
-    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-        method: 'GET',
-        headers: {
-            'accept': 'application/vnd.github+json',
-            'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
-        }
-    });
-    const data = await response.json();
-    const fileContent = await fetch(data.download_url, {
-        headers: {
-            'accept': 'application/vnd.github.v3.raw',
-            'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
-        }
-    }).then(res => res.text());
-    return fileContent;
+    try{
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+            method: 'GET',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+            }
+        });
+
+        const data = await response.json();
+        const fileContent = await fetch(data.download_url, {
+            headers: {
+                'accept': 'application/vnd.github.v3.raw',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+                }
+            }).then(res => res.text());
+            return fileContent;
+    } catch (error) {
+        console.error('Error getting file content:', error);
+        throw error;
+    }
 }
+
+async function getFileContentByContentURL(contentURL){
+    try{
+        const response = await fetch(contentURL, {
+            method: 'GET',
+            headers: {
+                'accept': 'application/vnd.github+json',
+                'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+            }
+        });
+        return response.text();
+    } catch (error) {
+        console.error('Error getting file content by content URL:', error);
+        throw error;
+    }
+}
+
 
 // DOCS: https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#get-a-reference
 async function getLatestCommit(owner, repo, ref) {
@@ -217,9 +240,34 @@ async function getFilesInPR(owner, repo, prNumber){
     }
 }
 
+// DOCS: https://docs.github.com/en/rest/pulls/reviews?apiVersion=2022-11-28#create-a-review-for-a-pull-request
+async function createReview(owner, repo, prNumber, comments){
+    try{
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                body: 'AI suggestions',
+                event: 'COMMENT',
+                comments: comments
+            })
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error creating review:', error);
+        throw error;
+    }
+}
+
+
 // doing module export instead of exporting functions directly to avoid "SyntaxError: Unexpected token 'export'" in github actions environment
 module.exports = {
     getFileContent,
+    getFileContentByContentURL,
     getLatestCommit,
     createBranch,
     createBlob,
@@ -227,5 +275,6 @@ module.exports = {
     commitChanges,
     pushCommit,
     createPR,
-    getFilesInPR
+    getFilesInPR,
+    createReview
 };

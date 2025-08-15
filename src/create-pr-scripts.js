@@ -27,6 +27,7 @@ async function processAIContent() {
             const pathMatch = file.match(/(.*?) ---\n([\s\S]*)/);
             const [, path, suggestion] = pathMatch;
 
+            console.log("path", path);
             let fileContent = await getFileContent(owner, repo, path);
 
             if (hasMetadata(fileContent)) {

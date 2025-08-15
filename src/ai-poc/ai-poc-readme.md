@@ -99,7 +99,7 @@
 2. deploy the main branch in github action
 
 ## Further Development Note ✏️
-- The markdown files with components are skipped for now, need to update them if we find a way to get raw information inside the components 
+- The markdown files with components are skipped for now, need to update them if we find a way to get raw information inside the components/ There's some special case for component detection, we can't skip a non coponent tag like <hr/>. 
 - The github repo related variables (owner, repo, ref ...) are hard coded, need to be updated for production
 - The PR suggestion workflow is defined in test-pull-request.yml, and the AI metadata for all pages is defined in deploy.yml. They may need to be seperated. 
 - AI metadata for all pages workflow will create a PR targeting to main branch, which will trigger pr suggestion workflow. Pr suggestion may not appear everytime since the AI prompt requested "minimum amount of necessary change", we may need to refine the prompt to fix it? Another way is to add another condition to PR suggestion: "if the PR is created by github bot, then skip this workflow".
