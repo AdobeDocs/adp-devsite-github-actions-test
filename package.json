@@ -37,7 +37,7 @@
     "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
     "checkLinks": "npx --yes github:AdobeDocs/adp-devsite-utils checkLinks -v",
     "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
-    "lint:remark": "npx --yes github:AdobeDocs/adp-devsite-utils#centralized-lint-poc lintRemark -v"
+    "lint:remark": "npx --yes github:AdobeDocs/adp-devsite-utils#centralized-lint-poc-2 lintRemark -v"
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
