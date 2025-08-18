@@ -14,4 +14,4 @@
           uses: actions/checkout@v4
   
         - name: Run Lint
-          run: npx github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v
+          run: npx --yes github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v
