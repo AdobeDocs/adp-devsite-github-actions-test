@@ -30,6 +30,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
     "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
