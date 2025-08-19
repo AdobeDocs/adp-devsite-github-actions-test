@@ -88,3 +88,13 @@ jobs:
         run: node src/create-pr-scripts.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint: 
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Lint
+        run: npx --yes github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v
