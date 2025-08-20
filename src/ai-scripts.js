@@ -115,7 +115,10 @@ async function createMetadata(endpoint, apiKey, filepath, content, faqCount) {
   });
 
   const result = await response.json();
-  const aiContent = result.choices[0].message.content;
+  let aiContent = result.choices[0].message.content;
+
+  // Clean any existing file headers from AI response
+  aiContent = aiContent.replace(/^--- File: .* ---\n/gm, '');
 
   return  `--- File: ${filepath} ---\n${aiContent}\n`;
 }
@@ -170,7 +173,10 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent, f
   });
 
   const result = await response.json();
-  const aiContent = result.choices[0].message.content;
+  let aiContent = result.choices[0].message.content;
+  
+  // Clean any existing file headers from AI response
+  aiContent = aiContent.replace(/^--- File: .* ---\n/gm, '');
   
   return `--- File: ${filepath} ---\n${aiContent}\n`;
 }
@@ -213,12 +219,20 @@ async function processContent(filename) {
         const metadata = parts.slice(1, 2).join('---').trim();
         const fullContent = parts.slice(2).join('---').trim();
         const edited = await EditMetadata(openAIEndpoint, openAIAPIKey, filePath, metadata, fullContent, faqCount);
-        const ensured = ensureTitleInFrontmatterBlock(edited, h1);
-        allGeneratedContent += `--- File: ${filePath} ---\n${ensured}\n`;
+        
+        // Extract just the frontmatter part (after "--- File: ... ---")
+        const fileHeaderMatch = edited.match(/^--- File: .* ---\n([\s\S]*)$/);
+        const frontmatterOnly = fileHeaderMatch ? fileHeaderMatch[1] : edited;
+        const ensured = ensureTitleInFrontmatterBlock(frontmatterOnly, h1);
+        allGeneratedContent += `--- File: ${filePath} ---\n${ensured}`;
       } else {
         const fm = await createMetadata(openAIEndpoint, openAIAPIKey, filePath, cleanContent, faqCount);
-        const ensured = ensureTitleInFrontmatterBlock(fm, h1);
-        allGeneratedContent += `--- File: ${filePath} ---\n${ensured}\n`;
+        
+        // Extract just the frontmatter part (after "--- File: ... ---")
+        const fileHeaderMatch = fm.match(/^--- File: .* ---\n([\s\S]*)$/);
+        const frontmatterOnly = fileHeaderMatch ? fileHeaderMatch[1] : fm;
+        const ensured = ensureTitleInFrontmatterBlock(frontmatterOnly, h1);
+        allGeneratedContent += `--- File: ${filePath} ---\n${ensured}`;
       }
     }
 
