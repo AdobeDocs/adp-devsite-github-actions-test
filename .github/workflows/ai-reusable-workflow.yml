@@ -27,7 +27,7 @@ on:
 jobs:
   call_reusable_workflow:
     name: Generate AI Metadata
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@main
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@ai-metadata
     with:
       PR_ID: ${{ github.event.pull_request.number }}
       FILE_NAME: "pr_content.txt"
