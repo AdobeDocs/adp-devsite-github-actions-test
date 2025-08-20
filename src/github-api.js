@@ -9,14 +9,23 @@ async function getFileContent(owner, repo, path) {
             }
         });
 
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to get file content meta ${path}: ${response.status} - ${text}`);
+        }
+
         const data = await response.json();
-        const fileContent = await fetch(data.download_url, {
+        const rawRes = await fetch(data.download_url, {
             headers: {
                 'accept': 'application/vnd.github.v3.raw',
                 'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
                 }
-            }).then(res => res.text());
-            return fileContent;
+            });
+        if (!rawRes.ok) {
+            const text = await rawRes.text();
+            throw new Error(`Failed to download raw file ${path}: ${rawRes.status} - ${text}`);
+        }
+        return await rawRes.text();
     } catch (error) {
         console.error('Error getting file content:', error);
         throw error;
@@ -32,6 +41,10 @@ async function getFileContentByContentURL(contentURL){
                 'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
             }
         });
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to get file by content URL: ${response.status} - ${text}`);
+        }
         return response.text();
     } catch (error) {
         console.error('Error getting file content by content URL:', error);
@@ -67,8 +80,7 @@ async function createBranch(owner, repo, branchRef, baseRefSha) {
     try {
         // Try to get the existing branch
         try {
-            const existingBranch = await getLatestCommit(owner, repo, branchRef);
-            return existingBranch;
+            return await getLatestCommit(owner, repo, branchRef);
         } catch (error) {
             // If branch doesn't exist, create it
             const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
@@ -112,6 +124,10 @@ async function createBlob(owner, repo, content) {
             })
         });
 
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to create blob: ${response.status} - ${text}`);
+        }
         return response.json();
 
     } catch (error) {
@@ -136,6 +152,10 @@ async function createTree(owner, repo, branchRefSha, treeArray) {
                 tree: treeArray
             })
         });
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to create tree: ${response.status} - ${text}`);
+        }
         return response.json();
     } catch (error) {
         console.error('Error creating tree:', error);
@@ -217,6 +237,10 @@ async function createPR(owner, repo, headRef, baseRef) {
                 base: baseRef
             })
         });
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to create PR: ${response.status} - ${text}`);
+        }
         return response.json();
     } catch (error) {
         console.error('Error creating PR:', error);
@@ -233,6 +257,10 @@ async function getFilesInPR(owner, repo, prNumber){
                 'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
             }
         });
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to get PR files: ${response.status} - ${text}`);
+        }
         return response.json();
     } catch (error) {
         console.error('Error getting files in PR:', error);
@@ -256,6 +284,10 @@ async function createReview(owner, repo, prNumber, comments){
                 comments: comments
             })
         });
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`Failed to create review: ${response.status} - ${text}`);
+        }
         return response.json();
     } catch (error) {
         console.error('Error creating review:', error);

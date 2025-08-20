@@ -1,12 +1,32 @@
-// FIXME: still a little tricky for metadata checking, need refine logic later
+const matter = require('gray-matter');
+
 function hasMetadata(content){
-    if (!content.startsWith('---')) return false;
-    const metadataEnd = content.indexOf("---", content.indexOf("---") + 1);
-    const metadata = content.slice(3, metadataEnd + 3).trim();
-    return metadata.includes("title") || metadata.includes("description") || metadata.includes("keywords");
+    try {
+        const parsed = matter(content);
+        return parsed.matter && parsed.matter.trim().length > 0;
+    } catch (_e) {
+        return false;
+    }
 }
 
-// doing module export instead of exporting functions directly to avoid "SyntaxError: Unexpected token 'export'" in github actions environment
+function replaceOrPrependFrontmatter(originalContent, newFrontmatterBlock){
+    // newFrontmatterBlock should be a full YAML block including leading and trailing ---
+    try {
+        const parsed = matter(originalContent);
+        const body = parsed.content || '';
+        if (parsed.matter && parsed.matter.trim().length > 0) {
+            // Replace existing frontmatter by reconstructing using gray-matter
+            return `${newFrontmatterBlock}\n${body.replace(/^\n+/, '')}`;
+        }
+        // No frontmatter, prepend
+        return `${newFrontmatterBlock}\n${originalContent.replace(/^\n+/, '')}`;
+    } catch (_e) {
+        // Fallback: naive prepend
+        return `${newFrontmatterBlock}\n${originalContent}`;
+    }
+}
+
 module.exports = {
-    hasMetadata
+    hasMetadata,
+    replaceOrPrependFrontmatter
 };

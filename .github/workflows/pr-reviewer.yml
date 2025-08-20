@@ -1,0 +1,60 @@
+name: AI Frontmatter Reviewer
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: pr-reviewer-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: Review PR with AI Metadata Suggestions
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: |
+          corepack enable
+          yarn install --frozen-lockfile
+
+      - name: Verify required secrets
+        env:
+          HAVE_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT != '' }}
+          HAVE_KEY: ${{ secrets.AZURE_OPENAI_API_KEY != '' }}
+        run: |
+          if [ "$HAVE_ENDPOINT" != "true" ] || [ "$HAVE_KEY" != "true" ]; then
+            echo "Missing AZURE_OPENAI_ENDPOINT or AZURE_OPENAI_API_KEY secrets" >&2
+            exit 1
+          fi
+
+      - name: Fetch PR files and write pr_content.txt
+        run: node src/pr-scripts.js
+        env:
+          PR_ID: ${{ github.event.pull_request.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate AI metadata suggestions
+        run: node src/ai-scripts.js
+        env:
+          FILE_NAME: pr_content.txt
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+
+      - name: Post review with suggestions
+        run: node src/review-scripts.js
+        env:
+          PR_ID: ${{ github.event.pull_request.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

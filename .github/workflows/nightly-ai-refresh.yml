@@ -1,0 +1,45 @@
+name: Nightly AI Metadata Refresh
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    name: Refresh AI Metadata
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: |
+          corepack enable
+          yarn install --frozen-lockfile
+
+      - name: Fetch all pages content
+        run: node src/fetch-pages-scripts.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate AI metadata suggestions
+        run: node src/ai-scripts.js
+        env:
+          FILE_NAME: all_pages_content.txt
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+
+      - name: Create/Update PR with metadata changes
+        run: node src/create-pr-scripts.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

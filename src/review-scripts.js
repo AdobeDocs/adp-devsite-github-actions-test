@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { hasMetadata } = require('./file-operation');
+const matter = require('gray-matter');
 const { getFileContentByContentURL, getFilesInPR, createReview } = require('./github-api');
 
 const owner = "AdobeDocs";
@@ -43,16 +44,15 @@ function readAiContent() {
 }
 
 function findMetadataEnd(content) {
-    const lines = content.split('\n');
-    let dashCount = 0;
-    for (let i = 0; i < lines.length; i++) {
-        if (lines[i].trim() === '---') {
-            dashCount++;
-            if (dashCount === 2) {
-                return i + 1;
-            }
+    try {
+        const parsed = matter(content);
+        if (parsed.matter && parsed.matter.trim().length > 0) {
+            // Count how many lines the frontmatter occupies (including closing ---)
+            const fm = `---\n${parsed.matter}\n---`;
+            const fmLines = fm.split('\n').length;
+            return fmLines + 0; // metadata ends at this line
         }
-    }
+    } catch (_e) {}
     return 0;
 }
 

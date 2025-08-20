@@ -49,6 +49,54 @@ For more in-depth [instructions](https://github.com/adobe/aio-theme#getting-star
 
   ```shell
   yarn start
+
+## AI metadata automation
+
+- AI PR Reviewer (PR workflow)
+  - Triggers on pull requests. Collects changed docs, generates frontmatter with Azure OpenAI, and posts a single review with per-file suggestions.
+  - Requires repository secrets: `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY`.
+
+- Nightly AI Refresh (scheduled workflow)
+  - Runs daily at 02:00 UTC. Collects all docs, generates frontmatter, and opens/updates a PR `ai-metadata`.
+  - Requires repository secrets: `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY`.
+
+- Links and Navigation Checks (PR workflow)
+  - Runs `yarn buildNavigation`, `yarn normalizeLinks`, and `yarn checkLinks` to validate navigation & links.
+
+### Local runs
+
+- Fetch PR files content into `pr_content.txt` (requires `PR_ID` and `GITHUB_TOKEN`):
+
+```bash
+PR_ID=123 GITHUB_TOKEN=ghp_xxx node src/pr-scripts.js
+```
+
+- Generate AI suggestions (supports dry run):
+
+```bash
+FILE_NAME=pr_content.txt AZURE_OPENAI_ENDPOINT=... AZURE_OPENAI_API_KEY=... DRY_RUN=1 node src/ai-scripts.js
+```
+
+- Post review comments to a PR:
+
+```bash
+PR_ID=123 GITHUB_TOKEN=ghp_xxx node src/review-scripts.js
+```
+
+- Create/Update AI metadata PR from all pages:
+
+```bash
+GITHUB_TOKEN=ghp_xxx node src/fetch-pages-scripts.js
+FILE_NAME=all_pages_content.txt AZURE_OPENAI_ENDPOINT=... AZURE_OPENAI_API_KEY=... node src/ai-scripts.js
+GITHUB_TOKEN=ghp_xxx node src/create-pr-scripts.js
+```
+
+### Required environment
+
+- `GITHUB_TOKEN` (PAT or GITHUB_TOKEN in Actions)
+- `AZURE_OPENAI_ENDPOINT`
+- `AZURE_OPENAI_API_KEY`
+- Optional: `DRY_RUN=1` to write AI output to stdout
   ```
 
 ## How to deploy

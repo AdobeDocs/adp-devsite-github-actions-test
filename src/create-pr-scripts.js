@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { getFileContent, getLatestCommit, createBranch, createBlob, createTree, commitChanges, pushCommit, createPR } = require('./github-api');
-const { hasMetadata } = require('./file-operation');
+const { hasMetadata, replaceOrPrependFrontmatter } = require('./file-operation');
 
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
@@ -29,14 +29,7 @@ async function processAIContent() {
 
             console.log("path", path);
             let fileContent = await getFileContent(owner, repo, path);
-
-            if (hasMetadata(fileContent)) {
-                const metadataEnd = fileContent.indexOf("---", fileContent.indexOf("---") + 1);
-                fileContent = suggestion + fileContent.slice(metadataEnd + 3);
-            }
-            else {
-                fileContent = suggestion + "\n" + fileContent
-            }
+            fileContent = replaceOrPrependFrontmatter(fileContent, suggestion.trim());
             let blob = await createBlob(owner, repo, fileContent);
             tree.push({ path: path, mode: '100644', type: 'blob', sha: blob.sha });
         }
@@ -57,9 +50,19 @@ async function main() {
     // create a new branch from the latest commit
     const createdBranch = await createBranch(owner, repo, branchRef, latestCommit.object.sha);
 
+    // get the tree SHA from the latest commit
+    const baseCommitSha = createdBranch.object.sha;
+    const baseCommitResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits/${baseCommitSha}`, {
+        headers: {
+            'accept': 'application/vnd.github+json',
+            'authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+        }
+    }).then(res => res.json());
+    const baseTreeSha = baseCommitResponse.tree.sha;
+
     const treeArray = await processAIContent();
 
-    const tree = await createTree(owner, repo, createdBranch.object.sha, treeArray);
+    const tree = await createTree(owner, repo, baseTreeSha, treeArray);
 
     const commit = await commitChanges(owner, repo, tree.sha, createdBranch.object.sha);
 

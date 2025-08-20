@@ -66,9 +66,13 @@ async function fetchMainBranchContent() {
 
                     if (contentResponse.ok) {
                         const content = await contentResponse.text();
-                        // skip files with components
-                        // FIXME: should not skip the non component tag like <hr/> and <meta/>
-                        if (content.includes("/>"))  continue;
+                        // Skip files that look like they embed React/JSX blocks while allowing simple HTML
+                        // Heuristic: skip if it contains lines starting with '<' followed by an uppercase letter (JSX components)
+                        const hasJSXComponent = /\n\s*<\s*[A-Z][A-Za-z0-9]*/.test(`\n${content}`);
+                        if (hasJSXComponent) {
+                            console.log(`Skipping JSX component file: ${item.path}`);
+                            continue;
+                        }
                         allContent += `\n\n--- File: ${item.path} ---\n\n${content}`;
                     } else {
                         console.log(`Failed to fetch content for ${item.path}`);
