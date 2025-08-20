@@ -1,0 +1,37 @@
+---
+###########################
+###########################
+## Pull request testing ##
+###########################
+###########################
+name: Latest Pull Request
+
+# Documentation:
+# - Workflow: https://help.github.com/en/articles/workflow-syntax-for-github-actions
+# - SuperLinter: https://github.com/github/super-linter
+# - Markdown linter: https://github.com/DavidAnson/markdownlint
+# - Link validation: https://github.com/remarkjs/remark-validate-links
+
+######################################################
+# Start the job on a pull request to the main branch #
+######################################################
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/**'
+
+###############
+# Set the Job #
+###############
+jobs:
+  call_reusable_workflow:
+    name: Generate AI Metadata
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@main
+    with:
+      PR_ID: ${{ github.event.pull_request.number }}
+      FILE_NAME: "pr_content.txt"
+    secrets:
+      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
