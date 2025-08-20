@@ -1,4 +1,4 @@
 plugins:
   - remark-lint
-  - remark-lint-no-heading-punctuation, 'error'
+  - [remark-lint-no-heading-punctuation, 'error']
 
