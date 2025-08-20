@@ -15,11 +15,11 @@ name: Latest Pull Request
 ######################################################
 # Start the job on a pull request to the main branch #
 ######################################################
-on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'src/pages/**'
+# on:
+#   pull_request:
+#     branches: [main]
+#     paths:
+#       - 'src/pages/**'
 
 ###############
 # Set the Job #
