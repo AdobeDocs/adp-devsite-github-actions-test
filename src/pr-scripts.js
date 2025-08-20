@@ -1,3 +1,5 @@
+const { getFilesInPR } = require('./github-api');
+
 const owner = "AdobeDocs";
 const repo = "adp-devsite-github-actions-test";
 
@@ -8,30 +10,8 @@ const fs = require('fs');
 
 async function fetchPRInformation() {
     try {
-        // fetch PR data
-        const prResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}`, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `Bearer ${githubToken}`
-            }
-        });
-
-        if (!prResponse.ok) {
-            throw new Error(`GitHub API request failed: ${prResponse.status}`);
-        }
-
         // fetch the files changed in this PR
-        const filesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}/files`, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `Bearer ${githubToken}`
-            }
-        });
-
-        if (!filesResponse.ok) {
-            throw new Error(`GitHub API request failed when fetching files: ${filesResponse.status}`);
-        }
-        const filesData = await filesResponse.json();
+        const filesData = await getFilesInPR(owner, repo, prNumber);
 
         // Filter files in src/pages directory and exclude config.md
         const pagesFiles = filesData.filter(file =>
@@ -44,16 +24,17 @@ async function fetchPRInformation() {
         for (const file of pagesFiles) {
             const contentResponse = await fetch(file.raw_url, {
                 headers: {
-                    'Accept': 'application/vnd.github.v3.raw'
+                    'Accept': 'application/vnd.github.v3.raw',
+                    'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
                 }
             });
 
             if (contentResponse.ok) {
                 const content = await contentResponse.text();
+                // append the content to allContent string with identifier "--- File: ${file.filename} ---" for further processing
                 allContent += `\n\n--- File: ${file.filename} ---\n\n${content}`;
-                // console.log(allContent);
             } else {
-                console.log(`Failed to fetch content for ${file.filename}`);
+                console.error(`Failed to fetch content for ${file.filename}`);
             }
         }
 

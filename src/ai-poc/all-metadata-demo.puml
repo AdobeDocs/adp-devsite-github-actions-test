@@ -1,0 +1,15 @@
+@startuml
+|Product Team|
+start
+:make a deployment request;
+|Github Action|
+  :fetch all content pages (skip pages with components);
+  :generate/update metadata;
+  :commit contents;
+  :create Pull Request;
+|Product Team|
+  :review Pull Request;
+  :modify comment(optional);
+  :merge Pull Request;
+stop
+@enduml

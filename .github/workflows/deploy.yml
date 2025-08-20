@@ -29,3 +29,72 @@ jobs:
       env: ${{ inputs.env }}
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
+   
+  ai-metadata-update:
+    name: AI Metadata Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Enable Corepack for Yarn v3
+        run: corepack enable
+        
+      - name: Install Yarn v3
+        uses: borales/actions-yarn@v3
+        with:
+          cmd: set version stable
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - name: Cache yarn dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies and run script
+        uses: borales/actions-yarn@v3
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          YARN_ENABLE_HARDENED_MODE: false
+        with:
+          cmd: install --mode=update-lockfile
+          
+      - name: Fetch all pages content
+        run: node src/fetch-pages-scripts.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Run AI metadata generation script
+        run: node src/ai-scripts.js
+        env:
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+          FILE_NAME: "all_pages_content.txt"
+          
+      - name: Push Commit and Create PR
+        run: node src/create-pr-scripts.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint: 
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Lint
+        run: npx --yes github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v

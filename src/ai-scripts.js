@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { hasMetadata } = require('./file-operation');
+
 const openAIEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const openAIAPIKey = process.env.AZURE_OPENAI_API_KEY;
 
@@ -13,11 +14,11 @@ async function createMetadata(endpoint, apiKey, filepath, content) {
     body: JSON.stringify({
       messages: [
         {
-          role: "system",
+          role: "system", // system prompt: sets the behavior and style of the AI assistant
           content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
         },
         {
-          role: "user",
+          role: "user", // user prompt: the specific task or request from the user to the AI assistant
           content: `Generate a summary of the following content in the format:
                 ---
                 title: [Same as the heading1 content]
@@ -54,11 +55,11 @@ async function EditMetadata(endpoint, apiKey, filepath, metadata, fileContent) {
     body: JSON.stringify({
       messages: [
         {
-          role: "system",
+          role: "system", // system prompt: sets the behavior and style of the AI assistant
           content: "You are an AI assistant that generates summaries in a specific format. Focus on providing a structured summary with a title, description, and a list of keywords."
         },
         {
-          role: "user",
+          role: "user", // user prompt: the specific task or request from the user to the AI assistant
           content: `Review and make minimal necessary updates to the following metadata based on the content. Keep the same format and only change what needs to be updated. If there is metadata that is not in the template, keep it at the end of the metadata.
     
             Expected format:

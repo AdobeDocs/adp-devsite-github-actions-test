@@ -1,0 +1,38 @@
+@startuml
+|Product Team|
+start
+:make a deployment;
+|Github Action|
+  partition "fetch-pages-scripts.js"{
+    :fetch all markdown content pages;
+    :skip files with components;
+  }
+  partition "ai-scrips.js"{
+    :Read pr-content.txt file;
+    :Split content into metadata and contents;
+    if(hasMetadata(content)) then (yes)
+      :update the metadata with minimum amount of necessary change;
+    else (no)
+      :create the metadata with page contents;
+    endif
+    :Generate ai-content.txt file;
+  }
+  partition "create-pr-script.js" {
+    :Read ai-content.txt;
+    :Get latest commit sha at main branch;
+    :Createa a branch from latest commit on main;
+  partition "for each content file"{
+    :Create blob with new content;
+    :Append created blob to tree array with blob sha and file path;
+  }
+  :Create tree with tree array;
+  :Commit changed contents;
+  :Push Commit to "ai-metadata" branch;
+  :Create pull request "ai-metadata" -> "main";
+}
+|Product Team|
+  :review Pull Request;
+  :modify comment(optional);
+  :merge Pull Request;
+stop
+@enduml 
