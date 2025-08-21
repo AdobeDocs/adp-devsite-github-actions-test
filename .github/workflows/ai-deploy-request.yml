@@ -1,5 +1,5 @@
 ---
-name: Deployment
+name: "Deployment" for Hackathon
 on:
   workflow_dispatch:
     inputs:
