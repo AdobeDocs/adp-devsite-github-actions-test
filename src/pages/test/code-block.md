@@ -1,5 +1,7 @@
 // copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#code-block
 
+<https://example.com>
+
 <CodeBlock slots="heading, code" repeat="2" languages="JSON, JSON" />
 
 #### Payload
