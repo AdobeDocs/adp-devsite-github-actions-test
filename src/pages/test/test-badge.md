@@ -1,4 +1,25 @@
 ---
+title: Set Up Access, Environment, and Tools New2
+description: Learn how to acquire access, credentials, and set up your local environment and tooling for Adobe App Builder development, including supported platforms and recommended best practices.
+keywords:
+- acquire access
+- credentials
+- local environment
+- adobe app builder
+- developer tools
+faqs:
+- question: How do I get access to Adobe App Builder in my organization?
+  answer: Request membership in your IMS organization from your account manager or IT/Marketing admin. Partners can request access from their partner manager or via the Adobe Solution Partner Portal.
+- question: What role do I need to access Adobe App Builder?
+  answer: You need a Developer or System Admin role in your Adobe IMS organization to access App Builder features.
+- question: Which version of NodeJS is recommended for setting up the local environment?
+  answer: Use NodeJS version 18 or 20 for best compatibility. Odd-numbered versions are not recommended.
+- question: How do I ensure my Adobe I/O CLI is up to date?
+  answer: Run `npm install -g @adobe/aio-cli` to update, and use `aio update` for core plugin updates. Compare your installed version with `npm show @adobe/aio-cli version`.
+- question: Is Visual Studio Code required for development with App Builder?
+  answer: Visual Studio Code is strongly recommended, especially for debugging and advanced usage, but other code editors can be used for basic editing.
+---
+---
 keywords:
 - Acquire Access
 - Credentials
