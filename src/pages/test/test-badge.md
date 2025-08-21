@@ -1,15 +1,33 @@
 ---
-title: Set Up Access, Environment, and Tools
-description: Learn how to acquire access, set up credentials, and configure your local development environment and tools to build applications using Adobe App Builder.
+title: Set Up Access, Environment, and Tools New2
+description: Learn how to acquire access, configure credentials, and set up your local environment and developer tools for Adobe App Builder applications. This document details all prerequisites, supported platforms, and essential tools to get started.
 keywords:
-- Access
+- Acquire Access
 - Credentials
 - Local Environment
-- NodeJS
-- Adobe I/O CLI
-other original metadata
+- Adobe Developer Console
+- App Builder Tools
+faqs:
+- question: Who can access App Builder within an organization?
+  answer: App Builder access is granted to members of the Adobe IMS organization with Developer or System Admin roles and a valid App Builder license.
+- question: How do I obtain access if I don't have it?
+  answer: Customers should contact their account manager or IT/Marketing admin, while partners can request access via their partner manager or the Adobe Solution Partner Portal.
+- question: What are the core tools needed for local development?
+  answer: You need NodeJS (recommended via nvm), Adobe I/O CLI, and optionally a GitHub account for CI/CD workflows.
+- question: How do I update the Adobe I/O CLI to the latest version?
+  answer: Run npm install -g @adobe/aio-cli to update, and use aio update to keep all CLI core plugins current.
+- question: Which operating systems and terminals are supported for local development?
+  answer: Local development is supported on Windows 10/11, MacOS 10.14+, and Linux Xenial, with popular terminals compatible through the inquirer package.
 ---
-
+---
+keywords:
+- Acquire Access
+- Credentials
+- Local Environment
+- Set up
+  title: Set Up Access, Environment, and Tools
+  description: App Builder is a complete framework that enables enterprise developers to build and deploy custom web applications that extend Adobe Experience Cloud solutions and run on Adobe infrastructure.
+---
 
 # Set Up Access, Environment, and Tools New2
 

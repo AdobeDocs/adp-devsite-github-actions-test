@@ -1,14 +1,20 @@
 ---
 title: Testing path relative link relative to current directory
-description: This document explores different types of markdown links, such as relative and root-relative paths, and how they resolve to files and directories. Various examples demonstrate linking to files with and without trailing slashes, navigating parent and current directories, and referencing index files in different scenarios.
+description: This document explains how to use various relative and root-relative link formats in markdown files to ensure proper navigation between pages and directories.
 keywords:
-- markdown links
-- relative paths
+- relative links
+- path navigation
+- markdown documentation
 - root-relative links
-- directory navigation
-- index files
+- linking files
+faqs:
+- question: How do I create a relative link to a file in the current directory?
+  answer: Use the format [filename](filename.md) or [./filename.md] to link to files in the same directory as your markdown file.
+- question: What's the difference between root-relative and relative links?
+  answer: Root-relative links start from the root of your project (e.g., /api/index.md), while relative links are based on the current file's location.
+- question: Do links with a trailing slash behave differently than those without?
+  answer: Yes, links with a trailing slash typically point to the index.md within that directory, while links without may refer to a specific file or the index.md by default when omitted.
 ---
-
 # Testing path relative link relative to current directory
 
 [path-test/index.md](path-test/index.md)

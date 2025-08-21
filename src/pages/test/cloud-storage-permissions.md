@@ -1,24 +1,34 @@
 ---
-title: Roles and permissions
-description: Overview of roles, permissions, and access control in Adobe Cloud Storage and Collaboration, including how to assign, update, and remove roles using the API.
+title: Roles and Permissions
+description: Learn how roles and permissions work in the Adobe Cloud Storage and Collaboration API, including how to assign, update, and remove access for users and groups.
 keywords:
   - Adobe Cloud Storage and Collaboration
-  - Access control
+  - Adobe Cloud Storage and Collaboration API
+  - Adobe Cloud Storage
+  - Creative production workflows
+  - Adobe workflows
+  - Cloud Storage endpoints
+  - Cloud Storage autorization
   - User roles
+  - Access Control
   - Permissions
-  - API
-  - Principal types
-  - Role assignment
-  - Collaboration
-  - Predefined principals
-  - User groups
+  - User group
 contributors:
   - https://github.com/michael-hodgson
   - https://github.com/lijumjose
 layout: none
+faqs:
+  - question: What roles are available in Adobe Cloud Storage?
+    answer: Roles include Administrator, Creator, Edit, and Comment, each granting different levels of access to projects, files, and folders.
+  - question: How can I assign roles to users or groups?
+    answer: Assign roles via the Adobe Admin Console or by inviting collaborators through Adobe UI or the Cloud Storage and Collaboration API.
+  - question: How do I update a user's project permissions using the API?
+    answer: Use the 'updates' section of the Project permissions API request, specifying the user's unique identifier and the new role you want to assign.
+  - question: Can I remove a user's access to a project?
+    answer: Yes, use the 'deletions' section of the API request and provide the user's or group's unique identifier and principal type to revoke their access.
+  - question: What are predefined principals and how do I use them?
+    answer: Predefined principals like _everybody and authenticated allow you to grant access to all organization members or signed-in users, by specifying these as recipients in your API calls.
 ---
-
-
 # Roles and permissions
 
 Adobe cloud storage provides an access control system to enaure only authorized users can access cloud content. Access to projects, folders, and files is based on the permissions granted to a user through their assigned role.

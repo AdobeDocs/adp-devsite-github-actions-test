@@ -1,14 +1,19 @@
 ---
-title: Enumeration: TextToImageAppVersion
-description: This document details the enumeration called TextToImageAppVersion, listing its members and their respective values for versioning within the TextToImage application.
+title: TextToImageAppVersion
+description: Documentation overview for the TextToImageAppVersion enumeration, detailing versioning options for the text-to-image application.
 keywords:
 - enumeration
 - TextToImageAppVersion
 - versioning
-- V1
-- V2
+- text-to-image
+- API reference
+# --- FAQs ---
+faqs:
+- question: What does the TextToImageAppVersion enumeration specify?
+  answer: It defines the available versions (V1 and V2) of the text-to-image application, helping you select the appropriate version for your project or integration.
+- question: How do I choose the correct version for my implementation?
+  answer: Review documentation and compatibility requirements for your use case, then select either V1 or V2 based on feature support and stability needs.
 ---
-
 # Enumeration: TextToImageAppVersion
 
 ## Enumeration Members
