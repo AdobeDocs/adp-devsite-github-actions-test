@@ -28,7 +28,7 @@ Have questions or feedback? Let us know at [xdcommerce@adobe.com](mailto:xdcomme
 
 ### What's in the kit?
 
-<Columns slots="heading, text" variant="vertical" repeat ="6" />
+<Columns slots="heading, text" variant="vertical" repeat ="3" />
 
 ### Venia Theme
 
@@ -42,6 +42,8 @@ Over 10 core commerce templates, including Homepage, PLP, PDP, Checkout, and mor
 
 Over 80 design system components, including buttons, form fields, and more.
 
+<Columns slots="heading, text" variant="vertical" repeat ="2" />
+
 ### Responsive Layouts
 
 Support for both desktop and mobile breakpoints for responsive designs.
@@ -50,13 +52,13 @@ Support for both desktop and mobile breakpoints for responsive designs.
 
 A variety of editable XD assets you can use to support your branding with color swatches, fonts, and much more.
 
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="3" />
+
 ### Design Tutorial
 
 In this introductory tutorial, you'll build and preview your first project with Adobe XD to create great user experiences in five easy steps.
 
 * [View Tutorial](https://www.adobe.com/products/xd/learn/get-started-xd-design.html)
-
-<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="6" />
 
 ### Prototypes Tutorial
 
@@ -70,6 +72,8 @@ In this introductory tutorial, you'll build out a library of colors, character s
 
 * [View Tutorial](https://www.adobe.com/products/xd/learn/get-started-xd-components-libraries.html)
 
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" />
+
 ### Collaboration Tutorial
 
 In this introductory tutorial, you'll learn the variety of ways you and your stakeholders can interact throughout the design to development process.
@@ -81,6 +85,8 @@ In this introductory tutorial, you'll learn the variety of ways you and your sta
 This guide walks through the process of designing an e-commerce site using Adobe XD. From product page to checkout, you'll learn best practices along the way.
 
 * [View Tutorial](https://www.adobe.com/products/xd/learn/design/layout/ecommerce-website-design.html)
+
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" />
 
 ### PWA Studio on GitHub
 
