@@ -1,17 +1,29 @@
 ---
+###########################
+###########################
+## Deployment AI generation testing ##
+###########################
+###########################
+
 name: Deployment for Hackathon
+
+######################################################
+# Start the job on a "deployment" to main or other branch #
+######################################################
+
 on:
   workflow_dispatch:
     inputs:
-      env:
-        description: "Select environment to deploy to"
-        type: choice
+      target_branch:
+        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        type: string
         required: false
-        default: "stage"
-        options:
-          - stage
-          - prod
-          - stage & prod
+        default: "main"
+
+###############
+# Set the Job #
+###############
+
 jobs:
   ai-metadata-update:
     name: AI Metadata Update on Deployment
