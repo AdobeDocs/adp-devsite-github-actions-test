@@ -52,7 +52,7 @@ Support for both desktop and mobile breakpoints for responsive designs.
 
 A variety of editable XD assets you can use to support your branding with color swatches, fonts, and much more.
 
-<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="3" />
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="3" variant="vertical" />
 
 ### Design Tutorial
 
@@ -72,7 +72,7 @@ In this introductory tutorial, you'll build out a library of colors, character s
 
 * [View Tutorial](https://www.adobe.com/products/xd/learn/get-started-xd-components-libraries.html)
 
-<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" />
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" variant="vertical" />
 
 ### Collaboration Tutorial
 
@@ -86,7 +86,7 @@ This guide walks through the process of designing an e-commerce site using Adobe
 
 * [View Tutorial](https://www.adobe.com/products/xd/learn/design/layout/ecommerce-website-design.html)
 
-<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" />
+<Columns slots="heading, text, buttons" width="33%" theme="dark" isCentered repeat="2" variant="vertical" />
 
 ### PWA Studio on GitHub
 
