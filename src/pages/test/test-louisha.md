@@ -6,11 +6,9 @@ keywords:
   - Tools
 ---
 
-<HeroSimple slots="image, icon, heading, text1, text2, text3, buttons" variant="halfwidth" className="Hero-Banner" />
+<HeroSimple slots="image, heading, text1, text2, text3, buttons" variant="halfWidth" className="Hero-Banner" />
 
 ![Adobe Commerce XD Kit](../assets/Explore_Image_3.png)
-
-![XD icon](https://developer.adobe.com/shared/icons/xd_appicon_64.svg)
 
 ## PWA Studio XD Kit
 
