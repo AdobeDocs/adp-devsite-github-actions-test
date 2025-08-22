@@ -1,3 +1,24 @@
+---
+title: Sign in from CLI
+description: Learn how to sign in to Adobe App Builder using the CLI, enabling local development and secure access to your project via your Adobe ID.
+keywords:
+- Adobe App Builder
+- CLI login
+- Adobe Developer Console
+- User token
+- Local environment
+faqs:
+- question: How do I sign in to Adobe App Builder using the CLI?
+  answer: Navigate to your terminal and run `aio login`. This initiates the authentication process and opens a browser window for you to sign in with your Adobe ID.
+- question: What should I do if the browser window does not open automatically?
+  answer: Copy the URL printed in your terminal and paste it into your browser to manually log in and complete authentication.
+- question: Where is my user token stored after logging in?
+  answer: The user token is automatically stored in the CLI configuration, allowing the CLI to authenticate your session with the Adobe Developer Console.
+- question: Can I modify my project settings after logging in from CLI?
+  answer: Yes, you can always return to the Adobe Developer Console to change or update your project settings at any time.
+- question: What can I do after signing in from the CLI?
+  answer: Once signed in, you can start building and managing App Builder applications locally using the CLI commands.
+---
 // copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1
 // page https://developer.adobe.com/app-builder/docs/getting_started/first_app/
 
