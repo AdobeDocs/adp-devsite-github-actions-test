@@ -1,3 +1,21 @@
+---
+title: Migrating
+description: An overview of the migration process, outlining key considerations and steps to ensure a smooth transition.
+keywords:
+- migration
+- process
+- transition
+- implementation
+- workflow
+# --- FAQs ---
+faqs:
+- question: What is the first step in the migration process?
+  answer: Begin by assessing your current setup and identifying data and systems that need to be migrated.
+- question: How can I minimize downtime during migration?
+  answer: Plan migration in stages and schedule it during low-usage periods to reduce service interruptions.
+- question: What should I do if issues arise post-migration?
+  answer: Monitor the system closely, document any problems, and have a rollback or troubleshooting plan ready.
+---
 # Migrating
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.

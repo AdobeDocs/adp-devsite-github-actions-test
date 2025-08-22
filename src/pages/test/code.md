@@ -1,3 +1,25 @@
+---
+title: Adobe I/O Runtime API Reference
+description: Comprehensive reference for Adobe I/O Runtime API endpoints, including usage, headers, parameters, and common issues encountered during integration and development.
+keywords:
+- Adobe I/O Runtime
+- API reference
+- namespaces
+- authorization
+- Adobe I/O
+# --- FAQs ---
+faqs:
+- question: How do I call the Adobe I/O Runtime API?
+  answer: Use the base URL https://api.adobe.io/ with the required authentication headers such as Authorization and X-Api-Key for all API calls.
+- question: What headers are required for API requests?
+  answer: Include headers like 'Authorization: Bearer {token}', 'x-api-key', 'x-gw-ims-org-id', and 'x-gw-ims-user-id' as required by the endpoint.
+- question: What causes a validation error related to authorization?
+  answer: A validation error occurs if an authorization header is missing in an API request where an auth token is expected.
+- question: Can I test un-supported functionality locally?
+  answer: Yes, run the UI locally while deploying backend actions to Adobe I/O Runtime using the command `aio app run --local`.
+- question: How can I get details about a namespace?
+  answer: Use the GET /runtime/admin/namespaces/{orgId}/{intId} endpoint with valid orgId and intId path parameters and appropriate authentication headers.
+---
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 

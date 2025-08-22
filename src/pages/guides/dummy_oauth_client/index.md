@@ -1,3 +1,25 @@
+---
+title: Creating an OAuth Client
+description: A comprehensive guide on creating an OAuth client, detailing key concepts and implementation strategies.
+keywords:
+- OAuth
+- Client
+- Authentication
+- Authorization
+- API
+# --- FAQs ---
+faqs:
+- question: What is an OAuth client?
+  answer: An OAuth client is an application that requests authorization from a user to access their protected resources on a server.
+- question: How do I create an OAuth client?
+  answer: You create an OAuth client by registering your application with the OAuth provider and obtaining client credentials such as client ID and secret.
+- question: What are the key components in OAuth authentication?
+  answer: The key components include the client, resource owner, authorization server, and resource server.
+- question: How can I securely store OAuth client credentials?
+  answer: Store client credentials in a secure environment variable or encrypted storage, never exposing them in client-side code.
+- question: What scopes should I request for OAuth authorization?
+  answer: Request only the minimal scopes necessary for your application to function, to limit access and improve security.
+---
 # Creating an OAuth Client
 
 ## Heading A
