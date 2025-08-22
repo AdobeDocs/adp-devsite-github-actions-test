@@ -1,12 +1,3 @@
----
-keywords:
-  - App Builder
-  - Extensibility
-  - API Documentation
-  - Developer Tooling
-title: Frequently Asked Questions
----
-
 # Frequently Asked Questions
 
 ## About App Builder
