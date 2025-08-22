@@ -22,7 +22,7 @@ Have questions or feedback? Let us know at [xdcommerce@adobe.com](mailto:xdcomme
 * [Get the kit](/pwa-studio-uikit-venia-v1.3.1.xd)
 * [View more UI kits](https://helpx.adobe.com/xd/help/access-ui-kits.html)
 
-<Title slots="heading" width="100%" theme="light" />
+<Announcement slots="heading" width="100%" theme="light" />
 
 ### What's in the kit?
 
