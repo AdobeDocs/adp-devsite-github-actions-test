@@ -17,7 +17,7 @@ keywords:
 **Expedite your Adobe Commerce storefront design.**
 
 We've put together a collection of resources that are compatible with PWA Studio to help you kick-start your next storefront design in Adobe XD.
-Just edit the provided assets, symbols, and templates to match your brand and experience.<br/><br/>
+Just edit the provided assets, symbols, and templates to match your brand and experience.
 
 Have questions or feedback? Let us know at [xdcommerce@adobe.com](mailto:xdcommerce@adobe.com).
 
