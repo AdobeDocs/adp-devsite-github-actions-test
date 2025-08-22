@@ -27,6 +27,10 @@ on:
 jobs:
   call_reusable_workflow:
     name: Generate AI Metadata
+    # Skip if PR title starts with "[AI PR] Metadata Update" or branch name starts with "ai-metadata"
+    if: >-
+      !startsWith(github.event.pull_request.title, '[AI PR] Metadata Update') ||
+      !startsWith(github.event.pull_request.head.ref, 'ai-metadata')
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@ai-metadata
     with:
       PR_ID: ${{ github.event.pull_request.number }}
