@@ -1,4 +1,25 @@
 ---
+title: Set Up Access, Environment, and Tools New2
+description: Learn what systems and credentials are needed to access Adobe App Builder, how to configure your local environment, and which tools are required for successful development and deployment on Adobe Experience Cloud infrastructure.
+keywords:
+- App Builder access
+- Adobe IMS organization
+- Credentials
+- Local environment setup
+- Required tools
+faqs:
+- question: How do I get access to Adobe App Builder?
+  answer: You need to be a member of an Adobe IMS organization with a Developer or System Admin role and have an App Builder license. Contact your company admin or account manager for access.
+- question: What credentials are required for setup?
+  answer: You must have access to your IMS organization and the Adobe Developer Console to set up APIs, SDKs, and developer tools for App Builder.
+- question: Which tools do I need for local development?
+  answer: You need NodeJS (version 18 or 20), the Adobe I/O CLI, and optionally a GitHub account for CI/CD workflows. Visual Studio Code is recommended for advanced features.
+- question: What operating systems and terminals are supported?
+  answer: App Builder supports Windows 10/11, MacOS 10.14+, and is tested with NodeJS 14/16. Supported terminals include those compatible with the inquirer package used in the CLI.
+- question: How do I update the Adobe I/O CLI?
+  answer: Check your CLI version with 'aio -v' and update using 'npm install -g @adobe/aio-cli'. Run 'aio update' to keep all core plugins up to date.
+---
+---
 keywords:
 - Acquire Access
 - Credentials
