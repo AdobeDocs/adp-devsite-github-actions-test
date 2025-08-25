@@ -1,5 +1,16 @@
 ---
+###########################
+###########################
+## Deployment AI generation testing ##
+###########################
+###########################
+
 name: Deployment for Hackathon
+
+######################################################
+# Start the job on a "deployment" to main or other branch #
+######################################################
+
 on:
   workflow_dispatch:
     inputs:

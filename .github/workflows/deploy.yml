@@ -97,4 +97,4 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Lint
-        run: npx --yes github:AdobeDocs/adp-devsite-utils#add-lint-check runLint -v
+        run: npx --yes github:AdobeDocs/adp-devsite-utils runLint -v
