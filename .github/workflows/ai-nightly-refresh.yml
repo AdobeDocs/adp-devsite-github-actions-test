@@ -19,7 +19,7 @@ on:
 jobs:
   ai-metadata-update:
     name: AI Metadata Update with Changed Files
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-metadata-changed-files.yml@atest-nightly-refresh
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-metadata-changed-files.yml@test-nightly-refresh
     with:
       baseSha: ${{ inputs.baseSha }}
       TARGET_BRANCH: ${{ inputs.target_branch }}
