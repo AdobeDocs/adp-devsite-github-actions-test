@@ -4,13 +4,26 @@ on:
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
+    inputs:
+      baseSha:
+        description: "Use base SHA commit to compare changes from (empty string defaults to last commit before HEAD)"
+        type: string
+        required: false
+        default: ""
+      target_branch:
+        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        type: string
+        required: false
+        default: "main"
 
 jobs:
   ai-metadata-update:
-    name: AI Metadata Update on Deployment
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-deploy-metadata.yml@ai-metadata
+    name: AI Metadata Update with Changed Files
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-metadata-changed-files.yml@atest-nightly-refresh
     with:
-      FILE_NAME: "all_pages_content.txt"
+      baseSha: ${{ inputs.baseSha }}
+      TARGET_BRANCH: ${{ inputs.target_branch }}
+      FILE_NAME: "changed_content.txt"
     secrets:
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
