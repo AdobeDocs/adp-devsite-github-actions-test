@@ -16,8 +16,7 @@ Creates a new namespace and returns the details of the newly created namespace. 
 Response content type: `application/json`
 |Code|Description|
 |--- |--- |
-|200|Successful operation Example value:|
-```
+|200|Successful operation Example value:
 {
 "name": "string",
 "auth": "string"
@@ -29,5 +28,4 @@ name    string
 Namespace name
 auth    string
 Auth associated with Namespace
-}
-```
+}|
