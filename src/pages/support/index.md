@@ -8,7 +8,8 @@ keywords:
 - performance
 - workflows
 
-faqs >
+
+faqs:
 - question: What is a nightly refresh in testing?
   answer: A nightly refresh is an automated process that updates a system or database every night to ensure data accuracy and system readiness for the next day.
 - question: Why is testing important during system refreshes?
