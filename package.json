@@ -22,21 +22,13 @@
     "gatsby-sharp": "1.12.0"
   },
   "scripts": {
-    "start": "gatsby build && gatsby serve",
-    "start:prefix": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
     "dev": "node ./dev.mjs",
-    "dev:gatsby": "gatsby develop",
-    "dev:https": "gatsby develop --https --host localhost.corp.adobe.com --port 9000",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
     "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
     "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
-    "checkLinks": "npx --yes github:AdobeDocs/adp-devsite-utils checkLinks -v",
-    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v"
+    "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
+    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v"
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
