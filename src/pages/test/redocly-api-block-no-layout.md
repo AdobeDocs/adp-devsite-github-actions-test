@@ -2,4 +2,4 @@
 layout: none
 --- 
 
-<RedoclyAPIBlock src="/github-actions-test/openapi.yaml" />
+<RedoclyAPIBlock src="/github-actions-test/openapi.yaml" scrollYOffset={64} />
