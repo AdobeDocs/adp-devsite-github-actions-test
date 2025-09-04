@@ -2,8 +2,6 @@
 
 Each timeline action shown in the previous table is described in detail below. Each description includes the payload that is sent as part of a Media Edge API request.
 
-<Accordion slots="title"/>
-
 ## Accordion Heading
 
 <AccordionItem slots="heading, table, text, code"/>
