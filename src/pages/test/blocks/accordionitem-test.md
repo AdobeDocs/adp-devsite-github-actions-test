@@ -1,3 +1,8 @@
+---
+title: Test AccordionItem
+description: This is the page for Testing AccordionItems block
+---
+
 # Accordion Example
 
 Each timeline action shown in the previous table is described in detail below. Each description includes the payload that is sent as part of a Media Edge API request.
@@ -192,3 +197,18 @@ The user closes the app. `sessionEnd` is sent to the Media Edge API to signal th
 }
 ```
 
+<AccordionItem slots="heading, table, text, code"/>
+
+### 4. Track buffer end
+
+| Number | Action | Client Request |
+| --- | --- | --- |
+| 4 | Buffer ends | `/play?configId=<ID>` |
+
+Description text here.
+
+```json
+{
+  "eventType": "media.play"
+}
+```

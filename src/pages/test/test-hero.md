@@ -27,7 +27,7 @@ Familiarize and experiment with powerful features in our Code Playground.
 
 - [Dive deeper →](https://www.atlassian.com/enterprise/cloud)
 
-<Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-gray" />
+<Announcement slots="heading, text, button" backgroundColor = "background-color-gray" />
 
 ### Are you an existing developer?
 
