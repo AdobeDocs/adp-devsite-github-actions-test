@@ -1,3 +1,24 @@
+---
+title: Adobe I/O Runtime API Reference
+description: Comprehensive reference for Adobe I/O Runtime APIs, detailing endpoints, parameters, and usage for effective integration and development.
+keywords:
+- Adobe I/O Runtime
+- Runtime API endpoints
+- API integration
+- Authorization header
+- Adobe developer docs
+faqs:
+- question: What is Adobe I/O Runtime API used for?
+  answer: Adobe I/O Runtime API enables developers to interact programmatically with Adobe cloud services, managing namespaces, deploying actions, and integrating custom workflows.
+- question: How do I authorize requests to Adobe I/O Runtime API?
+  answer: You must include an authorization header with a valid Bearer token and your API key in the request headers to authenticate and authorize API calls.
+- question: What is the base URL for all Adobe I/O Runtime API calls?
+  answer: All Adobe I/O Runtime API calls use the base URL `https://api.adobe.io/` followed by the specific endpoint path.
+- question: Can I run Adobe I/O Runtime actions locally during development?
+  answer: Yes, you can deploy actions to Adobe I/O Runtime while running the user interface locally using the command `aio app run --local`.
+- question: What does the error "cannot validate token, reason: missing authorization header" mean?
+  answer: This error indicates that an API call requiring authorization was made without including the necessary authorization header containing a valid access token.
+---
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 
