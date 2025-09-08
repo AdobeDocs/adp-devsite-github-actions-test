@@ -1,6 +1,6 @@
 [//]: # (Based from https://github.com/AdobeDocs/redocly-test/blob/2b38842fc606f7f98570534348888323f72e09b8/src/pages/hero/hero-default.md?plain=1)
 
-<Superhero slots="image, heading, text, buttons" background="rgb(64, 34, 138) />
+<Superhero slots="image, heading, text, buttons" background="rgb(64, 34, 138)" />
 
 ![Hero image](../../../assets/cc-hero.png)
 
