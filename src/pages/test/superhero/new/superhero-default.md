@@ -1,6 +1,6 @@
-[//]: # (Based from https://docs.google.com/document/d/1-SU27tZVeRmjmpnE7CQQrLx0RZVMDhrm-SN_NpJ9MSM/edit?tab=t.0#heading=h.e1lc3msnvkge, https://stage--adp-devsite--adobedocs.aem.page/tools/sidekick/blocks/hero?nocache=1751317958575)
+[//]: # (Based from https://github.com/AdobeDocs/redocly-test/blob/2b38842fc606f7f98570534348888323f72e09b8/src/pages/hero/hero-default.md?plain=1)
 
-<Hero slots="image, heading, text, buttons" />
+<Superhero slots="image, heading, text, buttons" background="rgb(64, 34, 138) />
 
 ![Hero image](../../../assets/cc-hero.png)
 
