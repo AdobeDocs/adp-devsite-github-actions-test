@@ -1,6 +1,11 @@
+---
+title: Test Columns
+description: This is the page for Testing Columns
+---
+
 <Columns slots="image, heading, text, buttons" repeat ="3" />
 
-![Discover](../../images/columns-img.webp)
+![Discover](https://raw.githubusercontent.com/AdobeDocs/adp-devsite/refs/heads/stage/tools/sidekick/images/DelightConsumers_1400x900.png?aio_type=image)
 
 ### Heading 3 is the size with bold
 
@@ -8,7 +13,7 @@ Normal text in here and you can write about two paragraphs worth. This is just f
 
 [Adobe Photoshop](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
 
-![Discover](../../images/columns-img.webp)
+![Discover](https://raw.githubusercontent.com/AdobeDocs/adp-devsite/refs/heads/stage/tools/sidekick/images/DelightConsumers_1400x900.png?aio_type=image)
 
 ### Fast custom app design
 
@@ -16,7 +21,7 @@ Build custom apps that interact with core Adobe services, and automate processes
 
 [Dive deeper](https://www.atlassian.com/enterprise/cloud)
 
-![Discover](../../images/columns-img.webp)
+![Discover](https://raw.githubusercontent.com/AdobeDocs/adp-devsite/refs/heads/stage/tools/sidekick/images/DelightConsumers_1400x900.png?aio_type=image)
 
 ### Heading 3 is the size with bold
 
