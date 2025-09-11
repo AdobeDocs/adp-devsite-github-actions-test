@@ -1,10 +1,9 @@
 
 [//]: # (Copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#hero-block)
 
-<Hero slots="image, heading, text, buttons" variant="fullwidth" background="rgb(51, 51, 51)" />
+<Superhero slots="image, heading, text, buttons" variant="centeredxl" background="rgb(51, 51, 51)" />
 
-![IO banner](../../../assets/hero.png)
-
+![IO banner](./hero.png)
 
 # The most memorable digital experiences are unleashed by developer creativity
 

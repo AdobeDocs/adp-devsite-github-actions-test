@@ -1,10 +1,11 @@
+
 [//]: # (Copied from https://github.com/AdobeDocs/after-effects/blob/72b670e87442a539b88e67ee6554b9c0c9f9841f/src/pages/index.md?plain=1#L14-L18, https://developer.adobe.com/after-effects/)
 
-<Hero slots="image, icon, heading, text, buttons" variant="halfwidth" />
+<Superhero slots="image, icon, heading, text, buttons" variant="halfwidth" />
 
-![Creative Cloud banner](../../../assets/cc-hero.png)
+![Creative Cloud banner](./cc-hero.png)
 
-![After Effects Logo](../../../assets/ae_appicon_64.svg)
+![After Effects Logo](./ae_appicon_64.svg)
 
 #  Extend the Power of After Effects
 
