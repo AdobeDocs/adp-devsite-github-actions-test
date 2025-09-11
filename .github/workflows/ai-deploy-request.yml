@@ -27,7 +27,7 @@ on:
 jobs:
   ai-metadata-update:
     name: AI Metadata Update on Deployment
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-deploy-metadata.yml@test-nightly-refresh
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-deploy-metadata.yml@main
     with:
       FILE_NAME: "all_pages_content.txt"
       TARGET_BRANCH: ${{ inputs.target_branch }}
