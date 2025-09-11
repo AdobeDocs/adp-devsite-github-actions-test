@@ -1,8 +1,24 @@
 ---
-title: Guides - Cat Analytics
-description: This is the guides overview page of Cat Analytics 
+title: Get Started
+description: Get started with Cat Analytics by exploring authentication methods like OAuth and JWT to secure your applications effectively.
+keywords:
+- authentication
+- OAuth
+- JWT
+- Cat Analytics
+- API security
+faqs:
+- question: What is OAuth and how is it used in Cat Analytics?
+  answer: OAuth is an open standard for access delegation often used as a way to grant websites or applications limited access to user information. Cat Analytics utilizes OAuth for secure authentication and authorization.
+- question: How does JWT improve security in Cat Analytics?
+  answer: JSON Web Tokens (JWT) provide a compact and secure way to transmit information between parties, ensuring authentication data is protected in Cat Analytics.
+- question: Can I use multiple authentication methods in Cat Analytics?
+  answer: Yes, Cat Analytics supports different authentication methods including OAuth and JWT, allowing flexible security options.
+- question: What is the first step to getting started with Cat Analytics?
+  answer: The first step is to understand and implement the authentication protocols supported, such as OAuth or JWT, to securely access the analytics platform.
+- question: Where can I find detailed guides for Cat Analytics authentication?
+  answer: Detailed guides and documentation are available on the Cat Analytics website, providing step-by-step instructions for OAuth, JWT, and other features.
 ---
-
 # Get Started 
 
 Changing a file to test nightly refresh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada feugiat enim vel facilisis. Nunc eget enim eu lacus lobortis tincidunt a nec est. Nunc quis sapien quis orci rutrum sollicitudin. Nullam vehicula ultricies mauris, id aliquam justo aliquam vitae. Nam quis tincidunt ante. Curabitur sagittis aliquam elit, at auctor enim maximus et. Praesent in lectus facilisis, tempor magna eget, bibendum est. In quis ornare mi. Donec vestibulum viverra magna, non mollis leo vestibulum sit amet. Aenean euismod nulla augue, sit amet vehicula nibh faucibus vel. Fusce at est lacus. Nullam ante nulla, elementum nec ornare in, placerat luctus enim. Suspendisse vitae lacinia nibh. Pellentesque porta accumsan est at volutpat. Nulla aliquam dictum faucibus.

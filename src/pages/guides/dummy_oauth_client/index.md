@@ -1,3 +1,24 @@
+---
+title: Creating an OAuth Client
+description: Learn how to create an OAuth client to enable secure authorization for your applications. This guide covers the essential steps and key concepts involved in setting up an OAuth client.
+keywords:
+- OAuth client
+- OAuth authorization
+- OAuth setup
+- OAuth application
+- OAuth security
+faqs:
+- question: What is an OAuth client?
+  answer: An OAuth client is an application that requests access to a user's resources on a server using the OAuth authorization protocol. It acts on behalf of the user to obtain limited access.
+- question: Why do I need to create an OAuth client?
+  answer: Creating an OAuth client is necessary to securely authenticate and authorize your application to access protected resources without sharing user credentials directly.
+- question: What information is required to register an OAuth client?
+  answer: Typically, you need to provide a client name, redirect URIs, client type, and sometimes the scopes your client will request during registration.
+- question: How do redirect URIs work in OAuth clients?
+  answer: Redirect URIs are where the authorization server sends the user after they authorize your application. These must be registered to prevent malicious redirections.
+- question: Can I use the same OAuth client for multiple applications?
+  answer: While technically possible, it is recommended to create separate OAuth clients for different applications to manage scopes and access more securely and cleanly.
+---
 # Creating an OAuth Client
 
 ## Heading A
