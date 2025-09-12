@@ -1,3 +1,20 @@
+---
+title: Bee movie
+description: "Bee movie is a humorous and imaginative animated story about a bee named Barry who challenges the laws of nature and questions his role in a perfectly functioning bee society."
+keywords:
+- Bee movie
+- animated movie
+- Barry bee
+- Honex Industries
+- Pollen Jocks
+faqs:
+- question: What is the main premise of Bee movie?
+  answer: Bee movie follows Barry, a bee who defies the known laws of aviation and explores life outside the hive while challenging societal expectations.
+- question: What job opportunities are available to bees in the movie?
+  answer: Bees can choose from various jobs such as stirring, pollen counting, stunt bee, pouring honey, and more, but must stay in their chosen job for life.
+- question: What is the significance of Honex in Bee movie?
+  answer: Honex Industries is the bee company where Barry and others begin their careers making honey and managing bee work routines.
+---
 # Bee movie
 
 ## All questions?
