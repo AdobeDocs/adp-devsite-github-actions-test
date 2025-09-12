@@ -2,7 +2,7 @@
 
 <Superhero slots="image, heading, text, buttons" background="rgb(64, 34, 138)"/>
 
-![Hero image](./hero.png)
+![Hero image](../../../assets/hero.png)
 
 # Adobe Photoshop and Lightroom API
 
