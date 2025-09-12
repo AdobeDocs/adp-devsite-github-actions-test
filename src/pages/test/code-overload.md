@@ -1,3 +1,24 @@
+---
+title: Adobe I/O Runtime API Reference
+description: This reference guide provides detailed information on the Adobe I/O Runtime API endpoints, parameters, and usage examples for programmatic interaction with Adobe's serverless platform.
+keywords:
+- Adobe I/O Runtime
+- Adobe API Reference
+- Serverless API
+- API Endpoints
+- Authorization Header
+faqs:
+- question: What is Adobe I/O Runtime?
+  answer: Adobe I/O Runtime is a serverless platform that allows developers to deploy and run code in response to events, enabling integration with Adobe cloud services.
+- question: How do I authenticate API requests to Adobe I/O Runtime?
+  answer: You must include an Authorization header with a Bearer token along with your API key in the request headers to authenticate API calls.
+- question: What is the base URL for all Adobe I/O Runtime API calls?
+  answer: The base URL for all API requests to Adobe I/O Runtime is https://api.adobe.io/.
+- question: What are namespaces in Adobe I/O Runtime?
+  answer: Namespaces represent containers associated with an organization and integration, holding the deployed actions and related resources.
+- question: How can I test Adobe I/O Runtime actions locally?
+  answer: You can deploy actions to Adobe I/O Runtime and run the UI locally using the command `aio app run --local` for testing unsupported functionality.
+---
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 
