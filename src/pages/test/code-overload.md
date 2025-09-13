@@ -1,7 +1,7 @@
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 
-```console-data-line="1-2,6,"-data-line-offset="2"
+```console-disableLineNumbers-data-line="2-4,6,"-data-line-offset="2"
 curl -i -X POST 'https://graffias.adobe.io/graffias/graphql' 
     -H 'Accept-Encoding: gzip, deflate, br' 
     -H 'Content-Type: application/json' 
@@ -58,3 +58,45 @@ Returns the details of the namespace associated with the specified organization 
 | `X-Api-Key` (`string`: _header_)     | Api key                                         |
 
 #### _Responses:_
+
+<Tab orientation="horizontal" slots="heading, content" repeat="2" theme="light"/>
+
+### Request
+
+```graphql-disableLineNumbers-data-line="2,10"-data-line-offset="2"
+mutation {
+  createCustomerV2(
+    input: {
+      firstname: "Bob"
+      lastname: "Loblaw"
+      email: "bobloblaw@example.com"
+      password: "b0bl0bl@w"
+      is_subscribed: true
+    }
+  ) {
+    customer {
+      firstname
+      lastname
+      email
+      is_subscribed
+    }
+  }
+}
+```
+
+### Response
+
+```json-data-line="7"-data-line-offset="1"
+{
+  "data": {
+    "createCustomer": {
+      "customer": {
+        "firstname": "Bob",
+        "lastname": "Loblaw",
+        "email": "bobloblaw@example.com",
+        "is_subscribed": true
+      }
+    }
+  }
+}
+```
