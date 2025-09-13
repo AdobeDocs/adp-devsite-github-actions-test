@@ -31,7 +31,7 @@ jobs:
     if: >-
       !startsWith(github.event.pull_request.title, '[AI PR] Metadata Update') ||
       !startsWith(github.event.pull_request.head.ref, 'ai-metadata')
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@test-nightly-refresh
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/ai-pr-request-metadata.yml@main
     with:
       PR_ID: ${{ github.event.pull_request.number }}
       FILE_NAME: "pr_content.txt"
