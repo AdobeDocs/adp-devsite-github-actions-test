@@ -9,4 +9,5 @@
 
 Adobe products and technologies power them
 
-* [Explore our APIs](https://adobe.io) [Subscribe](https://adobe.io)
+* [Explore our APIs](https://adobe.io) 
+* [Subscribe](https://adobe.io)

@@ -9,4 +9,4 @@
 
 Unlock the potential of Photoshop, Lightroom, and cutting edge Sensei services through an easy-to-use RESTful API.
 
-*[Get the SDKs](https://developer.adobe.com/console/servicesandapis/ae)
+* [Get the SDKs](https://developer.adobe.com/console/servicesandapis/ae)
