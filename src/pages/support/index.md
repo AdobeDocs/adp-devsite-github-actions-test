@@ -1,21 +1,12 @@
 ---
 title: Test
-description: This document provides an overview of the test process involving nightly refreshes and system updates. It covers essential points about maintaining system functionality and performance during tests.
+description: This document provides an overview of the test process involving nightly refreshes and system updates. It covers key aspects of maintaining system functionality and performance during testing cycles.
 keywords:
 - test
 - nightly refresh
 - system update
 - performance
-- workflows
-
-
-faqs:
-- question: What is a nightly refresh in testing?
-  answer: A nightly refresh is an automated process that updates a system or database every night to ensure data accuracy and system readiness for the next day.
-- question: Why is testing important during system refreshes?
-  answer: Testing verifies that updates or changes do not disrupt system performance or functionality, ensuring reliability and stability.
-- question: How can issues be detected during nightly tests?
-  answer: Automated tests and monitoring tools can identify errors or performance drops during the nightly refresh, allowing prompt resolution.
+- system testing
 ---
 # Test
 
