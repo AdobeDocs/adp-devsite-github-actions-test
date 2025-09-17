@@ -1,3 +1,13 @@
+---
+title: Bee movie
+description: An entertaining exploration of the life and society of bees, showcasing their unique behaviors and challenges in a humorous narrative inspired by the Bee Movie. Follow Barry's journey through the hive and beyond as he navigates his role and questions the world around him.
+keywords:
+- Bee movie
+- Bee society
+- Honey production
+- Animation film
+- Barry the bee
+---
 # Bee movie
 
 ## All questions?
