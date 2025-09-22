@@ -1,7 +1,7 @@
 
 [//]: # (Copied from https://github.com/AdobeDocs/after-effects/blob/72b670e87442a539b88e67ee6554b9c0c9f9841f/src/pages/index.md?plain=1#L14-L18, https://developer.adobe.com/after-effects/)
 
-<Superhero slots="image, icon, heading, text, buttons" variant="halfwidth" />
+<Superhero slots="image, icon, heading, text, buttons" variant="halfWidth" />
 
 ![Creative Cloud banner](../../../assets/cc-hero.png)
 

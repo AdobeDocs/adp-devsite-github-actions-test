@@ -1,4 +1,4 @@
-<Superhero slots="image, heading, text, buttons" variant="centeredxl" />
+<Superhero slots="image, heading, text, buttons" variant="centeredXL" />
 
 ![IO banner](../../../assets/hero.png)
 
