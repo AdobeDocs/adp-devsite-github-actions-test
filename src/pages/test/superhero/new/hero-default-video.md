@@ -1,11 +1,14 @@
-<Superhero slots="fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColorWhite overGradient />
+<Superhero slots="icon, fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColorWhite overGradient />
 
-![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](../../../assets/cc-hero.png)
+:photoshop:
 
-[video_url](https://raw.githubusercontent.com/AdobeDocs/adp-devsite/refs/heads/stage/tools/sidekick/images/vertical-gradient.png?aio_type=image)
+![Gradient background transitioning from pink at the top to blue at the bottom, with no visible objects or text.](../../../assets/vertical-gradient.png)
 
-#  Extend the Power of After Effects
+[Video depicting Adobe Express add-on creation process](../../../assets/express-add-ons.mp4)
 
-Opportunities abound for building for After Effects. Extend the capabilities of After Effects using plug-ins, scripts, and panels that integrate seamlessly into existing workflows. Create stunning visual effects, manipulate project elements, and automate complex tasks using After Effects APIs.
+#  Build add-ons for a global creative community.
 
-* [Get the SDKs](https://developer.adobe.com/console/servicesandapis/ae)
+[Adobe Express](https://adobe.com/express) is an AI-first all-in-one app to easily create and share standout content. Make tools and integrations for users that extend the functionality of Adobe Express.
+
+* [Get started](https://developer.adobe.com/express/add-ons/docs/guides?aio_external)
+* [Explore add-ons](https://new.express.adobe.com/add-ons)

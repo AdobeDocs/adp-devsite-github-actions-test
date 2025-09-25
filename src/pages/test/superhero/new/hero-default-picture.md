@@ -1,4 +1,6 @@
-<Superhero slots="image, heading, text, buttons" variant="halfWidth" />
+<Superhero slots="icon, image, heading, text, buttons" variant="halfWidth" />
+
+:photoshop:
 
 ![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](../../../assets/cc-hero.png)
 
