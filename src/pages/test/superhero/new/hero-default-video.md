@@ -4,7 +4,7 @@
 
 ![Gradient background transitioning from pink at the top to blue at the bottom, with no visible objects or text.](../../../assets/vertical-gradient.png)
 
-[Video depicting Adobe Express add-on creation process](../../../assets/express-add-ons.mp4)
+[Video depicting Adobe Express add-on creation process](https://main--adp-devsite--adobedocs.aem.page/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
 
 # Build add-ons for a global creative community.
 
