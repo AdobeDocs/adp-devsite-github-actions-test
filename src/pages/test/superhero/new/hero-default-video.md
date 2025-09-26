@@ -1,4 +1,4 @@
-<Superhero slots="icon, fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColorWhite overGradient />
+<Superhero slots="icon, fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient />
 
 # :photoshop:
 
