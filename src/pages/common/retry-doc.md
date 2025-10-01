@@ -9,7 +9,7 @@ If `Adobe I/O Events` fails to receive a successful response code from your webh
 Please note that if an event delivery fails with a response status code of [429 Too Many Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429), or with any response status code in the range of 500 to 599 except for [505 HTTP Version Not Supported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505), then those events are retried. Events that fail with any other response status codes are **not retried**.
 
 `Adobe I/O Events` will keep on retrying delivery to your webhook for **24 hours** using exponential and fixed backoff strategies. The first retry is attempted after 1 minute and the period between retries doubles after each attempt, but is at most 15 minutes (see below table outlining the retry pattern).
-<br/>
+&lt;br/&gt;
 
 | Retry Attempt        | 1  | 2  | 3  | 4  | 5   | 6   | 7   | ... |
 |----------------------|----|----|----|----|-----|-----|-----|-----|
@@ -30,6 +30,11 @@ If all retry attempts get exhausted and the event still isn't delivered (webhook
 An email notification is sent to the admins of the organization when a webhook endpoint is marked as **Unstable** or **Disabled**.
 
 Here you can see a sample email notification sent when a registration is marked as **Unstable**:
+
+&lt;br/&gt;
+
+&lt;br/&gt;
+
 ![Unstable Event Registration Email Notification](https://raw.githubusercontent.com/AdobeDocs/adobe-io-events/main/src/pages/guides/img/email-verified-unstable.png "Unstable Event Registration Email Notification")
 
 A similar email notification is sent when a registration is marked as **Disabled**.
