@@ -31,10 +31,6 @@ An email notification is sent to the admins of the organization when a webhook e
 
 Here you can see a sample email notification sent when a registration is marked as **Unstable**:
 
-&lt;br/&gt;
-
-&lt;br/&gt;
-
 ![Unstable Event Registration Email Notification](https://raw.githubusercontent.com/AdobeDocs/adobe-io-events/main/src/pages/guides/img/email-verified-unstable.png "Unstable Event Registration Email Notification")
 
 A similar email notification is sent when a registration is marked as **Disabled**.
