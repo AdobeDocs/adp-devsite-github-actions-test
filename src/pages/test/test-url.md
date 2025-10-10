@@ -22,11 +22,11 @@
 
 [path-test/pathname/](path-test/pathname/index.md)
 
-### path relative link to a file with a trailing slash but no index.md
+### path relative link to a file with a trailing slash but no index.md should fail
 
 [path-test/pathname/](path-test/pathname/)
 
-### path relative link to a file without a trailing slash and no .md
+### path relative link to a file without a trailing slash and no .md should fail
 
 [path-test/pathname](path-test/pathname)
 
@@ -50,6 +50,6 @@
 
 [anchor-link-in-table#request-object](anchor-link-in-table.md#request-object)
 
-### external link
+### external link with no http and https should fail 
 
 [www.google.com](www.google.com)
