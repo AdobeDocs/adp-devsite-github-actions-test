@@ -19,7 +19,7 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
 | Entity | Value |
 | -- | -- |
 | Description | Creates a webhookEndpoint |
-| Request object | Request object [below](./anchor-link-in-table.md#request-object) |
+| Request object | Request object [below](#request-object) |
 
 ## Request Object
 
