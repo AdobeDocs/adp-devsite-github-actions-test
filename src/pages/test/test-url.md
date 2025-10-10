@@ -45,3 +45,11 @@
 ### testing anchor link on another page
 
 [anchor-link-in-table#request-object](anchor-link-in-table#request-object)
+
+### testing anchor link on another page with md in the link
+
+[anchor-link-in-table#request-object](anchor-link-in-table.md#request-object)
+
+### external link
+
+[www.google.com](www.google.com)
