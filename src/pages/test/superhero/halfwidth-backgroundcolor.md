@@ -1,4 +1,4 @@
-<Superhero slots="icon, image, heading, text, buttons" variant="halfWidth" />
+<Superhero slots="icon, image, heading, text, buttons" variant="halfWidth" background="cyan" />
 
 # :photoshop:
 
