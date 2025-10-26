@@ -2,7 +2,7 @@
 
 # :photoshop:
 
-![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/assets/cc-hero.png)
+![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](../../../assets/cc-hero.png)
 
 # Extend the Power of After Effects
 
