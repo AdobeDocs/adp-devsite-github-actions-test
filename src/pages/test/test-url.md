@@ -2,10 +2,6 @@
 
 [path-test/index.md](path-test/index.md)
 
-# Root relative link
-
-[/api/index.md](/api/index.md)
-
 ## path relative link that goes to parent of current directory
 
 [../support/index.md](../support/index.md)
