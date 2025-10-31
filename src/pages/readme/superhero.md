@@ -93,7 +93,7 @@ Use `slots` to identify the markdown content:
 
 - `heading` (required)
 - `text` (required)
-- `image` (required)
+- `image` (optional)
 - `buttons` (optional)
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(29, 125, 238)`.
@@ -123,8 +123,7 @@ Use `slots` to identify the markdown content:
 
 - `heading` (required)
 - `text` (required)
-- `image` (required)
-- `background` (optional)
+- `image` (optional)
 - `buttons` (optional)
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(29, 125, 238)`.
