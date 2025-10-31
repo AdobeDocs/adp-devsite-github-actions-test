@@ -46,10 +46,10 @@
 
 [anchor-link-in-table#request-object](anchor-link-in-table#request-object)
 
-### testing anchor link on another page with md in the link
+### testing anchor link on another page with md in the link testing
 
 [anchor-link-in-table#request-object](anchor-link-in-table.md#request-object)
 
-### external link with no http and https should fail testing
+### external link with no http and https should fail testing 
 
 [www.google.com](www.google.com)
