@@ -38,11 +38,11 @@
 
 [path-test](path-test.md)
 
-### testing anchor link on the current page
+### testing anchor link on the current page testing
 
 [#path-relative-link-that-goes-to-parent-of-current-directory](#path-relative-link-that-goes-to-parent-of-current-directory)
 
-### testing anchor link on another page testing
+### testing anchor link on another page
 
 [anchor-link-in-table#request-object](anchor-link-in-table#request-object)
 
