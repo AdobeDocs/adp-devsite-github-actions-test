@@ -3,10 +3,11 @@ name: Call Validate PR Workflow
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'src/pages/**'
+    # Temporarily remove path filter to test
+    # paths:
+    #   - 'src/pages/**'
 
 jobs:
-  vall_validation:
+  call_validation:  # Fixed typo: vall → call
     name: Validate PR
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
