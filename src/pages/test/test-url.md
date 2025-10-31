@@ -50,6 +50,6 @@
 
 [anchor-link-in-table#request-object](anchor-link-in-table.md#request-object)
 
-### external link with no http and https should fail 
+### external link with no http and https should fail testing
 
 [www.google.com](www.google.com)
