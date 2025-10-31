@@ -11,7 +11,7 @@ There are 4 different variants:
 - The centered variant for Index home pages.
 - The centered XL variant for Index home pages.
 
-**Default variant:**
+#### Default variant
 
 ![superhero default](superhero-default.png)
 
@@ -38,7 +38,7 @@ Use `background` to set a custom background color matching your color scheme. De
 
 Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
 
-**Half width variant:**
+#### Half width variant
 
 ![superhero half width](superhero-half-width.png)
 
@@ -70,7 +70,7 @@ Use `textColor` to customize text color. Available options include white, black,
 
 Use `overGradient` to improve button visibility against gradient backgrounds.
 
-**Centered variant:**
+#### Centered variant
 
 ![superhero centered](superhero-centered.png)
 
@@ -100,7 +100,7 @@ Use `background` to set a custom background color matching your color scheme. De
 
 Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
 
-**Centered XL variant:**
+#### Centered XL variant
 
 ![superhero centered xl](superhero-centered-xl.png)
 
