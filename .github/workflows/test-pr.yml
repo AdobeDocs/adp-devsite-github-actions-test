@@ -2,16 +2,11 @@
 name: Call Validate PR Workflow
 on:
   pull_request:
-  workflow_dispatch:
     branches: [main]
     paths:
       - 'src/pages/**'
-  push:
-    branches:
-      - main
-      - stage
 
 jobs:
-  call-validation:
+  call_reusable_workflow:
     name: Validate PR
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
