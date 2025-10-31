@@ -2,7 +2,7 @@
 name: Call Validate PR Workflow
 on:
   pull_request:
-  workflow_call:
+  workflow_dispatch:
     branches:
       - main
       - stage
