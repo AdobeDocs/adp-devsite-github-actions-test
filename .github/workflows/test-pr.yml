@@ -7,6 +7,6 @@ on:
       - 'src/pages/**'
 
 jobs:
-  call_reusable_workflow:
+  vall_validation:
     name: Validate PR
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
