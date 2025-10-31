@@ -14,5 +14,4 @@ on:
 jobs:
   call-validation:
     name: Validate PR
-    call-validation:
-      uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
