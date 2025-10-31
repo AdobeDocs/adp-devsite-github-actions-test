@@ -35,6 +35,7 @@ Use `slots` to identify the markdown content:
 - `buttons`(optional) 
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(29, 125, 238)`.
+
 Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
 
 **Half width variant**
@@ -64,7 +65,9 @@ Use `slots` to identify the markdown content:
 - `buttons` (optional)
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(255, 255, 255)`.
+
 Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to black.
+
 Use `overGradient` to improve button visibility against gradient backgrounds.
 
 **Centered variant**
@@ -94,6 +97,7 @@ Use `slots` to identify the markdown content:
 - `buttons` (optional)
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(29, 125, 238)`.
+
 Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
 
 **Centered XL variant**
@@ -124,5 +128,5 @@ Use `slots` to identify the markdown content:
 - `buttons` (optional)
 
 Use `background` to set a custom background color matching your color scheme. Defaults to `rgb(29, 125, 238)`.
-Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
 
+Use `textColor` to customize text color. Available options include white, black, navy, and gray. Defaults to white.
