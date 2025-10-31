@@ -1,5 +1,5 @@
 ---
-name: PR Tests
+name: Call Validate PR Workflow
 on:
   pull_request:
     branches:
@@ -11,12 +11,7 @@ on:
       - stage
 
 jobs:
-  lint:
-    name: Lint Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Run Lint
-        run: npx --yes github:AdobeDocs/adp-devsite-utils runLint -v
+  call-validation:
+    name: Validate PR
+    call-validation:
+      uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
