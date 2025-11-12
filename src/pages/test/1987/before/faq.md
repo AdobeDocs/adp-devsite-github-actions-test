@@ -122,11 +122,17 @@ contributors:
 
 Use the following syntax:
 
+TODO 26
+
 ```bash
 npm run start -- --port 8080
 ```
 
+TODO 27
+
 ### Is `yarn` supported with the CLI, or only `npm`?
+
+TODO 28
 
 We recommend using `npm` for running the CLI scripts. Note that while there might be workarounds to get `yarn` working, we do not recommend it, or support any issues that may arise using `yarn`.
 
@@ -134,13 +140,23 @@ We recommend using `npm` for running the CLI scripts. Note that while there migh
 
 The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../../references/addonsdk/instance-client-storage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
 
+TODO 29
+
 ### How do I use top level `await` while using webpack?
+
+TODO 30
 
 Set `experiments: { topLevelAwait: true}` in the webpack config file (otherwise you'll get a build error).
 
+TODO 31
+
 ### How do I setup webpack to copy new files or folders into `dist`?
 
+TODO 32
+
 If you add any folders, (like images for example), to your `src`, you can update the `webpack.config.js` `CopyWebpackPlugin` section within to ensure those new resources added are copied into the `dist` folder. For instance, in the following, the 3rd line was added to ensure any `.jpg` files in the `src/images` folder get copied over:
+
+TODO 33
 
 ```js
 new CopyWebpackPlugin({
@@ -154,7 +170,11 @@ new CopyWebpackPlugin({
 
 ### My form submission doesn't work and the devtools console shows the error: "Blocked form submission to " " because the form's frame is sandboxed and the 'allow-forms' permission is not set." What's wrong?"
 
+TODO 34
+
 You can call `preventDefault` on the submit event to prevent the browser from trying to complete the full form submission process and avoid this error, such as:
+
+TODO 35
 
 ```js
 <form
@@ -164,7 +184,11 @@ You can call `preventDefault` on the submit event to prevent the browser from tr
 />
 ```
 
+TODO 36
+
 **NOTE:** If the above does not work for you, you can also handle this by adding click handler to the submit button itself instead, and in that call `event.preventDefault` on the event, such as:
+
+TODO 37
 
 ```javascript
 <form onSubmit={(e) => e.preventDefault()}>
@@ -182,25 +206,45 @@ To help enable a smoother experience for developers dealing with CORS, we provid
 
 ### How do I prevent my iframe content from being blocked due to cross-origin issues?
 
+TODO 38
+
 If your iframe is being blocked by the browser, it's likely due to CORS issues. To resolve this, you need to set the appropriate HTTP headers on the server that hosts the content being loaded within the iframe. Specifically, you need to set the [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) header to `require-corp`.
+
+TODO 39
 
 ### The `Window.showOpenFilePicker()` API is not working from within my add-on, why not?
 
+TODO 40
+
 You can open the file picker using the `input` element with a `type` set to `file` to get around this.
+
+TODO 41
 
 ### I’m not able to load the add-on in the browser anymore. When I click on "Connect", I get an error `ERR_CERT_AUTHORITY_INVALID`.
 
+TODO 42
+
 This usually indicates an issue with invalid SSL credentials. Locate the `devcert` folder which can be found at `/Users/{your_username}/Library/Application\ Support/devcert` on MAC or `C:\Users\{your_username}\AppData\Local\`, delete it, and create an add-on again. You should get the option to create an SSL certificate again when you create the new add-on, which should resolve your problem.
+
+TODO 43
 
 ### I receive this error when trying to run my add-on: `Error: EISDIR: illegal operation on a directory`.
 
 This usually indicates you do not have SSL configured correctly. You can fix it by clearing the configurations from the configuration file.
 
+TODO 44
+
 - In Windows, you can locate this file at: `C:\Users\{your_username}\AppData\Local\Adobe\CCWebAddOn\add-on-preferences.json`.
+
+TODO 45
 
 - On MAC, you can locate this file at: `/Users/{user}/Library/Application Support/Adobe/CCWebAddOn\add-on-preferences.json`
 
+TODO 46
+
 Once you find config file, delete the two properties defined for `sslCertPath` and `sslKeyPath` there. After they've been deleted, you can run the commands to create a new add-on where you will be prompted to set up SSL again and then be sure to specify the correct paths to your certificate and key file.
+
+TODO 47
 
 ### I receive a `MANIFEST_NOT_FOUND_ERROR` during the package verification when trying to upload my plugin package for distribution.
 
@@ -212,11 +256,15 @@ At this time, the only way to monetize is by using a third party provider, and e
 
 ### What does it mean when an API is considered **experimental**?
 
+TODO 48
+
 Experimental APIs are those which have not been declared stable yet, and to try them, first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the [`manifest.json`](../../references/manifest/index.md). The `experimentalApis` flag is **only allowed during development** and needs to be removed during submission. Experimental APIs should never be used in any add-ons you will be distributing.
 
 ### What are the supported mime types/file formats for exported content?
 
 The supported file types for exported content are:
+
+TODO 49
 
 - **JPEG**: `"image/jpeg"`
 - **PNG**: `"image/png"`
@@ -232,6 +280,8 @@ Adobe Express add-ons support importing various file types through the document 
 
 **Image Files:**
 
+TODO 50
+
 - JPEG: `image/jpeg`
 - JPG: `image/jpeg`
 - PNG: `image/png`
@@ -240,10 +290,14 @@ Adobe Express add-ons support importing various file types through the document 
 
 **Design Files:**
 
+TODO 51
+
 - Illustrator files (AI): `application/illustrator`
 - Photoshop files (PSD): `image/vnd.adobe.photoshop`
 
 **Video Files:**
+
+TODO 52
 
 - MP4: `video/mp4`
 - MOV: `video/mov`
@@ -269,6 +323,8 @@ Adobe Express add-ons support importing various file types through the document 
 
 **Audio Files:**
 
+TODO 53
+
 - AAC: `audio/aac`
 - ADTS: `audio/aac`
 - M4A: `audio/m4a`
@@ -276,6 +332,8 @@ Adobe Express add-ons support importing various file types through the document 
 - WAV: `audio/wav`
 - XM4A: `audio/x-m4a`
 - XWAV: `audio/x-wav`
+
+TODO 54
 
 Use the appropriate import methods: [`addImage()`](../../references/addonsdk/app-document.md#addimage), [`addVideo()`](../../references/addonsdk/app-document.md#addvideo), or [`addAudio()`](../../references/addonsdk/app-document.md#addaudio) depending on the file type.
 
@@ -287,6 +345,8 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 - **Maximum size:** 10 MB
 - **Maximum GIFs per scene:** 7
 
+TODO 55
+
 **Importing gifs:** You should use the [`addAnimatedImage()`](../../references/addonsdk/app-document.md#addanimatedimage) method when you want to import an animated GIF by default. It will be added as an animated GIF to the document as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it does not fit the criteria, only the first frame will be added. **Note:** Though [`addImage()`](../../references/addonsdk/app-document.md#addaudio) supports the `gif` file type, if an animated GIF is passed in, only the first frame will be added.
 
 **Drag and drop:** If the content being dragged is an animated GIF, it will be added as an animated GIF to the document, as long as it fits [the size criteria for animated GIF's](https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html). In the event that it doesn't fit the size criteria, an error toast will be shown to the user.
@@ -297,9 +357,13 @@ This error message indicates that the server that the JavaScript code is making 
 
 ### What permissions are available for add-ons and how do I configure them?
 
+TODO 56
+
 Adobe Express add-ons support several types of permissions that you configure in your `manifest.json` file:
 
 **Sandbox Permissions** (for iframe behavior):
+
+TODO 57
 
 - `allow-downloads` - Enable file downloads
 - `allow-popups` - Allow opening popups/new windows  
@@ -308,12 +372,16 @@ Adobe Express add-ons support several types of permissions that you configure in
 
 **Additional Permissions**:
 
+TODO 58
+
 - `oauth` - List of domains for OAuth workflows (e.g., `["www.dropbox.com"]`)
 - `clipboard` - Clipboard access (currently supports `["clipboard-write"]`)
 - `microphone` - Microphone access (e.g., `"*"` for all origins)
 - `camera` - Camera access (e.g., `"*"` for all origins)
 
 **Example manifest permissions:**
+
+TODO 59
 
 ```json
 "permissions": {
@@ -327,7 +395,11 @@ Adobe Express add-ons support several types of permissions that you configure in
 
 For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform-concepts/context.md#permissions).
 
+TODO 60
+
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
+
+TODO 61
 
 No, `SharedArrayBuffer` is not currently available to use with your add-ons.
 
@@ -347,13 +419,23 @@ You can head over to the [Adobe Express UserVoice forum](https://adobeexpress.us
 
 ### Why does the CLI return the error: "Login failed. Please try again.", though I didn't have a chance to login because the browser never opened?
 
+TODO 62
+
 This can happen due to a permissions issue, and the `~/Library/Application Support/Adobe/CCWebAddOn` doesn't get created. This can be fixed by creating the folder and modifying the permissions to allow write.
+
+TODO 63
 
 ### What mime type is returned from a PDF that was exported with the `createRenditions` method?
 
+TODO 64
+
 The mime type returned from a PDF generated using the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API is `application/pdf`.
 
+TODO 65
+
 ### The latest version of the CLI is not automatically installing when I run the `npx` command to create a new add-on.
+
+TODO 66
 
 You can force it to install by clearing the npx cache first with `npx clear-npx-cache`, or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`.
 
@@ -379,7 +461,11 @@ Yes, if an EU user has already installed your add-on, they will still be able to
 
 ### Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?
 
+TODO 67
+
 There's a known issue with running certain versions of Node.js on Windows with the CLI currently. Specifically, `v22.14.0` and `v18.20.7` have been found to fail with the following error:
+
+TODO 68
 
 ```bash
 Creating a new Add-on ...
@@ -405,5 +491,7 @@ Aborting installation.
 Unexpected error. Please report it as a bug:
 TypeError: Invalid URL
 ```
+
+TODO 69
 
 If you encounter this issue, please update your Node.js version to `v20.11.0` and try again.

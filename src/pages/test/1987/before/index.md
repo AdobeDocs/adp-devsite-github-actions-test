@@ -59,6 +59,8 @@ In general, an SDK provides a more complete set of tools and resources for devel
 
 ## Importing the addOnUISdk for Use
 
+TODO 70
+
 The add-on SDK is available as a hosted JavaScript module on the Adobe CDN. It's referenced with an `import` statement in either an HTML `<script>` tag or in the list of `import` statements in the JavaScript source. However, you don't need to worry about adding this reference if you used the CLI to create your add-on project, since **it will already be imported for you**, and the location it was placed will depend on the `template` you chose. The following sections show how it's imported into different file types for reference.
 
 #### Import into HTML file

@@ -62,13 +62,19 @@ addOnUISdk.ready.then(async () => {
 
 ### locales
 
+TODO 3
+
 &lt;!-- **`locales: string[]`**&lt;br/&gt; --&gt;
 
 Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
+TODO 4
+
 A `string` array containing the supported locales:
+
+TODO 5
 
 ```json
 locales:
@@ -76,6 +82,8 @@ locales:
 ```
 
 #### Example Usage
+
+TODO 6
 
 ```js
 addOnUISdk.ready.then(async () => {
@@ -86,11 +94,17 @@ addOnUISdk.ready.then(async () => {
 
 ### format
 
+TODO 7
+
 Access the regional format currently set in Adobe Express to display dates, times, numbers, etc. This value is accessed via the `addOnUISdk.app.ui` object, so you should only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
+TODO 8
+
 A `string` containing the current format value. Current regional format could be one of:
+
+TODO 9
 
 ```json
 [
@@ -178,6 +192,8 @@ A `string` containing the current format value. Current regional format could be
 
 #### Example Usage
 
+TODO 10
+
 ```js
 addOnUISdk.ready.then(async () => {
   console.log(addOnUISdk.app.ui.format); // output "en-GB"
@@ -192,9 +208,13 @@ Programmatically open the Editor panel in Adobe Express. When sub-tabs are avail
 
 #### Signature
 
+TODO 11
+
 `openEditorPanel(panel: EditorPanel, action?: PanelAction): void;`
 
 #### Parameters
+
+TODO 12
 
 | Name      | Type     |                                              Description |
 | --------- | -------- | -------------------------------------------------------: |
@@ -203,11 +223,18 @@ Programmatically open the Editor panel in Adobe Express. When sub-tabs are avail
 
 #### `PanelAction`
 
+TODO 13
+
 | Name   | Type     |                                                  Description |
 | ------ | -------- | -----------------------------------------------------------: |
 | `type` | `string` | [`PanelActionType`](./addonsdk-constants.md) constant value. |
 
+
+TODO 14
+
 #### `SearchAction`
+
+TODO 15
 
 Extends the [`PanelAction`](#panelaction) object and adds the following options for the Search action:
 
@@ -216,7 +243,11 @@ Extends the [`PanelAction`](#panelaction) object and adds the following options 
 | `type`         | `string` | [`PanelActionType.search`](./addonsdk-constants.md) constant value. |
 | `searchString` | `string` |                            Query used to perform the Search action. |
 
+TODO 16
+
 #### `NavigateAction`
+
+TODO 17
 
 Extends the [`PanelAction`](#panelaction) object and adds the following options for the Navigation action:
 
@@ -239,6 +270,8 @@ Actions are currently not supported on every Editor panel. Please find the suppo
 Both Collection and Tab navigation can be executed in combination.
 
 #### Example Usage
+
+TODO 18
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript, TypeScript" />
 
@@ -334,6 +367,8 @@ addOnUISdk.ready.then(() => {
 
 ### themechange
 
+TODO 19
+
 **`themechange: string`**&lt;br/&gt;
 The "themechange" event is fired when the user changes the UI theme in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
 
@@ -347,17 +382,23 @@ N/A
 
 #### Example Usage
 
+TODO 20
+
 ```js
 addOnUISdk.app.on("themechange", (data) => {
   applyTheme(data.theme);
 });
 ```
 
+TODO 21
+
 <InlineAlert slots="text" variant="success"/>
 
 Please see the **swc** sample provided in the [code samples](../../guides/learn/samples.md) within the **contributed** folder as a reference for how to use the `theme` in your own add-on.
 
 ### localechange
+
+TODO 22
 
 **`localechange: string`**&lt;br/&gt;
 The "localechange" event is fired when the user changes the UI locale in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
@@ -372,6 +413,8 @@ N/A
 
 #### Example Usage
 
+TODO 23
+
 ```js
 addOnUISdk.app.on("localechange", (data) => {
   applyTheme(data.locale);
@@ -379,6 +422,8 @@ addOnUISdk.app.on("localechange", (data) => {
 ```
 
 ### formatchange
+
+TODO 24
 
 **`formatchange: string`**&lt;br/&gt;
 The "formatchange" event is fired when the user changes the UI format in Adobe Express. It's used with the [`addOnUISdk.app.on`](addonsdk-app.md) function.
@@ -392,6 +437,8 @@ N/A
 N/A
 
 #### Example Usage
+
+TODO 25
 
 ```js
 addOnUISdk.app.on("formatchange", (data) => {

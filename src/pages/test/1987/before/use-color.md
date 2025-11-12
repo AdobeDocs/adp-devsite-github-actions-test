@@ -256,6 +256,8 @@ colorPickerButton.addEventListener("click", () => {
 
 You can use any HTML element as the color picker's anchor element; in the example below, we're using a `<div>` element to display a color swatch.
 
+TODO 1
+
 <CodeBlock slots="heading, code" repeat="2" languages="html, js"/>
 
 #### index.html
@@ -297,6 +299,8 @@ addOnUISdk.ready.then(async () => {
 ```
 
 To use the picked color in the Document Sandbox, you can use the [`colorUtils.fromHex()`](../../../references/document-sandbox/document-apis/classes/color-utils.md#fromhex) method, which converts the HEX color string to a [`Color`](../../../references/document-sandbox/document-apis/interfaces/color.md) object.
+
+TODO 2
 
 ```js
 // sandbox/code.js
