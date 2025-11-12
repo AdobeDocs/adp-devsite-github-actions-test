@@ -17,6 +17,8 @@ contributors:
   - https://github.com/hollyschinsky
 ---
 
+[page](https://stage--adp-devsite-stage--adobedocs.aem.page/express/add-ons/docs/references/addonsdk/)
+
 # Add-on UI SDK Reference
 
 ## Overview

@@ -49,6 +49,8 @@ faq:
       answer: 'Listen for `"colorpicker-color-change"` and `"colorpicker-close"` events on the anchor element.'
 ---
 
+[page](https://stage--adp-devsite-stage--adobedocs.aem.page/express/add-ons/docs/guides/learn/how-to/use-color)
+
 # Use Color
 
 ## Create colors

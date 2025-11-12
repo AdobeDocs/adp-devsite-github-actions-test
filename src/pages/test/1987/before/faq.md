@@ -22,6 +22,8 @@ contributors:
   - https://github.com/nimithajalal
 ---
 
+[page](https://stage--adp-devsite-stage--adobedocs.aem.page/express/add-ons/docs/guides/support/faq)
+
 # Frequently Asked Questions
 
 ## Questions

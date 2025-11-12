@@ -1,3 +1,5 @@
+[page](https://stage--adp-devsite-stage--adobedocs.aem.page/express/add-ons/docs/references/addonsdk/app-ui)
+
 # addOnUISdk.app.ui
 
 Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/learn/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/learn/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
