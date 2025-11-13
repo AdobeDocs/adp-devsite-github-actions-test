@@ -1,4 +1,4 @@
-# Accordion Example
+# Accordion Block Example
 
 Each timeline action shown in the previous table is described in detail below. Each description includes the payload that is sent as part of a Media Edge API request.
 

@@ -1,6 +1,4 @@
----
-layout: none
----
+# Inline Alert Example
 
 // copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#simple-inlinealert
 
@@ -28,3 +26,7 @@ This is faux step text for the `text2` slot.
 
 **Step 4:** This is faux step text for the `text4` slot.
 This is faux step text for the `text3` slot.
+
+<InlineAlert slots="text" variant="warning"/>
+
+This is an inline alert warning.

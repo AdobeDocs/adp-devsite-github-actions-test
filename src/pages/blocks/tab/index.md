@@ -1,6 +1,4 @@
----
-title: createCustomerV2 mutation
----
+# Tab Block Example
 
 // copied from https://github.com/AdobeDocs/commerce-webapi/blob/ae6507dd2ffa343f79bd16b842b72a2f9de0a594/src/pages/graphql/schema/customer/mutations/create-v2.md?plain=1#L2
 // page https://developer.adobe.com/commerce/webapi/graphql/schema/customer/mutations/create-v2/
@@ -51,19 +49,19 @@ mutation {
 
 ## Tab 1
 
-![Code for initializing SDK](../images/adobe-express.svg)
+![Code for initializing SDK](src/pages/images/adobe-express.svg)
 
 content tab 1
 
 ## Tab 2
 
-![Code to invoke full editor](../images/adobe-express.svg)
+![Code to invoke full editor](src/pages/images/adobe-express.svg)
 
 content tab 2
 
 ## Tab 3
 
-![Code to invoke quick actions](../images/adobe-express.svg)
+![Code to invoke quick actions](src/pages/images/adobe-express.svg)
 
 content tab 3
 
