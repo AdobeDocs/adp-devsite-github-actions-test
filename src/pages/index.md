@@ -8,59 +8,59 @@ This page provides links to examples of all available blocks in the Adobe Develo
 
 ## Content Blocks
 
-### [Accordion](accordion/index.md)
+### [Accordion](blocks/accordion/index.md)
 Collapsible content sections for organizing information.
 
-### [Announcement](announcement/index.md)
+### [Announcement](blocks/announcement/index.md)
 Display important announcements or notices.
 
-### [Column](column/index.md)
+### [Column](blocks/column/index.md)
 Multi-column layouts for content organization.
 
-### [Discover Block](discoverblock/index.md)
+### [Discover Block](blocks/discoverblock/index.md)
 Showcase featured content or resources.
 
-### [Edition](edition/index.md)
+### [Edition](blocks/edition/index.md)
 Edition-specific content display.
 
-### [Image](image/index.md)
+### [Image](blocks/image/index.md)
 Image display and formatting examples.
 
-### [Inline Alert](inline-alert/index.md)
+### [Inline Alert](blocks/inline-alert/index.md)
 Inline alert messages for warnings, tips, and notes.
 
-### [List](list/index.md)
+### [List](blocks/list/index.md)
 Various list formatting options.
 
-### [Resources](resources/)
-- [Resources Block](resources/resources.md)
+### [Resources](blocks/resources/resources.md)
+- [Resources Block](blocks/resources/resources.md)
 - [Resources with No Hero](resources/resources-with-no-hero.md)
 
-### [Tab](tab/index.md)
+### [Tab](blocks/tab/index.md)
 Tabbed content for organizing related information.
 
 ## Code Blocks
 
-### [Code Block Examples](codeblock/)
-- [Basic Code Block](codeblock/code.md)
-- [Code Block (Standard)](codeblock/code-block.md)
-- [Code Block with Picklist](codeblock/code-block-with-picklist.md)
-- [Code Block without Picklist](codeblock/code-block-without-picklist.md)
-- [Code with Highlighted Lines](codeblock/code-highlighted-line.md)
-- [Code in Lists](codeblock/code-in-list.md)
-- [Code in Tables](codeblock/code-in-table.md)
-- [Code Overload Example](codeblock/code-overload.md)
-- [Code Example 0](codeblock/code-0.md)
+### [Code Block Examples](blocks/codeblock/code.md)
+- [Basic Code Block](blocks/codeblock/code.md)
+- [Code Block (Standard)](blocks/codeblock/code-block.md)
+- [Code Block with Picklist](blocks/codeblock/code-block-with-picklist.md)
+- [Code Block without Picklist](blocks/codeblock/code-block-without-picklist.md)
+- [Code with Highlighted Lines](blocks/codeblock/code-highlighted-line.md)
+- [Code in Lists](blocks/codeblock/code-in-list.md)
+- [Code in Tables](blocks/codeblock/code-in-table.md)
+- [Code Overload Example](blocks/codeblock/code-overload.md)
+- [Code Example 0](blocks/codeblock/code-0.md)
 
 ## API Documentation
 
-### [Redocly API Block](redoclyapiblock/)
+### [Redocly API Block](blocks/redoclyapiblock/redocly-api-block-default.md)
 Interactive API documentation using Redocly.
 
-- [Default API Block](redoclyapiblock/redocly-api-block-default.md)
-- [API Block Configurations](redoclyapiblock/redocly-api-block-configs.md)
-- [API Block without Layout](redoclyapiblock/redocly-api-block-no-layout.md)
-- [API Block without Sidebar](redoclyapiblock/redocly-api-block-no-sidebar.md)
-- [API Block without Sidebar and Search](redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
-- [API Block without Y-Scroll Offset](redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
-- [Redocly Overflow Example](redoclyapiblock/redocly-overflow.md)
+- [Default API Block](blocks/redoclyapiblock/redocly-api-block-default.md)
+- [API Block Configurations](blocks/redoclyapiblock/redocly-api-block-configs.md)
+- [API Block without Layout](blocks/redoclyapiblock/redocly-api-block-no-layout.md)
+- [API Block without Sidebar](blocks/redoclyapiblock/redocly-api-block-no-sidebar.md)
+- [API Block without Sidebar and Search](blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
+- [API Block without Y-Scroll Offset](blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
+- [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)

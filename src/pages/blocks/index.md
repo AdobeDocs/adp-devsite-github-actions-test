@@ -32,7 +32,7 @@ Inline alert messages for warnings, tips, and notes.
 ### [List](list/index.md)
 Various list formatting options.
 
-### [Resources](resources/)
+### [Resources](resources/resources.md)
 - [Resources Block](resources/resources.md)
 - [Resources with No Hero](resources/resources-with-no-hero.md)
 
@@ -41,7 +41,7 @@ Tabbed content for organizing related information.
 
 ## Code Blocks
 
-### [Code Block Examples](codeblock/)
+### [Code Block Examples](codeblock/code-block.md)
 - [Basic Code Block](codeblock/code.md)
 - [Code Block (Standard)](codeblock/code-block.md)
 - [Code Block with Picklist](codeblock/code-block-with-picklist.md)
@@ -54,7 +54,7 @@ Tabbed content for organizing related information.
 
 ## API Documentation
 
-### [Redocly API Block](redoclyapiblock/)
+### [Redocly API Block](redoclyapiblock/redocly-api-block-default.md)
 Interactive API documentation using Redocly.
 
 - [Default API Block](redoclyapiblock/redocly-api-block-default.md)
