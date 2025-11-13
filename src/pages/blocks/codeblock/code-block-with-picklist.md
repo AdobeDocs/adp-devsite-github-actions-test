@@ -1,3 +1,8 @@
+---
+title: Code Block with Picklist
+description: Display code blocks with a language picker dropdown menu for switching between different code examples.
+---
+
 // copied from https://github.com/AdobeDocs/express-add-ons-docs/blob/main/src/pages/guides/tutorials/grids-addon.md?plain=1#L163
 // page https://developer.adobe.com/express/add-ons/docs/guides/tutorials/grids-addon/
 

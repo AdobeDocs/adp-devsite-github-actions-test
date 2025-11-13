@@ -1,3 +1,8 @@
+---
+title: Resources Block without Hero
+description: Display a resources section with useful links without a hero banner for a simpler layout.
+---
+
 # Resources with no hero
 
 <Resources slots="heading, links"/>

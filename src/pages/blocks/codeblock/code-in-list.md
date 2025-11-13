@@ -1,3 +1,8 @@
+---
+title: Code in Lists
+description: Examples of code blocks embedded within list items and ordered/unordered lists.
+---
+
 // copied from https://github.com/AdobeDocs/app-builder/blob/main/src/pages/getting_started/first_app.md?plain=1
 // page https://developer.adobe.com/app-builder/docs/getting_started/first_app/
 

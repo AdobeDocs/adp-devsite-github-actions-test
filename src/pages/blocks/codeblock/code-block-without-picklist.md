@@ -1,3 +1,8 @@
+---
+title: Code Block without Picklist
+description: Display multiple code blocks without a language picker dropdown.
+---
+
 <CodeBlock slots="heading, code" repeat="5"/>
 
 #### iframe

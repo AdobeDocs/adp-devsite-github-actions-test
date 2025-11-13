@@ -1,4 +1,6 @@
 ---
+title: Redocly API Block - Custom Configurations
+description: Examples of Redocly API Block with custom configuration options including typography, code styling, and behavior settings.
 layout: none
 ---
 

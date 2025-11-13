@@ -1,3 +1,8 @@
+---
+title: Tab Block
+description: Organize related content using tabbed layouts with the Tab block component.
+---
+
 # Tab Block Example
 
 // copied from https://github.com/AdobeDocs/commerce-webapi/blob/ae6507dd2ffa343f79bd16b842b72a2f9de0a594/src/pages/graphql/schema/customer/mutations/create-v2.md?plain=1#L2

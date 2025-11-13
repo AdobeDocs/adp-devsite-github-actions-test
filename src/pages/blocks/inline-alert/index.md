@@ -1,3 +1,8 @@
+---
+title: Inline Alert Block
+description: Display inline alert messages for warnings, tips, and notes using the Inline Alert block.
+---
+
 # Inline Alert Example
 
 // copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#simple-inlinealert

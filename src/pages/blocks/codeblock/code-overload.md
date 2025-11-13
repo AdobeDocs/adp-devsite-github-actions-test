@@ -1,3 +1,8 @@
+---
+title: Code Overload Example
+description: Complex code examples demonstrating multiple features like line highlighting, offsets, and disabling line numbers.
+---
+
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 

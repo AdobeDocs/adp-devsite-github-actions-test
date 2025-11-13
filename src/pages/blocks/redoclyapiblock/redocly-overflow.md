@@ -1,5 +1,6 @@
 ---
-title: Assets Author API
+title: Redocly API Block - Overflow Example
+description: Example of Redocly API Block with external OpenAPI specification and custom typography.
 layout: none
 --- 
 

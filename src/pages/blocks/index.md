@@ -1,3 +1,7 @@
+---
+title: Block Examples
+description: Explore all available blocks for the Adobe Developer documentation site, including content blocks, code blocks, and API documentation components.
+--- 
 # Block Examples
 
 This page provides links to examples of all available blocks in the Adobe Developer documentation site.

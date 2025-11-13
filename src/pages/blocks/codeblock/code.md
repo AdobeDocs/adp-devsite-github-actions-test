@@ -1,3 +1,8 @@
+---
+title: Code Examples
+description: Examples of code blocks with various features including line highlighting, line offset, and inline code.
+---
+
 // copied from https://github.com/AdobeDocs/adobe-assurance-public-apis/blob/3ab99cac59f3c9026f76e23a24a9db13a330d02c/src/pages/api/index.md?plain=1#L24
 // page https://developer.adobe.com/adobe-assurance-public-apis/api/
 

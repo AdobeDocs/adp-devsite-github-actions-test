@@ -1,3 +1,8 @@
+---
+title: Code Block Component
+description: Learn how to use the Code Block component to display multiple code snippets with headings.
+---
+
 // copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#code-block
 
 <CodeBlock slots="heading, code" repeat="2" languages="JSON, JSON" />

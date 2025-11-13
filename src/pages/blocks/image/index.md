@@ -1,3 +1,8 @@
+---
+title: Image Block
+description: Learn how to display and format images in your documentation.
+---
+
 # Image Example
 
 ![image](../../images/ab_add_io_management_api.png)

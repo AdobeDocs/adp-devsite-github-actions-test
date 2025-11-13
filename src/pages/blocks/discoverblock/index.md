@@ -1,3 +1,8 @@
+---
+title: Discover Block
+description: Showcase featured content and resources using the Discover block component.
+---
+
 # Discover Block Example 
 
 <DiscoverBlock slots="heading, link, text"/>

@@ -1,3 +1,8 @@
+---
+title: Code in Tables
+description: Examples of inline code and code formatting within table cells.
+---
+
 // copied from https://github.com/AdobeDocs/adobe-io-events/blob/main/src/pages/guides/sdk/sdk_signature_verification.md?plain=1#L43
 // page https://developer.adobe.com/events/docs/guides/sdk/sdk_signature_verification/
 

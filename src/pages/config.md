@@ -1,16 +1,12 @@
 - pathPrefix:
     - /github-actions-test/
 
-- versions:
-    - [v2.0](/index.md) selected
-    - [v1.4](https://github.com/AdobeDocs/dev-site) 
-
 - pages:
     - [Blocks](/blocks/index.md)
     - [Guides](/guides/index.md)
     - API Reference
-        - [Cat Reference v2.0](/api/index.md)
-        - [Cat Reference v1.4](/api/1-4.md)
+        - [Reference v2.0](/api/index.md)
+        - [Reference v1.4](/api/1-4.md)
     - [Support](/support/index.md)
     - [Test](/test/index.md)
     - [no-sidenav-1](/no-sidenav-1.md)
@@ -46,7 +42,7 @@
     - [Get Started](/guides/index.md) 
         - [Dummy an OAuth Client](/guides/dummy_oauth_client/index.md) 
         - [Dummy OAuth using POSTMAN](/guides/dummy_using_postman/index.md) 
-    - [Cat Metrics API](/guides/dummy_metrics_api/index.md) 
+    - [Metrics API](/guides/dummy_metrics_api/index.md) 
     - [Migrating](/guides/migrating/index.md) 
     - [Overview](/support/index.md) header
         - [Help](/support/index.md) 

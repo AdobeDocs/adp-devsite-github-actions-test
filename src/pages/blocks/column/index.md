@@ -1,3 +1,8 @@
+---
+title: Column Block
+description: Create multi-column layouts for content organization using the Column block.
+---
+
 # Column block
 
 <Columns slots="image, heading, text, buttons" repeat ="3" />

@@ -1,3 +1,8 @@
+---
+title: Announcement Block
+description: Display important announcements and notices to your users with the Announcement block.
+---
+
 # Announcement block
 
 <Announcement slots="heading, text, button" variant="secondary" backgroundColor = "background-color-gray" />

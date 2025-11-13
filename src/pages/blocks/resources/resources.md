@@ -1,3 +1,8 @@
+---
+title: Resources Block with Hero
+description: Display a resources section with links alongside a hero banner for an engaging landing page.
+---
+
 <Superhero slots="image, heading, text, buttons" background="rgb(22, 49, 42)"/>
 
 ![Hero image](../../../assets/hero.png)
