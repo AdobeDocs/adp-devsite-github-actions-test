@@ -2,7 +2,7 @@
 
 ![Gradient background transitioning from pink at the top to blue at the bottom, with no visible objects or text.](../../assets/vertical-gradient.png)
 
-![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](../../../assets/cc-hero.png)
+![Illustration of a computer monitor displaying the Adobe Creative Cloud logo, surrounded by a smartphone, tablet, cloud icon, color palette, and geometric design tools, set against a blue background.](../../assets/cc-hero.png)
 
 # Build add-ons for a global creative community.
 

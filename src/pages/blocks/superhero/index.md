@@ -3,7 +3,7 @@ They are used to set up the tone of the page and optionally add call to actions 
 
 There are 4 different variants:
 
-- The [default]() variant for Documentation pages.
-- The [half width]() variant for Product/Platform authored pages.
-- The [centered]() variant for Index home pages.
-- The [centered XL]() variant for Index home pages.
+- The [default](superhero-default.md) variant for Documentation pages.
+- The [half width](superhero-halfwidth.md) variant for Product/Platform authored pages.
+- The [centered](superhero-centered.md) variant for Index home pages.
+- The [centered XL](superhero-centeredxl.md) variant for Index home pages.

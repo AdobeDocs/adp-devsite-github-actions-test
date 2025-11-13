@@ -1,8 +1,8 @@
 <Superhero slots="fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient />
 
-![Gradient background transitioning from pink at the top to blue at the bottom, with no visible objects or text.](../../assets/vertical-gradient.png)
+![Gradient background transitioning from pink at the top to blue at the bottom, with no visible objects or text.](../../../assets/vertical-gradient.png)
 
-[video_url](https://developer.adobe.com/test/melissa/superhero/express-add-ons.mp4)
+[video_url](https://developer-stage.adobe.com/test/melissa/superhero/express-add-ons.mp4)
 
 # Build add-ons for a global creative community.
 
