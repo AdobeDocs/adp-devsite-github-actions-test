@@ -5,15 +5,15 @@ layout: none
 ---
 
 <RedoclyAPIBlock
-    src="/github-actions-test/openapi.yaml"
-    width="600px"
-    typography="fontFamily: `serif`, fontSize: '16px'"
-    codeBlock="tokens: { punctuation: { color: 'red ' }}"
-    disableSidebar={false}
-    disableSearch={true}
-    hideTryItPanel
-    scrollYOffset={64}
-    
+src="../../assets/openapi.yaml"
+width="600px"
+typography="fontFamily: `serif`, fontSize: '16px'"
+codeBlock="tokens: { punctuation: { color: 'red ' }}"
+disableSidebar={false}
+disableSearch={true}
+hideTryItPanel
+scrollYOffset={64}
+
     sortOperationsAlphabetically
     sortTagsAlphabetically
     jsonSampleExpandLevel="all"
