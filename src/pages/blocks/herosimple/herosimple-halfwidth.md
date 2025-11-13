@@ -1,0 +1,1 @@
+**DEPRECATED**: please use [Superhero halfWidth](../superhero/superhero-halfwidth.md) instead

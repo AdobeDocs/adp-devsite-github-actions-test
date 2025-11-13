@@ -23,6 +23,11 @@ Showcase featured content or resources.
 ### [Edition](edition/index.md)
 Edition-specific content display.
 
+### [HeroSimple](herosimple/herosimple-default.md)
+- [HeroSimple (default)](herosimple/herosimple-default.md)
+- [HeroSimple fullWidth](herosimple/herosimple-fullwidth.md)
+- [HeroSimple halfWidth](herosimple/herosimple-halfwidth.md)
+
 ### [Image](image/index.md)
 Image display and formatting examples.
 
@@ -35,6 +40,15 @@ Various list formatting options.
 ### [Resources](resources/resources.md)
 - [Resources Block](resources/resources.md)
 - [Resources with No Hero](resources/resources-with-no-hero.md)
+
+### [Superhero](superhero/index.md)
+- [Superhero (default)](superhero/superhero-default.md)
+- [Superhero centered](superhero/superhero-centered.md)
+- [Superhero centeredXL](superhero/superhero-centeredxl.md)
+- [Superhero halfWidth](superhero/superhero-halfwidth.md)
+- [Superhero halfWidth with background image](superhero/superhero-halfwidth-with-background-image.md)
+- [Superhero halfWidth with background image and video](superhero/superhero-halfwidth-with-background-image-and-video.md)
+
 
 ### [Tab](tab/index.md)
 Tabbed content for organizing related information.

@@ -1,0 +1,1 @@
+**DEPRECATED**: please use [Superhero centered](../superhero/superhero-centered.md) instead
