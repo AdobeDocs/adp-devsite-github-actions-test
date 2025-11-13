@@ -4,4 +4,4 @@ description: Redocly API Block displayed without a layout wrapper for full-page 
 layout: none
 --- 
 
-<RedoclyAPIBlock src="/github-actions-test/openapi.yaml" scrollYOffset={64} />
+<RedoclyAPIBlock src="../../openapi/openapi.yaml" scrollYOffset={64} />

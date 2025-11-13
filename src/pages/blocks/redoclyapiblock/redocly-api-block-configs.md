@@ -5,7 +5,7 @@ layout: none
 ---
 
 <RedoclyAPIBlock
-    src="/github-actions-test/openapi.yaml"
+    src="../../assets/openapi.yaml"
     width="600px"
     typography="fontFamily: `serif`, fontSize: '16px'"
     codeBlock="tokens: { punctuation: { color: 'red ' }}"

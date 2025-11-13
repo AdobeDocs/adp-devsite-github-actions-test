@@ -4,4 +4,4 @@ description: Redocly API Block configured with a vertical scroll offset for fixe
 layout: none
 --- 
 
-<RedoclyAPIBlock src="/github-actions-test/openapi.yaml" />
+<RedoclyAPIBlock src="../../assets/openapi.yaml" />
