@@ -14,6 +14,19 @@ Collapsible content sections for organizing information.
 ### [Announcement](announcement/index.md)
 Display important announcements or notices.
 
+### [Code](code/code.md)
+Preformatted multi-line code created by enclosing text in three backticks (```).
+- [Code Examples](code/code.md)
+- [Code with Highlighted Lines](code/code-highlighted-line.md)
+- [Code in Lists](code/code-in-list.md)
+- [Code in Tables](code/code-in-table.md)
+- [Code Overload](code/code-overload.md)
+
+### [Code Block](codeblock/code-block.md)
+- [Code Block (Standard)](codeblock/code-block.md)
+- [Code Block with Picklist](codeblock/code-block-with-picklist.md)
+- [Code Block without Picklist](codeblock/code-block-without-picklist.md)
+
 ### [Column](column/index.md)
 Multi-column layouts for content organization.
 
@@ -34,6 +47,9 @@ Image display and formatting examples.
 ### [Inline Alert](inline-alert/index.md)
 Inline alert messages for warnings, tips, and notes.
 
+### [Inline Code](inline-code/index.md)
+Preformatted inline code created by enclosing text in single backticks (`).
+
 ### [List](list/index.md)
 Various list formatting options.
 
@@ -52,19 +68,6 @@ Various list formatting options.
 
 ### [Tab](tab/index.md)
 Tabbed content for organizing related information.
-
-## Code Blocks
-
-### [Code Block Examples](codeblock/code-block.md)
-- [Basic Code Block](codeblock/code.md)
-- [Code Block (Standard)](codeblock/code-block.md)
-- [Code Block with Picklist](codeblock/code-block-with-picklist.md)
-- [Code Block without Picklist](codeblock/code-block-without-picklist.md)
-- [Code with Highlighted Lines](codeblock/code-highlighted-line.md)
-- [Code in Lists](codeblock/code-in-list.md)
-- [Code in Tables](codeblock/code-in-table.md)
-- [Code Overload Example](codeblock/code-overload.md)
-- [Code Example 0](codeblock/code-0.md)
 
 ## API Documentation
 
