@@ -73,6 +73,7 @@
         - [Code in Table](/test/code-in-table.md) 
         - [InlineAlert](/test/inline-alert.md) 
         - [ListBlock](/test/list-block.md) 
+        - [nohero-sidenav-noonthispage-resources](/test/nohero-sidenav-noonthispage-resources.md)
         - [OnThisPage with Sidenav](/test/onthispage-with-sidenav.md) 
         - [RedoclyAPIBlock](/test/redocly-api-block.md) 
         - [TabsBlock](/test/tabs-block.md) 
