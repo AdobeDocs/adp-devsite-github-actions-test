@@ -74,6 +74,7 @@
         - [InlineAlert](/test/inline-alert.md) 
         - [ListBlock](/test/list-block.md) 
         - [nohero-sidenav-noonthispage-resources](/test/nohero-sidenav-noonthispage-resources.md)
+        - [nohero-sidenav-noonthispage-noresources](/test/nohero-sidenav-noonthispage-noresources.md)
         - [hero-sidenav-noonthispage-resources](/test/hero-sidenav-noonthispage-resources.md)
         - [OnThisPage with Sidenav](/test/onthispage-with-sidenav.md) 
         - [RedoclyAPIBlock](/test/redocly-api-block.md) 
