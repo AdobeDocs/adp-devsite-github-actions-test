@@ -39,9 +39,9 @@ Expected behavior:
 
 These use relative path notation:
 
-- [Parent directory link](../api)
+- [Parent directory link](../api/)
 - [Current directory link](./test-url)
-- [Nested path](./test/path-test/pathname)
+- [Nested path](./path-test/pathname)
 
 Expected behavior:
 - Should normalize to simplest relative path
@@ -75,4 +75,4 @@ Expected behavior:
 - Should normalize all to proper relative paths from current file location
 `/src/pages/test/test-url -> test-url.md`
 `test-url -> test-url.md`
-`./test-url -> test-url.md`
+`./test-url -> ./test-url.md`
