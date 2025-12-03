@@ -66,6 +66,6 @@ Interactive API documentation using Redocly.
 - [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)
 
 
-<InlineAlert slots="text" variant="info"/>
+<InlineAlert slots="text" variant="warning"/>
 
 This is a info alert.
