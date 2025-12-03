@@ -64,3 +64,8 @@ Interactive API documentation using Redocly.
 - [API Block without Sidebar and Search](blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
 - [API Block without Y-Scroll Offset](blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
 - [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)
+
+
+<InlineAlert slots="text" variant="info"/>
+
+This is a info alert.
