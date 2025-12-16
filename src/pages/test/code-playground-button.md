@@ -4,7 +4,7 @@ description: Interactive code example demonstrating how to create a rectangle wi
 playground-url: https://express.adobe.com/new?learn=creative-exercises&category=search
 ---
 
-```js-data-line="3"-data-playground-session-id="createAndFillRectangle"-data-playground-mode="playground"-data-playground-session="new"-playground-execution-mode="script"
+```js-data-line="3"-data-playground-session-id="createAndFillRectangle"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"
 const insertionParent = editor.context.insertionParent; // get node to insert content into
 
 const rectangle = editor.createRectangle();
