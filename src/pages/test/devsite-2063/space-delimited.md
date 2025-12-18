@@ -1,4 +1,10 @@
-```bash data-line="2"
-{"error": "cannot validate token, reason: missing authorization header"}
-{"error": "validate token"}
+```javascript data-line="4-5,8,"
+const num1 = 5;
+const num2 = 3;
+
+// add two numbers
+const sum = num1 + num2;
+
+// display the sum
+console.log('The sum of ' + num1 + ' and ' + num2 + ' is: ' + sum);
 ```
