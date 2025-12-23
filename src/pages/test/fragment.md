@@ -2,3 +2,4 @@ Important note: Fragment must point to a path relative to the `/src/pages/` path
 
 <Fragment src="../support/index.md" />
 
+<Fragment src="../support/FAQ/index.md" />
