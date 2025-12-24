@@ -57,6 +57,8 @@ This is faux step text for the `text2` slot.
 **Step 4:** This is faux step text for the `text4` slot.
 This is faux step text for the `text3` slot.
 
+\---
+
 ## testing another fragment
 
 <Fragment src="../support/FAQ/index.md" />
