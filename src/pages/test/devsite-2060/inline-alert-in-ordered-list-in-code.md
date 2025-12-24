@@ -1,5 +1,5 @@
 ```
-1. list
+1. list.
 
     <InlineAlert slots="text" />
 
