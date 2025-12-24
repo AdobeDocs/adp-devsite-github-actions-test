@@ -61,3 +61,7 @@ This is faux step text for the `text3` slot.
 
 <Fragment src="../support/FAQ/index.md" />
 
+## testing absolute path
+
+<Fragment src="/blocks/accordion/index.md" />
+
