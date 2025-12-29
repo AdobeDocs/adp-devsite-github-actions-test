@@ -1,6 +1,6 @@
 # Trying two Fragment Test
 
-<Fragment src="../support/index.md" />
+<Fragment repeat="0" src="../support/index.md" />
 
 This is the header
 
@@ -59,9 +59,12 @@ This is faux step text for the `text3` slot.
 
 ## testing another fragment
 
-<Fragment src="../support/FAQ/index.md" />
+<Fragment repeat="0" src="../support/FAQ/index.md" />
 
 ## testing absolute path
 
-<Fragment src="/blocks/accordion/index.md" />
+<Fragment repeat="0" src="/blocks/accordion/index.md" />
 
+## testing with dot path
+
+<Fragment repeat="0" src="./path-test/index.md" />
