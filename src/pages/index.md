@@ -70,11 +70,11 @@ Interactive API documentation using Redocly.
 import { editor } from "express-document-sdk";
 
 // Create some Text
-const greeting = editor.createText("Hissya!");
+const greeting = editor.createText("Hi Text");
 greeting.translation = { x: 0, y: 0 };
 
 // Create some other Text
-const saluto = editor.createText("Ciao!");
+const saluto = editor.createText("Hello");
 saluto.translation = { x: 0, y: 50 };
 
 // Create a Group
