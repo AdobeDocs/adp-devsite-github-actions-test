@@ -1,0 +1,60 @@
+name: Upload playground samples
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/pages/**/*.md"
+
+jobs:
+  upload-playground:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install uploader dependencies (no lockfile changes)
+        run: npm install --no-save jszip fs-extra dotenv
+
+      - name: Collect changed markdown files
+        id: files
+        shell: bash
+        run: |
+          BASE="${{ github.event.before }}"
+          HEAD="${{ github.sha }}"
+
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            BASE="${HEAD}^"
+          fi
+
+          CHANGED=$(git diff --name-only "$BASE" "$HEAD" -- 'src/pages/**/*.md')
+          printf 'list<<EOF\n%s\nEOF\n' "$CHANGED" >> "$GITHUB_OUTPUT"
+
+      - name: Upload changed code blocks to FFC
+        if: steps.files.outputs.list != ''
+        env:
+          IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
+          FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
+          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
+          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+        shell: bash
+        run: |
+          mapfile -t FILES <<< "${{ steps.files.outputs.list }}"
+          node src/upload-playground-samples.js --files "${FILES[@]}"
+
+      - name: Skip upload (no markdown changes)
+        if: steps.files.outputs.list == ''
+        run: echo "No markdown file changes detected; skipping upload."
+
