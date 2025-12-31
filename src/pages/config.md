@@ -22,6 +22,7 @@
         - [Code](/blocks/code/code.md)
             - [Code Examples](/blocks/code/code.md)
             - [Code with Highlighted Lines](/blocks/code/code-highlighted-line.md)
+            - [Code Playground button](/blocks/code/code-playground-button.md)
             - [Code in Lists](/blocks/code/code-in-list.md)
             - [Code in Tables](/blocks/code/code-in-table.md)
             - [Code Overload](/blocks/code/code-overload.md)
@@ -90,4 +91,3 @@
         - [hidebreadcrumb](/test/hide-breadcrumb-nav.md)
         - [resourcesblock](/test/test-resources-block.md)
         - [resourcesblocknohero](/test/test-resources-block-nohero.md)
-
