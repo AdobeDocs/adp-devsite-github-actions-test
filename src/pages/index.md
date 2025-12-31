@@ -64,3 +64,26 @@ Interactive API documentation using Redocly.
 - [API Block without Sidebar and Search](blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
 - [API Block without Y-Scroll Offset](blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
 - [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)
+
+```js{try id=test-sandbox-codex-rest}
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+// Create some Text
+const greeting = editor.createText("Hissya!");
+greeting.translation = { x: 0, y: 0 };
+
+// Create some other Text
+const saluto = editor.createText("Ciao!");
+saluto.translation = { x: 0, y: 50 };
+
+// Create a Group
+const greetingsGroup = editor.createGroup();
+greetingsGroup.translation = { x: 100, y: 100 };
+
+// Append the Text nodes to the Group
+greetingsGroup.children.append(greeting, saluto);
+
+// Append the Group to the page
+editor.context.insertionParent.children.append(greetingsGroup);
+```
