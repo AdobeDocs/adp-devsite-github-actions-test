@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install uploader dependencies (no lockfile changes)
-        run: npm install --no-save jszip fs-extra dotenv
+      - name: Install dependencies
+        run: npm install --no-progress --ignore-scripts --omit=dev
 
       - name: Collect changed markdown files
         id: files
