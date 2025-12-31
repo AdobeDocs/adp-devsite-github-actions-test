@@ -1,6 +1,10 @@
 - pathPrefix:
     - /github-actions-test/
 
+- buttons:
+  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
+  - [Console](/console) consoleId
+
 - pages:
     - [Blocks](/blocks/index.md)
     - [Guides](/guides/index.md)
