@@ -31,10 +31,16 @@
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
     "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
     "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
-    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v"
+    "lint": "npx --yes github:AdobeDocs/adp-devsite-utils#skip-url-patterns runLint -v"
   },
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "express": "5.1.0"
+  },
+  "lint": {
+    "skipUrlPatterns": [
+      "jqueryvalidation.org",
+      "adobedocs.github.io"
+    ]
   }
 }
