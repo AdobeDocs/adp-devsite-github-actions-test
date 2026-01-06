@@ -24,7 +24,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install --no-progress --ignore-scripts --omit=dev
+        run: npm install
 
       - name: Collect changed markdown files
         id: files
