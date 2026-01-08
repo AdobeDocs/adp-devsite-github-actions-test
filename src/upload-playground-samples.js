@@ -42,6 +42,11 @@ function getFilesFromArgs(args = process.argv.slice(2)) {
   return resolved;
 }
 
+// Matches fences like:
+// ```js-data-line="3"-data-playground-session-id="myId"-data-playground-mode="playground"
+// <code>
+// ```
+// Captures language, required data-playground-session-id, and the inner code.
 const CODE_BLOCK_REGEX =
   /```(\w+)\{-data-playground-session-id(?:\s+id=([a-zA-Z0-9_-]+))?\}\s*\n([\s\S]*?)\n```/g;
 
