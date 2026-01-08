@@ -26,7 +26,6 @@ jobs:
       FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
     secrets:
       FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
-      GATSBY_EXPRESS_URL: ${{ secrets.GATSBY_EXPRESS_URL }}
       IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
       PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
       PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
