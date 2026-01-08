@@ -11,10 +11,6 @@
     - [Test](/test/index.md)
     - [no-sidenav-1](/no-sidenav-1.md)
 
-- buttons:
-  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
-  - [Console](/console) consoleId
-
 - subPages:
     - [Block Examples](/blocks/index.md) 
         - [Accordion](/blocks/accordion/index.md)

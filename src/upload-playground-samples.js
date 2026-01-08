@@ -43,7 +43,7 @@ function getFilesFromArgs(args = process.argv.slice(2)) {
 }
 
 const CODE_BLOCK_REGEX =
-  /```(\w+)\{try(?:\s+id=([a-zA-Z0-9_-]+))?\}\s*\n([\s\S]*?)\n```/g;
+  /```(\w+)\{-data-playground-session-id(?:\s+id=([a-zA-Z0-9_-]+))?\}\s*\n([\s\S]*?)\n```/g;
 
 
 async function getImsServiceToken({
