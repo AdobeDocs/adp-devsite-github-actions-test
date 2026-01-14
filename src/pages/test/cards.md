@@ -11,7 +11,7 @@ keywords:
 
 This next generation application store offers merchants a curated selection of solutions, and provides qualified developers the tools, platform, and prime location to build a thriving business.
 
-<Card slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="33%" />
 
 ![Before you begin](_images/assets/quick-start.png)
 
@@ -21,7 +21,7 @@ Review the items you must have before you start the process of submitting an ext
 
 [Learn more](before-you-begin.md)
 
-<Card slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="33%" />
 
 ![Extension Quality Program](_images/assets/tech-review.png)
 
@@ -31,7 +31,7 @@ Learn what EQP is all about.
 
 [Learn more](extension-quality-program.md)
 
-<Card slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="33%" />
 
 ![Set up your developer account](_images/assets/your-account.png)
 
@@ -41,7 +41,7 @@ Use your account to access the Developer Portal and manage your profile informat
 
 [Learn more](developer-register.md)
 
-<DiscoverBlock slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="50%" />
 
 ![Create an extension](_images/assets/new-extension.png)
 
@@ -51,7 +51,7 @@ Review steps in the app or extension building process and learn about technical 
 
 [Learn more](extension-create.md)
 
-<DiscoverBlock slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="50%" />
 
 ![Submit for review](_images/assets/code-review.png)
 
@@ -61,7 +61,7 @@ Our Extension Quality Program (EQP) verifies that all submissions meet Adobe qua
 
 [Learn more](extension-quality-program.md)
 
-<DiscoverBlock slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="50%" />
 
 ![Manage your sales](_images/assets/sales-data.png)
 
@@ -71,7 +71,7 @@ You can use the sales and analytics reports to view and manage your sales inform
 
 [Learn more](sales.md)
 
-<DiscoverBlock slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="50%" />
 
 ![For buyers](_images/assets/purchase.png)
 
@@ -81,7 +81,7 @@ Learn about the installation process from a customer's perspective.
 
 [Learn more](https://experienceleague.adobe.com/en/docs/commerce-admin/start/resources/commerce-marketplace)
 
-<DiscoverBlock slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="50%" />
 
 ![Technical reference](_images/assets/tools.png)
 
