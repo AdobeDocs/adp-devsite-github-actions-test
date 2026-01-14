@@ -1,60 +1,33 @@
+---
 name: Upload playground samples
 
 on:
   push:
     branches: [main]
-    paths:
-      - "src/pages/**/*.md"
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        type: string
+        required: false
+        default: "main"
+      folder_path:
+        description: "Folder path to read files from (defaults to src/pages)"
+        type: string
+        required: false
+        default: "src/pages"
 
 jobs:
   upload-playground:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Collect changed markdown files
-        id: files
-        shell: bash
-        run: |
-          BASE="${{ github.event.before }}"
-          HEAD="${{ github.sha }}"
-
-          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
-            BASE="${HEAD}^"
-          fi
-
-          CHANGED=$(git diff --name-only "$BASE" "$HEAD" -- 'src/pages/**/*.md')
-          printf 'list<<EOF\n%s\nEOF\n' "$CHANGED" >> "$GITHUB_OUTPUT"
-
-      - name: Upload changed code blocks to FFC
-        if: steps.files.outputs.list != ''
-        env:
-          IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
-          FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
-          PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
-          PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
-          PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
-          PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
-        shell: bash
-        run: |
-          mapfile -t FILES <<< "${{ steps.files.outputs.list }}"
-          node src/upload-playground-samples.js --files "${FILES[@]}"
-
-      - name: Skip upload (no markdown changes)
-        if: steps.files.outputs.list == ''
-        run: echo "No markdown file changes detected; skipping upload."
-
+    name: Upload playground samples
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@main
+    with:
+      TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
+      FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
+    secrets:
+      FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
+      IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
+      PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+      PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+      PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+      PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}

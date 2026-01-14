@@ -13,7 +13,7 @@
 
 - buttons:
   - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
-  - [Console](/console) consoleId
+  - [Console](https://developer.adobe.com/console/) consoleId
 
 - subPages:
     - [Block Examples](/blocks/index.md) 
