@@ -1,7 +1,10 @@
-<Superhero slots="image, heading, text" background="linear-gradient(180deg, #c946eb, #6372f5)" textColor="white"/>
+<Superhero slots="video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient />
 
-![Hero image](../assets/wide-SDK-Banner-570x400.png)
+[video_url](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/refs/heads/main/src/pages/assets/express-add-ons.mp4)
 
-# Adobe Express Embed SDK
+# Build Extensions for Your Users
 
-Seamlessly embed Adobe Express on your website with our SDK.
+Create powerful tools and integrations.
+
+* [Get Started](https://example.com/getting-started)
+* [View Examples](https://example.com/examples)
