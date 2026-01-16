@@ -13,7 +13,7 @@ This next generation application store offers merchants a curated selection of s
 
 <Cards slots="image, heading, text, links" width="33%" />
 
-![Before you begin](../assets/express-add-ons.mp4)
+![Before you begin](_images/assets/quick-start.png)
 
 ## Before you begin
 
