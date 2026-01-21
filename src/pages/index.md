@@ -64,3 +64,13 @@ Interactive API documentation using Redocly.
 - [API Block without Sidebar and Search](blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
 - [API Block without Y-Scroll Offset](blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
 - [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)
+
+## Landing Page
+
+<Columns slots="image, heading, text" />
+
+![Reframe GIF](assets/cc-hero.png)
+
+### Reframe your videos with AI
+
+This API uses technology similar to the Auto Reframe feature currently available in Premiere Pro software. It can be integrated with third-party systems and workflows, subject to applicable terms and conditions. Performance and results may vary based on input parameters and system configurations.
