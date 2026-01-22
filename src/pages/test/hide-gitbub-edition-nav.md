@@ -1,6 +1,6 @@
 ---
 title: Edit in Github
-hideEditInGithub: true
+hideEditInGitHub: true
 ---
 
 ## Edit in Github Feature
