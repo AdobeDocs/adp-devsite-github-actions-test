@@ -1,8 +1,18 @@
-<Columns slots="image, heading, text" />
+<Columns slots="image, heading, text, buttons" repeat="2" />
 
-![Image](../../assets/cc-hero.png)
+![Image](../../assets/column.jpg)
 
-### Reframe your videos with AI
+### Feature One
 
-This API uses technology similar to the Auto Reframe feature currently available in Premiere Pro software. It can be integrated with third-party systems and workflows, subject to applicable terms and conditions. Performance and results may vary based on input parameters and system configurations.
+Description of the first feature.
+
+[Button One](https://example.com)
+
+![Image](../../assets/column2.jpg)
+
+### Feature Two
+
+Description of the second feature.
+
+[Button Two](https://example.com)
 
