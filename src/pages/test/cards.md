@@ -11,7 +11,7 @@ keywords:
 
 This next generation application store offers merchants a curated selection of solutions, and provides qualified developers the tools, platform, and prime location to build a thriving business.
 
-<Cards slots="image, heading, text, links" width="33%" />
+<Cards slots="image, heading, text, links" width="25%" />
 
 ![Before you begin](_images/assets/quick-start.png)
 
@@ -21,7 +21,7 @@ Review the items you must have before you start the process of submitting an ext
 
 [Learn more](before-you-begin.md)
 
-<Cards slots="image, heading, text, links" width="33%" />
+<Cards slots="image, heading, text, links" width="25%" />
 
 ![Extension Quality Program](_images/assets/tech-review.png)
 
@@ -31,7 +31,7 @@ Learn what EQP is all about.
 
 [Learn more](extension-quality-program.md)
 
-<Cards slots="image, heading, text, links" width="33%" />
+<Cards slots="image, heading, text, links" width="25%" />
 
 ![Set up your developer account](_images/assets/your-account.png)
 
@@ -41,7 +41,7 @@ Use your account to access the Developer Portal and manage your profile informat
 
 [Learn more](developer-register.md)
 
-<Cards slots="image, heading, text, links" width="50%" />
+<Cards slots="image, heading, text, links" width="25%" />
 
 ![Create an extension](_images/assets/new-extension.png)
 
