@@ -70,3 +70,5 @@ Interactive API documentation using Redocly.
 ![This image has alt text](assets/hero.png)
 
 ![](assets/site.png)
+
+![Reframe GIF](/images/reframe.gif)
