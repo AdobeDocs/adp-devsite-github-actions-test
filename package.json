@@ -20,6 +20,11 @@
     "sharp": "0.33.0",
     "gatsby-sharp": "1.12.0"
   },
+  "lint": {
+    "skipFrontmatterPaths": [
+      "src/pages/fragments/"
+    ]
+  },
   "scripts": {
     "dev": "node ./dev.mjs",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
