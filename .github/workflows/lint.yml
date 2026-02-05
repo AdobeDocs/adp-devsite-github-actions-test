@@ -19,7 +19,7 @@
         - name: Lint
           id: lint
           continue-on-error: true
-          run: npx --yes github:AdobeDocs/adp-devsite-utils runLint -v
+          run: npx --yes github:AdobeDocs/adp-devsite-utils#bot-poc runLint -v
 
         - name: Post Linter Report to PR
           if: always()
