@@ -9,9 +9,26 @@
   jobs:
     lint:
       runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        pull-requests: write
       steps:
         - name: Checkout
           uses: actions/checkout@v4
   
         - name: Lint
+          id: lint
+          continue-on-error: true
           run: npx --yes github:AdobeDocs/adp-devsite-utils runLint -v
+
+        - name: Post Linter Report to PR
+          if: always()
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            PR_ID: ${{ github.event.pull_request.number }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+          run: npx --yes github:AdobeDocs/adp-devsite-utils#bot-poc bot-poc/bot-scripts.js
+
+        - name: Fail if linter found errors
+          if: steps.lint.outcome == 'failure'
+          run: exit 1
