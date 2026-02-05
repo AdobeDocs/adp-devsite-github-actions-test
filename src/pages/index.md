@@ -1,33 +1,36 @@
 ---
-title: Overview - Cat Analytics
-description: This is the overview page of Cat Analytics
-contributors:
-  - https://github.com/icaraps 
----
+title: Block Examples
+description: Explore all available blocks for the Adobe Developer documentation site, including content blocks, code blocks, and API documentation components.
+--- 
+# DevDoc Block Examples
 
-<HeroSimple slots="heading, text"/>
+This page provides links to examples of all available blocks in the Adobe Developer documentation site.
 
-# test re use work
+## Content Blocks
 
-Stage Cat Product API offers limitless ways to integrate your most important customer data into key business processes. Cat Product API offer limitless ways.
+### [Accordion](blocks/accordion/index.md)
+Collapsible content sections for organizing information.
 
-## Overview
+### [Announcement](blocks/announcement/index.md)
+Display important announcements or notices.
 
-This documentation provides instructions for Catt Analytics 2.0 APIs. For working with Cat Analytics APIs, see [Cat Analytics API Documentation](https://github.com/AdobeDocs/dev-site).
+### [Column](blocks/column/index.md)
+Multi-column layouts for content organization.
 
-The Cat Analytics APIs are a collection of APIs that power Cat Analytics products like Cat Workspace.
-The APIs allow for the creation of data rich user interfaces that you can use to manipulate and integrate data.
-You can also create reports to explore, get insights, or answer important questions about your data.
+### [Discover Block](blocks/discoverblock/index.md)
+Showcase featured content or resources.
 
-## Contributing
+### [Edition](blocks/edition/index.md)
+Edition-specific content display.
 
-We encourage you to participate in our open documentation initiative, if you have suggestions, corrections, additions
-or deletions for this documentation, check out the source from [this github repo](https://github.com/adobe/gatsby-theme-spectrum-example), and submit a pull
-request with your contribution. For more information, refer to the [contributing page](support/contribute/index.md).
+### [Image](blocks/image/index.md)
+Image display and formatting examples.
 
-## API Requests & Rate Limits
+### [Inline Alert](blocks/inline-alert/index.md)
+Inline alert messages for warnings, tips, and notes.
 
-The timeout for API requests through adobe.io is currently *60 seconds*.
+### [List](blocks/list/index.md)
+Various list formatting options.
 
 The default rate limit for an Cat Analytics Company is *120 requests per minute*. (The limit is enforced as *12 requests every 6 seconds*).
 When rate limiting is being enforced you will get `429` HTTP response codes with the following response body: `{"error_code":"429050","message":"Too many requests"}`.

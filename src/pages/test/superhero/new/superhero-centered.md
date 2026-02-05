@@ -1,0 +1,10 @@
+<Superhero slots="image, heading, text, buttons" variant="centered" />
+
+![IO banner](../../../assets/hero.png)
+
+# The most memorable digital experiences are unleashed by developer creativity
+
+Adobe products and technologies power them
+
+* [Explore our APIs](https://adobe.io)
+* [Subscribe](https://adobe.io)

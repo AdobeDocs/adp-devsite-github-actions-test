@@ -1,0 +1,24 @@
+---
+title: List Block
+description: Create styled lists with icons and various formatting options using the List block.
+---
+
+// copied from https://github.com/adobe/aio-theme?tab=readme-ov-file#listblock
+
+<List slots="text1, text2" repeat="4" iconColor="#2ac3a2" icon="checkmark" variant="fullWidth" />
+
+500 free Document Transactions per month
+
+Volume and multi-product discounts
+
+Access to all 15+ PDF Services including PDF Extract, PDF Accessibility Auto-Tag API, and Document Generation
+
+Access to all 15+ PDF Services including PDF Extract, PDF Accessibility Auto-Tag API, and Document Generation
+
+Easy to sign up and create credentials in minutes
+
+Technical Support included (different tiers available)
+
+No credit card or commitment required
+
+Scalable for high volume needs.

@@ -3,7 +3,7 @@ title: Adobe Experience Platform Data Collection APIs
 description: Overview of the Adobe Experience Platform data collection APIs.
 ---
 
-<HeroSimple slots="image, heading, text" background="rgb(154, 23, 34)"/>
+<Superhero slots="image, heading, text" background="rgb(154, 23, 34)"/>
 
 ![Hero image](assets/platform-hero.png)
 

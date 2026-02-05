@@ -1,0 +1,33 @@
+---
+name: Upload playground samples
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        type: string
+        required: false
+        default: "main"
+      folder_path:
+        description: "Folder path to read files from (defaults to src/pages)"
+        type: string
+        required: false
+        default: "src/pages"
+
+jobs:
+  upload-playground:
+    name: Upload playground samples
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@main
+    with:
+      TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
+      FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
+    secrets:
+      FFC_BASE_URL: ${{ secrets.FFC_BASE_URL }}
+      IMS_BASE_URL: ${{ secrets.IMS_BASE_URL }}
+      PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+      PLAYGROUND_AUTH_CODE: ${{ secrets.PLAYGROUND_AUTH_CODE }}
+      PLAYGROUND_CLIENT_ID: ${{ secrets.PLAYGROUND_CLIENT_ID }}
+      PLAYGROUND_CLIENT_SECRET: ${{ secrets.PLAYGROUND_CLIENT_SECRET }}
