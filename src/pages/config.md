@@ -70,6 +70,8 @@
       - [Information](/support/community/index.md) 
     - Test Examples header
     - [Test](/test/index.md)
+      - [clientsdk](/test/api-reference-clientsdk.md)
+      - [clientsdk2](/test/api-reference-clientsdk2.md)
       - [Code](/test/cards.md) 
       - [CodeBlock](/test/code-block.md) 
       - [CodeBlock with Picklist](/test/code-block-with-picklist.md) 
@@ -83,7 +85,7 @@
       - [nohero-sidenav-noonthispage-noresources](/test/nohero-sidenav-noonthispage-noresources.md)
       - [hero-sidenav-noonthispage-resources](/test/hero-sidenav-noonthispage-resources.md)
       - [OnThisPage with Sidenav](/test/onthispage-with-sidenav.md) 
-      - [RedoclyAPIBlock](/test/redocly-api-block.md) 
+      - [RedoclyAPIBlock](/test/redocly-api-block.md)
       - [TabsBlock](/test/tabs-block.md) 
       - [TestUrl](/test/test-url.md)
       - [TestUrl-withadot](./test/test-url.md)
