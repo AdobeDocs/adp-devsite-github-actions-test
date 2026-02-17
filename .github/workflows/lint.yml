@@ -29,7 +29,7 @@
             GITHUB_REPOSITORY: ${{ github.repository }}
           run: |
             npm install --no-save github:AdobeDocs/adp-devsite-scripts#bot-poc
-            node node_modules/adp-devsite-scripts/postLinterReport.js
+            node node_modules/adp-devsite-scripts/linter-bot/postLinterReport.js
 
         - name: Fail if linter found errors
           if: steps.lint.outcome == 'failure'
