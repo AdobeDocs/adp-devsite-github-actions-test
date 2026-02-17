@@ -27,7 +27,9 @@
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             PR_ID: ${{ github.event.pull_request.number }}
             GITHUB_REPOSITORY: ${{ github.repository }}
-          run: npx --yes github:AdobeDocs/adp-devsite-scripts#bot-poc postLinterReport
+          run: |
+            npm install --no-save github:AdobeDocs/adp-devsite-scripts#bot-poc
+            node node_modules/adp-devsite-scripts/postLinterReport.js
 
         - name: Fail if linter found errors
           if: steps.lint.outcome == 'failure'
