@@ -32,41 +32,81 @@ Inline alert messages for warnings, tips, and notes.
 ### [List](blocks/list/index.md)
 Various list formatting options.
 
-### [Resources](blocks/resources/resources.md)
-- [Resources Block](blocks/resources/resources.md)
-- [Resources with No Hero](resources/resources-with-no-hero.md)
+The default rate limit for an Cat Analytics Company is *120 requests per minute*. (The limit is enforced as *12 requests every 6 seconds*).
+When rate limiting is being enforced you will get `429` HTTP response codes with the following response body: `{"error_code":"429050","message":"Too many requests"}`.
 
-### [Tab](blocks/tab/index.md)
-Tabbed content for organizing related information.
+<Announcement slots="heading, text, button" variant="secondary" backgroundColor="background-color-gray" />
 
-## Code Blocks
+#### Important Update
 
-### [Code Block Examples](blocks/codeblock/code.md)
-- [Basic Code Block](blocks/codeblock/code.md)
-- [Code Block (Standard)](blocks/codeblock/code-block.md)
-- [Code Block with Picklist](blocks/codeblock/code-block-with-picklist.md)
-- [Code Block without Picklist](blocks/codeblock/code-block-without-picklist.md)
-- [Code with Highlighted Lines](blocks/codeblock/code-highlighted-line.md)
-- [Code in Lists](blocks/codeblock/code-in-list.md)
-- [Code in Tables](blocks/codeblock/code-in-table.md)
-- [Code Overload Example](blocks/codeblock/code-overload.md)
-- [Code Example 0](blocks/codeblock/code-0.md)
+Review these changes before your next deployment.
 
-## API Documentation
+- [View details](https://example.com)
 
-### [Redocly API Block](blocks/redoclyapiblock/redocly-api-block-default.md)
-Interactive API documentation using Redocly.
+<Tab orientation="vertical" slots="heading, content" repeat="2"/>
 
-- [Default API Block](blocks/redoclyapiblock/redocly-api-block-default.md)
-- [API Block Configurations](blocks/redoclyapiblock/redocly-api-block-configs.md)
-- [API Block without Layout](blocks/redoclyapiblock/redocly-api-block-no-layout.md)
-- [API Block without Sidebar](blocks/redoclyapiblock/redocly-api-block-no-sidebar.md)
-- [API Block without Sidebar and Search](blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
-- [API Block without Y-Scroll Offset](blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
-- [Redocly Overflow Example](blocks/redoclyapiblock/redocly-overflow.md)
+### Request
 
-## Test Images for Alt Text Linter
+```javascript-disableLineNumbers-data-line="2-4"
+graphql
+mutation {
+  createCustomerV2(
+    input: {
+      firstname: "Bob"
+      lastname: "Loblaw"
+      email: "bobloblaw@example.com"
+      password: "b0bl0bl@w"
+      is_subscribed: true
+    }
+  ) {
+    customer {
+      firstname
+      lastname
+      email
+      is_subscribed
+    }
+  }
+}
+```
 
-![This image has alt text](assets/hero.png)
+### Response
 
-![](assets/site.png)
+```json
+{
+  "data": {
+    "createCustomer": {
+      "customer": {
+        "firstname": "Bob",
+        "lastname": "Loblaw",
+        "email": "bobloblaw@example.com",
+        "is_subscribed": true
+      }
+    }
+  }
+}
+```
+
+<List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="checkmark" variant="fullWidth" />
+
+Item 1 title
+
+Item 1 description
+
+Item 2 title
+
+Item 2 description
+
+<Product-Card slots="icon, text, buttons" theme="light" repeat="2" />
+
+![typescript-logo](images/adobe-express.svg)
+
+Lit is a simple library for building fast, lightweight web components. It's built on top of the Web Components standard and provides a set of tools and utilities to simplify the creation of custom elements. Lit uses modern web standards like JavaScript template literals and reactive properties to create reusable and efficient components with minimal boilerplate required.
+
+- [Learn more](https://lit.dev/)
+- [View Docs](https://lit.dev/)
+
+![typescript-logo](images/adobe-express.svg)
+
+TypeScript is a statically typed superset of JavaScript that adds optional static types to the language.TypeScript aims to improve the development experience by providing a robust type system, which helps catch errors early during development and enhances code quality and maintainability.
+
+- [Learn more](https://https://www.typescriptlang.org/)
