@@ -22,7 +22,11 @@
           deployAll:
             description: "Force deploy all files"
             type: boolean
-            default: false
+            default: true
+          dryRun:
+            description: "Dry run (no actual changes)"
+            type: boolean
+            default: true
     jobs:
       deployment:
         name: Deployment
@@ -31,6 +35,7 @@
           env: ${{ inputs.env || 'prod' }}
           baseSha: ${{ inputs.baseSha || '' }}
           deployAll: ${{ inputs.deployAll || false }}
+          dryRun: ${{ inputs.dryRun }}
     
     
        
