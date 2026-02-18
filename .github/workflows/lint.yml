@@ -19,7 +19,7 @@
         - name: Lint
           id: lint
           continue-on-error: true
-          run: npx --yes github:AdobeDocs/adp-devsite-utils#bot-poc runLint -v
+          run: npx --yes github:AdobeDocs/adp-devsite-utils runLint -v
 
         - name: Post Linter Report to PR
           if: always()
@@ -28,7 +28,7 @@
             PR_ID: ${{ github.event.pull_request.number }}
             GITHUB_REPOSITORY: ${{ github.repository }}
           run: |
-            npm install --no-save github:AdobeDocs/adp-devsite-scripts#bot-poc
+            npm install --no-save github:AdobeDocs/adp-devsite-scripts
             node node_modules/adp-devsite-scripts/linter-bot/postLinterReport.js
 
         - name: Fail if linter found errors
