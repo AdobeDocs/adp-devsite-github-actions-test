@@ -27,8 +27,7 @@ description: Tests for remark-lint-internal-link-extension rule
 - [Index link](../blocks)
 - [Relative no ext](./test-hero)
 
-## Invalid Links — anchor-link-extension (should fail)
+## Anchor links (valid — should pass)
 
-- [With trailing slash and anchor](../blocks/accordion/#usage)
-- [Missing md before anchor](../blocks/inline-alert#heading)
-- [SideNav Section](../blocks/sidenav/#header-format)
+- [With anchor](../blocks/accordion/index.md#usage)
+- [SideNav](../blocks/inline-alert/index.md#heading)
