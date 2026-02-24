@@ -20,10 +20,15 @@ description: Tests for remark-lint-internal-link-extension rule
 - [PDF link](../assets/doc.pdf)
 - [JSON link](../assets/data.json)
 
-## Invalid Links (should fail)
+## Invalid Links — internal-link-extension (should fail)
 
 - [Accordion](../blocks/accordion/)
 - [Inline Alert](../blocks/inline-alert)
 - [Index link](../blocks)
 - [Relative no ext](./test-hero)
+
+## Invalid Links — anchor-link-extension (should fail)
+
 - [With trailing slash and anchor](../blocks/accordion/#usage)
+- [Missing md before anchor](../blocks/inline-alert#heading)
+- [SideNav Section](../blocks/sidenav/#header-format)
