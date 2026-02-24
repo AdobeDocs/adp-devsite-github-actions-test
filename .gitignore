@@ -31,6 +31,3 @@ cypress/screenshots
 
 # lerna
 lerna-debug.log
-
-# json files
-adp-site-metadata.json
