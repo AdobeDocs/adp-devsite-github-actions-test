@@ -26,7 +26,7 @@
     ]
   },
   "scripts": {
-    "dev": "npx --yes github:AdobeDocs/adp-devsite-utils dev",
+    "dev": "npx --yes github:AdobeDocs/adp-devsite-utils#build-contributors dev",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
     "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
