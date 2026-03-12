@@ -1,10 +1,11 @@
 ---
 name: Build Site Metadata
 on:
-    pull_request:
-    workflow_dispatch:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-    build-site-metadata:
-        name: Build Site Metadata
-        uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-site-metadata.yml@main
+  build-site-metadata:
+    name: Build Site Metadata
+    if: github.repository != 'AdobeDocs/dev-docs-template'
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-site-metadata.yml@main

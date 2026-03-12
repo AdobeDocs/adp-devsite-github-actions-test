@@ -1,11 +1,12 @@
 ---
+name: Build Contributors
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-contributors:
     name: Build Contributors
-    on:
-      pull_request:
-      workflow_dispatch:
-    
-    jobs:
-      build-contributors:
-        name: Build Contributors
-        uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-contributors.yml@main
-        secrets: inherit
+    if: github.repository != 'AdobeDocs/dev-docs-template'
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-contributors.yml@main
+    secrets: inherit
