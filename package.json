@@ -1,10 +1,11 @@
 {
-  "name": "dev-docs-template",
+  "private": true,
+  "name": "adp-devsite-github-actions-test",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AdobeDocs/dev-docs-template"
+    "url": "https://github.com/AdobeDocs/adp-devsite-github-actions-test"
   },
   "author": {
     "name": "Tim Kim",
