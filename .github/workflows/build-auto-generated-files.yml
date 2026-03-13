@@ -8,6 +8,6 @@ jobs:
   build-contributors:
     name: Build Auto-Generated Files
     if: github.repository != 'AdobeDocs/dev-docs-template'
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-auto-generated-files.yml@build-auto-generated-files
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/build-auto-generated-files.yml@main
     secrets: inherit
     
