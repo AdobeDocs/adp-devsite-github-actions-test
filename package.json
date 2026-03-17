@@ -29,8 +29,5 @@
   },
   "config": {
     "sitePath": "commerce/frontend-core"
-  },
-  "devDependencies": {
-    "express": "5.2.1"
   }
 }
