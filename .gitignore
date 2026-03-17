@@ -1,10 +1,10 @@
-# OS and IDE generated files
+
+# OS and IDE generated files #
 .DS_Store
 .vscode
 .history
 .idea
 .editorconfig
-.cursor
 
 # npm yarn
 node_modules
