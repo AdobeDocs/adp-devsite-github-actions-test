@@ -45,3 +45,6 @@ local-test.yml
 .yalc
 yalc.lock
 
+#txt
+linter-output.txt
+linter-report.txt
