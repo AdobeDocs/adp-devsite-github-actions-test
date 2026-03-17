@@ -7,10 +7,6 @@
     "type": "git",
     "url": "https://github.com/AdobeDocs/adp-devsite-github-actions-test"
   },
-  "author": {
-    "name": "Tim Kim",
-    "url": "https://github.com/timkim"
-  },
   "scripts": {
     "dev": "npx --yes github:AdobeDocs/adp-devsite-utils dev",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
