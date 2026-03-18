@@ -1,11 +1,11 @@
-<Edition slot="text"/>
+<Edition slots="text"/>
 
 PaaS Only
 
-<Edition slot="text" backgroundcolor="blue" />
+<Edition slots="text" backgroundcolor="blue" />
 
 PaaS Only
 
-<Edition slot="text" backgroundcolor="green" />
+<Edition slots="text" backgroundcolor="green" />
 
 PaaS Only
