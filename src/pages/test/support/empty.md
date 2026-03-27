@@ -119,6 +119,13 @@ Acrobat posts the following `WinEvent` notifications:
 | `EVENT_OBJECT_STATECHANGE` | If the `childID` parameter is `CHILDID_SELF`, the current document or page has changed its state by opening or closing a comment. The client should update its copy of the document content. Only the `IAccessible` object for the comment changes when this occurs.  If `childID` is non-zero, it is the UID of the `IAccessible` object for a form field, such as a checkbox or radio button, whose state has changed. |
 | `EVENT_OBJECT_VALUECHANGE` | If the `childID` parameter is `CHILDID_SELF`, a new document or page has been opened or the current content has changed. The client should update its cached value of the document or page.  If the `childID` parameter is not `CHILDID_SELF`, it identifies the content on the page to which the user has turned his or her attention. For instance, if a page has scrolled or Acrobat has followed a link to a new page, it identifies the first visible content on the page. The client may wish to update its internal state about where it is reading the document. |
 
+test table
+
+| Parameter | Values                    |
+| --------- | ------------------------- |
+| color     | • red\<br/>• green\<br/>• blue |
+
+
 ### Retrieving a PDF DOM object f
 
 or an event
