@@ -1,5 +1,6 @@
 
 # OS and IDE generated files #
+##############################
 .DS_Store
 .vscode
 .history
@@ -44,6 +45,6 @@ local-test.yml
 .yalc
 yalc.lock
 
-# txt
+#txt
 linter-output.txt
 linter-report.txt

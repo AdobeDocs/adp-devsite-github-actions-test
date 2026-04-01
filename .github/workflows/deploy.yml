@@ -1,5 +1,5 @@
 ---
-name: Deployment
+name: Production Deployment
 on:
   push:
     branches:
