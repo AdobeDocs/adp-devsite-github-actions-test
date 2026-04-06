@@ -20,7 +20,7 @@
           "copyIdButton": "Copy ID"
         }
       },
-      "tip": "Tip: After copying the globalCompanyId, click \"Try it\" on any API endpoint below and paste the ID into the globalCompanyId field."
+      "tip": "💡 Tip: After copying the globalCompanyId, click \"Try it\" on any API endpoint below and paste the ID into the globalCompanyId field."
     }
   ],
   ":type": "sheet"
