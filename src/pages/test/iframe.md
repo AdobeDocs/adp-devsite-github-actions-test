@@ -12,3 +12,7 @@ Important note: Fragment must point to a path relative to the `/src/pages/` path
 ### Embed Video
 
 <iframe src="https://www.youtube.com/embed/5M1a7zY5iVM"/>
+
+### Explicit Video
+
+<iframe src="https://main--adp-devsite--adobedocs.aem.page/express/add-ons/intellisense.mp4" width="100%"  allow="autoplay" />
