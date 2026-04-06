@@ -16,10 +16,6 @@
       "availableCompanies": {
         "title": "Available Companies",
         "description": "Select a company from the dropdown and copy its globalCompanyId:",
-        "dropdown": {
-          "label": "Select Company",
-          "selected": "Mihai Corlan (mihaic0)"
-        },
         "actions": {
           "copyIdButton": "Copy ID"
         }
