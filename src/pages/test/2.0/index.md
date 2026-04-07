@@ -4,7 +4,7 @@
 
 ![Hero image](../../../assets/hero.png)
 
-# Adobe Photoshop and Lightroom API
+# Adobe Photoshop and Lightroom API Test
 
 Unlock the potential of Photoshop, Lightroom, and cutting edge Sensei services through an easy-to-use RESTful API.
 
