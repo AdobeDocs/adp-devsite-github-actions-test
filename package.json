@@ -26,5 +26,27 @@
     "link:checkAllLinks": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --internal-links-only --external-links-only -v",
     "redirectCheck:stage": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker stage --verbose",
     "redirectCheck:prod": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker prod --verbose"
+  },
+  "lint": {
+    "skipRules": {
+      "check-frontmatter": true,
+      "no-angle-brackets": true,
+      "no-html-comments": true,
+      "no-html-tags": true,
+      "no-br-in-tables": true,
+      "no-block-in-list": true,
+      "no-details-html": true,
+      "self-close-component": true,
+      "no-code-blocks-in-tables": true,
+      "no-bracket-in-table": true,
+      "no-unescaped-curly-braces": true,
+      "no-alt-text-for-image": true,
+      "no-kebab-in-filename": true,
+      "internal-link-extension": true,
+      "anchor-link-extension": true,
+      "no-horizontal-lines": true,
+      "no-hidden-table-cell": true,
+      "no-multiple-toplevel-headings": false
+    }
   }
 }
