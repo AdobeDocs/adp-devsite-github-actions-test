@@ -9,7 +9,6 @@
         - [Reference v1.4](/api/1-4.md) - 🔴 Deprecated
     - [Support](/support/index.md)
     - [Test](/test/index.md)
-    - [no-sidenav-1](/no-sidenav-1.md)
 
 - buttons:
   - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
