@@ -46,13 +46,13 @@ jobs:
           cp .artifact/src/pages/llms.txt src/pages/llms.txt
           rm -rf .artifact
 
-          if git diff --quiet src/pages/llms.txt 2>/dev/null; then
+          git add src/pages/llms.txt
+          if git diff --staged --quiet; then
             echo "No changes to llms.txt, skipping commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/pages/llms.txt
           git commit -m "auto-generate llms.txt"
           git push
