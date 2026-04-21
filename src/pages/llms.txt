@@ -1,0 +1,82 @@
+# Block Examples
+
+> Explore all available blocks for the Adobe Developer documentation site, including content blocks, code blocks, and API documentation components.
+
+For detailed documentation on any page below, request the URL with `Accept: text/markdown` header to receive LLM-optimized markdown.
+
+## Pages
+
+- [Block Examples](https://developer.adobe.com/github-actions-test/blocks/index.md): Explore all available blocks for the Adobe Developer documentation site, including content blocks, code blocks, and API documentation components.
+- [Guides - Cat Analytics](https://developer.adobe.com/github-actions-test/guides/index.md): This is the guides overview page of Cat Analytics
+- [Cat API Spec 2.0](https://developer.adobe.com/github-actions-test/api/index.md): Cat API Spec 2.0
+- [Cat Spec 1.4](https://developer.adobe.com/github-actions-test/api/1-4.md): Cat API Spec 1.4
+- [Test](https://developer.adobe.com/github-actions-test/support/index.md): This document provides an overview of the test process involving nightly refreshes and system updates. It covers essential points about maintaining system functionality and performance during tests. [test, nightly refresh, system update, performance, workflows]
+- [Test](https://developer.adobe.com/github-actions-test/test/index.md)
+- [no-sidenav-1](https://developer.adobe.com/github-actions-test/no-sidenav-1.md)
+- [Accordion Block Example](https://developer.adobe.com/github-actions-test/blocks/accordion/index.md): Learn how to use the Accordion block to create collapsible content sections for organizing information in your documentation.
+- [Announcement Block](https://developer.adobe.com/github-actions-test/blocks/announcement/index.md): Display important announcements and notices to your users with the Announcement block.
+- [Code Examples](https://developer.adobe.com/github-actions-test/blocks/code/code.md): Examples of code blocks with various features including line highlighting, line offset, and inline code.
+- [Code with Highlighted Lines](https://developer.adobe.com/github-actions-test/blocks/code/code-highlighted-line.md): Examples of code blocks with specific lines highlighted using data-line and data-line-offset attributes.
+- [Code in Lists](https://developer.adobe.com/github-actions-test/blocks/code/code-in-list.md): Examples of code blocks embedded within list items and ordered/unordered lists.
+- [Code in Tables](https://developer.adobe.com/github-actions-test/blocks/code/code-in-table.md): Examples of inline code and code formatting within table cells.
+- [Code Overload Example](https://developer.adobe.com/github-actions-test/blocks/code/code-overload.md): Complex code examples demonstrating multiple features like line highlighting, offsets, and disabling line numbers.
+- [Code Block Component](https://developer.adobe.com/github-actions-test/blocks/codeblock/code-block.md): Learn how to use the Code Block component to display multiple code snippets with headings.
+- [Code Block with Picklist](https://developer.adobe.com/github-actions-test/blocks/codeblock/code-block-with-picklist.md): Display code blocks with a language picker dropdown menu for switching between different code examples.
+- [Code Block without Picklist](https://developer.adobe.com/github-actions-test/blocks/codeblock/code-block-without-picklist.md): Display multiple code blocks without a language picker dropdown.
+- [Column Block](https://developer.adobe.com/github-actions-test/blocks/column/index.md): Create multi-column layouts for content organization using the Column block.
+- [Discover Block](https://developer.adobe.com/github-actions-test/blocks/discoverblock/index.md): Showcase featured content and resources using the Discover block component.
+- [Edition Block](https://developer.adobe.com/github-actions-test/blocks/edition/index.md): Display edition-specific content using the Edition block component.
+- [HeroSimple](https://developer.adobe.com/github-actions-test/blocks/herosimple/herosimple-default.md)
+- [HeroSimple fullWidth](https://developer.adobe.com/github-actions-test/blocks/herosimple/herosimple-fullwidth.md)
+- [HeroSimple halfWidth](https://developer.adobe.com/github-actions-test/blocks/herosimple/herosimple-halfwidth.md)
+- [Image Block](https://developer.adobe.com/github-actions-test/blocks/image/index.md): Learn how to display and format images in your documentation.
+- [Inline Alert Block](https://developer.adobe.com/github-actions-test/blocks/inline-alert/index.md): Display inline alert messages for warnings, tips, and notes using the Inline Alert block.
+- [Inline Code](https://developer.adobe.com/github-actions-test/blocks/inline-code/index.md)
+- [List](https://developer.adobe.com/github-actions-test/blocks/list/index.md)
+- [Redocly API Block - Default](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-default.md): Default configuration of the Redocly API Block for displaying interactive API documentation.
+- [Redocly API Block - Custom Configurations](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-configs.md): Examples of Redocly API Block with custom configuration options including typography, code styling, and behavior settings.
+- [Redocly API Block - No Layout](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-no-layout.md): Redocly API Block displayed without a layout wrapper for full-page API documentation.
+- [Redocly API Block - No Sidebar](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-no-sidebar.md): Redocly API Block with the sidebar navigation disabled for a streamlined view.
+- [Redocly API Block - No Sidebar No Search](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-no-sidebar-no-search.md): Redocly API Block with both sidebar navigation and search functionality disabled.
+- [Redocly API Block - With Y-Scroll Offset](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-api-block-no-y-scroll-offset.md): Redocly API Block configured with a vertical scroll offset for fixed headers.
+- [Redocly API Block - Overflow Example](https://developer.adobe.com/github-actions-test/blocks/redoclyapiblock/redocly-overflow.md): Example of Redocly API Block with external OpenAPI specification and custom typography.
+- [Resources](https://developer.adobe.com/github-actions-test/blocks/resources/)
+- [Superhero](https://developer.adobe.com/github-actions-test/blocks/superhero/index.md)
+- [Superhero (default)](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-default.md)
+- [Superhero centered](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-centered.md)
+- [Superhero centeredXL](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-centeredxl.md)
+- [Superhero halfWidth](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-halfwidth.md)
+- [Superhero halfWidth with background image](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-halfwidth-with-background-image.md)
+- [Superhero halfWidth with background image and video](https://developer.adobe.com/github-actions-test/blocks/superhero/superhero-halfwidth-with-background-image-and-video.md)
+- [Tab Block](https://developer.adobe.com/github-actions-test/blocks/tab/index.md): Organize related content using tabbed layouts with the Tab block component.
+- [Dummy an OAuth Client](https://developer.adobe.com/github-actions-test/guides/dummy_oauth_client/index.md)
+- [Dummy OAuth using POSTMAN](https://developer.adobe.com/github-actions-test/guides/dummy_using_postman/index.md)
+- [Metrics API](https://developer.adobe.com/github-actions-test/guides/dummy_metrics_api/index.md)
+- [Migrating](https://developer.adobe.com/github-actions-test/guides/migrating/index.md)
+- [FAQ](https://developer.adobe.com/github-actions-test/support/FAQ/index.md)
+- [How to contribute](https://developer.adobe.com/github-actions-test/support/contribute/index.md)
+- [Community](https://developer.adobe.com/github-actions-test/support/community/index.md)
+- [Adobe Journey Optimizer API reference](https://developer.adobe.com/github-actions-test/test/api-reference-clientsdk.md): An API reference for the Adobe Journey Optimizer (AJO) mobile extension. [Adobe Journey Optimizer, API reference, Messaging]
+- [Adobe Journey Optimizer API reference](https://developer.adobe.com/github-actions-test/test/api-reference-clientsdk2.md): An API reference for the Adobe Journey Optimizer (AJO) mobile extension. [Adobe Journey Optimizer, API reference, Messaging]
+- [Getting started](https://developer.adobe.com/github-actions-test/test/cards.md): Browse Commerce Marketplace developer guides. [App Builder, Extensions, Themes]
+- [CodeBlock](https://developer.adobe.com/github-actions-test/test/code-block.md)
+- [CodeBlock with Picklist](https://developer.adobe.com/github-actions-test/test/code-block-with-picklist.md)
+- [CodeBlock without Picklist](https://developer.adobe.com/github-actions-test/test/code-block-without-picklist.md)
+- [Code in List](https://developer.adobe.com/github-actions-test/test/code-in-list.md)
+- [Code in Table](https://developer.adobe.com/github-actions-test/test/code-in-table.md)
+- [Create and Fill Rectangle Example](https://developer.adobe.com/github-actions-test/test/code-playground-button.md): Interactive code example demonstrating how to create a rectangle with custom dimensions and color fill using the editor API.
+- [InlineAlert](https://developer.adobe.com/github-actions-test/test/inline-alert.md)
+- [ListBlock](https://developer.adobe.com/github-actions-test/test/list-block.md)
+- [Adobe Experience Platform Data Collection APIs](https://developer.adobe.com/github-actions-test/test/nohero-sidenav-noonthispage-resources.md): Overview of the Adobe Experience Platform data collection APIs.
+- [Adobe Experience Platform Data Collection APIs](https://developer.adobe.com/github-actions-test/test/nohero-sidenav-noonthispage-noresources.md): Overview of the Adobe Experience Platform data collection APIs.
+- [Experience Cloud Documentation for Adobe Developer Distribution](https://developer.adobe.com/github-actions-test/test/hero-sidenav-noonthispage-resources.md): A self-service submission portal for developers to publish listings that extend Adobe products on Adobe Exchange. [Experience Cloud, software integration, Exchange, Distribution, Application, Console, API, CLI, Extension, Extend, Extensibility, App Builder, Service to Service, ISV App Builder, Multi Tenant, App Manager, EC Exchange, Customer Configurations, Submission, Product Profile, AEM, Commerce]
+- [OnThisPage with Sidenav](https://developer.adobe.com/github-actions-test/test/onthispage-with-sidenav.md)
+- [RedoclyAPIBlock](https://developer.adobe.com/github-actions-test/test/redocly-api-block.md)
+- [TabsBlock](https://developer.adobe.com/github-actions-test/test/tabs-block.md)
+- [TestUrl](https://developer.adobe.com/github-actions-test/test/test-url.md)
+- [TestUrl-withadot](https://developer.adobe.com/github-actions-test/test/test-url.md)
+- [TestUrl-noforwardslash](https://developer.adobe.com/github-actions-test/test/test-url.md)
+- [Adobe InDesign API Overview](https://developer.adobe.com/github-actions-test/test/hide-breadcrumb-nav.md): This is the overview page of Adobe InDesign API.
+- [Adobe Experience Platform Data Collection APIs](https://developer.adobe.com/github-actions-test/test/test-resources-block.md): Overview of the Adobe Experience Platform data collection APIs.
+- [Adobe Experience Platform Data Collection APIs](https://developer.adobe.com/github-actions-test/test/test-resources-block-nohero.md): Overview of the Adobe Experience Platform data collection APIs.
+
