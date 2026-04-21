@@ -29,9 +29,6 @@ Image display and formatting examples.
 ### [Inline Alert](blocks/inline-alert/index.md)
 Inline alert messages for warnings, tips, and notes.
 
-### [List](blocks/list/index.md)
-Various list formatting options.
-
 The default rate limit for an Cat Analytics Company is *120 requests per minute*. (The limit is enforced as *12 requests every 6 seconds*).
 When rate limiting is being enforced you will get `429` HTTP response codes with the following response body: `{"error_code":"429050","message":"Too many requests"}`.
 
