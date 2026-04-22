@@ -1,0 +1,81 @@
+name: QA Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      path_prefix:
+        description: 'Path prefix to test (e.g. /experience-cloud/cloud-manager)'
+        required: true
+        type: string
+      suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - visual
+          - links
+          - nav
+          - images
+          - content
+      threshold:
+        description: 'Visual diff threshold %'
+        required: false
+        default: '5'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: tools/qa
+        run: npm install
+
+      - name: Install Playwright browsers
+        working-directory: tools/qa
+        run: npx playwright install chromium --with-deps
+
+      - name: Run tests
+        working-directory: tools/qa
+        continue-on-error: true
+        env:
+          PATH_PREFIX: ${{ inputs.path_prefix }}
+          DIFF_THRESHOLD: ${{ inputs.threshold }}
+          SUITE: ${{ inputs.suite }}
+          CI: true
+        run: |
+          if [ "$SUITE" = "all" ]; then
+            npx playwright test
+          else
+            npx playwright test "test/$SUITE.spec.js"
+          fi
+
+      - name: Write summary
+        working-directory: tools/qa
+        env:
+          PATH_PREFIX: ${{ inputs.path_prefix }}
+          DIFF_THRESHOLD: ${{ inputs.threshold }}
+          SUITE: ${{ inputs.suite }}
+        run: node summarize.js
+
+      - name: Commit results
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git pull --rebase origin ${{ github.ref_name }}
+          git add tools/qa/results/latest.json
+          git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
+          git push origin ${{ github.ref_name }}
