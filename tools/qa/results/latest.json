@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-04-22T23:39:31.987Z",
-  "path_prefix": "/data-collection-apis/docs",
+  "timestamp": "2026-04-22T23:47:30.670Z",
+  "path_prefix": "/adobe-connect-sdk",
   "suite": "all",
   "threshold": 5,
-  "status": "failed",
-  "report_url": null,
+  "status": "passed",
+  "report_url": "https://AdobeDocs.github.io/adp-devsite-github-actions-test/",
   "suites": {
     "visual": {
-      "passed": 26,
+      "passed": 15,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "links": {
-      "passed": 26,
+      "passed": 15,
       "failed": 0,
       "skipped": 0,
       "issues": []
@@ -25,21 +25,16 @@
       "issues": []
     },
     "images": {
-      "passed": 26,
+      "passed": 15,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "content": {
-      "passed": 22,
-      "failed": 4,
+      "passed": 15,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /data-collection-apis/docs/endpoints/media/bitratechange — Error: Content issues on stage for /data-collection-apis/docs/endpoints/media/bitratechange",
-        "content: /data-collection-apis/docs/endpoints/media/error — Error: Content issues on stage for /data-collection-apis/docs/endpoints/media/error",
-        "content: /data-collection-apis/docs/getting-started/ — Error: Content issues on stage for /data-collection-apis/docs/getting-started/",
-        "content: /data-collection-apis/docs/getting-started/guardrails — Error: Content issues on stage for /data-collection-apis/docs/getting-started/guardrails"
-      ]
+      "issues": []
     }
   }
 }
