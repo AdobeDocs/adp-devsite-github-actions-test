@@ -16,7 +16,7 @@ const summary = {
   suite: process.env.SUITE || 'all',
   threshold: parseFloat(process.env.DIFF_THRESHOLD || '5'),
   status: 'passed',
-  run_url: process.env.GITHUB_RUN_URL || null,
+  report_url: process.env.REPORT_URL || null,
   suites: {
     visual: emptySuite(),
     links: emptySuite(),
