@@ -86,6 +86,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git stash || true
           git pull --rebase origin ${{ github.ref_name }}
+          git stash pop || true
           git add tools/qa/results/latest.json
           git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
           git push origin ${{ github.ref_name }}
