@@ -63,18 +63,28 @@ jobs:
             npx playwright test "test/$SUITE.spec.js"
           fi
 
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: tools/qa/playwright-report/
+          retention-days: 30
+
       - name: Write summary
         working-directory: tools/qa
         env:
           PATH_PREFIX: ${{ inputs.path_prefix }}
           DIFF_THRESHOLD: ${{ inputs.threshold }}
           SUITE: ${{ inputs.suite }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node summarize.js
 
       - name: Commit results
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          git stash || true
           git pull --rebase origin ${{ github.ref_name }}
           git add tools/qa/results/latest.json
           git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
