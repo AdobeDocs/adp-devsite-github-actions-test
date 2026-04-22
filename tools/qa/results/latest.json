@@ -1,27 +1,22 @@
 {
-  "timestamp": "2026-04-22T10:30:00.000Z",
-  "path_prefix": "/experience-cloud/cloud-manager",
+  "timestamp": "2026-04-22T23:13:12.807Z",
+  "path_prefix": "/data-collection-apis/docs",
   "suite": "all",
   "threshold": 5,
   "status": "failed",
-  "run_url": "https://github.com/AdobeDocs/adp-devsite/actions/runs/123456789",
+  "run_url": "https://github.com/AdobeDocs/adp-devsite-github-actions-test/actions/runs/24807324717",
   "suites": {
     "visual": {
-      "passed": 8,
-      "failed": 1,
+      "passed": 26,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "visual diff: /experience-cloud/cloud-manager/using-the-devops-center — differs by 12.4% (threshold: 5%)"
-      ]
+      "issues": []
     },
     "links": {
-      "passed": 12,
-      "failed": 2,
+      "passed": 26,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "links: /experience-cloud/cloud-manager/getting-access — broken: /experience-cloud/cloud-manager/release-notes/2023 (stage: 404, prod: 200)",
-        "links: /experience-cloud/cloud-manager/overview — broken: /experience-cloud/cloud-manager/faqs (stage: 404, prod: 200)"
-      ]
+      "issues": []
     },
     "nav": {
       "passed": 2,
@@ -30,17 +25,18 @@
       "issues": []
     },
     "images": {
-      "passed": 9,
+      "passed": 26,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "content": {
-      "passed": 7,
-      "failed": 1,
+      "passed": 24,
+      "failed": 2,
       "skipped": 0,
       "issues": [
-        "content: /experience-cloud/cloud-manager/overview — FRONTMATTER: Missing meta description"
+        "content: /data-collection-apis/docs/api/media-edge — Error: Content issues on stage for /data-collection-apis/docs/api/media-edge",
+        "content: /data-collection-apis/docs/endpoints/media/bufferstart — Error: Content issues on stage for /data-collection-apis/docs/endpoints/media/bufferstart"
       ]
     }
   }
