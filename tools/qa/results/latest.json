@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-04-22T10:30:00.000Z",
+  "path_prefix": "/experience-cloud/cloud-manager",
+  "suite": "all",
+  "threshold": 5,
+  "status": "failed",
+  "run_url": "https://github.com/AdobeDocs/adp-devsite/actions/runs/123456789",
+  "suites": {
+    "visual": {
+      "passed": 8,
+      "failed": 1,
+      "skipped": 0,
+      "issues": [
+        "visual diff: /experience-cloud/cloud-manager/using-the-devops-center — differs by 12.4% (threshold: 5%)"
+      ]
+    },
+    "links": {
+      "passed": 12,
+      "failed": 2,
+      "skipped": 0,
+      "issues": [
+        "links: /experience-cloud/cloud-manager/getting-access — broken: /experience-cloud/cloud-manager/release-notes/2023 (stage: 404, prod: 200)",
+        "links: /experience-cloud/cloud-manager/overview — broken: /experience-cloud/cloud-manager/faqs (stage: 404, prod: 200)"
+      ]
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 7,
+      "failed": 1,
+      "skipped": 0,
+      "issues": [
+        "content: /experience-cloud/cloud-manager/overview — FRONTMATTER: Missing meta description"
+      ]
+    }
+  }
+}
