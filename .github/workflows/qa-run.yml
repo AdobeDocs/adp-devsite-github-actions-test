@@ -20,7 +20,7 @@ on:
           - images
           - content
       threshold:
-        description: 'Visual diff threshold %'
+        description: 'Visual diff threshold % (only applies to visual/all suites)'
         required: false
         default: '20'
         type: string
