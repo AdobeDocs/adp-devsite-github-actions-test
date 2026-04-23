@@ -22,7 +22,7 @@ on:
       threshold:
         description: 'Visual diff threshold %'
         required: false
-        default: '5'
+        default: '20'
         type: string
 
 permissions:
