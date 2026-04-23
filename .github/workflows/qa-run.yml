@@ -94,6 +94,18 @@ jobs:
           git pull --rebase origin ${{ github.ref_name }}
           mkdir -p "tools/qa/results${{ inputs.path_prefix }}"
           cp /tmp/qa-results.json "tools/qa/results${{ inputs.path_prefix }}/latest.json"
+          node -e "
+          const {readFileSync,writeFileSync}=require('fs');
+          const r=JSON.parse(readFileSync('/tmp/qa-results.json'));
+          const p='tools/qa/results/index.json';
+          let idx=[];
+          try{idx=JSON.parse(readFileSync(p));}catch{}
+          const e={path_prefix:r.path_prefix,timestamp:r.timestamp,status:r.status,suite:r.suite};
+          const i=idx.findIndex(x=>x.path_prefix===r.path_prefix);
+          if(i>=0)idx[i]=e;else idx.push(e);
+          idx.sort((a,b)=>a.path_prefix.localeCompare(b.path_prefix));
+          writeFileSync(p,JSON.stringify(idx,null,2));
+          "
           git add tools/qa/results/
           git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
           git push origin ${{ github.ref_name }}
