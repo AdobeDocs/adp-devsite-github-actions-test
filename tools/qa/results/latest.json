@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-23T18:57:49.839Z",
-  "path_prefix": "/adobe-connect-sdk",
-  "suite": "visual",
+  "timestamp": "2026-04-23T20:24:21.909Z",
+  "path_prefix": "/data-collection-apis/docs",
+  "suite": "content",
   "threshold": 20,
-  "status": "passed",
+  "status": "failed",
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
   "suites": {
     "visual": {
-      "passed": 15,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "issues": []
@@ -31,10 +31,14 @@
       "issues": []
     },
     "content": {
-      "passed": 0,
-      "failed": 0,
+      "passed": 23,
+      "failed": 3,
       "skipped": 0,
-      "issues": []
+      "issues": [
+        "content: /data-collection-apis/docs/api/ — Error: Content issues on stage for /data-collection-apis/docs/api/",
+        "content: /data-collection-apis/docs/endpoints/media/ads — Error: Content issues on stage for /data-collection-apis/docs/endpoints/media/ads",
+        "content: /data-collection-apis/docs/getting-started/guardrails — Error: Content issues on stage for /data-collection-apis/docs/getting-started/guardrails"
+      ]
     }
   }
 }
