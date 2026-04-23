@@ -82,7 +82,7 @@ jobs:
           PATH_PREFIX: ${{ inputs.path_prefix }}
           DIFF_THRESHOLD: ${{ inputs.threshold }}
           SUITE: ${{ inputs.suite }}
-          REPORT_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          REPORT_URL: https://adobedocs.github.io/adp-devsite-github-actions-test/
         run: node summarize.js
 
       - name: Commit results
