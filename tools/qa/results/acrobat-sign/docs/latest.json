@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-04-23T22:08:48.147Z",
+  "path_prefix": "/acrobat-sign/docs",
+  "suite": "all",
+  "threshold": 20,
+  "status": "failed",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
+  "suites": {
+    "visual": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "issues": [
+        "content: /acrobat-sign/docs/ — Error: Content issues on stage for /acrobat-sign/docs/"
+      ]
+    }
+  }
+}
