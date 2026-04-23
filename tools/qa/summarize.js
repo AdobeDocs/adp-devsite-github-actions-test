@@ -32,9 +32,10 @@ try {
 } catch {
   summary.status = 'error';
   summary.error = 'Test run did not produce results';
-  mkdirSync('results', { recursive: true });
-  writeFileSync('results/latest.json', JSON.stringify(summary, null, 2));
-  console.log('Summary written to results/latest.json (no test-results.json found)');
+  const errDir = `results${summary.path_prefix}`;
+  mkdirSync(errDir, { recursive: true });
+  writeFileSync(`${errDir}/latest.json`, JSON.stringify(summary, null, 2));
+  console.log(`Summary written to ${errDir}/latest.json (no test-results.json found)`);
   process.exit(0);
 }
 
@@ -71,6 +72,7 @@ for (const suite of raw.suites || []) {
   }
 }
 
-mkdirSync('results', { recursive: true });
-writeFileSync('results/latest.json', JSON.stringify(summary, null, 2));
-console.log('Summary written to results/latest.json');
+const outDir = `results${summary.path_prefix}`;
+mkdirSync(outDir, { recursive: true });
+writeFileSync(`${outDir}/latest.json`, JSON.stringify(summary, null, 2));
+console.log(`Summary written to ${outDir}/latest.json`);

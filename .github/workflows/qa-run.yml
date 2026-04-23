@@ -92,7 +92,7 @@ jobs:
           cp tools/qa/results/latest.json /tmp/qa-results.json
           git checkout -- tools/qa/results/latest.json
           git pull --rebase origin ${{ github.ref_name }}
-          cp /tmp/qa-results.json tools/qa/results/latest.json
-          git add tools/qa/results/latest.json
+          cp /tmp/qa-results.json "tools/qa/results${{ inputs.path_prefix }}/latest.json"
+          git add tools/qa/results/
           git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
           git push origin ${{ github.ref_name }}
