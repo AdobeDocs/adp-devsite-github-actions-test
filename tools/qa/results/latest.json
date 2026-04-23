@@ -1,31 +1,31 @@
 {
-  "timestamp": "2026-04-23T18:33:37.373Z",
+  "timestamp": "2026-04-23T18:36:58.185Z",
   "path_prefix": "/adobe-pass",
-  "suite": "content",
+  "suite": "all",
   "threshold": 20,
   "status": "passed",
   "report_url": "https://AdobeDocs.github.io/adp-devsite-github-actions-test/",
   "suites": {
     "visual": {
-      "passed": 0,
+      "passed": 3,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "links": {
-      "passed": 0,
+      "passed": 3,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "nav": {
-      "passed": 0,
+      "passed": 2,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "images": {
-      "passed": 0,
+      "passed": 3,
       "failed": 0,
       "skipped": 0,
       "issues": []
