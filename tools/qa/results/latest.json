@@ -1,37 +1,37 @@
 {
-  "timestamp": "2026-04-23T18:46:42.662Z",
-  "path_prefix": "/adobe-pass",
-  "suite": "all",
+  "timestamp": "2026-04-23T18:57:49.839Z",
+  "path_prefix": "/adobe-connect-sdk",
+  "suite": "visual",
   "threshold": 20,
   "status": "passed",
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
   "suites": {
     "visual": {
-      "passed": 3,
+      "passed": 15,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "links": {
-      "passed": 3,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "nav": {
-      "passed": 2,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "images": {
-      "passed": 3,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "content": {
-      "passed": 3,
+      "passed": 0,
       "failed": 0,
       "skipped": 0,
       "issues": []
