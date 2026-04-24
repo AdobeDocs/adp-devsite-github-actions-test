@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-23T22:42:32.430Z",
+  "timestamp": "2026-04-24T00:00:50.874Z",
   "path_prefix": "/commerce/testing",
   "suite": "all",
   "threshold": 20,
-  "status": "passed",
+  "status": "failed",
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
   "suites": {
     "visual": {
@@ -31,10 +31,12 @@
       "issues": []
     },
     "content": {
-      "passed": 84,
-      "failed": 0,
+      "passed": 83,
+      "failed": 1,
       "skipped": 0,
-      "issues": []
+      "issues": [
+        "content: /commerce/testing/functional-testing-framework/debugging — Error: Content issues on stage for /commerce/testing/functional-testing-framework/debugging"
+      ]
     }
   }
 }
