@@ -103,5 +103,11 @@
     "status": "passed",
     "suite": "all",
     "dev_biz": true
+  },
+  {
+    "path_prefix": "/firefly-services",
+    "timestamp": "2026-04-24T21:33:32.882Z",
+    "status": "error",
+    "suite": "all"
   }
 ]
