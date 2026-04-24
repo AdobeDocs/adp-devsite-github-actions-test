@@ -68,13 +68,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd tools/qa/playwright-report
-          git init
+          REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          PAGES_DIR="/tmp/gh-pages"
+          git clone --depth 1 --branch gh-pages "$REPO_URL" "$PAGES_DIR" 2>/dev/null || (
+            mkdir -p "$PAGES_DIR" && cd "$PAGES_DIR" && git init && git checkout -b gh-pages
+          )
+          rm -rf "${PAGES_DIR}${{ inputs.path_prefix }}"
+          mkdir -p "${PAGES_DIR}${{ inputs.path_prefix }}"
+          cp -r tools/qa/playwright-report/. "${PAGES_DIR}${{ inputs.path_prefix }}/"
+          cd "$PAGES_DIR"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add .
-          git commit -m "deploy playwright report [skip ci]"
-          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:gh-pages
+          git diff --staged --quiet || git commit -m "deploy report for ${{ inputs.path_prefix }} [skip ci]"
+          git push "$REPO_URL" gh-pages
 
       - name: Write summary
         working-directory: tools/qa
@@ -82,7 +89,7 @@ jobs:
           PATH_PREFIX: ${{ inputs.path_prefix }}
           DIFF_THRESHOLD: ${{ inputs.threshold }}
           SUITE: ${{ inputs.suite }}
-          REPORT_URL: https://adobedocs.github.io/adp-devsite-github-actions-test/
+          REPORT_URL: https://adobedocs.github.io/adp-devsite-github-actions-test${{ inputs.path_prefix }}/
         run: node summarize.js
 
       - name: Commit results
