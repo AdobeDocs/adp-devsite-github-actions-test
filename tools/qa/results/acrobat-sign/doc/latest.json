@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-04-24T17:31:40.652Z",
-  "path_prefix": "/adobe-pass",
+  "timestamp": "2026-04-24T17:31:06.760Z",
+  "path_prefix": "/acrobat-sign/doc",
   "suite": "all",
   "threshold": 20,
   "status": "passed",
-  "dev_biz": false,
-  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/adobe-pass/",
+  "dev_biz": true,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/acrobat-sign/doc/",
   "suites": {
     "visual": {
-      "passed": 3,
+      "passed": 1,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "links": {
-      "passed": 3,
+      "passed": 1,
       "failed": 0,
       "skipped": 0,
       "issues": []
@@ -26,13 +26,13 @@
       "issues": []
     },
     "images": {
-      "passed": 3,
+      "passed": 1,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "content": {
-      "passed": 3,
+      "passed": 1,
       "failed": 0,
       "skipped": 0,
       "issues": []
