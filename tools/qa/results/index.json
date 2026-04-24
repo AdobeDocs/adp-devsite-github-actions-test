@@ -103,5 +103,12 @@
     "status": "passed",
     "suite": "all",
     "dev_biz": true
+  },
+  {
+    "path_prefix": "/firefly-services/docs/lightroom",
+    "timestamp": "2026-04-24T22:08:23.365Z",
+    "status": "passed",
+    "suite": "all",
+    "dev_biz": false
   }
 ]
