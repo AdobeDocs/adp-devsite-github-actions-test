@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T18:50:39.458Z",
+  "path_prefix": "/commerce/cloud-tools",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/commerce/cloud-tools/",
+  "suites": {
+    "visual": {
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}
