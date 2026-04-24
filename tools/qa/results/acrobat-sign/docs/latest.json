@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-23T22:48:42.909Z",
+  "timestamp": "2026-04-24T00:33:24.527Z",
   "path_prefix": "/acrobat-sign/docs",
   "suite": "all",
   "threshold": 20,
   "status": "failed",
-  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/acrobat-sign/docs/",
   "suites": {
     "visual": {
       "passed": 1,
