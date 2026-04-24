@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-24T18:58:22.686Z",
+  "timestamp": "2026-04-24T20:34:44.037Z",
   "path_prefix": "/developer-console/docs/guides",
   "suite": "all",
   "threshold": 20,
-  "status": "failed",
+  "status": "passed",
   "dev_biz": false,
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/developer-console/docs/guides/",
   "suites": {
@@ -32,12 +32,10 @@
       "issues": []
     },
     "content": {
-      "passed": 53,
-      "failed": 1,
+      "passed": 54,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /developer-console/docs/guides/authentication/ServerToServerAuthentication/ — Error: Content issues on stage for /developer-console/docs/guides/authentication/ServerToServerAuthentication/"
-      ]
+      "issues": []
     }
   }
 }
