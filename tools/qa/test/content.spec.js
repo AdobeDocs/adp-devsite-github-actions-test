@@ -97,19 +97,17 @@ for (const path of paths) {
     await page.waitForLoadState('load');
     const { issues: stageIssues, warnings } = await extractIssues(page);
 
-    // Load prod to filter out pre-existing issues (prod is Gatsby — only compare
-    // checks that are meaningful across both frameworks: title, description, anchors)
+    // Load prod to filter out pre-existing issues already broken on prod
     const prodRes = await page.goto(`${PROD_BASE}${path}`);
     let prodIssues = new Set();
     if (prodRes?.status() === 200) {
       await page.waitForLoadState('load');
       const { issues: pi } = await extractIssues(page);
-      // Only carry over non-block issues from prod (blocks are EDS-specific)
-      prodIssues = new Set(pi.filter(i => !i.startsWith('BLOCKS:')));
+      prodIssues = new Set(pi);
     }
 
     // Only flag issues that are new on stage (not already broken on prod)
-    const issues = stageIssues.filter(i => i.startsWith('BLOCKS:') || !prodIssues.has(i));
+    const issues = stageIssues.filter(i => !prodIssues.has(i));
 
     if (issues.length || warnings.length) {
       const lines = [`PAGE: ${path}`, ''];
