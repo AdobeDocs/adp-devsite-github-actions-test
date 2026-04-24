@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T17:41:51.764Z",
+  "timestamp": "2026-04-24T18:06:23.025Z",
   "path_prefix": "/cloud-storage",
   "suite": "all",
   "threshold": 20,
@@ -35,12 +35,10 @@
       "issues": []
     },
     "content": {
-      "passed": 17,
-      "failed": 1,
+      "passed": 18,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /cloud-storage/support/community/ — Error: Content issues on stage for /cloud-storage/support/community/"
-      ]
+      "issues": []
     }
   }
 }
