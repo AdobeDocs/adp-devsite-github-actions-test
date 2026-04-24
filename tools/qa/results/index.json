@@ -12,6 +12,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/after-effects",
+    "timestamp": "2026-04-24T21:02:06.284Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/app-builder/docs/overview",
     "timestamp": "2026-04-24T18:47:29.967Z",
     "status": "passed",
@@ -69,6 +75,18 @@
     "path_prefix": "/experience-cloud/cloud-manager",
     "timestamp": "2026-04-24T18:43:18.315Z",
     "status": "failed",
+    "suite": "all"
+  },
+  {
+    "path_prefix": "/express",
+    "timestamp": "2026-04-24T21:01:25.943Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
+    "path_prefix": "/express/add-ons",
+    "timestamp": "2026-04-24T21:01:29.664Z",
+    "status": "passed",
     "suite": "all"
   }
 ]
