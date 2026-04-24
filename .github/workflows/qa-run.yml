@@ -94,6 +94,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git add .
           git diff --staged --quiet || git commit -m "deploy report for ${{ inputs.path_prefix }} [skip ci]"
+          git pull --rebase "$REPO_URL" gh-pages || true
           git push "$REPO_URL" gh-pages
 
       - name: Write summary
