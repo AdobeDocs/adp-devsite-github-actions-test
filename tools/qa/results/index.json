@@ -19,8 +19,8 @@
   },
   {
     "path_prefix": "/commerce/testing",
-    "timestamp": "2026-04-24T00:00:50.874Z",
-    "status": "failed",
+    "timestamp": "2026-04-24T00:42:26.979Z",
+    "status": "passed",
     "suite": "all"
   }
 ]
