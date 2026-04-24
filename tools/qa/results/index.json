@@ -42,6 +42,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/data-collection-apis/docs",
+    "timestamp": "2026-04-24T18:51:21.530Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/developer-distribution/creative-cloud/docs/guides",
     "timestamp": "2026-04-24T18:51:17.068Z",
     "status": "passed",
