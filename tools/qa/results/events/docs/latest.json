@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-24T19:01:05.986Z",
+  "timestamp": "2026-04-24T20:52:59.532Z",
   "path_prefix": "/events/docs",
   "suite": "all",
   "threshold": 20,
-  "status": "failed",
+  "status": "passed",
   "dev_biz": false,
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/events/docs/",
   "suites": {
@@ -32,13 +32,10 @@
       "issues": []
     },
     "content": {
-      "passed": 71,
-      "failed": 2,
+      "passed": 73,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /events/docs/guides/using/asset-events/asset-events-actions — Error: Content issues on stage for /events/docs/guides/using/asset-events/asset-events-actions",
-        "content: /events/docs/guides/using/asset-events/asset-events-glossary — Error: Content issues on stage for /events/docs/guides/using/asset-events/asset-events-glossary"
-      ]
+      "issues": []
     }
   }
 }
