@@ -1,11 +1,5 @@
 [
   {
-    "path_prefix": "/acrobat-sign/docs",
-    "timestamp": "2026-04-24T18:33:26.970Z",
-    "status": "failed",
-    "suite": "all"
-  },
-  {
     "path_prefix": "/adobe-connect-sdk",
     "timestamp": "2026-04-24T18:49:10.407Z",
     "status": "passed",
