@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T18:51:17.068Z",
+  "path_prefix": "/developer-distribution/creative-cloud/docs/guides",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/developer-distribution/creative-cloud/docs/guides/",
+  "suites": {
+    "visual": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}
