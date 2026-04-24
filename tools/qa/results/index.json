@@ -22,5 +22,11 @@
     "timestamp": "2026-04-24T00:42:26.979Z",
     "status": "passed",
     "suite": "all"
+  },
+  {
+    "path_prefix": "/experience-cloud/cloud-manager",
+    "timestamp": "2026-04-24T00:43:30.951Z",
+    "status": "failed",
+    "suite": "all"
   }
 ]

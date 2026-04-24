@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-04-24T00:43:30.951Z",
+  "path_prefix": "/experience-cloud/cloud-manager",
+  "suite": "all",
+  "threshold": 20,
+  "status": "failed",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/experience-cloud/cloud-manager/",
+  "suites": {
+    "visual": {
+      "passed": 26,
+      "failed": 7,
+      "skipped": 0,
+      "issues": [
+        "visual diff: /experience-cloud/cloud-manager/cli-and-sdks/ — Error: /experience-cloud/cloud-manager/cli-and-sdks/ differs by 20.55% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/docs/ — Error: /experience-cloud/cloud-manager/docs/ differs by 32.87% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/guides/api-usage/advancing-and-cancelling-steps/ — Error: /experience-cloud/cloud-manager/guides/api-usage/advancing-and-cancelling-steps/ differs by 22.97% (threshold: 20",
+        "visual diff: /experience-cloud/cloud-manager/guides/getting-started/understanding-the-api/ — Error: /experience-cloud/cloud-manager/guides/getting-started/understanding-the-api/ differs by 20.71% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/reference/api/ — Error: /experience-cloud/cloud-manager/reference/api/ differs by 21.33% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/reference/events/ — Error: /experience-cloud/cloud-manager/reference/events/ differs by 20.53% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/tutorial/6-getting-the-program/ — Error: /experience-cloud/cloud-manager/tutorial/6-getting-the-program/ differs by 20.23% (threshold: 20%)"
+      ]
+    },
+    "links": {
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 31,
+      "failed": 2,
+      "skipped": 0,
+      "issues": [
+        "content: /experience-cloud/cloud-manager/guides/ — Error: Content issues on stage for /experience-cloud/cloud-manager/guides/",
+        "content: /experience-cloud/cloud-manager/reference/ — Error: Content issues on stage for /experience-cloud/cloud-manager/reference/"
+      ]
+    }
+  }
+}
