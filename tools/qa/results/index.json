@@ -66,6 +66,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/events/docs",
+    "timestamp": "2026-04-24T19:01:05.986Z",
+    "status": "failed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/experience-cloud/cloud-manager",
     "timestamp": "2026-04-24T18:43:18.315Z",
     "status": "failed",
