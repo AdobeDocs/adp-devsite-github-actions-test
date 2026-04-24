@@ -1,0 +1,56 @@
+name: QA Batch Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      path_prefixes:
+        description: 'Comma-separated path prefixes (e.g. /cloud-storage,/acrobat-sign/docs)'
+        required: true
+        type: string
+      suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - visual
+          - links
+          - nav
+          - images
+          - content
+      threshold:
+        description: 'Visual diff threshold % (only applies to visual/all suites)'
+        required: false
+        default: '20'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: |
+          MATRIX=$(node -e "
+            const prefixes = '${{ inputs.path_prefixes }}'.split(',').map(s => s.trim()).filter(Boolean);
+            console.log(JSON.stringify({ prefix: prefixes }));
+          ")
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+
+  qa:
+    needs: prepare
+    strategy:
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+      fail-fast: false
+    uses: ./.github/workflows/qa-run.yml
+    with:
+      path_prefix: ${{ matrix.prefix }}
+      suite: ${{ inputs.suite }}
+      threshold: ${{ inputs.threshold }}
+    permissions:
+      contents: write

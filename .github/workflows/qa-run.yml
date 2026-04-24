@@ -24,6 +24,19 @@ on:
         required: false
         default: '20'
         type: string
+  workflow_call:
+    inputs:
+      path_prefix:
+        required: true
+        type: string
+      suite:
+        required: false
+        default: 'all'
+        type: string
+      threshold:
+        required: false
+        default: '20'
+        type: string
 
 permissions:
   contents: write
