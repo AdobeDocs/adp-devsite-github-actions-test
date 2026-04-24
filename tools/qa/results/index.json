@@ -76,5 +76,11 @@
     "timestamp": "2026-04-24T21:01:25.943Z",
     "status": "passed",
     "suite": "all"
+  },
+  {
+    "path_prefix": "/express/add-ons",
+    "timestamp": "2026-04-24T21:01:29.664Z",
+    "status": "passed",
+    "suite": "all"
   }
 ]
