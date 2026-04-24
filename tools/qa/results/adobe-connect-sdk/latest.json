@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-04-23T22:14:36.109Z",
+  "timestamp": "2026-04-24T18:49:10.407Z",
   "path_prefix": "/adobe-connect-sdk",
   "suite": "all",
   "threshold": 20,
-  "status": "failed",
-  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/adobe-connect-sdk/",
   "suites": {
     "visual": {
       "passed": 15,
@@ -31,13 +32,10 @@
       "issues": []
     },
     "content": {
-      "passed": 13,
-      "failed": 2,
+      "passed": 15,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /adobe-connect-sdk/guides/brand_guidelines/ — Error: Content issues on stage for /adobe-connect-sdk/guides/brand_guidelines/",
-        "content: /adobe-connect-sdk/guides/development_considerations/ — Error: Content issues on stage for /adobe-connect-sdk/guides/development_considerations/"
-      ]
+      "issues": []
     }
   }
 }

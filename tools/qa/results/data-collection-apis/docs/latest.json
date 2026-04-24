@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-04-24T18:43:50.946Z",
-  "path_prefix": "/commerce/testing",
+  "timestamp": "2026-04-24T18:51:21.530Z",
+  "path_prefix": "/data-collection-apis/docs",
   "suite": "all",
   "threshold": 20,
   "status": "passed",
   "dev_biz": false,
-  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/commerce/testing/",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/data-collection-apis/docs/",
   "suites": {
     "visual": {
-      "passed": 84,
+      "passed": 26,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "links": {
-      "passed": 84,
+      "passed": 26,
       "failed": 0,
       "skipped": 0,
       "issues": []
@@ -26,13 +26,13 @@
       "issues": []
     },
     "images": {
-      "passed": 84,
+      "passed": 26,
       "failed": 0,
       "skipped": 0,
       "issues": []
     },
     "content": {
-      "passed": 84,
+      "passed": 26,
       "failed": 0,
       "skipped": 0,
       "issues": []
