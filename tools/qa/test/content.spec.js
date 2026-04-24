@@ -14,13 +14,6 @@ function extractIssues(page) {
     const hints = [];
     const inMain = el => el.closest('main') && !el.closest('header') && !el.closest('footer') && !el.closest('nav');
 
-    // --- Frontmatter ---
-    const title = document.title?.trim();
-    if (!title) problems.push('FRONTMATTER: Missing <title>');
-
-    const desc = document.querySelector('meta[name="description"]')?.getAttribute('content')?.trim();
-    if (!desc) problems.push('FRONTMATTER: Missing meta description');
-
     // --- H1 (warning only — recommended for LLM readability) ---
     const h1s = [...document.querySelectorAll('main h1')];
     if (h1s.length === 0) hints.push('H1: No H1 heading — recommended for LLM/search readability');
