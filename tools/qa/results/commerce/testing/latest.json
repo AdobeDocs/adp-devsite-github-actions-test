@@ -1,9 +1,10 @@
 {
-  "timestamp": "2026-04-24T00:42:26.979Z",
+  "timestamp": "2026-04-24T18:43:50.946Z",
   "path_prefix": "/commerce/testing",
   "suite": "all",
   "threshold": 20,
   "status": "passed",
+  "dev_biz": false,
   "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/commerce/testing/",
   "suites": {
     "visual": {
