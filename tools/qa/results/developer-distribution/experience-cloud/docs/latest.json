@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T18:50:54.498Z",
+  "path_prefix": "/developer-distribution/experience-cloud/docs",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/developer-distribution/experience-cloud/docs/",
+  "suites": {
+    "visual": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}

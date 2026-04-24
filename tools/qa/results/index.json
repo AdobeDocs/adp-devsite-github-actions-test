@@ -42,6 +42,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/developer-distribution/experience-cloud/docs",
+    "timestamp": "2026-04-24T18:50:54.498Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/experience-cloud/cloud-manager",
     "timestamp": "2026-04-24T18:43:18.315Z",
     "status": "failed",
