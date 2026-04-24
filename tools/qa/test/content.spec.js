@@ -42,7 +42,7 @@ function extractIssues(page) {
     }
 
     // --- Empty EDS block containers (stage-only check, prod is Gatsby so no .block elements) ---
-    const excludedBlocks = ['site-wide-banner', 'contributors', 'discover', 'redoclyapiblock', 'side-nav', 'breadcrumbs', 'embed', 'next-prev', 'onthispage', 'fragment'];
+    const excludedBlocks = ['site-wide-banner', 'contributors', 'discover', 'redoclyapiblock', 'side-nav', 'breadcrumbs', 'embed', 'next-prev', 'onthispage', 'fragment', 'horizontalline'];
     const emptyBlocks = [...document.querySelectorAll('main .block')]
       .filter(b => inMain(b) && !b.textContent?.trim() && !b.querySelector('img, video, iframe'))
       .filter(b => !excludedBlocks.some(name => [...b.classList].some(c => c.includes(name))));
