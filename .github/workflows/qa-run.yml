@@ -121,7 +121,7 @@ jobs:
           const p='tools/qa/results/index.json';
           let idx=[];
           try{idx=JSON.parse(readFileSync(p));}catch{}
-          const e={path_prefix:r.path_prefix,timestamp:r.timestamp,status:r.status,suite:r.suite};
+          const e={path_prefix:r.path_prefix,timestamp:r.timestamp,status:r.status,suite:r.suite,dev_biz:r.dev_biz||false};
           const i=idx.findIndex(x=>x.path_prefix===r.path_prefix);
           if(i>=0)idx[i]=e;else idx.push(e);
           idx.sort((a,b)=>a.path_prefix.localeCompare(b.path_prefix));
