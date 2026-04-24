@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T18:47:29.967Z",
+  "path_prefix": "/app-builder/docs/overview",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/app-builder/docs/overview/",
+  "suites": {
+    "visual": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}
