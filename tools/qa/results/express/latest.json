@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T21:01:25.943Z",
+  "path_prefix": "/express",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": true,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/express/",
+  "suites": {
+    "visual": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}
