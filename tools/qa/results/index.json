@@ -6,6 +6,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/adobe-connect-sdk",
+    "timestamp": "2026-04-24T18:49:10.407Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/adobe-pass",
     "timestamp": "2026-04-24T18:33:30.261Z",
     "status": "passed",
