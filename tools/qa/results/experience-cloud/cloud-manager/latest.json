@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T17:48:07.259Z",
+  "timestamp": "2026-04-24T18:43:18.315Z",
   "path_prefix": "/experience-cloud/cloud-manager",
   "suite": "all",
   "threshold": 20,
@@ -16,7 +16,7 @@
         "visual diff: /experience-cloud/cloud-manager/docs/ — Error: /experience-cloud/cloud-manager/docs/ differs by 32.87% (threshold: 20%)",
         "visual diff: /experience-cloud/cloud-manager/guides/api-usage/advancing-and-cancelling-steps/ — Error: /experience-cloud/cloud-manager/guides/api-usage/advancing-and-cancelling-steps/ differs by 22.97% (threshold: 20",
         "visual diff: /experience-cloud/cloud-manager/guides/getting-started/understanding-the-api/ — Error: /experience-cloud/cloud-manager/guides/getting-started/understanding-the-api/ differs by 20.71% (threshold: 20%)",
-        "visual diff: /experience-cloud/cloud-manager/reference/api/ — Error: /experience-cloud/cloud-manager/reference/api/ differs by 21.27% (threshold: 20%)",
+        "visual diff: /experience-cloud/cloud-manager/reference/api/ — Error: /experience-cloud/cloud-manager/reference/api/ differs by 21.14% (threshold: 20%)",
         "visual diff: /experience-cloud/cloud-manager/reference/events/ — Error: /experience-cloud/cloud-manager/reference/events/ differs by 20.53% (threshold: 20%)",
         "visual diff: /experience-cloud/cloud-manager/tutorial/6-getting-the-program/ — Error: /experience-cloud/cloud-manager/tutorial/6-getting-the-program/ differs by 20.23% (threshold: 20%)"
       ]
@@ -40,13 +40,10 @@
       "issues": []
     },
     "content": {
-      "passed": 31,
-      "failed": 2,
+      "passed": 33,
+      "failed": 0,
       "skipped": 0,
-      "issues": [
-        "content: /experience-cloud/cloud-manager/guides/ — Error: Content issues on stage for /experience-cloud/cloud-manager/guides/",
-        "content: /experience-cloud/cloud-manager/guides/getting-started/ — Error: Content issues on stage for /experience-cloud/cloud-manager/guides/getting-started/"
-      ]
+      "issues": []
     }
   }
 }
