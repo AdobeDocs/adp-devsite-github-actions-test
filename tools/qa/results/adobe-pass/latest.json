@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-24T00:08:31.386Z",
+  "timestamp": "2026-04-24T00:18:40.643Z",
   "path_prefix": "/adobe-pass",
   "suite": "all",
   "threshold": 20,
   "status": "passed",
-  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/adobe-pass/",
   "suites": {
     "visual": {
       "passed": 3,
