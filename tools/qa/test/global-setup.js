@@ -1,8 +1,9 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync, unlinkSync } from 'fs';
 import { chromium } from '@playwright/test';
 
 const SITEMAP_URL = 'https://developer.adobe.com/sitemap.xml';
 const PATHS_FILE = '.playwright-paths.json';
+const DEVBIZ_FLAG = '.playwright-devbiz';
 
 async function fetchText(url) {
   const res = await fetch(url);
@@ -66,10 +67,12 @@ export default async function globalSetup() {
 
   if (await isDevBiz(normalizedPrefix)) {
     console.log(`\nDev-biz page detected — running checks on single page: ${normalizedPrefix}`);
+    writeFileSync(DEVBIZ_FLAG, '1');
     writeFileSync(PATHS_FILE, JSON.stringify([normalizedPrefix], null, 2));
     return;
   }
 
+  try { unlinkSync(DEVBIZ_FLAG); } catch { /* not present */ }
   console.log(`\nFetching sitemap for prefix: ${prefix}`);
   const paths = await fetchAllPaths(prefix);
   console.log(`Found ${paths.length} paths`);

@@ -1,4 +1,4 @@
-import { readFileSync, mkdirSync, writeFileSync } from 'fs';
+import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'fs';
 
 function suiteKey(file) {
   if (file.includes('links')) return 'links';
@@ -16,6 +16,7 @@ const summary = {
   suite: process.env.SUITE || 'all',
   threshold: parseFloat(process.env.DIFF_THRESHOLD || '5'),
   status: 'passed',
+  dev_biz: existsSync('.playwright-devbiz'),
   report_url: process.env.REPORT_URL || null,
   suites: {
     visual: emptySuite(),
