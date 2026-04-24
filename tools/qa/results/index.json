@@ -24,6 +24,12 @@
     "suite": "all"
   },
   {
+    "path_prefix": "/commerce-testing",
+    "timestamp": "2026-04-24T17:38:07.804Z",
+    "status": "passed",
+    "suite": "all"
+  },
+  {
     "path_prefix": "/commerce/testing",
     "timestamp": "2026-04-24T00:42:26.979Z",
     "status": "passed",
