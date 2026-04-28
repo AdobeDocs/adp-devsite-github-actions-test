@@ -110,11 +110,5 @@
     "status": "passed",
     "suite": "all",
     "dev_biz": false
-  },
-  {
-    "path_prefix": "/indesign",
-    "timestamp": "2026-04-25T02:58:25.458Z",
-    "status": "error",
-    "suite": "all"
   }
 ]
