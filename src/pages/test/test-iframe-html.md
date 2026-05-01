@@ -1,2 +1,2 @@
 
-<iframe  src="/github-actions-test/graphql-api/admin-api/index.html"/>
+<Fragment  src="/github-actions-test/graphql-api/admin-api/index.html"/>
