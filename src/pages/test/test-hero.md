@@ -68,3 +68,5 @@ Build custom apps that interact with core Adobe services, and automate processes
 Normal text in here and you can write about two paragraphs worth. This is just filler to keep going on and on and on. Taking up space to make it look like this is actually about something.
 
 [Adobe Photoshop](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
+
+[example json file](../../../static/petstore.json)
