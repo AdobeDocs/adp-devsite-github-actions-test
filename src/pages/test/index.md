@@ -1,7 +1,3 @@
-testing page
-
-![Before you begin](../assets/express-add-ons.mp4)
-
 ## Info Card Example
 
 <Info-Card slots="image, heading , text "  repeat="2" />
