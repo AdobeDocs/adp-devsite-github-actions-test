@@ -111,3 +111,4 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 - [Learn more](https://https://www.typescriptlang.org/)
 
+[JSON file in static](../../static/petstore.json)
