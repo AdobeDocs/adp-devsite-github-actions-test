@@ -5,6 +5,7 @@ keywords:
 - App Builder
 - Extensions
 - Themes
+hideBreadcrumbNav: true
 ---
 
 # Getting started
