@@ -1,4 +1,4 @@
-<Superhero slots="video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient />
+<Superhero slots="video, heading, text, buttons" variant="halfWidth" textColor="black" overGradient controls autoplay loop/>
 
 [video_url](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/refs/heads/main/src/pages/assets/express-add-ons.mp4)
 
