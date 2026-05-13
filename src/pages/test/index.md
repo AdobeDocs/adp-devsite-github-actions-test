@@ -1,6 +1,6 @@
 ## Info Card Example
 
-<Info-Card slots="image, heading , text "  repeat="2" />
+<Infocard slots="image, heading , text "  repeat="2" />
 
 ![](./_images/assets/your-account.png)
 
@@ -16,7 +16,7 @@ Join our monthly Office Hours focused on Adobe Express Add-ons development and b
 
 ## Info Card with Wide varient
 
-<Info-Card slots="image, heading , text " wide repeat="2" />
+<Infocard slots="image, heading , text " repeat="2" isWide />
 
 ![](./_images/assets/your-account.png)
 
@@ -30,7 +30,9 @@ Join our monthly Office Hours focused on Adobe Express Add-ons development and b
 
 Join our monthly Office Hours focused on Adobe Express Add-ons development and bring your questions
 
-<Info-Card slots="list" articles wide />
+## Info Card with Article slots
+
+<InfoCard slots="articles"  isWide />
 
 - [https://blog.developer.adobe.com/en/publish/2026/02/inside-the-24-hour-adobe-express-add-ons-for-enterprise-hackathon](https://blog.developer.adobe.com/en/publish/2026/02/inside-the-24-hour-adobe-express-add-ons-for-enterprise-hackathon)
 - [https://blog.developer.adobe.com/en/publish/2026/02/inside-the-24-hour-adobe-express-add-ons-for-enterprise-hackathon](https://blog.developer.adobe.com/en/publish/2026/02/inside-the-24-hour-adobe-express-add-ons-for-enterprise-hackathon)
