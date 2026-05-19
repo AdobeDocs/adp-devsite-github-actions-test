@@ -1,22 +1,30 @@
 ---
 title: No Dead URLs False Positives Test
-description: Tests that the no-dead-urls linter does not flag anchor/hash URLs, mailto links, or HTTP redirect URLs as dead
+description: Tests that the no-dead-urls linter does not flag bare fragment links, mailto links, or HTTP redirect URLs as dead
 ---
 
 # no-dead-urls False Positive Scenarios (DEVSITE-2405)
 
 These cases should NOT trigger the no-dead-urls linter.
 
-## Anchor / Hash Fragment URLs (should NOT be flagged)
+## Bare Fragment Links
 
-URLs that include a `#` fragment are sometimes flagged as dead even when the base page is alive.
-The linter should skip the anchor check or gracefully handle missing anchors.
+Links that start with `#` reference a heading on the current page and cannot be resolved
+in a static linting context. The linter skips these via the `/^#/` pattern in `skipUrlPatterns`.
 
-- [Spectrum theming resources](https://spectrum.adobe.com/page/theming/#Resources-for-Spectrum-for-Adobe-Express)
+- [Jump to Mailto section](#mailto-links)
+- [Jump to Redirect section](#http-redirect-urls)
+- [Back to top](#no-dead-urls-false-positive-scenarios-devsite-2405)
+
+## Full URLs with Anchor Fragments
+
+Full URLs that contain a `#` anchor (e.g. `https://example.com/page#section`) are validated
+at the base-URL level. The anchor portion does not affect liveness detection.
+
 - [MDN WebSocket close](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/close#parameters)
-- [Adobe I/O Authentication overview](https://developer.adobe.com/developer-console/docs/guides/authentication/#authentication-overview)
+- [MDN Array map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map#parameters)
 
-## Mailto Links (should NOT be flagged)
+## Mailto Links
 
 Email addresses expressed as `mailto:` links are not HTTP URLs and cannot be checked for liveness.
 
@@ -24,13 +32,14 @@ Email addresses expressed as `mailto:` links are not HTTP URLs and cannot be che
 - [Send feedback](mailto:adobeio-feedback@adobe.com)
 - [Report an issue](mailto:devsite-support@adobe.com)
 
-## HTTP-to-HTTPS Redirect URLs (should NOT be flagged)
+## HTTP Redirect URLs
 
-URLs that issue a permanent redirect from HTTP to HTTPS should be treated as alive,
-not dead, when `followRedirect` is enabled.
+URLs that redirect from HTTP to HTTPS are followed via `followRedirects: true`. The linter may
+emit a "redirecting URL" advisory (suggesting you use the final URL), but should NOT classify
+these as dead.
 
-- [Discord community](http://discord.gg/nc3QDyFeb4)
-- [Adobe website (http)](http://www.adobe.com)
+- [GitHub (http)](http://github.com)
+- [W3C (http)](http://www.w3.org)
 
 ## Real Dead URL (SHOULD trigger the linter - regression check)
 
