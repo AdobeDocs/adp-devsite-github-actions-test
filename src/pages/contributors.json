@@ -1,7 +1,7 @@
 {
-  "total": 176,
+  "total": 177,
   "offset": 0,
-  "limit": 176,
+  "limit": 177,
   "data": [
     {
       "page": "/",
@@ -628,6 +628,13 @@
       "page": "/test/devsite-2235/valid-with-numbers-123",
       "avatars": [],
       "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2375/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "5/19/2026"
     },
     {
       "page": "/test/double--dash-dir/",
