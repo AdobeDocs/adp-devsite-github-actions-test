@@ -888,8 +888,10 @@
     },
     {
       "page": "/test/superhero-cc-everywhere",
-      "avatars": [],
-      "lastUpdated": "1/15/2026"
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "5/20/2026"
     },
     {
       "page": "/test/superhero/new/gatsby-hero-default",
