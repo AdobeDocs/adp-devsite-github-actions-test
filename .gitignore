@@ -1,9 +1,8 @@
-# OS and IDE generated files
+# OS
 .DS_Store
+
+# IDE
 .vscode
-.history
-.idea
-.editorconfig
 
 # Environment variables
 .env
@@ -11,18 +10,6 @@
 # npm
 node_modules
 package-lock.json
-
-# Cypress
-cypress/videos
-cypress/screenshots
-
-# Lerna
-lerna-debug.log
-
-# Local GitHub Actions testing
-.actrc
-.secrets
-local-test.yml
 
 # Lint output
 linter-report.txt
