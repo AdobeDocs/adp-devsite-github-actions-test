@@ -20,7 +20,7 @@ on:
 jobs:
   upload-playground:
     name: Upload playground samples
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@security/yaml-context-injection
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@main
     with:
       TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
       FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
