@@ -1,18 +1,18 @@
 {
-  "total": 152,
+  "total": 177,
   "offset": 0,
-  "limit": 152,
+  "limit": 177,
   "data": [
     {
       "page": "/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4",
         "https://avatars.githubusercontent.com/u/41382203?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/57922?v=4",
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
+        "https://avatars.githubusercontent.com/u/57922?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "5/26/2026"
     },
     {
       "page": "/api/",
@@ -115,11 +115,6 @@
       "lastUpdated": "11/13/2025"
     },
     {
-      "page": "/blocks/herosimple/herosimple-default",
-      "avatars": [],
-      "lastUpdated": "11/13/2025"
-    },
-    {
       "page": "/blocks/herosimple/herosimple-fullwidth",
       "avatars": [],
       "lastUpdated": "11/13/2025"
@@ -147,13 +142,6 @@
       "page": "/blocks/inline-code/",
       "avatars": [],
       "lastUpdated": "11/14/2025"
-    },
-    {
-      "page": "/blocks/list/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "11/13/2025"
     },
     {
       "page": "/blocks/redoclyapiblock/redocly-api-block-configs",
@@ -332,6 +320,13 @@
       "lastUpdated": "6/4/2025"
     },
     {
+      "page": "/openapi/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/16/2026"
+    },
+    {
       "page": "/readme/herosimple",
       "avatars": [],
       "lastUpdated": "10/31/2025"
@@ -379,11 +374,40 @@
     {
       "page": "/test/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/57922?v=4",
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
-      "lastUpdated": "1/14/2026"
+      "lastUpdated": "5/27/2026"
+    },
+    {
+      "page": "/test/_images/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/_images/underscore",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/2.0/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/2.0/version",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/7/2026"
     },
     {
       "page": "/test/anchor-link-extention",
@@ -446,6 +470,16 @@
       "lastUpdated": "3/4/2026"
     },
     {
+      "page": "/test/consecutive--dashes-invalid",
+      "avatars": [],
+      "lastUpdated": "4/16/2026"
+    },
+    {
+      "page": "/test/consecutive-dashes-valid",
+      "avatars": [],
+      "lastUpdated": "4/16/2026"
+    },
+    {
       "page": "/test/content-with-hr",
       "avatars": [
         "https://avatars.githubusercontent.com/u/113968869?v=4"
@@ -475,6 +509,11 @@
       "page": "/test/details-html",
       "avatars": [],
       "lastUpdated": "2/25/2026"
+    },
+    {
+      "page": "/test/details-html-quoted-angle-brackets",
+      "avatars": [],
+      "lastUpdated": "3/30/2026"
     },
     {
       "page": "/test/devsite-2008/centered",
@@ -538,6 +577,70 @@
       "page": "/test/devsite-2131/valid-filename-123",
       "avatars": [],
       "lastUpdated": "2/3/2026"
+    },
+    {
+      "page": "/test/devsite-2235/",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/-leading-dash",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/consecutive--dashes",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/file.with.dots",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/name with spaces",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/name_with_underscore",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/trailing-dash-",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/Uppercase-Name",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/valid-kebab-case",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2235/valid-with-numbers-123",
+      "avatars": [],
+      "lastUpdated": "4/27/2026"
+    },
+    {
+      "page": "/test/devsite-2375/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "5/19/2026"
+    },
+    {
+      "page": "/test/double--dash-dir/",
+      "avatars": [],
+      "lastUpdated": "4/16/2026"
     },
     {
       "page": "/test/edition",
@@ -629,6 +732,11 @@
       "lastUpdated": "1/16/2026"
     },
     {
+      "page": "/test/inline-html-comment",
+      "avatars": [],
+      "lastUpdated": "5/12/2026"
+    },
+    {
       "page": "/test/inlinealert",
       "avatars": [],
       "lastUpdated": "12/4/2025"
@@ -645,12 +753,20 @@
     {
       "page": "/test/md-extention",
       "avatars": [],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/missing-file-outside-src-pages",
+      "avatars": [],
+      "lastUpdated": "4/14/2026"
     },
     {
       "page": "/test/mp4",
-      "avatars": [],
-      "lastUpdated": "1/15/2026"
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "5/27/2026"
     },
     {
       "page": "/test/multiple-errors",
@@ -673,6 +789,11 @@
       "page": "/test/nested-inline-alert",
       "avatars": [],
       "lastUpdated": "12/5/2025"
+    },
+    {
+      "page": "/test/no-dead-urls-false-positives",
+      "avatars": [],
+      "lastUpdated": "5/19/2026"
     },
     {
       "page": "/test/no-sidenav-2",
@@ -740,6 +861,13 @@
       "lastUpdated": "10/10/2025"
     },
     {
+      "page": "/test/qa-dashboard",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/22/2026"
+    },
+    {
       "page": "/test/redocly-api-block-default",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
@@ -758,7 +886,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "11/13/2025"
+      "lastUpdated": "4/14/2026"
     },
     {
       "page": "/test/superhero-cc-everywhere",
@@ -866,9 +994,10 @@
     {
       "page": "/test/test-hero",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "7/29/2025"
+      "lastUpdated": "5/4/2026"
     },
     {
       "page": "/test/test-hr",
@@ -884,6 +1013,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "8/1/2025"
+    },
+    {
+      "page": "/test/test-iframe-html",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "5/1/2026"
     },
     {
       "page": "/test/test-louisha",
@@ -941,6 +1077,18 @@
       "page": "/test/UPPERCASE/",
       "avatars": [],
       "lastUpdated": "1/29/2026"
+    },
+    {
+      "page": "/test/UPPERCASE/uppercase",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
+      ],
+      "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/validate-links-404",
+      "avatars": [],
+      "lastUpdated": "4/7/2026"
     }
   ],
   ":type": "sheet"
