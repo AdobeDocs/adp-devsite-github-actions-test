@@ -1,0 +1,136 @@
+name: QA Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      path_prefix:
+        description: 'Path prefix to test (e.g. /experience-cloud/cloud-manager)'
+        required: true
+        type: string
+      suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - visual
+          - links
+          - nav
+          - images
+          - content
+      threshold:
+        description: 'Visual diff threshold % (only applies to visual/all suites)'
+        required: false
+        default: '20'
+        type: string
+  workflow_call:
+    inputs:
+      path_prefix:
+        required: true
+        type: string
+      suite:
+        required: false
+        default: 'all'
+        type: string
+      threshold:
+        required: false
+        default: '20'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: tools/qa
+        run: npm install
+
+      - name: Install Playwright browsers
+        working-directory: tools/qa
+        run: npx playwright install chromium --with-deps
+
+      - name: Run tests
+        working-directory: tools/qa
+        continue-on-error: true
+        env:
+          PATH_PREFIX: ${{ inputs.path_prefix }}
+          DIFF_THRESHOLD: ${{ inputs.threshold }}
+          SUITE: ${{ inputs.suite }}
+          CI: true
+        run: |
+          if [ "$SUITE" = "all" ]; then
+            npx playwright test
+          else
+            npx playwright test "test/$SUITE.spec.js"
+          fi
+
+      - name: Deploy report to GitHub Pages
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          PAGES_DIR="/tmp/gh-pages"
+          git clone --depth 1 --branch gh-pages "$REPO_URL" "$PAGES_DIR" 2>/dev/null || (
+            mkdir -p "$PAGES_DIR" && cd "$PAGES_DIR" && git init && git checkout -b gh-pages
+          )
+          rm -rf "${PAGES_DIR}${{ inputs.path_prefix }}"
+          mkdir -p "${PAGES_DIR}${{ inputs.path_prefix }}"
+          cp -r tools/qa/playwright-report/. "${PAGES_DIR}${{ inputs.path_prefix }}/"
+          cd "$PAGES_DIR"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add .
+          git diff --staged --quiet || git commit -m "deploy report for ${{ inputs.path_prefix }} [skip ci]"
+          for i in 1 2 3 4 5; do
+            git pull --rebase "$REPO_URL" gh-pages || true
+            git push "$REPO_URL" gh-pages && break
+            echo "Push attempt $i failed, retrying..."
+            sleep $i
+          done
+
+      - name: Write summary
+        working-directory: tools/qa
+        env:
+          PATH_PREFIX: ${{ inputs.path_prefix }}
+          DIFF_THRESHOLD: ${{ inputs.threshold }}
+          SUITE: ${{ inputs.suite }}
+          REPORT_URL: https://adobedocs.github.io/adp-devsite-github-actions-test${{ inputs.path_prefix }}/
+        run: node summarize.js
+
+      - name: Commit results
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          cp "tools/qa/results${{ inputs.path_prefix }}/latest.json" /tmp/qa-results.json
+          git checkout -- "tools/qa/results${{ inputs.path_prefix }}/latest.json" 2>/dev/null || true
+          git pull --rebase origin ${{ github.ref_name }}
+          mkdir -p "tools/qa/results${{ inputs.path_prefix }}"
+          cp /tmp/qa-results.json "tools/qa/results${{ inputs.path_prefix }}/latest.json"
+          node -e "
+          const {readFileSync,writeFileSync}=require('fs');
+          const r=JSON.parse(readFileSync('/tmp/qa-results.json'));
+          const p='tools/qa/results/index.json';
+          let idx=[];
+          try{idx=JSON.parse(readFileSync(p));}catch{}
+          const e={path_prefix:r.path_prefix,timestamp:r.timestamp,status:r.status,suite:r.suite,dev_biz:r.dev_biz||false};
+          const i=idx.findIndex(x=>x.path_prefix===r.path_prefix);
+          if(i>=0)idx[i]=e;else idx.push(e);
+          idx.sort((a,b)=>a.path_prefix.localeCompare(b.path_prefix));
+          writeFileSync(p,JSON.stringify(idx,null,2));
+          "
+          git add tools/qa/results/
+          git diff --staged --quiet || git commit -m "chore: update qa results [skip ci]"
+          git push origin ${{ github.ref_name }}

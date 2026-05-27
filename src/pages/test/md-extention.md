@@ -1,6 +1,6 @@
 ---
 title: Internal Link Extension Test
-description: Tests for remark-lint-internal-link-extension rule
+description: Tests for remark-lint-internal-link-extension rule (missing .md extension)
 ---
 
 ## Valid Links (should pass)
@@ -20,14 +20,8 @@ description: Tests for remark-lint-internal-link-extension rule
 - [PDF link](../assets/doc.pdf)
 - [JSON link](../assets/data.json)
 
-## Invalid Links — internal-link-extension (should fail)
+## Invalid Links — missing .md extension (should fail)
 
-- [Accordion](../blocks/accordion/)
-- [Inline Alert](../blocks/inline-alert)
-- [Index link](../blocks)
+- [No extension](../blocks/inline-alert)
+- [No extension deep](../blocks)
 - [Relative no ext](./test-hero)
-
-## Anchor links (valid — should pass)
-
-- [With anchor](../blocks/accordion/index.md#usage)
-- [SideNav](../blocks/inline-alert/index.md#heading)

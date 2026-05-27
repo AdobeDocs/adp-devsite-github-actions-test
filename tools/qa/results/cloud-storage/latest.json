@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-04-24T20:45:21.747Z",
+  "path_prefix": "/cloud-storage",
+  "suite": "all",
+  "threshold": 20,
+  "status": "failed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/cloud-storage/",
+  "suites": {
+    "visual": {
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 16,
+      "failed": 2,
+      "skipped": 0,
+      "issues": [
+        "links: /cloud-storage/guides/api/overview — Error: Page missing from stage: https://developer-stage.adobe.com/cloud-storage/guides/api/overview",
+        "links: /cloud-storage/guides/authentication/ — Error: Page missing from stage: https://developer-stage.adobe.com/cloud-storage/guides/authentication/"
+      ]
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}

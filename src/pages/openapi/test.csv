@@ -1,0 +1,4 @@
+id,name,email,department,salary,start_date
+1,Alice Johnson,alice@example.com,Engineering,95000,2022-03-15
+2,Bob Smith,bob@example.com,Marketing,72000,2021-07-01
+3,Carol Lee,carol@example.com,Engineering,102000,2020-11-20

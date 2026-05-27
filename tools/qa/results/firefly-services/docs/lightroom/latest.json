@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T22:08:23.365Z",
+  "path_prefix": "/firefly-services/docs/lightroom",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/firefly-services/docs/lightroom/",
+  "suites": {
+    "visual": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}

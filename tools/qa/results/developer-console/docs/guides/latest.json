@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T20:34:44.037Z",
+  "path_prefix": "/developer-console/docs/guides",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/developer-console/docs/guides/",
+  "suites": {
+    "visual": {
+      "passed": 54,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 54,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 54,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 54,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}

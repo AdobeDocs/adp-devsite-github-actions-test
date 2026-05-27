@@ -12,6 +12,7 @@ codeBlock="tokens: { punctuation: { color: 'red ' }}"
 disableSidebar={false}
 disableSearch={true}
 hideTryItPanel
+hideSchemaTitles={false}
 scrollYOffset={64}
 
     sortOperationsAlphabetically

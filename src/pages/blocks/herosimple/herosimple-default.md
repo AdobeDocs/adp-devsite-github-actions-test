@@ -1,1 +1,0 @@
-**DEPRECATED**: please use [Superhero default](../superhero/superhero-default.md) instead

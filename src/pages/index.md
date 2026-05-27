@@ -1,8 +1,9 @@
 ---
-title: Block Examples
+title: Block Examples 
 description: Explore all available blocks for the Adobe Developer documentation site, including content blocks, code blocks, and API documentation components.
+no-toc: true
 --- 
-# DevDoc Block Examples
+# DevDoc Block Examples 
 
 This page provides links to examples of all available blocks in the Adobe Developer documentation site.
 
@@ -111,3 +112,4 @@ TypeScript is a statically typed superset of JavaScript that adds optional stati
 
 - [Learn more](https://https://www.typescriptlang.org/)
 
+[JSON file in static](../../static/petstore.json)

@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-23T22:11:21.040Z",
+  "path_prefix": "/commerce/test",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/",
+  "suites": {
+    "visual": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}

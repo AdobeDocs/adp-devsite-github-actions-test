@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T20:52:59.532Z",
+  "path_prefix": "/events/docs",
+  "suite": "all",
+  "threshold": 20,
+  "status": "passed",
+  "dev_biz": false,
+  "report_url": "https://adobedocs.github.io/adp-devsite-github-actions-test/events/docs/",
+  "suites": {
+    "visual": {
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "links": {
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "nav": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0,
+      "issues": []
+    }
+  }
+}
