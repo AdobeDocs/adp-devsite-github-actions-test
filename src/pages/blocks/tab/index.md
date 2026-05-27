@@ -50,32 +50,88 @@ mutation {
 }
 ```
 
-<Tab orientation="vertical" slots="heading, image, content" repeat="3"  theme="dark" className='bgBlue ' />
+## Vertical Tab — Dark / Navy Theme
 
-## Tab 1
+<Tab orientation="vertical" slots="heading, image, content" repeat="4" className="background-color-navy" />
 
-![Code for initializing SDK](src/pages/images/adobe-express.svg)
+## Create PDF from URL
 
-content tab 1
+![Adobe PDF Services](/images/adobe-express.svg)
 
-## Tab 2
+```bash
+curl --location --request POST \
+  'https://pdf-services.adobe.io/operation/createpdf' \
+  --header 'Authorization: Bearer {{token}}' \
+  --header 'x-api-key: {{client_id}}' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "assetID": "urn:aaid:AS:UE1:23c30ee0-2e4d-46d6-87f2-087832fca718",
+    "createTaggedPDF": true
+  }'
+```
 
-![Code to invoke full editor](src/pages/images/adobe-express.svg)
+## Dynamic PDF Document Generation
 
-content tab 2
+![Adobe Document Generation](/assets/ae_appicon_64.svg)
 
-## Tab 3
+```javascript
+const PDFServicesSdk = require('@adobe/pdfservices-node-sdk');
 
-![Code to invoke quick actions](src/pages/images/adobe-express.svg)
+const credentials = PDFServicesSdk.Credentials
+  .servicePrincipalCredentialsBuilder()
+  .withClientId(process.env.PDF_SERVICES_CLIENT_ID)
+  .withClientSecret(process.env.PDF_SERVICES_CLIENT_SECRET)
+  .build();
 
-content tab 3
+const documentMergeOptions = new PDFServicesSdk.DocumentMerge.options
+  .DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
 
-<Tab slots="heading, content" repeat="2"  theme="dark" className='bgBlue ' />
+const documentMergeOperation = PDFServicesSdk.DocumentMerge.Operation
+  .createNew(documentMergeOptions);
+```
 
-## Tab 1
+## Extract PDF Content & Structure
 
-content tab 1
+![Adobe PDF Extract](/images/adobe-express.svg)
 
-## Tab 2
+```python
+from adobe.pdfservices.operation.auth.service_principal_credentials import (
+    ServicePrincipalCredentials
+)
+from adobe.pdfservices.operation.pdf_services import PDFServices
+from adobe.pdfservices.operation.pdfjobs.jobs.extract_pdf_job import ExtractPDFJob
 
-content tab 1
+credentials = ServicePrincipalCredentials(
+    client_id=os.getenv('PDF_SERVICES_CLIENT_ID'),
+    client_secret=os.getenv('PDF_SERVICES_CLIENT_SECRET')
+)
+pdf_services = PDFServices(credentials=credentials)
+
+input_asset = pdf_services.upload(
+    input_stream=input_stream,
+    mime_type=PDFServicesMediaType.PDF
+)
+extract_job = ExtractPDFJob(input_asset=input_asset)
+location = pdf_services.submit(extract_job)
+```
+
+## Embed PDF for Viewing
+
+![Adobe PDF Embed](/assets/ae_appicon_64.svg)
+
+```html
+<div id="adobe-dc-view"></div>
+<script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+<script type="text/javascript">
+  document.addEventListener("adobe_dc_view_sdk.ready", function () {
+    var adobeDCView = new AdobeDC.View({
+      clientId: "YOUR_CLIENT_ID",
+      divId: "adobe-dc-view",
+    });
+    adobeDCView.previewFile({
+      content: { location: { url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFfiles/Sample.pdf" } },
+      metaData: { fileName: "Sample.pdf" },
+    });
+  });
+</script>
+```
