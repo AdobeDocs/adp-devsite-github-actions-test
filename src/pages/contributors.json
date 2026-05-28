@@ -1,7 +1,7 @@
 {
-  "total": 177,
+  "total": 178,
   "offset": 0,
-  "limit": 177,
+  "limit": 178,
   "data": [
     {
       "page": "/",
@@ -576,6 +576,11 @@
       "page": "/test/devsite-2131/valid-filename-123",
       "avatars": [],
       "lastUpdated": "2/3/2026"
+    },
+    {
+      "page": "/test/DEVSITE-2173/",
+      "avatars": [],
+      "lastUpdated": "5/28/2026"
     },
     {
       "page": "/test/devsite-2235/",
