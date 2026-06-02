@@ -9,3 +9,7 @@ PaaS Only
 <Edition slots="text" backgroundcolor="green" />
 
 PaaS Only
+
+<Edition slots="text" backgroundcolor="grey" />
+
+[Link sample](http://example.com)
