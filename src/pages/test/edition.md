@@ -10,6 +10,6 @@ PaaS Only
 
 PaaS Only
 
-<Edition slots="text" backgroundcolor="grey" />
+<Edition slots="text" backgroundcolor="gray" />
 
 [Link sample](http://example.com)
