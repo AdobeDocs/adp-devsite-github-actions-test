@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   comment:
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/pr-comment.yml@DEVSITE-2424
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/pr-comment-v3.yml@DEVSITE-2424
     with:
       run_id: ${{ github.event.workflow_run.id }}
       event: ${{ github.event.workflow_run.event }}
