@@ -9,7 +9,7 @@ description: Testing whether plain relative links to files in static/ and src/pa
 
 | File | Relative path | raw.githubusercontent.com |
 |------|--------------|--------------------------|
-| petstore.json | [relative](../../../static/petstore.json) (404) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/static/petstore.json) (works) |
+| petstore.json | [relative](../../../../static/petstore.json) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/static/petstore.json) (works) |
 
 ## Files in src/pages/
 
