@@ -18,6 +18,9 @@ description: Testing whether plain relative links to files in static/ and src/pa
 | DemoCode.zip | [relative](../../DemoCode.zip) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/DemoCode.zip) |
 | hero.png | [relative](../../assets/hero.png) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/assets/hero.png) |
 
-## RedoclyAPIBlock with relative static/ path
+## RedoclyAPIBlock
 
-[RedoclyAPIBlock test](redocly.md)
+| src | Link |
+|-----|------|
+| relative `static/` path (expect 404) | [test](redocly-relative.md) |
+| `raw.githubusercontent.com` (expect to work) | [test](redocly-raw.md) |
