@@ -1,7 +1,7 @@
 {
-  "total": 180,
+  "total": 182,
   "offset": 0,
-  "limit": 180,
+  "limit": 182,
   "data": [
     {
       "page": "/",
@@ -650,6 +650,20 @@
     },
     {
       "page": "/test/DEVSITE-2445/redocly",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "6/5/2026"
+    },
+    {
+      "page": "/test/DEVSITE-2445/redocly-raw",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "6/5/2026"
+    },
+    {
+      "page": "/test/DEVSITE-2445/redocly-relative",
       "avatars": [
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
