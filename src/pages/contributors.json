@@ -1,7 +1,7 @@
 {
-  "total": 179,
+  "total": 180,
   "offset": 0,
-  "limit": 179,
+  "limit": 180,
   "data": [
     {
       "page": "/",
@@ -643,6 +643,13 @@
     },
     {
       "page": "/test/DEVSITE-2445/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "6/5/2026"
+    },
+    {
+      "page": "/test/DEVSITE-2445/redocly",
       "avatars": [
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
