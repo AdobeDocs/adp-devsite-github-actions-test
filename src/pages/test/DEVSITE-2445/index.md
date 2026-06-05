@@ -1,9 +1,9 @@
 ---
-title: DEVSITE-2445 Static file link test
+title: File linking test
 description: Testing whether plain relative links to files in static/ and src/pages/ resolve correctly on an EDS page
 ---
 
-# DEVSITE-2445 Static file link test
+# File linking test
 
 ## Files in static/
 
@@ -22,6 +22,5 @@ description: Testing whether plain relative links to files in static/ and src/pa
 
 | src | Link |
 |-----|------|
-| relative `static/` path | [relative test](redocly-relative.md) |
 | `raw.githubusercontent.com` | [raw test](redocly-raw.md) |
 | `/{pathPrefix}/filename` pattern | [pathPrefix test](redocly-pathprefix.md) |
