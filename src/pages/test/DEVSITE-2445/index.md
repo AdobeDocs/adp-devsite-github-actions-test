@@ -24,3 +24,4 @@ description: Testing whether plain relative links to files in static/ and src/pa
 |-----|------|
 | relative `static/` path (expect 404) | [test](redocly-relative.md) |
 | `raw.githubusercontent.com` (expect to work) | [test](redocly-raw.md) |
+| `/{pathPrefix}/filename` pattern (expect 404) | [test](redocly-pathprefix.md) |
