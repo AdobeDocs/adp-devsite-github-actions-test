@@ -9,19 +9,19 @@ description: Testing whether plain relative links to files in static/ and src/pa
 
 | File | Relative path | raw.githubusercontent.com |
 |------|--------------|--------------------------|
-| petstore.json | [relative](../../../../static/petstore.json) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/static/petstore.json) (works) |
+| petstore.json | [relative](../../../../static/petstore.json) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/static/petstore.json) |
 
 ## Files in src/pages/
 
 | File | Relative path | raw.githubusercontent.com |
 |------|--------------|--------------------------|
-| DemoCode.zip | [relative](../../DemoCode.zip) (works) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/DemoCode.zip) (works) |
-| hero.png | [relative](../../assets/hero.png) (works) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/assets/hero.png) (works) |
+| DemoCode.zip | [relative](../../DemoCode.zip) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/DemoCode.zip) |
+| hero.png | [relative](../../assets/hero.png) | [raw](https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/assets/hero.png) |
 
 ## RedoclyAPIBlock
 
 | src | Link |
 |-----|------|
-| relative `static/` path | [relative test (404)](redocly-relative.md) |
-| `raw.githubusercontent.com` | [raw test (works)](redocly-raw.md) |
-| `/{pathPrefix}/filename` pattern | [pathPrefix test (works)](redocly-pathprefix.md) |
+| relative `static/` path | [relative test](redocly-relative.md) |
+| `raw.githubusercontent.com` | [raw test](redocly-raw.md) |
+| `/{pathPrefix}/filename` pattern | [pathPrefix test](redocly-pathprefix.md) |
