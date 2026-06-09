@@ -6,14 +6,6 @@ on:
       - main
   workflow_dispatch:
     inputs:
-      env:
-        description: "Select environment to deploy to"
-        type: choice
-        required: true
-        default: "prod"
-        options:
-          - "prod"
-          - "stage & prod"
       baseSha:
         description: "Use base SHA commit to deploy from (empty string defaults to last commit before HEAD)"
         type: string
@@ -27,9 +19,9 @@ jobs:
   deployment:
     name: Deployment
     if: github.actor != 'adp-devsite-app[bot]' && github.repository != 'AdobeDocs/dev-docs-template'
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@main
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@devsite-1674
     secrets: inherit
     with:
-      env: ${{ inputs.env || 'prod' }}
+      env: prod
       baseSha: ${{ inputs.baseSha || '' }}
       deployAll: ${{ inputs.deployAll || false }}
