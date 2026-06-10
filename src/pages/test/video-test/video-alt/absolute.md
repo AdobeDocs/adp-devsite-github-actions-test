@@ -1,0 +1,34 @@
+<Superhero slots="fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient controls autoplay loop />
+
+![Gradient background](../../../assets/vertical-gradient.png)
+
+[video_url](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
+
+# Page Heading
+
+This is a sample description text with an [inline link](https://example.com) for the superhero block.
+
+* [Get Started](https://example.com/getting-started)
+* [View Examples](https://example.com/examples)
+
+<Columns slots="video, heading, text, buttons" repeat="2" />
+
+[video_url](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
+
+### Feature One
+
+Description of the first feature.
+
+[Learn more](https://example.com)
+
+[video_url](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
+
+### Feature Two
+
+Description of the second feature.
+
+[Learn more](https://example.com)
+
+<Embed slots="video" />
+
+[video](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
