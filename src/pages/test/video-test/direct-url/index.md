@@ -2,7 +2,7 @@
 
 ![Gradient background](../../../assets/vertical-gradient.png)
 
-https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4
+../../../assets/express-add-ons.mp4
 
 # Page Heading
 
@@ -13,7 +13,7 @@ This is a sample description text with an [inline link](https://example.com) for
 
 <Columns slots="video, heading, text, buttons" repeat="2" />
 
-https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4
+../../../assets/express-add-ons.mp4
 
 ### Feature One
 
@@ -21,7 +21,7 @@ Description of the first feature.
 
 [Learn more](https://example.com)
 
-https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4
+../../../assets/express-add-ons.mp4
 
 ### Feature Two
 
@@ -31,4 +31,4 @@ Description of the second feature.
 
 <Embed slots="video" />
 
-https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4
+../../../assets/express-add-ons.mp4

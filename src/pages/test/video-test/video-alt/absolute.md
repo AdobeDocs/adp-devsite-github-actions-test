@@ -2,7 +2,7 @@
 
 ![Gradient background](../../../assets/vertical-gradient.png)
 
-[video_url](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
+[](https://developer.adobe.com/express/add-ons/media_18687901ae5613eb6494cfe0da186a541403e0feb.mp4)
 
 # Page Heading
 
