@@ -1,7 +1,7 @@
 {
-  "total": 182,
+  "total": 190,
   "offset": 0,
-  "limit": 182,
+  "limit": 190,
   "data": [
     {
       "page": "/",
@@ -374,11 +374,12 @@
     {
       "page": "/test/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/57922?v=4",
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
-      "lastUpdated": "1/14/2026"
+      "lastUpdated": "6/22/2026"
     },
     {
       "page": "/test/_images/",
@@ -643,13 +644,6 @@
     },
     {
       "page": "/test/DEVSITE-2445/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "6/5/2026"
-    },
-    {
-      "page": "/test/DEVSITE-2445/redocly",
       "avatars": [
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
@@ -1123,6 +1117,69 @@
       "page": "/test/validate-links-404",
       "avatars": [],
       "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/video-test/direct-url/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/22/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/absolute",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/22/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/instagram",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/relative",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/twitter",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/video-adobe-com",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/vimeo",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/youtube",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
+    },
+    {
+      "page": "/test/video-test/video-alt/youtube-shorts",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "6/10/2026"
     }
   ],
   ":type": "sheet"
