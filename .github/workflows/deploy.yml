@@ -19,7 +19,7 @@ jobs:
   deployment:
     name: Deployment
     if: github.actor != 'adp-devsite-app[bot]' && github.repository != 'AdobeDocs/dev-docs-template'
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@devsite-1674
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@main
     secrets: inherit
     with:
       env: prod
