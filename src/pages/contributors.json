@@ -1,7 +1,7 @@
 {
-  "total": 191,
+  "total": 190,
   "offset": 0,
-  "limit": 191,
+  "limit": 190,
   "data": [
     {
       "page": "/",
@@ -1005,13 +1005,6 @@
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
       "lastUpdated": "3/27/2026"
-    },
-    {
-      "page": "/test/test-badge",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "5/20/2025"
     },
     {
       "page": "/test/test-discover-2",
