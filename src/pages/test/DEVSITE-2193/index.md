@@ -1,11 +1,11 @@
 ---
 title: DEVSITE-2193 - Code line numbers in Accordion
-description: Reproduces the issue where Code blocks inside Accordion blocks do not show line numbers.
+description: Reproduces the issue where Code blocks inside Accordion blocks do not show line numbers, while standalone code blocks do.
 ---
 
 # DEVSITE-2193: Code Line Numbers in Accordion
 
-## Standalone Code Block (has line numbers - expected behavior)
+## Standalone Code (has line numbers - expected)
 
 ```javascript
 const greeting = 'hello';
@@ -15,40 +15,40 @@ function add(a, b) {
 }
 ```
 
-## Accordion with Code Block (should also have line numbers)
+## With Table and Code
 
-<AccordionItem slots="heading, code"/>
+<AccordionItem slots="heading, table, text, code"/>
 
-### Example with JavaScript Code
+### 1. Initial Setup
 
-```javascript
-const greeting = 'hello';
-console.log(greeting);
-function add(a, b) {
-  return a + b;
-}
-```
+| Step | Description | Duration | Status | Endpoint |
+| --- | --- | --- | --- | --- |
+| 1 | User initiates the process and the system begins loading resources | 0s | Starting | `/api/initialize` |
 
-<AccordionItem slots="heading, code"/>
-
-### Example with JSON Code
+This action represents the beginning of a workflow. The system state transitions from idle to active.
 
 ```json
 {
-  "name": "example",
-  "version": "1.0.0",
-  "description": "Test payload"
+  "eventType": "process.start",
+  "timestamp": "2024-01-15T10:00:00.000Z",
+  "data": {
+    "sessionId": "abc123",
+    "config": {
+      "name": "Sample Process",
+      "timeout": 60
+    }
+  }
 }
 ```
 
 <AccordionItem slots="heading, text, code"/>
 
-### Example with Text and Code
+### 2. Code Only (no table)
 
-This accordion item has both a text description and a code block.
+A simpler accordion item with just text and a code block.
 
 ```javascript
-fetch('https://api.example.com/data')
+fetch('https://api.example.com/start')
   .then(response => response.json())
   .then(data => console.log(data));
 ```
