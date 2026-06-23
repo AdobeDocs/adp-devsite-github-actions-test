@@ -1,19 +1,9 @@
 ---
 title: DEVSITE-2193 - Code line numbers in Accordion
-description: Reproduces the issue where Code blocks inside Accordion blocks do not show line numbers, while standalone code blocks do.
+description: Reproduces the issue where Code blocks inside Accordion blocks do not show line numbers.
 ---
 
 # DEVSITE-2193: Code Line Numbers in Accordion
-
-## Standalone Code (has line numbers - expected)
-
-```javascript
-const greeting = 'hello';
-console.log(greeting);
-function add(a, b) {
-  return a + b;
-}
-```
 
 ## With Table and Code
 
@@ -43,12 +33,14 @@ This action represents the beginning of a workflow. The system state transitions
 
 <AccordionItem slots="heading, text, code"/>
 
-### 2. Code Only (no table)
+### 2. Second Step
 
-A simpler accordion item with just text and a code block.
+Subsequent step with a JavaScript code block.
 
 ```javascript
-fetch('https://api.example.com/start')
-  .then(response => response.json())
+fetch('https://api.example.com/start', {
+  method: 'POST',
+  body: JSON.stringify({ sessionId: 'abc123' })
+}).then(response => response.json())
   .then(data => console.log(data));
 ```
