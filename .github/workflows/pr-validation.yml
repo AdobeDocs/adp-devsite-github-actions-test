@@ -6,7 +6,7 @@ on:
 
 jobs:
   validate:
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr-v3.yml@DEVSITE-2424
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr-v3.yml@DEVSITE-2480
     with:
       pr_number: ${{ github.event.pull_request.number }}
       base_ref: ${{ github.event.pull_request.base.ref }}
