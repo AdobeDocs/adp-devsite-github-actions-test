@@ -11,3 +11,4 @@ jobs:
   call_validation:  # Fixed typo: vall → call
     name: Validate PR
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/validate-pr.yml@DEVSITE-1978-linter-bug
+
