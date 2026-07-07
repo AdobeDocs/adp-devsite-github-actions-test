@@ -85,3 +85,32 @@ start();
 // empty 2
 
 ```
+
+<CodeBlock slots="heading, code" repeat="2" languages="bash, json" />
+
+#### Request
+
+```bash
+     curl -i -X GET
+       'https://your-api'
+       -H 'Authorization: Bearer YOUR_AUTH_TOKEN_HERE' 
+       -H 'X-API-KEY: YOUR_API_KEY_HERE'
+```
+
+#### Response
+
+```json
+    {
+    "documents": [
+    {
+      "id": "string",
+      "name": "string",
+      "thumbnailUrl": "string"
+    }
+    ],
+    "paging": {
+      "nextUrl": "string",
+      "totalRecords": 0
+    }
+    }
+```
