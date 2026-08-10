@@ -1,16 +1,3 @@
-<Superhero slots="fullWidthBackground, video, heading, text, buttons" variant="halfWidth" textColor="white" overGradient controls autoplay loop />
-
-![Gradient background](../../../assets/vertical-gradient.png)
-
-[video_url](../assets/express-add-ons.mp4)
-
-# Page Heading
-
-This is a sample description text with an [inline link](https://example.com) for the superhero block.
-
-* [Get Started](https://example.com/getting-started)
-* [View Examples](https://example.com/examples)
-
 <Infocard slots="image, heading , text " navigation  repeat="6" />
 
 ![](../assets/hero.png)
