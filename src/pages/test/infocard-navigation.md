@@ -1,3 +1,4 @@
+
 <Infocard slots="image, heading , text " navigation  repeat="6" />
 
 ![](../assets/hero.png)

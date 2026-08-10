@@ -94,3 +94,4 @@
       - [hidebreadcrumb](/test/hide-breadcrumb-nav.md)
       - [resourcesblock](/test/test-resources-block.md)
       - [resourcesblocknohero](/test/test-resources-block-nohero.md)
+      - [infovcardNavigation](/test/infocard-navigation.md)
