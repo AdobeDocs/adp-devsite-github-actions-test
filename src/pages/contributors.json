@@ -1,7 +1,7 @@
 {
-  "total": 190,
+  "total": 193,
   "offset": 0,
-  "limit": 190,
+  "limit": 193,
   "data": [
     {
       "page": "/",
@@ -773,6 +773,27 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
       "lastUpdated": "7/14/2026"
+    },
+    {
+      "page": "/test/infocard-compact",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "8/10/2026"
+    },
+    {
+      "page": "/test/infocard-navigation",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "8/10/2026"
+    },
+    {
+      "page": "/test/infocard-reverse",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "8/10/2026"
     },
     {
       "page": "/test/inline-html-comment",
