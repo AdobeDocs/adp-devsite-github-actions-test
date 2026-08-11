@@ -17,7 +17,7 @@ Join our monthly Office Hours focused on Adobe Express Add-ons development and b
 
 ### [March 20, 2026](https://events.ringcentral.com/events/office-hours-for-adobe-express-developers-march-2026)
 
-Join our monthly Office Hours focused on Adobe Express Add-ons development and bring your questions
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ![](../assets/column.jpg)
 
