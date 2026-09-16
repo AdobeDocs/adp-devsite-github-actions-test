@@ -50,8 +50,6 @@ Inline alert messages for warnings, tips, and notes.
 ### [Inline Code](inline-code/index.md)
 Preformatted inline code created by enclosing text in single backticks (`).
 
-### [List](list/index.md)
-Various list formatting options.
 
 ### [Resources](resources/resources.md)
 - [Resources Block](resources/resources.md)
