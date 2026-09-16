@@ -29,9 +29,10 @@
     {
       "page": "/blocks/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/2/2026"
+      "lastUpdated": "9/16/2026"
     },
     {
       "page": "/blocks/accordion/",
@@ -59,8 +60,10 @@
     },
     {
       "page": "/blocks/code/code-in-list",
-      "avatars": [],
-      "lastUpdated": "11/14/2025"
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "9/16/2026"
     },
     {
       "page": "/blocks/code/code-in-table",
