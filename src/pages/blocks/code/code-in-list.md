@@ -8,7 +8,7 @@ description: Examples of code blocks embedded within list items and ordered/unor
 
 ## 3. Sign in from CLI
 
-Once your project is set up in [Adobe Developer Console](/console), let's move onto your local environment. You can always go back to [Adobe Developer Console](/console) to modify your project later.
+Once your project is set up in [Adobe Developer Console](https://developer.adobe.com/developer-console/), let's move onto your local environment. You can always go back to [Adobe Developer Console](https://developer.adobe.com/developer-console/) to modify your project later.
 
 1. On your machine, navigate to the Terminal and enter
 
