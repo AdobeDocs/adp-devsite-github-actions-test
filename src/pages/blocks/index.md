@@ -79,8 +79,3 @@ Interactive API documentation using Redocly.
 - [API Block without Sidebar and Search](redoclyapiblock/redocly-api-block-no-sidebar-no-search.md)
 - [API Block without Y-Scroll Offset](redoclyapiblock/redocly-api-block-no-y-scroll-offset.md)
 - [Redocly Overflow Example](redoclyapiblock/redocly-overflow.md)
-
-[test wrong link](https://github.com/adobe/aio-li)
-
-
-[test wrong link2](https://github.com/adobe/aios)
