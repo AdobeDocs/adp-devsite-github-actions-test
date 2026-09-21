@@ -24,3 +24,15 @@ Sign Gov admins should note the minor differences from the content below. *Descr
 | Severity: S2 | -  Affects non-critical data or functionality and forces users to employ a workaround.&lt;br/&gt;-  Impact to the product qualities that makes the product more usable.&lt;br/&gt; - Major restrictions or short-term circumventions are required until a fix is available. A fix is important.&lt;br/&gt; |
 | Severity: S3 | -  Affects non-critical data or functionality and does not force users to employ a workaround.&lt;br/&gt; -  Problem has moderate impact requiring some restrictions. The fix is in an area that is not critical.&lt;br/&gt;                                                                               |
 | Severity: S4 | -  A minor problem, annoyance, or technical issue with minimal impact.&lt;br/&gt;-  Impact that does not prevent or hinder functionality.&lt;br/&gt;-  Affects aesthetics, professional look and feel, "quality" or "usability".&lt;br/&gt;                                                                |
+
+| Environment | Supported Features                                                                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Production   | • Full API access\<br/\>• Rate limiting enforced\<br/\>• SLA-backed uptime                                                                              |
+| Staging      | • Full API access\<br/\>• No rate limiting\<br/\>• Data reset weekly                                                                                    |
+| Sandbox      | • Limited API access\<br/\>• No rate limiting\<br/\>• Mock data only                                                                                    |
+
+| Plan | Features |
+| ---- | -------- |
+| Basic | \<ul\>\<li\>Full API access\</li\>\<li\>Rate limiting enforced\</li\>\<li\>SLA-backed uptime\</li\>\</ul\> |
+| Pro | \<ul\>\<li\>Full API access\</li\>\<li\>No rate limiting\</li\>\<li\>Data reset weekly\</li\>\</ul\> |
+
