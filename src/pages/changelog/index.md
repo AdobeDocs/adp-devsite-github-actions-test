@@ -45,5 +45,18 @@ description: All notable changes are documented in this page.
 
 - Added a new [Analytics concept guide](../concepts/host-app-trigger.md) that explains how partners can configure the required analytics data to provide consistent launch attribution for Embed SDK workflows.
 
+## [v1.53.17] 2026-09-01
 
+### API Enhancement
 
+- [`CCEverywhere.BaseAppConfig.useClientAuth`](../../v4/shared/src/types/design-config-types/interfaces/base-app-config.md#properties): Added a new feature to enable no consumption of credits for Generative AI workflows. This configuration can only be used for Generate Image and Edit Image workflows for selected enabled partners.
+- **[`CCEverywhere.CallBackTarget.CALLBACK`](../../v4/shared/src/types/export-config-types/enumerations/call-back-target.md#callback)**: Added a new callback export target to trigger callback actions without publishing or downloading assets.
+- **Custom Message Workflow**:
+  - Added [`WORKFLOW_CONTEXT`](../../v4/shared/src/messenger/message-types/enumerations/message-type.md#workflow_context) message type for module-specific communication.
+  - New [`CustomMessage`](../../v4/shared/src/messenger/message-types/interfaces/custom-message.md) interface includes instance ID, request ID, action, intent, and optional data.
+  - Added [`CustomMessageAction`](../../v4/shared/src/messenger/message-types/enumerations/custom-message-action.md) enum with actions for notifying unsaved changes and requesting assets.
+- **[`CCEverywhere.ModalContainerConfig.showExpressIconWithText`](../../v4/shared/src/types/container-config-types/interfaces/modal-container-config.md#properties)**: the new default loading experience will include the Express logo plus text.
+
+### Tech Enhancement
+
+- **[CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor](../../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config.md#properties)**: Added support to configure the canvas background color (String in the `RRGGBBAA` HEX format).
