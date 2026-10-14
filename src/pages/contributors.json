@@ -1,7 +1,7 @@
 {
-  "total": 193,
+  "total": 194,
   "offset": 0,
-  "limit": 193,
+  "limit": 194,
   "data": [
     {
       "page": "/",
@@ -251,6 +251,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "5/27/2026"
+    },
+    {
+      "page": "/changelog/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "10/14/2026"
     },
     {
       "page": "/config",
