@@ -60,3 +60,20 @@ description: All notable changes are documented in this page.
 ### Tech Enhancement
 
 - **[CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor](../../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config.md#properties)**: Added support to configure the canvas background color (String in the `RRGGBBAA` HEX format).
+
+
+## [v1.52.16] 2026-08-31
+
+### API Enhancement
+
+- **[`CCEverywhere.ModuleWorkflow.CancelCallback`](../../v4/shared/src/types/callbacks-types/type-aliases/cancel-callback.md)**: Added optional parameter `isEscapePressed` as part of `onCancel` callback which is `true` if the cancel was triggered by escape key press during loading.
+- **[`CCEverywhere.HostInfo.coiEnabled`](../../v4/shared/src/types/host-info-types/interfaces/host-info-specified-base.md#properties)**: Added property in `HostInfo` to indicate if COI (Cross-Origin Isolation) is enabled for client.
+- **[`CCEverywhere.BaseContainerConfig.iframeTitle`](../../v4/shared/src/types/container-config-types/interfaces/base-container-config.md#properties)**: Added support to configure iframe title for accessibility.
+
+### Tech Enhancement
+
+- **[`CCEverywhere.BrowseSearchBaseConfig.rootCollectionId`](../../v4/shared/src/types/browse-search-config-types/interfaces/browse-search-base-config.md#properties)**: Added support to surface collections other than Express collections.
+
+### Documentation
+
+- Added a new comprehensive [Mobile Web Support Overview](../concepts/mobile-web-support-overview.md) concept guide that covers implementing creative workflows on mobile devices, including configuration options, best practices, and troubleshooting guidance for cross-platform compatibility.
