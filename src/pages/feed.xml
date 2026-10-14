@@ -69,5 +69,25 @@
 <li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties">CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor</a></strong>: Added support to configure the canvas background color (String in the <code>RRGGBBAA</code> HEX format).</li>
 </ul>]]></description>
     </item>
+    <item>
+      <title>v1.52.16</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#1-52-16-2026-08-31</link>
+      <guid isPermaLink="false">1.52.16-2026-08-31</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>API Enhancement</h3>
+<ul>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/callbacks-types/type-aliases/cancel-callback/"><code>CCEverywhere.ModuleWorkflow.CancelCallback</code></a></strong>: Added optional parameter <code>isEscapePressed</code> as part of <code>onCancel</code> callback which is <code>true</code> if the cancel was triggered by escape key press during loading.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/host-info-types/interfaces/host-info-specified-base/#properties"><code>CCEverywhere.HostInfo.coiEnabled</code></a></strong>: Added property in <code>HostInfo</code> to indicate if COI (Cross-Origin Isolation) is enabled for client.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/container-config-types/interfaces/base-container-config/#properties"><code>CCEverywhere.BaseContainerConfig.iframeTitle</code></a></strong>: Added support to configure iframe title for accessibility.</li>
+</ul>
+<h3>Tech Enhancement</h3>
+<ul>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/browse-search-config-types/interfaces/browse-search-base-config/#properties"><code>CCEverywhere.BrowseSearchBaseConfig.rootCollectionId</code></a></strong>: Added support to surface collections other than Express collections.</li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li>Added a new comprehensive <a href="https://developer.adobe.com/github-actions-test/concepts/mobile-web-support-overview/">Mobile Web Support Overview</a> concept guide that covers implementing creative workflows on mobile devices, including configuration options, best practices, and troubleshooting guidance for cross-platform compatibility.</li>
+</ul>]]></description>
+    </item>
   </channel>
 </rss>
