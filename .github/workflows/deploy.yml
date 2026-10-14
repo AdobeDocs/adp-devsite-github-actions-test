@@ -19,9 +19,10 @@ jobs:
   deployment:
     name: Deployment
     if: github.actor != 'adp-devsite-app[bot]' && github.repository != 'AdobeDocs/dev-docs-template'
-    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@DEVSITE-2710
+    uses: AdobeDocs/adp-devsite-workflow/.github/workflows/deploy-v2.yml@rss-auto-generate
     secrets: inherit
     with:
       env: prod
       baseSha: ${{ inputs.baseSha || '' }}
       deployAll: ${{ inputs.deployAll || false }}
+      changelogPath: 'src/pages/changelog/index.md'
