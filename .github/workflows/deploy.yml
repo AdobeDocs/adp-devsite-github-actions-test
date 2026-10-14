@@ -25,4 +25,3 @@ jobs:
       env: prod
       baseSha: ${{ inputs.baseSha || '' }}
       deployAll: ${{ inputs.deployAll || false }}
-      changelogPath: 'src/pages/changelog/index.md'
