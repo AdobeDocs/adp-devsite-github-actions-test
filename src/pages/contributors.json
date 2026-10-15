@@ -1,7 +1,7 @@
 {
-  "total": 194,
+  "total": 195,
   "offset": 0,
-  "limit": 194,
+  "limit": 195,
   "data": [
     {
       "page": "/",
@@ -1131,6 +1131,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "10/10/2025"
+    },
+    {
+      "page": "/test/test-xml",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "10/15/2026"
     },
     {
       "page": "/test/trailing-slash",
