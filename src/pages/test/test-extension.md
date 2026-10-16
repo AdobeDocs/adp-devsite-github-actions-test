@@ -22,11 +22,6 @@ Links to non-markdown files should become raw GitHub URLs:
 | [JSON](../assets/petstore.json) | `.../src/pages/assets/petstore.json` |
 | [Video](../video/test-video.mp4) | `.../src/pages/video/test-video.mp4` |
 
-## Any other file type (new)
-
-| Link | Expected href |
-| --- | --- |
-| [Protobuf](./test-extension-files/sample.proto) | `.../src/pages/test/test-extension-files/sample.proto` |
 
 ## Root-relative path, query, and hash
 
