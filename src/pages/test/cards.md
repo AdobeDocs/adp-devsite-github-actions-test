@@ -71,7 +71,7 @@ You can use the sales and analytics reports to view and manage your sales inform
 
 [Learn more](sales.md)
 
-<Cards slots="image, heading, text, links" width="50%" wide />
+<Cards slots="image, heading, text, buttons" width="50%" wide />
 
 ![For buyers](../assets/column.jpg)
 
@@ -81,7 +81,7 @@ Learn about the installation process from a customer's perspective.
 
 [Learn more](https://experienceleague.adobe.com/en/docs/commerce-admin/start/resources/commerce-marketplace)
 
-<Cards slots="image, heading, text, links" width="50%" wide />
+<Cards slots="image, heading, text, buttons" width="50%" wide />
 
 ![Technical reference](../assets/column.jpg)
 
