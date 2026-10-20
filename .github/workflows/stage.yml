@@ -21,3 +21,5 @@ jobs:
       env: stage
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
+      changelogPath: 'src/pages/changelog/index.md'
+

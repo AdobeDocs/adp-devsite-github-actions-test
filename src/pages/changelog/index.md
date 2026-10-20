@@ -22,7 +22,7 @@ description: All notable changes are documented in this page.
 - Added a new [Embedded Design Editor tutorial](../tutorials/embedded-design-editor.md) that walks through building a Create Design → Edit Design flow step by step.
 
 
-## [v2.0.0] 2026-09-16
+## 2026-09-16
 
 ### Added
 
