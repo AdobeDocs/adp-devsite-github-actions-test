@@ -9,7 +9,7 @@
     <lastBuildDate>Wed, 14 Oct 2026 00:00:00 GMT</lastBuildDate>
     <item>
       <title>v3.0.0</title>
-      <link>https://developer.adobe.com/github-actions-test/changelog/#3-0-0-2026-10-14</link>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v300-2026-10-14</link>
       <guid isPermaLink="false">3.0.0-2026-10-14</guid>
       <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>Documentation</h3>
@@ -19,9 +19,9 @@
 </ul>]]></description>
     </item>
     <item>
-      <title>v2.0.0</title>
-      <link>https://developer.adobe.com/github-actions-test/changelog/#2-0-0-2026-09-16</link>
-      <guid isPermaLink="false">2.0.0-2026-09-16</guid>
+      <title>2026-09-16</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#09-16</link>
+      <guid isPermaLink="false">2026-09-16</guid>
       <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>Added</h3>
 <ul>
@@ -32,7 +32,7 @@
     </item>
     <item>
       <title>v1.54.18</title>
-      <link>https://developer.adobe.com/github-actions-test/changelog/#1-54-18-2026-09-02</link>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v15418-2026-09-02</link>
       <guid isPermaLink="false">1.54.18-2026-09-02</guid>
       <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>Added</h3>
@@ -51,7 +51,7 @@
     </item>
     <item>
       <title>v1.53.17</title>
-      <link>https://developer.adobe.com/github-actions-test/changelog/#1-53-17-2026-09-01</link>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v15317-2026-09-01</link>
       <guid isPermaLink="false">1.53.17-2026-09-01</guid>
       <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>API Enhancement</h3>
@@ -71,7 +71,7 @@
     </item>
     <item>
       <title>v1.52.16</title>
-      <link>https://developer.adobe.com/github-actions-test/changelog/#1-52-16-2026-08-31</link>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v15216-2026-08-31</link>
       <guid isPermaLink="false">1.52.16-2026-08-31</guid>
       <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>API Enhancement</h3>
