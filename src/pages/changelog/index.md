@@ -21,6 +21,7 @@ description: All notable changes are documented in this page.
 - Added a new [Embedded Design Editor (EDE) concept guide](../concepts/ede.md) that introduces EDE's configurable, focused creation experiences, along with companion [Create Design](../concepts/ede-create-design.md) and [Edit Design](../concepts/ede-edit-design.md) guides.
 - Added a new [Embedded Design Editor tutorial](../tutorials/embedded-design-editor.md) that walks through building a Create Design → Edit Design flow step by step.
 
+-[Demo image](../assets/cc-hero.png)
 
 ## 2026-09-16
 
@@ -30,7 +31,7 @@ description: All notable changes are documented in this page.
 - [`DesignViewerContext`](../../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context.md): Added support for accessing the context of the Design Viewer, allowing host applications to provide additional assets after the initial load via the [`updateDesignAssets`](../../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context.md#updatedesignassets) method.
 - [`hideTemplatePreview`](../../v4/shared/src/types/module/app-config-types/interfaces/browse-mode-config.md#properties): Added a configuration option to hide Template Preview, allowing clients to navigate directly to the editor after selecting a template.
 
-## [v1.54.18] 2026-09-02
+## Test 2026-09-02
 
 ### Added
 
@@ -45,7 +46,7 @@ description: All notable changes are documented in this page.
 
 - Added a new [Analytics concept guide](../concepts/host-app-trigger.md) that explains how partners can configure the required analytics data to provide consistent launch attribution for Embed SDK workflows.
 
-## [v1.53.17] 2026-09-01
+## Test check url
 
 ### API Enhancement
 
