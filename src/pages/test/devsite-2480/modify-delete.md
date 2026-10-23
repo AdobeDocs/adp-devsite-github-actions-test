@@ -6,3 +6,7 @@ description: Test page for DEVSITE-2480. Linted while another page is deleted in
 # DEVSITE-2480 lint test
 
 This page should lint clean.
+
+---
+
+The line above is a deliberate lint error for DEVSITE-2480 run 2.
