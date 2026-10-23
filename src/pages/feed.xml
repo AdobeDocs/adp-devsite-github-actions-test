@@ -14,8 +14,8 @@
       <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>Documentation</h3>
 <ul>
-<li>Added a new <a href="https://developer.adobe.com/github-actions-test/concepts/ede/">Embedded Design Editor (EDE) concept guide</a> that introduces EDE's configurable, focused creation experiences, along with companion <a href="https://developer.adobe.com/github-actions-test/concepts/ede-create-design/">Create Design</a> and <a href="https://developer.adobe.com/github-actions-test/concepts/ede-edit-design/">Edit Design</a> guides.</li>
-<li>Added a new <a href="https://developer.adobe.com/github-actions-test/tutorials/embedded-design-editor/">Embedded Design Editor tutorial</a> that walks through building a Create Design → Edit Design flow step by step.</li>
+<li>Added a new <a href="https://developer.adobe.com/github-actions-test/api/1-4/">Embedded Design Editor (EDE) concept guide</a> that introduces EDE's configurable, focused creation experiences, along with companion <a href="https://developer.adobe.com/github-actions-test/concepts/ede-create-design/">Create Design</a> and <a href="https://developer.adobe.com/github-actions-test/api/">Edit Design</a> guides.</li>
+<li>Added a new <a href="https://developer.adobe.com/github-actions-test/blocks/accordion/">Embedded Design Editor tutorial</a> that walks through building a Create Design → Edit Design flow step by step.</li>
 </ul>
 <p>-<a href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/assets/cc-hero.png">Demo image</a></p>]]></description>
     </item>
@@ -26,15 +26,20 @@
       <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>Added</h3>
 <ul>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/#migrateassets"><code>migrateAssets()</code></a>: Added support for asset migration (guest to logged-in user) in the <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/authentication-types/#interfaces">Partner Assertion</a> workflow.</li>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context/"><code>DesignViewerContext</code></a>: Added support for accessing the context of the Design Viewer, allowing host applications to provide additional assets after the initial load via the <a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context/#updatedesignassets"><code>updateDesignAssets</code></a> method.</li>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/browse-mode-config/#properties"><code>hideTemplatePreview</code></a>: Added a configuration option to hide Template Preview, allowing clients to navigate directly to the editor after selecting a template.</li>
-</ul>
-<p>## Test 2026-09-02</p>
-<h3>Added</h3>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/announcement/"><code>migrateAssets()</code></a>: Added support for asset migration (guest to logged-in user) in the <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-highlighted-line/">Partner Assertion</a> workflow.</li>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-list/"><code>DesignViewerContext</code></a>: Added support for accessing the context of the Design Viewer, allowing host applications to provide additional assets after the initial load via the <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-list/#updatedesignassets"><code>updateDesignAssets</code></a> method.</li>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>hideTemplatePreview</code></a>: Added a configuration option to hide Template Preview, allowing clients to navigate directly to the editor after selecting a template.</li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#test-2026-09-02</link>
+      <guid isPermaLink="false">Test-2026-09-02</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
 <ul>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/editor-guide-config/"><code>editorGuideConfig</code></a>: Added a new property to configure the visibility of Bleed, Margins, and Rulers in the Edit Design module's UI.</li>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/pdf-print-config/"><code>pdfPrintConfig</code></a>: Added a new property to configure the print-ready PDF export in the Edit Design module (<code>&quot;print&quot;</code> variant), including Crop Marks, Bleed, Color Mode, and ICC Profile.</li>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>editorGuideConfig</code></a>: Added a new property to configure the visibility of Bleed, Margins, and Rulers in the Edit Design module's UI.</li>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>pdfPrintConfig</code></a>: Added a new property to configure the print-ready PDF export in the Edit Design module (<code>&quot;print&quot;</code> variant), including Crop Marks, Bleed, Color Mode, and ICC Profile.</li>
 </ul>
 <h3>Fixed</h3>
 <ul>
@@ -42,22 +47,26 @@
 </ul>
 <h3>Documentation</h3>
 <ul>
-<li>Added a new <a href="https://developer.adobe.com/github-actions-test/concepts/host-app-trigger/">Analytics concept guide</a> that explains how partners can configure the required analytics data to provide consistent launch attribution for Embed SDK workflows.</li>
-</ul>
-<p>## Test check url</p>
-<h3>API Enhancement</h3>
+<li>Added a new <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/">Analytics concept guide</a> that explains how partners can configure the required analytics data to provide consistent launch attribution for Embed SDK workflows.</li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>Test check url</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#test-check-url</link>
+      <guid isPermaLink="false">Test check url</guid>
+      <description><![CDATA[<h3>API Enhancement</h3>
 <ul>
-<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/design-config-types/interfaces/base-app-config/#properties"><code>CCEverywhere.BaseAppConfig.useClientAuth</code></a>: Added a new feature to enable no consumption of credits for Generative AI workflows. This configuration can only be used for Generate Image and Edit Image workflows for selected enabled partners.</li>
+<li><a href="https://developer.adobe.com/github-actions-test/blocks/code/code/"><code>CCEverywhere.BaseAppConfig.useClientAuth</code></a>: Added a new feature to enable no consumption of credits for Generative AI workflows. This configuration can only be used for Generate Image and Edit Image workflows for selected enabled partners.</li>
 <li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/enumerations/call-back-target/#callback"><code>CCEverywhere.CallBackTarget.CALLBACK</code></a></strong>: Added a new callback export target to trigger callback actions without publishing or downloading assets.</li>
 <li><strong>Custom Message Workflow</strong>:</li>
-<li>Added <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/enumerations/message-type/#workflow_context"><code>WORKFLOW_CONTEXT</code></a> message type for module-specific communication.</li>
-<li>New <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/interfaces/custom-message/"><code>CustomMessage</code></a> interface includes instance ID, request ID, action, intent, and optional data.</li>
-<li>Added <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/enumerations/custom-message-action/"><code>CustomMessageAction</code></a> enum with actions for notifying unsaved changes and requesting assets.</li>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/container-config-types/interfaces/modal-container-config/#properties"><code>CCEverywhere.ModalContainerConfig.showExpressIconWithText</code></a></strong>: the new default loading experience will include the Express logo plus text.</li>
+<li>Added <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-overload/"><code>WORKFLOW_CONTEXT</code></a> message type for module-specific communication.</li>
+<li>New <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CustomMessage</code></a> interface includes instance ID, request ID, action, intent, and optional data.</li>
+<li>Added <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CustomMessageAction</code></a> enum with actions for notifying unsaved changes and requesting assets.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CCEverywhere.ModalContainerConfig.showExpressIconWithText</code></a></strong>: the new default loading experience will include the Express logo plus text.</li>
 </ul>
 <h3>Tech Enhancement</h3>
 <ul>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties">CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor</a></strong>: Added support to configure the canvas background color (String in the <code>RRGGBBAA</code> HEX format).</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/">CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor</a></strong>: Added support to configure the canvas background color (String in the <code>RRGGBBAA</code> HEX format).</li>
 </ul>]]></description>
     </item>
     <item>
@@ -67,17 +76,17 @@
       <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<h3>API Enhancement</h3>
 <ul>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/callbacks-types/type-aliases/cancel-callback/"><code>CCEverywhere.ModuleWorkflow.CancelCallback</code></a></strong>: Added optional parameter <code>isEscapePressed</code> as part of <code>onCancel</code> callback which is <code>true</code> if the cancel was triggered by escape key press during loading.</li>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/host-info-types/interfaces/host-info-specified-base/#properties"><code>CCEverywhere.HostInfo.coiEnabled</code></a></strong>: Added property in <code>HostInfo</code> to indicate if COI (Cross-Origin Isolation) is enabled for client.</li>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/container-config-types/interfaces/base-container-config/#properties"><code>CCEverywhere.BaseContainerConfig.iframeTitle</code></a></strong>: Added support to configure iframe title for accessibility.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CCEverywhere.ModuleWorkflow.CancelCallback</code></a></strong>: Added optional parameter <code>isEscapePressed</code> as part of <code>onCancel</code> callback which is <code>true</code> if the cancel was triggered by escape key press during loading.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CCEverywhere.HostInfo.coiEnabled</code></a></strong>: Added property in <code>HostInfo</code> to indicate if COI (Cross-Origin Isolation) is enabled for client.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CCEverywhere.BaseContainerConfig.iframeTitle</code></a></strong>: Added support to configure iframe title for accessibility.</li>
 </ul>
 <h3>Tech Enhancement</h3>
 <ul>
-<li><strong><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/browse-search-config-types/interfaces/browse-search-base-config/#properties"><code>CCEverywhere.BrowseSearchBaseConfig.rootCollectionId</code></a></strong>: Added support to surface collections other than Express collections.</li>
+<li><strong><a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/"><code>CCEverywhere.BrowseSearchBaseConfig.rootCollectionId</code></a></strong>: Added support to surface collections other than Express collections.</li>
 </ul>
 <h3>Documentation</h3>
 <ul>
-<li>Added a new comprehensive <a href="https://developer.adobe.com/github-actions-test/concepts/mobile-web-support-overview/">Mobile Web Support Overview</a> concept guide that covers implementing creative workflows on mobile devices, including configuration options, best practices, and troubleshooting guidance for cross-platform compatibility.</li>
+<li>Added a new comprehensive <a href="https://developer.adobe.com/github-actions-test/blocks/code/code-in-table/">Mobile Web Support Overview</a> concept guide that covers implementing creative workflows on mobile devices, including configuration options, best practices, and troubleshooting guidance for cross-platform compatibility.</li>
 </ul>]]></description>
     </item>
   </channel>
