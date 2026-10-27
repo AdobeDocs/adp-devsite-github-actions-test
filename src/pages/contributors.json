@@ -1,7 +1,7 @@
 {
-  "total": 195,
+  "total": 186,
   "offset": 0,
-  "limit": 195,
+  "limit": 186,
   "data": [
     {
       "page": "/",
@@ -447,23 +447,6 @@
       "lastUpdated": "2/11/2026"
     },
     {
-      "page": "/test/bracket-in-codeblock",
-      "avatars": [],
-      "lastUpdated": "3/27/2026"
-    },
-    {
-      "page": "/test/bracket-in-table",
-      "avatars": [],
-      "lastUpdated": "3/9/2026"
-    },
-    {
-      "page": "/test/breaking",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/57922?v=4"
-      ],
-      "lastUpdated": "8/14/2025"
-    },
-    {
       "page": "/test/cards",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4",
@@ -576,11 +559,6 @@
       "lastUpdated": "2/3/2026"
     },
     {
-      "page": "/test/devsite-2131/file.with.dots",
-      "avatars": [],
-      "lastUpdated": "2/3/2026"
-    },
-    {
       "page": "/test/devsite-2131/MixedCase_And_Underscore",
       "avatars": [],
       "lastUpdated": "2/3/2026"
@@ -619,11 +597,6 @@
     },
     {
       "page": "/test/devsite-2235/consecutive--dashes",
-      "avatars": [],
-      "lastUpdated": "4/27/2026"
-    },
-    {
-      "page": "/test/devsite-2235/file.with.dots",
       "avatars": [],
       "lastUpdated": "4/27/2026"
     },
@@ -686,11 +659,6 @@
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
       "lastUpdated": "6/5/2026"
-    },
-    {
-      "page": "/test/double--dash-dir/",
-      "avatars": [],
-      "lastUpdated": "4/16/2026"
     },
     {
       "page": "/test/edition",
@@ -812,11 +780,6 @@
       "lastUpdated": "8/10/2026"
     },
     {
-      "page": "/test/inline-html-comment",
-      "avatars": [],
-      "lastUpdated": "5/12/2026"
-    },
-    {
       "page": "/test/inlinealert",
       "avatars": [],
       "lastUpdated": "12/4/2025"
@@ -847,11 +810,6 @@
         "https://avatars.githubusercontent.com/u/120194874?v=4"
       ],
       "lastUpdated": "5/29/2026"
-    },
-    {
-      "page": "/test/multiple-errors",
-      "avatars": [],
-      "lastUpdated": "3/30/2026"
     },
     {
       "page": "/test/nested-code",
@@ -1080,13 +1038,6 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
       "lastUpdated": "5/4/2026"
-    },
-    {
-      "page": "/test/test-hr",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4"
-      ],
-      "lastUpdated": "7/23/2025"
     },
     {
       "page": "/test/test-hr-0",
