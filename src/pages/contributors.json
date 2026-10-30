@@ -1,7 +1,7 @@
 {
-  "total": 176,
+  "total": 177,
   "offset": 0,
-  "limit": 176,
+  "limit": 177,
   "data": [
     {
       "page": "/",
@@ -1059,6 +1059,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/v3-check",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/test/validate-links-404",
