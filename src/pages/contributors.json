@@ -1,7 +1,7 @@
 {
-  "total": 177,
+  "total": 178,
   "offset": 0,
-  "limit": 177,
+  "limit": 178,
   "data": [
     {
       "page": "/",
@@ -542,6 +542,13 @@
       "page": "/test/devsite-2063/dash-delimited",
       "avatars": [],
       "lastUpdated": "12/18/2025"
+    },
+    {
+      "page": "/test/devsite-2063/languages",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/2/2026"
     },
     {
       "page": "/test/devsite-2063/space-delimited",
