@@ -1,7 +1,7 @@
 {
-  "total": 178,
+  "total": 179,
   "offset": 0,
-  "limit": 178,
+  "limit": 179,
   "data": [
     {
       "page": "/",
@@ -971,6 +971,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "7/4/2025"
+    },
+    {
+      "page": "/test/test-discover-test",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/3/2026"
     },
     {
       "page": "/test/test-discoverblock",
