@@ -1,7 +1,7 @@
 {
-  "total": 179,
+  "total": 177,
   "offset": 0,
-  "limit": 179,
+  "limit": 177,
   "data": [
     {
       "page": "/",
@@ -966,13 +966,6 @@
       "lastUpdated": "3/27/2026"
     },
     {
-      "page": "/test/test-discover-2",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "7/4/2025"
-    },
-    {
       "page": "/test/test-discover-test",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4"
@@ -1000,14 +993,6 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
       "lastUpdated": "5/4/2026"
-    },
-    {
-      "page": "/test/test-hr-0",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "8/1/2025"
     },
     {
       "page": "/test/test-hr-test",
