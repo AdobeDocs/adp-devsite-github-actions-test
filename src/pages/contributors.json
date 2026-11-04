@@ -1,7 +1,7 @@
 {
-  "total": 177,
+  "total": 178,
   "offset": 0,
-  "limit": 177,
+  "limit": 178,
   "data": [
     {
       "page": "/",
@@ -447,6 +447,13 @@
       "lastUpdated": "2/11/2026"
     },
     {
+      "page": "/test/Bad_Name",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/4/2026"
+    },
+    {
       "page": "/test/cards",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4",
@@ -836,9 +843,10 @@
     {
       "page": "/test/path-test/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "6/19/2025"
+      "lastUpdated": "11/4/2026"
     },
     {
       "page": "/test/path-test/pathname",
