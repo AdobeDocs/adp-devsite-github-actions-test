@@ -1,7 +1,7 @@
 {
-  "total": 178,
+  "total": 177,
   "offset": 0,
-  "limit": 178,
+  "limit": 177,
   "data": [
     {
       "page": "/",
@@ -986,13 +986,6 @@
         "https://avatars.githubusercontent.com/u/160927437?v=4"
       ],
       "lastUpdated": "10/16/2026"
-    },
-    {
-      "page": "/test/test-extension-files/addfile-v3-test",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/4/2026"
     },
     {
       "page": "/test/test-hero",
