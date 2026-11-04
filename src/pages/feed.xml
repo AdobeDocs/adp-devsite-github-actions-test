@@ -3,7 +3,7 @@
   <channel>
     <title>Changelog</title>
     <link>https://developer.adobe.com/github-actions-test/changelog/</link>
-    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/v3-deploy-test/src/pages/feed.xml" rel="self" type="application/rss+xml" />
     <description>All notable changes are documented in this page.</description>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Oct 2026 00:00:00 GMT</lastBuildDate>
@@ -17,7 +17,7 @@
 <li>Added a new <a href="https://developer.adobe.com/github-actions-test/api/1-4/">Embedded Design Editor (EDE) concept guide</a> that introduces EDE's configurable, focused creation experiences, along with companion <a href="https://developer.adobe.com/github-actions-test/concepts/ede-create-design/">Create Design</a> and <a href="https://developer.adobe.com/github-actions-test/api/">Edit Design</a> guides.</li>
 <li>Added a new <a href="https://developer.adobe.com/github-actions-test/blocks/accordion/">Embedded Design Editor tutorial</a> that walks through building a Create Design → Edit Design flow step by step.</li>
 </ul>
-<p>-<a href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/main/src/pages/assets/cc-hero.png">Demo image</a></p>]]></description>
+<p>-<a href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/v3-deploy-test/src/pages/assets/cc-hero.png">Demo image</a></p>]]></description>
     </item>
     <item>
       <title>2026-09-16</title>
