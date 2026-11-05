@@ -1,7 +1,7 @@
 {
-  "total": 178,
+  "total": 179,
   "offset": 0,
-  "limit": 178,
+  "limit": 179,
   "data": [
     {
       "page": "/",
@@ -473,6 +473,13 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
       "lastUpdated": "3/4/2026"
+    },
+    {
+      "page": "/test/consecutive--dashes-invalid",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/5/2026"
     },
     {
       "page": "/test/consecutive-dashes-valid",
