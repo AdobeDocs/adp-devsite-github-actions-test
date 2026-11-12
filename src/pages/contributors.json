@@ -1,7 +1,7 @@
 {
-  "total": 142,
+  "total": 143,
   "offset": 0,
-  "limit": 142,
+  "limit": 143,
   "data": [
     {
       "page": "/",
@@ -416,6 +416,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "4/7/2026"
+    },
+    {
+      "page": "/test/add-new-file",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/12/2026"
     },
     {
       "page": "/test/anchor-link-extention",
