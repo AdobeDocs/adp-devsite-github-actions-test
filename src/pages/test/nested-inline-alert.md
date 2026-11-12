@@ -7,3 +7,10 @@ Level 0
     <InlineAlert slots="text" />
 
     Level 1
+
+
+<InlineNestedAlert variant="info" header="true" iconPosition="left">
+
+Content here
+
+</InlineNestedAlert>
