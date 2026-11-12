@@ -794,8 +794,10 @@
     },
     {
       "page": "/test/nested-inline-alert",
-      "avatars": [],
-      "lastUpdated": "12/5/2025"
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/12/2026"
     },
     {
       "page": "/test/no-dead-urls-false-positives",
