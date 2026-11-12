@@ -1,7 +1,7 @@
 {
-  "total": 179,
+  "total": 180,
   "offset": 0,
-  "limit": 179,
+  "limit": 180,
   "data": [
     {
       "page": "/",
@@ -898,6 +898,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "4/14/2026"
+    },
+    {
+      "page": "/test/steps-and-tasks",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/12/2026"
     },
     {
       "page": "/test/superhero-cc-everywhere",
