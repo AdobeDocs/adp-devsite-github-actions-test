@@ -1,7 +1,7 @@
 {
-  "total": 180,
+  "total": 142,
   "offset": 0,
-  "limit": 180,
+  "limit": 142,
   "data": [
     {
       "page": "/",
@@ -327,11 +327,6 @@
       "lastUpdated": "8/22/2024"
     },
     {
-      "page": "/no-sidenav-1",
-      "avatars": [],
-      "lastUpdated": "6/4/2025"
-    },
-    {
       "page": "/openapi/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
@@ -428,11 +423,6 @@
       "lastUpdated": "2/24/2026"
     },
     {
-      "page": "/test/anchor-link-in-table",
-      "avatars": [],
-      "lastUpdated": "10/10/2025"
-    },
-    {
       "page": "/test/api-reference-clientsdk",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
@@ -461,18 +451,6 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "10/19/2026"
-    },
-    {
-      "page": "/test/cloud-storage-permissions",
-      "avatars": [],
-      "lastUpdated": "7/16/2025"
-    },
-    {
-      "page": "/test/code-playground-button",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4"
-      ],
-      "lastUpdated": "3/4/2026"
     },
     {
       "page": "/test/consecutive--dashes-invalid",
@@ -508,13 +486,6 @@
       "lastUpdated": "2/12/2026"
     },
     {
-      "page": "/test/details",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/2/2026"
-    },
-    {
       "page": "/test/details-html",
       "avatars": [],
       "lastUpdated": "2/25/2026"
@@ -523,51 +494,6 @@
       "page": "/test/details-html-quoted-angle-brackets",
       "avatars": [],
       "lastUpdated": "3/30/2026"
-    },
-    {
-      "page": "/test/devsite-2008/centered",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/20/2026"
-    },
-    {
-      "page": "/test/devsite-2008/centered-xl",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/20/2026"
-    },
-    {
-      "page": "/test/devsite-2008/default",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/20/2026"
-    },
-    {
-      "page": "/test/devsite-2008/half-width",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/20/2026"
-    },
-    {
-      "page": "/test/devsite-2063/dash-delimited",
-      "avatars": [],
-      "lastUpdated": "12/18/2025"
-    },
-    {
-      "page": "/test/devsite-2063/languages",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/2/2026"
-    },
-    {
-      "page": "/test/devsite-2063/space-delimited",
-      "avatars": [],
-      "lastUpdated": "12/18/2025"
     },
     {
       "page": "/test/devsite-2131/valid-filename-123",
@@ -609,45 +535,12 @@
       "lastUpdated": "5/19/2026"
     },
     {
-      "page": "/test/DEVSITE-2445/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "6/5/2026"
-    },
-    {
-      "page": "/test/DEVSITE-2445/redocly-pathprefix",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "6/5/2026"
-    },
-    {
-      "page": "/test/DEVSITE-2445/redocly-raw",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "6/5/2026"
-    },
-    {
       "page": "/test/edition",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "10/30/2026"
-    },
-    {
-      "page": "/test/embed-video-tv-adobe",
-      "avatars": [],
-      "lastUpdated": "2/13/2026"
-    },
-    {
-      "page": "/test/fragment",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "12/29/2025"
     },
     {
       "page": "/test/fragment-2",
@@ -677,26 +570,6 @@
         "https://avatars.githubusercontent.com/u/168568579?v=4"
       ],
       "lastUpdated": "5/2/2025"
-    },
-    {
-      "page": "/test/headings",
-      "avatars": [],
-      "lastUpdated": "5/6/2025"
-    },
-    {
-      "page": "/test/hero-nosidenav-noonthispage-noresources",
-      "avatars": [],
-      "lastUpdated": "11/19/2025"
-    },
-    {
-      "page": "/test/hero-nosidenav-noonthispage-resources",
-      "avatars": [],
-      "lastUpdated": "11/19/2025"
-    },
-    {
-      "page": "/test/hero-sidenav-noonthispage-resources",
-      "avatars": [],
-      "lastUpdated": "11/19/2025"
     },
     {
       "page": "/test/hide-breadcrumb-nav",
@@ -749,20 +622,6 @@
       "lastUpdated": "8/10/2026"
     },
     {
-      "page": "/test/inlinealert",
-      "avatars": [],
-      "lastUpdated": "12/4/2025"
-    },
-    {
-      "page": "/test/list-block",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/57922?v=4",
-        "https://avatars.githubusercontent.com/u/168568579?v=4",
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/18/2025"
-    },
-    {
       "page": "/test/md-extention",
       "avatars": [],
       "lastUpdated": "4/7/2026"
@@ -781,18 +640,6 @@
       "lastUpdated": "5/29/2026"
     },
     {
-      "page": "/test/nested-code",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "12/5/2025"
-    },
-    {
-      "page": "/test/nested-hr",
-      "avatars": [],
-      "lastUpdated": "12/9/2025"
-    },
-    {
       "page": "/test/nested-inline-alert",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4"
@@ -803,43 +650,6 @@
       "page": "/test/no-dead-urls-false-positives",
       "avatars": [],
       "lastUpdated": "5/19/2026"
-    },
-    {
-      "page": "/test/no-sidenav-2",
-      "avatars": [],
-      "lastUpdated": "6/4/2025"
-    },
-    {
-      "page": "/test/nohero-nosidenav-noonthispage-resources",
-      "avatars": [],
-      "lastUpdated": "11/18/2025"
-    },
-    {
-      "page": "/test/nohero-nosidenav-onthispage-resources",
-      "avatars": [],
-      "lastUpdated": "11/18/2025"
-    },
-    {
-      "page": "/test/nohero-sidenav-noonthispage-noresources",
-      "avatars": [],
-      "lastUpdated": "11/19/2025"
-    },
-    {
-      "page": "/test/nohero-sidenav-noonthispage-resources",
-      "avatars": [],
-      "lastUpdated": "11/18/2025"
-    },
-    {
-      "page": "/test/onthispage-with-sidenav",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "7/10/2025"
-    },
-    {
-      "page": "/test/onthispage-without-sidenav",
-      "avatars": [],
-      "lastUpdated": "6/10/2025"
     },
     {
       "page": "/test/path-test",
@@ -879,20 +689,6 @@
       "lastUpdated": "4/22/2026"
     },
     {
-      "page": "/test/redocly-api-block-default",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "11/24/2025"
-    },
-    {
-      "page": "/test/redocly-api-block-no-layout",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "11/24/2025"
-    },
-    {
       "page": "/test/redocly-test",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
@@ -905,13 +701,6 @@
         "https://avatars.githubusercontent.com/u/160927437?v=4"
       ],
       "lastUpdated": "11/12/2026"
-    },
-    {
-      "page": "/test/superhero-cc-everywhere",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4"
-      ],
-      "lastUpdated": "5/20/2026"
     },
     {
       "page": "/test/superhero/new/gatsby-hero-default",
@@ -982,13 +771,6 @@
       "page": "/test/superhero/old/herosimple-halfwidth",
       "avatars": [],
       "lastUpdated": "9/8/2025"
-    },
-    {
-      "page": "/test/support/empty",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/120194874?v=4"
-      ],
-      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/test/test-discover-test",
@@ -1080,19 +862,6 @@
       "page": "/test/trailing-slash",
       "avatars": [],
       "lastUpdated": "2/25/2026"
-    },
-    {
-      "page": "/test/UPPERCASE/",
-      "avatars": [],
-      "lastUpdated": "1/29/2026"
-    },
-    {
-      "page": "/test/UPPERCASE/uppercase",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "11/4/2026"
     },
     {
       "page": "/test/validate-links-404",
