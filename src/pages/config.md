@@ -95,3 +95,4 @@
       - [resourcesblock](/test/test-resources-block.md)
       - [resourcesblocknohero](/test/test-resources-block-nohero.md)
       - [infovcardNavigation](/test/infocard-navigation.md)
+      - [Image](/test/devsite-2097/index.md)
