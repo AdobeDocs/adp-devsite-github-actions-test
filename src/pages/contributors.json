@@ -1,7 +1,7 @@
 {
-  "total": 143,
+  "total": 150,
   "offset": 0,
-  "limit": 143,
+  "limit": 150,
   "data": [
     {
       "page": "/",
@@ -501,6 +501,55 @@
       "page": "/test/details-html-quoted-angle-brackets",
       "avatars": [],
       "lastUpdated": "3/30/2026"
+    },
+    {
+      "page": "/test/devsite-2097/default",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/large",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/medium",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/percent",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/px",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/rem",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
+    },
+    {
+      "page": "/test/devsite-2097/small",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/120194874?v=4"
+      ],
+      "lastUpdated": "11/13/2026"
     },
     {
       "page": "/test/devsite-2131/valid-filename-123",
