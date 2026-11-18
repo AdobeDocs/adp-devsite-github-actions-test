@@ -6,3 +6,4 @@
 
 [path-test/](path-test/index.md)
 
+testing
