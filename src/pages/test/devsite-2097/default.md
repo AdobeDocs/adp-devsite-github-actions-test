@@ -1,0 +1,1 @@
+![My alt text](../../assets/projects-card-view.png)
