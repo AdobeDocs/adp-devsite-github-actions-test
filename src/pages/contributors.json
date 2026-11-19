@@ -1,7 +1,7 @@
 {
-  "total": 153,
+  "total": 152,
   "offset": 0,
-  "limit": 153,
+  "limit": 152,
   "data": [
     {
       "page": "/",
@@ -711,13 +711,6 @@
     },
     {
       "page": "/test/new-file",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/19/2026"
-    },
-    {
-      "page": "/test/new-folder/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4"
       ],
