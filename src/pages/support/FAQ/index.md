@@ -1,3 +1,13 @@
+---
+title: Bee movie update!
+description: A complete update and summary of the Bee Movie script, highlighting key scenes and memorable quotes from the animated classic.
+keywords:
+- Bee Movie script
+- Bee Movie update
+- Bee Movie summary
+- animated movie bees
+- Bee Movie quotes
+---
 # Bee movie update!
 
 ## THE whole script
