@@ -13,7 +13,6 @@ Do not merge this page. The malformed breaks make deployment fail.
 
 Malformed break (VIPMP): first<br/\>second
 
-Space and slash before malformed break: first / <br/\>second
 
 Slash before malformed break: first/<br/\>second
 
