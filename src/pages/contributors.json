@@ -1,7 +1,7 @@
 {
-  "total": 152,
+  "total": 153,
   "offset": 0,
-  "limit": 152,
+  "limit": 153,
   "data": [
     {
       "page": "/",
@@ -444,11 +444,32 @@
       "lastUpdated": "2/11/2026"
     },
     {
-      "page": "/test/Bad_Name",
+      "page": "/test/br-in-tables-invalid",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160927437?v=4"
       ],
-      "lastUpdated": "11/4/2026"
+      "lastUpdated": "11/24/2026"
+    },
+    {
+      "page": "/test/br-in-tables-valid",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/24/2026"
+    },
+    {
+      "page": "/test/br-outside-tables-invalid",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/25/2026"
+    },
+    {
+      "page": "/test/br-outside-tables-valid",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160927437?v=4"
+      ],
+      "lastUpdated": "11/24/2026"
     },
     {
       "page": "/test/cards",
@@ -458,13 +479,6 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "10/19/2026"
-    },
-    {
-      "page": "/test/consecutive--dashes-invalid",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/5/2026"
     },
     {
       "page": "/test/consecutive-dashes-valid",
@@ -708,13 +722,6 @@
         "https://avatars.githubusercontent.com/u/160927437?v=4"
       ],
       "lastUpdated": "11/12/2026"
-    },
-    {
-      "page": "/test/new-file",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/160927437?v=4"
-      ],
-      "lastUpdated": "11/19/2026"
     },
     {
       "page": "/test/no-dead-urls-false-positives",
