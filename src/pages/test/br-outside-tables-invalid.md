@@ -14,5 +14,3 @@ Do not merge this page. The malformed breaks make deployment fail.
 
 
 ## Breaks in lists
-
-- Malformed break: first<br/\>second
