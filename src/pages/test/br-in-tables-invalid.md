@@ -11,13 +11,5 @@ Do not merge this page. The malformed rows make deployment fail.
 
 | Case | Value |
 | ---- | ----- |
-| Unescaped HTML break | first<br>second |
-| Unescaped self-closing break | first<br/>second |
-| Unescaped break with space | first<br />second |
-| Uppercase break | first<BR/>second |
-| Malformed break (VIPMP) | first<br/\>second |
-| Space and slash before malformed break | first / <br/\>second |
-| Slash before malformed break | first/<br/\>second |
-| Escaped backslash before break | first\\<br/>second |
 | `datasets[].filters.probability` | For the propensity dataset: `HIGH`, `MEDIUM`, or `LOW`. If omitted, allowed values are included. Duplicates are removed. / <br/\> **Note:** Currently, only `HIGH` is supported.|
 | probability | Mapped propensity rating. Possible values are: `HIGH`, `MEDIUM`, or `LOW`. /<br/\>**Note:** Currently, only `HIGH` is supported.|
