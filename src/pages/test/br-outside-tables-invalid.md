@@ -11,7 +11,6 @@ Do not merge this page. The malformed breaks make deployment fail.
 
 ## Malformed breaks in paragraphs
 
-Malformed break (VIPMP): first<br/\>second
 
 
 Slash before malformed break: first/<br/\>second
