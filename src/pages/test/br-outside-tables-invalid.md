@@ -13,8 +13,6 @@ Do not merge this page. The malformed breaks make deployment fail.
 
 
 
-Slash before malformed break: first/<br/\>second
-
 ## Breaks in lists
 
 - Malformed break: first<br/\>second
