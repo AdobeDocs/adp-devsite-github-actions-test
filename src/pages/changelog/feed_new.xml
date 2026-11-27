@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Changelog</title>
+    <link>https://developer.adobe.com/github-actions-test/changelog/</link>
+    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/adp-devsite-github-actions-test/refs/heads/main/src/pages/changelog/feed_new.xml" rel="self" type="application/rss+xml" />
+    <description>Release notes and changelog updates.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>v4.58.18</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45818-2026-10-21</link>
+      <guid isPermaLink="false">4.58.18-2026-10-21</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/#createguideddesign"><code>module.createGuidedDesign</code></a> module that launches a guided design creation flow in EDE. <em>(Embedded Design Editor)</em>
+<ul>
+<li>list1</li>
+<li>list2</li>
+<li>list3</li>
+<li>list4</li>
+</ul></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.57.22</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45722-2026-10-08</link>
+      <guid isPermaLink="false">4.57.22-2026-10-08</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/enumerations/edit-further-intent/"><code>EditFurtherIntent.ERASE</code></a> starting intent for Edit Image, so users can continue into object erase. <em>(Edit Image)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Various performance improvements and fixes. <em>(SDK core &amp; config)</em>
+<pre><code>(async () =&gt; {
+  const ccEverywhere = await window.CCEverywhere.initialize({
+    clientId: &lt;CLIENT_ID&gt;,
+    appName: &lt;APP_NAME&gt;,
+  });
+})();</code></pre></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.56.21</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45621-2026-09-30</link>
+      <guid isPermaLink="false">4.56.21-2026-09-30</guid>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li>Optional <code>tooltip</code> field on <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/interfaces/publish-export-option/#properties"><code>PublishExportOption</code></a> in <code>ExportConfig</code>, letting hosts customize hover tooltip text on publish-target export buttons. <em>(Export &amp; publish)</em></li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>Per-document success/failure status in <a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/#migrateassets"><code>migrateAssets()</code></a> <code>MigrateAssetsResult</code>. <em>(Authentication)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.55.8</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4558-2026-09-24</link>
+      <guid isPermaLink="false">4.55.8-2026-09-24</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/ede/">Embedded Design Editor (EDE) concept guide</a> introducing EDE's configurable, focused creation experiences, along with companion <a href="https://developer.adobe.com/github-actions-test/concepts/ede-create-design/">Create Design</a> and <a href="https://developer.adobe.com/github-actions-test/concepts/ede-edit-design/">Edit Design</a> guides. <em>(Embedded Design Editor)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/tutorials/embedded-design-editor/">Embedded Design Editor tutorial</a> walking through building a Create Design → Edit Design flow step by step. <em>(Embedded Design Editor)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.55.8</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4558-2026-09-16</link>
+      <guid isPermaLink="false">4.55.8-2026-09-16</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/#migrateassets"><code>migrateAssets()</code></a> support for asset migration (guest to logged-in user) in the <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/authentication-types/#interfaces">Partner Assertion</a> workflow. <em>(Authentication)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context/"><code>DesignViewerContext</code></a> access for Design Viewer, allowing host applications to provide additional assets after initial load via <a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/context/3p/design-viewer-context/classes/design-viewer-context/#updatedesignassets"><code>updateDesignAssets</code></a>. <em>(Design Viewer)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/browse-mode-config/#properties"><code>hideTemplatePreview</code></a> option to hide Template Preview, navigating directly to the editor after selecting a template. <em>(Template Browser)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.54.18</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45418-2026-09-02</link>
+      <guid isPermaLink="false">4.54.18-2026-09-02</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/editor-guide-config/"><code>editorGuideConfig</code></a> property to configure visibility of Bleed, Margins, and Rulers in the Edit Design module UI. <em>(Embedded Design Editor)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/pdf-print-config/"><code>pdfPrintConfig</code></a> property to configure print-ready PDF export in the Edit Design module (<code>&quot;print&quot;</code> variant), including Crop Marks, Bleed, Color Mode, and ICC Profile. <em>(Embedded Design Editor, Export &amp; publish)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li><code>createDesign()</code> with <code>&quot;print&quot;</code> variant now correctly displays bleed in the editor preview. <em>(Embedded Design Editor)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/host-app-trigger/">Analytics concept guide</a> explaining how to configure required analytics data for consistent launch attribution across Embed SDK workflows. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.53.3</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4533-2026-08-13</link>
+      <guid isPermaLink="false">4.53.3-2026-08-13</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/authentication-types/#type-aliases"><code>PartnerAssertionAuthConfig</code></a> interface for partner assertion authentication (guest, signed-in, or guest-to-user transition). <em>(Authentication)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/interfaces/publish-action/#properties"><code>PublishAction.previewConfig</code></a> property of type <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/interfaces/asset-preview-config/"><code>AssetPreviewConfig</code></a> to configure an additional output preview image. <em>(Export &amp; publish)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.51.14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45114-2026-08-05</link>
+      <guid isPermaLink="false">4.51.14-2026-08-05</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/doc-config-types/interfaces/design-viewer-doc-config/"><code>CCEverywhere.DesignViewerDocConfig</code></a> accepts multiple assets in <code>docConfig</code>. <em>(Design Viewer)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties"><code>CCEverywhere.EditorAppConfig.editorMode</code></a> optional property on Full Editor <code>appConfig</code>; setting <code>'assistant'</code> opens the editor with the AI Assistant panel active. <em>(Full Editor)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.50.23</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v45023-2026-07-24</link>
+      <guid isPermaLink="false">4.50.23-2026-07-24</guid>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/template-browser-v2/">Template Browser v2 concept guide</a> covering the new tabbed Template Browser experience for authenticated users (coexists with Template Browser v1). <em>(Template Browser)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.48.12</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44812-2026-06-16</link>
+      <guid isPermaLink="false">4.48.12-2026-06-16</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>General improvements and bug fixes. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.45.20</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44520-2026-04-14</link>
+      <guid isPermaLink="false">4.45.20-2026-04-14</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/design-viewer/">Design Viewer concept guide</a> covering implementation details of the Design Viewer module. <em>(Design Viewer)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.44.14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44414-2026-03-19</link>
+      <guid isPermaLink="false">4.44.14-2026-03-19</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><strong>Design Viewer</strong></p>
+<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/#viewdesign"><code>CCEverywhere.viewDesign</code></a> Design Viewer module, configured via <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/design-viewer-app-config/"><code>DesignViewerAppConfig</code></a> and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/doc-config-types/interfaces/design-viewer-doc-config/"><code>DesignViewerDocConfig</code></a>. <em>(Design Viewer)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.43.13</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44313-2026-03-10</link>
+      <guid isPermaLink="false">4.43.13-2026-03-10</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li>Expanded <strong>Mobile Web Concept Guide</strong>: <a href="https://developer.adobe.com/github-actions-test/concepts/mobile-web-support-overview/">Overview</a> comparing Mobile Web and Mobile SDKs, <a href="https://developer.adobe.com/github-actions-test/concepts/mobile-web-support-webview/">Mobile Web in a WebView</a> for iOS and Android apps, and improved information architecture. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/tutorials/mobile-web/">Mobile Web tutorial</a> with a Fantasy Sports badge creation end-to-end example and working samples for Web (client and server), Android, and iOS. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.41.14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44114-2026-01-30</link>
+      <guid isPermaLink="false">4.41.14-2026-01-30</guid>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/interfaces/publish-action/"><code>CCEverywhere.PublishAction.outputType</code></a> option to return output files as <code>Blob</code> for Quick Actions and Module Workflows. <em>(Export &amp; publish, Quick Actions)</em></li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/publish-config/#properties"><code>CCEverywhere.PublishConfig.outputType</code></a> asset data type updated for <code>Blob</code> output. <em>(Export &amp; publish)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.40.30</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v44030-2026-01-09</link>
+      <guid isPermaLink="false">4.40.30-2026-01-09</guid>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/design-config-types/interfaces/base-app-config/#properties"><code>CCEverywhere.BaseAppConfig.metaData</code></a> support for passing custom key-value metadata across all workflows. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.39.13</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43913-2025-11-24</link>
+      <guid isPermaLink="false">4.39.13-2025-11-24</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Maintenance release.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-11-14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#11-14</link>
+      <guid isPermaLink="false">2025-11-14</guid>
+      <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/template-browser/">Template Browser concept guide</a> covering implementation details of the Template Browser experience. <em>(Template Browser)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.38.19</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43819-2025-11-10</link>
+      <guid isPermaLink="false">4.38.19-2025-11-10</guid>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/design-config-types/interfaces/base-app-config/#properties"><code>CCEverywhere.BaseAppConfig.useClientAuth</code></a> option for credit-free Generative AI workflows in Generate Image and Edit Image (enabled partners only). <em>(Generate Image, Edit Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/enumerations/call-back-target/#callback"><code>CCEverywhere.CallBackTarget.CALLBACK</code></a> export target to trigger callback actions without publishing or downloading assets. <em>(Export &amp; publish)</em></li>
+<li><strong>Custom Message Workflow</strong>: <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/enumerations/message-type/#workflow_context"><code>WORKFLOW_CONTEXT</code></a> message type, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/interfaces/custom-message/"><code>CustomMessage</code></a> interface (instance ID, request ID, action, intent, and optional data), and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/messenger/message-types/enumerations/custom-message-action/"><code>CustomMessageAction</code></a> enum for unsaved changes and asset requests. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties"><code>CCEverywhere.BaseEditorAppConfig.canvasBackgroundColor</code></a> option to configure canvas background color in <code>RRGGBBAA</code> HEX format. <em>(Full Editor)</em></li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/container-config-types/interfaces/modal-container-config/#properties"><code>CCEverywhere.ModalContainerConfig.showExpressIconWithText</code></a> default loading screen includes the Express logo and text. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.36.26</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43626-2025-10-08</link>
+      <guid isPermaLink="false">4.36.26-2025-10-08</guid>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/host-info-types/interfaces/host-info-specified-base/#properties"><code>CCEverywhere.HostInfo.coiEnabled</code></a> property on <code>HostInfo</code> indicating whether COI (Cross-Origin Isolation) is enabled. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/container-config-types/interfaces/base-container-config/#properties"><code>CCEverywhere.BaseContainerConfig.iframeTitle</code></a> property to configure the iframe's accessible title. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/browse-search-config-types/interfaces/browse-search-base-config/#properties"><code>CCEverywhere.BrowseSearchBaseConfig.rootCollectionId</code></a> option to surface non-Express collections in the browser. <em>(Template Browser)</em></li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/callbacks-types/type-aliases/cancel-callback/"><code>CCEverywhere.ModuleWorkflow.CancelCallback</code></a> <code>onCancel</code> reports optional <code>isEscapePressed</code> (<code>true</code> when canceled via Escape during loading). <em>(SDK core &amp; config)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/mobile-web-support-overview/">Mobile Web Support Overview</a> concept guide covering mobile creative workflows, configuration options, best practices, and troubleshooting. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.35.15</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43515-2025-09-18</link>
+      <guid isPermaLink="false">4.35.15-2025-09-18</guid>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/tethering/">Workflow Tethering concept guide</a> and <a href="https://developer.adobe.com/github-actions-test/tutorials/workflow-tethering/">Workflow Tethering tutorial</a> covering chained workflows (Generate Image → Edit Image and Edit Image → Full Editor). <em>(Full Editor, Generate Image, Edit Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.34.27</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43427-2025-09-01</link>
+      <guid isPermaLink="false">4.34.27-2025-09-01</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><code>AUTO</code> content type on <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-content-type/"><code>ImageContentType</code></a> to automatically determine content type from the prompt and context. <em>(Generate Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.34.26</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43426-2025-08-28</link>
+      <guid isPermaLink="false">4.34.26-2025-08-28</guid>
+      <pubDate>Thu, 28 Aug 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Removed</h3>
+<ul>
+<li><code>ImageColorStyle</code>, <code>ImageCompositionStyle</code>, and <code>ImageLightingStyle</code> enumerations are no longer accepted in <code>CCEverywhere.TextToImageAppConfig.panelSettings</code>. <em>(Generate Image)</em> <strong>Action:</strong> Remove these values from your <code>panelSettings</code> configuration.</li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/tutorials/edit-image/">Edit Image tutorial</a> covering implementation details of Edit Image v2 features. <em>(Edit Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.32.26</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43226-2025-08-07</link>
+      <guid isPermaLink="false">4.32.26-2025-08-07</guid>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#panelsettings"><code>CCEverywhere.TextToImageAppConfig.panelSettings</code></a> configuration for Generate Image v1 and v2, including <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/interfaces/panel-settings/"><code>PanelSettings</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/interfaces/style-setting/"><code>StyleSetting</code></a>, and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/interfaces/content-type-setting/"><code>ContentTypeSetting</code></a>. <em>(Generate Image)</em></li>
+<li>Style enumerations and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/type-aliases/image-style-id/"><code>ImageStyleId</code></a>: <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-content-type/"><code>ImageContentType</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-theme-style/"><code>ImageThemeStyle</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-technique-style/"><code>ImageTechniqueStyle</code></a>, <code>ImageLightingStyle</code>, <code>ImageCompositionStyle</code>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-effect-style/"><code>ImageEffectStyle</code></a>, <code>ImageColorStyle</code>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-movement-style/"><code>ImageMovementStyle</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-material-style/"><code>ImageMaterialStyle</code></a>, and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/panel-settings-types/enumerations/image-concept-style/"><code>ImageConceptStyle</code></a>. <em>(Generate Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#hidefeedbackmenu"><code>CCEverywhere.TextToImageAppConfig.hideFeedbackMenu</code></a> option to hide the feedback menu in the header bar. <em>(Generate Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#ispromptsafe"><code>CCEverywhere.TextToImageAppConfig.isPromptSafe</code></a> callback for custom prompt moderation. <em>(Generate Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#promptinputplaceholder"><code>CCEverywhere.TextToImageAppConfig.promptInputPlaceholder</code></a> placeholder text configuration for the prompt input field (Generate Image v2 only). <em>(Generate Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/edit-image-app-config/#inlinetouconsent"><code>CCEverywhere.EditImageAppConfig.inlineTOUConsent</code></a> inline Terms of Use consent configuration. <em>(Edit Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/interfaces/publish-button-group/"><code>PublishButtonGroup</code></a> interface for organizing export buttons. <em>(Export &amp; publish)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li>Updated <a href="https://developer.adobe.com/github-actions-test/tutorials/generate-image/">Generate Image tutorial</a> and <a href="https://developer.adobe.com/github-actions-test/concepts/generate-image-v2/">Concept Guide</a> for the new panel settings options. <em>(Generate Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>2025-07-11</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#07-11</link>
+      <guid isPermaLink="false">2025-07-11</guid>
+      <pubDate>Fri, 11 Jul 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/tutorials/generate-image/">Generate Image tutorial</a> covering Generate Image v2 features, including the Custom Community Wall. <em>(Generate Image)</em></li>
+<li>Improved API Reference (v4) documentation for Type Aliases such as <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/asset-types/type-aliases/asset/"><code>Asset</code></a>. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.30.13</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v43013-2025-06-20</link>
+      <guid isPermaLink="false">4.30.13-2025-06-20</guid>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Maintenance release.</p>]]></description>
+    </item>
+    <item>
+      <title>v4.29.22</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v42922-2025-05-28</link>
+      <guid isPermaLink="false">4.29.22-2025-05-28</guid>
+      <pubDate>Wed, 28 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><strong>Edit Image v2</strong></p>
+<h3>Deprecated</h3>
+<ul>
+<li>PDF in <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/edit-image-app-config/#properties"><code>AppConfig.allowedFileTypes</code></a> for Edit Image v2; PDFs are converted to PNG. <em>(Edit Image)</em> <strong>Action:</strong> Drop PDF from Edit Image <code>allowedFileTypes</code>, or expect PNG output.</li>
+</ul>
+<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/module-workflow/classes/module-workflow/"><code>CCEverywhere.module.editImage()</code></a> <a href="https://developer.adobe.com/github-actions-test/concepts/edit-image-v2/">Edit Image v2 experience</a>: 35–50% faster loads, 35% less memory, Adobe Spectrum 2 UI. No config changes needed. <em>(Edit Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.TextToImageAppConfig.communityWallConfig</code></a> to populate the Community Wall with custom images (see <a href="https://developer.adobe.com/github-actions-test/concepts/generate-image-v2/#custom-community-wall">Custom Community Wall</a>). <em>(Generate Image)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties"><code>CCEverywhere.EditorAppConfig.showPageMargin</code></a> and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties"><code>CCEverywhere.EditorAppConfig.showBleedArea</code></a> options to control margins and bleed visibility. <em>(Full Editor)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li>Enhanced <a href="https://developer.adobe.com/github-actions-test/concepts/appconfig/">Editor Customization</a> concept guide with <code>assetCollection</code>, <code>showPageMargin</code>, and <code>showBleedArea</code> options, use cases, and examples. <em>(Full Editor)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.28.19</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v42819-2025-05-05</link>
+      <guid isPermaLink="false">4.28.19-2025-05-05</guid>
+      <pubDate>Mon, 05 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/editor/app-config-types/interfaces/base-editor-app-config/#properties"><code>CCEverywhere.BaseEditorAppConfig.assetCollection</code></a> optional property (collection URN) for asset collection filtering in the Editor. <em>(Full Editor)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/callbacks-types/interfaces/callbacks/#properties"><code>CCEverywhere.Callbacks.onIntentChange</code></a> optional callback for intent change events in the Editor. <em>(Full Editor)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Performance improvements and bug fixes. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.26.5</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4265-2025-04-11</link>
+      <guid isPermaLink="false">4.26.5-2025-04-11</guid>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.BaseEditorAppConfig.analyticsData</code></a> (<code>hostAppTrigger</code>). See the <a href="https://developer.adobe.com/github-actions-test/concepts/host-app-trigger/">Analytics guide</a>. <em>(SDK core &amp; config)</em></li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>Cancel events include optional <code>clientCtaLocation</code> and <code>workflowLoadCompleted</code> properties. <em>(SDK core &amp; config)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Various performance improvements and bug fixes. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.22.9</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4229-2025-03-12</link>
+      <guid isPermaLink="false">4.22.9-2025-03-12</guid>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/generate-image-v2/#custom-firefly-models">Firefly Custom Models</a> support in Generate Image V2 (Enterprise users only). <em>(Generate Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.21.17</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v42117-2025-02-27</link>
+      <guid isPermaLink="false">4.21.17-2025-02-27</guid>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><strong>Generate Image v2</strong></p>
+<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.TextToImageAppConfig.appVersion</code></a> option to opt in to Generate Image V2 with <code>appVersion: &quot;2&quot;</code> (default stays <code>&quot;1&quot;</code>). <em>(Generate Image)</em></li>
+<li>v2 config options: <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>thumbnailOptions</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>editDropdownOptions</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>publishConfig</code></a>, <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>fastModeConfig</code></a>, and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>featureConfig</code></a>. <em>(Generate Image)</em></li>
+<li><code>pdfPrint</code> support in <code>allowedExportFileTypes</code> on <code>appConfig</code>. <em>(Export &amp; publish)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Loader CSS for frictionless experience. <em>(SDK core &amp; config)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/generate-image-v2/">Concept Guide</a> for Generate Image V2 and updated <a href="https://demo.expressembed.com/">Demo App</a>. <em>(Generate Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.20.46</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v42046-2025-02-18</link>
+      <guid isPermaLink="false">4.20.46-2025-02-18</guid>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Removed</h3>
+<ul>
+<li>Presigned <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/asset-types/type-aliases/url-asset/"><code>URL</code></a> as the <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/asset-types/enumerations/asset-data-type/"><code>datatype</code></a> for video <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/asset-types/interfaces/asset-base/"><code>asset</code></a> inputs in <code>createWithAsset()</code> is temporarily unsupported. <em>(Full Editor)</em> <strong>Action:</strong> Pass video as <code>blob</code> or <code>base64</code> until support returns. <em>(Still open)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Video <code>blob</code> and <code>base64</code> asset inputs for <a href="https://developer.adobe.com/github-actions-test/../v4/sdk/src/workflows/3p/editor-workflow/classes/editor-workflow/#createwithasset"><code>Editor.createWithAsset()</code></a>. <em>(Full Editor)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.19.22</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41922-2025-01-31</link>
+      <guid isPermaLink="false">4.19.22-2025-01-31</guid>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/export-config-types/enumerations/edit-further-intent/"><code>CCEverywhere.ExportConfig.EditFurtherIntent</code></a> intents <code>INSERT_OBJECT</code> and <code>REMOVE_OBJECT</code> in Edit Image. <em>(Edit Image)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Various performance improvements and bug fixes. <em>(SDK core &amp; config)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/asset-types/">Asset</a> type documentation coverage. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/#embed-sdk-developer-journey">Embed SDK Developer Journey</a> map and <a href="https://developer.adobe.com/github-actions-test/troubleshooting/express-unavailable-error/">Troubleshooting</a> guide for &quot;Adobe Express is Unavailable&quot; and &quot;Missing Referrer Header&quot; errors. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.18.14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41814-2025-01-09</link>
+      <guid isPermaLink="false">4.18.14-2025-01-09</guid>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/publish-params-types/interfaces/text-to-image-publish-params/"><code>CCEverywhere.TextToImagePublishParams.prompt</code></a> returns the prompt in <code>onPublish</code>. <em>(Generate Image)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.17.33</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41733-2024-12-16</link>
+      <guid isPermaLink="false">4.17.33-2024-12-16</guid>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.appConfig.imageDimensions</code></a> aspect ratio parameter in <code>createImageFromText()</code>. <em>(Generate Image)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/concepts/error-handling/">Error code guide</a> for managing errors. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.16.11</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41611-2024-11-18</link>
+      <guid isPermaLink="false">4.16.11-2024-11-18</guid>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.appConfig.imageStyleReference</code></a> and <a href="https://developer.adobe.com/github-actions-test/../v4/shared/src/types/module/app-config-types/interfaces/text-to-image-app-config/#properties"><code>CCEverywhere.appConfig.imageCompositionReference</code></a> in <code>createImageFromText()</code>. <em>(Generate Image)</em></li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Animate from Audio microphone input. <em>(Quick Actions)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.15.19</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41519-2024-10-09</link>
+      <guid isPermaLink="false">4.15.19-2024-10-09</guid>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li>Enabled state for export buttons (<code>CCEverywhere.ExportConfig.ENABLED_BUTTON</code>). <em>(Export &amp; publish)</em></li>
+<li><code>CCEverywhere.ExportConfig.DOWNLOAD_ALL</code> export option. <em>(Generate Image, Export &amp; publish)</em></li>
+<li><code>CCEverywhere.createImageFromText.appConfig.imageDimensions</code> parameter. <em>(Generate Image)</em></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li>Redesigned <a href="https://developer.adobe.com/github-actions-test/../v4/">SDK Reference</a> section and V3 to V4 <a href="https://developer.adobe.com/github-actions-test/concepts/migration-v3-v4/">Migration Guide</a>. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.14.23</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41423-2024-09-23</link>
+      <guid isPermaLink="false">4.14.23-2024-09-23</guid>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Documentation</h3>
+<ul>
+<li>Reorganized docs: updated <a href="https://developer.adobe.com/github-actions-test/review/">Submission and Review</a> and <a href="https://developer.adobe.com/github-actions-test/quickstart/">Quickstart</a> guides, and new <a href="https://developer.adobe.com/github-actions-test/tutorials/">Tutorials</a> section. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.14.23</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v41423-2024-09-05</link>
+      <guid isPermaLink="false">4.14.23-2024-09-05</guid>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><code>DocConfig</code> accepts <code>Blob</code> and <code>File</code> assets. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.4.15</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4415-2024-04-02</link>
+      <guid isPermaLink="false">4.4.15-2024-04-02</guid>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+<ul>
+<li><code>CCEverywhere.terminate()</code>. <em>(SDK core &amp; config)</em></li>
+<li><a href="https://developer.adobe.com/github-actions-test/../reference/types/#containerconfig">z-index</a> support for the root container. <em>(SDK core &amp; config)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.2.30</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4230-2024-03-14</link>
+      <guid isPermaLink="false">4.2.30-2024-03-14</guid>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Breaking Changes</h3>
+<ul>
+<li>Callbacks move from <code>initialize()</code> to each call’s <code>appConfig</code>. <em>(SDK core &amp; config)</em> <strong>Action:</strong> Move callbacks from <code>initialize()</code> into the <code>appConfig</code> of each call.</li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v4.2.29</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v4229-2024-03-14</link>
+      <guid isPermaLink="false">4.2.29-2024-03-14</guid>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><strong>SDK v4</strong></p>
+<h3>Breaking Changes</h3>
+<ul>
+<li><code>createDesign</code> is now <code>editor.create</code> / <code>editor.createWithAsset</code>; <code>editDesign</code> is now <code>editor.edit</code>. <em>(Full Editor)</em> <strong>Action:</strong> Rename the calls. See the <a href="https://developer.adobe.com/github-actions-test/concepts/migration-v3-v4/">migration guide</a>.</li>
+<li><code>openQuickAction</code> is replaced by one method per action. <em>(Quick Actions)</em> <strong>Action:</strong> Call the per-action methods instead.</li>
+<li><code>ExportOptions</code> changed shape. <em>(Export &amp; publish)</em> <strong>Action:</strong> Update <code>ExportOptions</code> to the v4 types.</li>
+</ul>
+<h3>Added</h3>
+<ul>
+<li>Generate Image module: <code>createImageFromText</code>. <em>(Generate Image)</em></li>
+<li>Edit Image module: <code>editImage</code>. <em>(Edit Image)</em></li>
+<li>Delayed login. <em>(Authentication)</em></li>
+</ul>]]></description>
+    </item>
+    <item>
+      <title>v3.10.13</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v31013-2023-11-06</link>
+      <guid isPermaLink="false">3.10.13-2023-11-06</guid>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>LINE and note layouts (<a href="https://developer.adobe.com/github-actions-test/../reference/types/#canvasaspectid">CreateInputParams.canvasSize</a>) and template types (<a href="https://developer.adobe.com/github-actions-test/../reference/types/#templatetype">CreateInputParams.templateType</a>); QR Code and Caption Video quick actions.</p>]]></description>
+    </item>
+    <item>
+      <title>v3.8.11</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v3811-2023-08-25</link>
+      <guid isPermaLink="false">3.8.11-2023-08-25</guid>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><code>skipBrowserSupportCheck</code> option.</p>]]></description>
+    </item>
+    <item>
+      <title>v3.7.14</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v3714-2023-08-15</link>
+      <guid isPermaLink="false">3.7.14-2023-08-15</guid>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Breaking Changes</h3>
+<p><code>ExportButton.id</code> is required; <code>cta</code> variant renamed <code>accent</code>; Animate From Audio added; Reverse Video and Change Speed retired.</p>]]></description>
+    </item>
+    <item>
+      <title>v3.6.16</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v3616-2023-08-06</link>
+      <guid isPermaLink="false">3.6.16-2023-08-06</guid>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>MP4 export, mixed media, and <code>allowedFileTypes</code>.</p>]]></description>
+    </item>
+    <item>
+      <title>v2.0.8</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v208-2023-02-02</link>
+      <guid isPermaLink="false">2.0.8-2023-02-02</guid>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Breaking Changes</h3>
+<p><code>initialize()</code> is async; browser support check; <code>terminate()</code>; Google One Tap sign-in.</p>]]></description>
+    </item>
+    <item>
+      <title>v1.5.4</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v154-2022-12-16</link>
+      <guid isPermaLink="false">1.5.4-2022-12-16</guid>
+      <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Quick actions work logged out; bug fixes.</p>]]></description>
+    </item>
+    <item>
+      <title>v1.4.10</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v1410-2022-11-14</link>
+      <guid isPermaLink="false">1.4.10-2022-11-14</guid>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Delayed login; Create from Image.</p>]]></description>
+    </item>
+    <item>
+      <title>v1.3.11</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v1311-2022-08-24</link>
+      <guid isPermaLink="false">1.3.11-2022-08-24</guid>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>CDN bundle, welcome screen, and sign-out.</p>]]></description>
+    </item>
+    <item>
+      <title>v1.1.0</title>
+      <link>https://developer.adobe.com/github-actions-test/changelog/#v110-2022-04-09</link>
+      <guid isPermaLink="false">1.1.0-2022-04-09</guid>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Configurable scrim and redirect URI; <code>appVersion</code> and <code>platformCategory</code> optional.</p>]]></description>
+    </item>
+  </channel>
+</rss>
