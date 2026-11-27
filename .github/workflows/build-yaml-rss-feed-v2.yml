@@ -4,8 +4,24 @@ name: Build YAML RSS Feeds
 # changelog*.yml / changelog*.yaml (e.g. src/pages/guides/changelog/changelog-data.yaml).
 # changelog-settings.yaml is not a changelog itself: when it changes, the changelogs in its folder are rebuilt.
 # Each feed is written where the changelog's `rssfeed` key points (see generate-rss-from-yaml.js),
-# falling back to the feedPath input, and all feeds are committed in a single commit.
+# falling back to src/pages/feed.xml, and all feeds are committed in a single commit.
 on:
+  # Any push to main that changes a changelog*.yml / changelog*.yaml file in any folder under src/pages.
+  # The "Find changed YAML changelogs" step then works out exactly which files changed.
+  push:
+    branches: [main]
+    paths:
+      - 'src/pages/changelog*.yml'
+      - 'src/pages/changelog*.yaml'
+      - 'src/pages/**/changelog*.yml'
+      - 'src/pages/**/changelog*.yaml'
+  workflow_dispatch:
+    inputs:
+      buildAll:
+        description: Rebuild the feeds of all YAML changelogs, not only the changed ones
+        type: boolean
+        required: false
+        default: false
   workflow_call:
     inputs:
       baseSha:
@@ -94,7 +110,6 @@ jobs:
         uses: actions/github-script@v8
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-          FEED_PATH: ${{ inputs.feedPath }}
           BRANCH: ${{ github.ref_name }}
           CHANGELOG_LIST_FILE: ${{ runner.temp }}/yaml-changelogs.txt
           FEEDS_DIR: ${{ runner.temp }}/yaml-feeds
