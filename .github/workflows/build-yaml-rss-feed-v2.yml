@@ -1,0 +1,166 @@
+---
+name: Build YAML RSS Feeds
+# Builds an RSS feed for every changed YAML changelog under src/pages, i.e. files named
+# changelog*.yml / changelog*.yaml (e.g. src/pages/guides/changelog/changelog-data.yaml).
+# changelog-settings.yaml is not a changelog itself: when it changes, the changelogs in its folder are rebuilt.
+# Each feed is written where the changelog's `rssfeed` key points (see generate-rss-from-yaml.js),
+# falling back to the feedPath input, and all feeds are committed in a single commit.
+on:
+  workflow_call:
+    inputs:
+      baseSha:
+        type: string
+        required: false
+      buildAll:
+        description: Rebuild the feeds of all YAML changelogs, not only the changed ones
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  build-yaml-rss-feed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Find changed YAML changelogs
+        id: changed-changelogs
+        env:
+          BASE_SHA: ${{ inputs.baseSha || github.event.before }}
+          BUILD_ALL: ${{ inputs.buildAll }}
+          CHANGELOG_LIST_FILE: ${{ runner.temp }}/yaml-changelogs.txt
+        run: |
+          # changelog*.yml / changelog*.yaml anywhere under src/pages
+          name_re='(^|/)changelog[^/]*\.ya?ml$'
+          settings_re='(^|/)changelog-settings\.ya?ml$'
+
+          all_changelogs() {
+            git ls-files -- 'src/pages' | grep -iE "$name_re" | grep -viE "$settings_re" || true
+          }
+
+          # Rebuild everything on a full build or without a usable base SHA (first run, force push, new branch)
+          if [ "$BUILD_ALL" = "true" ] || ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            all_changelogs > "$CHANGELOG_LIST_FILE"
+          else
+            # Added, modified and renamed files only: a deleted changelog has nothing to build
+            changed=$(git diff --name-only --diff-filter=d "$BASE_SHA" HEAD -- 'src/pages' | grep -iE "$name_re" || true)
+            {
+              printf '%s\n' "$changed" | grep -viE "$settings_re" || true
+              # A changed settings file rebuilds the changelogs next to it
+              printf '%s\n' "$changed" | grep -iE "$settings_re" | while IFS= read -r settings; do
+                dir=$(dirname "$settings")
+                all_changelogs | while IFS= read -r file; do
+                  [ "$(dirname "$file")" = "$dir" ] && echo "$file"
+                done
+              done
+            } | grep -v '^$' | sort -u > "$CHANGELOG_LIST_FILE"
+          fi
+
+          count=$(grep -c . "$CHANGELOG_LIST_FILE" || true)
+          echo "YAML changelogs to build - $count"
+          cat "$CHANGELOG_LIST_FILE"
+          if [ "$count" -gt 0 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout Scripts Repo
+        if: steps.changed-changelogs.outputs.changed == 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: AdobeDocs/adp-devsite-scripts
+          path: scripts
+          ref: rss-feed-from-yaml
+          persist-credentials: false
+
+      - name: Generate GitHub App token
+        if: steps.changed-changelogs.outputs.changed == 'true'
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.ADP_DEVSITE_APP_ID }}
+          private-key: ${{ secrets.ADP_DEVSITE_APP_PRIVATE_KEY }}
+
+      - name: Generate RSS feeds from YAML changelogs
+        if: steps.changed-changelogs.outputs.changed == 'true'
+        id: feeds
+        uses: actions/github-script@v8
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          FEED_PATH: ${{ inputs.feedPath }}
+          BRANCH: ${{ github.ref_name }}
+          CHANGELOG_LIST_FILE: ${{ runner.temp }}/yaml-changelogs.txt
+          FEEDS_DIR: ${{ runner.temp }}/yaml-feeds
+          FEED_LIST_FILE: ${{ runner.temp }}/yaml-feeds.txt
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { getYamlChangeLogXmlContent } = require('./scripts/generate-rss-from-yaml.js');
+            const { owner, repo } = context.repo;
+            const { GITHUB_TOKEN, FEED_PATH, BRANCH, CHANGELOG_LIST_FILE, FEEDS_DIR, FEED_LIST_FILE } = process.env;
+
+            const changelogs = fs.readFileSync(CHANGELOG_LIST_FILE, 'utf8').split('\n').map(line => line.trim()).filter(Boolean);
+            // feed path -> changelog it was built from
+            const feeds = new Map();
+
+            for (const changelogPath of changelogs) {
+              let result;
+              try {
+                result = await getYamlChangeLogXmlContent(owner, repo, GITHUB_TOKEN, changelogPath, FEED_PATH, BRANCH);
+              } catch (error) {
+                // A bad `rssfeed` value in one changelog should not block the other feeds
+                core.error(`${changelogPath}: ${error.message}`, { file: changelogPath });
+                continue;
+              }
+              if (!result || !result.xmlContent) {
+                console.log(`No feed content generated from ${changelogPath}. Skipping.`);
+                continue;
+              }
+
+              const { xmlContent, feedPath } = result;
+              if (feeds.has(feedPath)) {
+                core.warning(`${changelogPath} and ${feeds.get(feedPath)} both write ${feedPath}. Keeping the feed from ${feeds.get(feedPath)}; give each changelog its own rssfeed.`, { file: changelogPath });
+                continue;
+              }
+
+              // The XML goes to the next step through files, it is too large for a step output.
+              // feedPath is already checked by the script to be an .xml file under src/pages.
+              const outFile = path.join(FEEDS_DIR, feedPath);
+              fs.mkdirSync(path.dirname(outFile), { recursive: true });
+              fs.writeFileSync(outFile, xmlContent, 'utf8');
+              feeds.set(feedPath, changelogPath);
+              console.log(`${changelogPath} -> ${feedPath}`);
+            }
+
+            fs.writeFileSync(FEED_LIST_FILE, [...feeds.keys()].map(feedPath => `${feedPath}\n`).join(''), 'utf8');
+            core.setOutput('has_content', feeds.size > 0 ? 'true' : 'false');
+
+      - name: Place feed files, commit and push if changed
+        if: steps.feeds.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          REPO: ${{ github.repository }}
+          FEEDS_DIR: ${{ runner.temp }}/yaml-feeds
+          FEED_LIST_FILE: ${{ runner.temp }}/yaml-feeds.txt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${REPO}"
+          # Pull first so the generated feeds always overwrite whatever is on the branch
+          git pull origin "${GITHUB_REF#refs/heads/}" --ff-only
+          while IFS= read -r feed; do
+            [ -n "$feed" ] || continue
+            mkdir -p "$(dirname "$feed")"
+            cp "$FEEDS_DIR/$feed" "$feed"
+            git add -- "$feed"
+          done < "$FEED_LIST_FILE"
+          git diff --cached --quiet || git commit -m "chore: auto-generate rss feed from yaml changelog"
+          git push
